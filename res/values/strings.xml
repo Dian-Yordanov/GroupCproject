@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Kotkopod</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+	    <string-array name="countryListView">
+        <item >ABW</item>
+        <item >AFG</item>
+        <item >AGO</item>
+        <item >ALB</item>
+        <item >AND</item>
+    	</string-array>
+    	<string-array name="indicatorListView">
+        <item >1.1_ACCESS.ELECTRICITY.TOT</item>
+        <item >1.1_TOTAL.FINAL.ENERGY.CONSUM</item>
+        <item >1.1_YOUTH.LITERACY.RATE</item>
+        <item >1.2_ACCESS.ELECTRICITY.RURAL</item>
+        <item >1.3_ACCESS.ELECTRICITY.URBAN</item>
+    	</string-array>
+    
+</resources>
