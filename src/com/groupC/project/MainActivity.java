@@ -35,9 +35,11 @@ public class MainActivity extends Activity implements Runnable{
         @Override
         protected void onCreate(Bundle savedInstanceState) {
                 super.onCreate(savedInstanceState);
-                uiBuidler();
                
-                
+
+               
+                 uiBuidler();
+                 queryBuilder qBuilder = new queryBuilder();
         }
 
         @Override
@@ -58,10 +60,11 @@ public class MainActivity extends Activity implements Runnable{
 
             textView1 = (TextView) findViewById(R.id.textViewJaonTest);
         }
-
+  
 		@Override
 		public void run() {
-			// TODO Auto-generated method stub
-			 queryBuilder qBuilder = new queryBuilder();
+			// this is our second threth where we create new object queryBuilder which is creating the query building string and calling the jsonParser
+			
+			 Log.v("hfbsfiusd","dfsdfsd");
 		}
-}  
+}

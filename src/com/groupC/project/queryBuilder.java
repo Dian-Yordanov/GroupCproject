@@ -54,6 +54,7 @@ android:targetSdkVersion="17" />
     
     //i am also using a textView1 to display the source Json
     //the think is that son.readData(String) reads only about that string and that string should be changed 
+	
     jsonParser son = new jsonParser();
     
     
