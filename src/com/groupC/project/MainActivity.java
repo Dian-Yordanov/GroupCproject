@@ -19,7 +19,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements Runnable{
         
         
         public static TextView textView1;
@@ -36,7 +36,7 @@ public class MainActivity extends Activity {
         protected void onCreate(Bundle savedInstanceState) {
                 super.onCreate(savedInstanceState);
                 uiBuidler();
-                queryBuilder qBuilder = new queryBuilder();
+               
                 
         }
 
@@ -58,4 +58,10 @@ public class MainActivity extends Activity {
 
             textView1 = (TextView) findViewById(R.id.textViewJaonTest);
         }
+
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			 queryBuilder qBuilder = new queryBuilder();
+		}
 }  
