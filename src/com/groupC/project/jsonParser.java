@@ -15,7 +15,6 @@ import android.os.StrictMode;
 import android.util.Log;
 
 public class jsonParser {
-        
         public jsonParser(){
                 
         }
