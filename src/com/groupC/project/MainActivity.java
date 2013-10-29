@@ -19,7 +19,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class MainActivity extends Activity implements Runnable{
+public class MainActivity extends Activity{
         
         
         public static TextView textView1;
@@ -31,12 +31,9 @@ public class MainActivity extends Activity implements Runnable{
 
         //String info;
 
-        
         @Override
         protected void onCreate(Bundle savedInstanceState) {
                 super.onCreate(savedInstanceState);
-               
-
                
                  uiBuidler();
                  queryBuilder qBuilder = new queryBuilder();
@@ -50,6 +47,9 @@ public class MainActivity extends Activity implements Runnable{
         }
         
         public void uiBuidler(){
+        	
+        	
+        	
         	setContentView(R.layout.activity_main);
         	       	
             countryListView = (Spinner) findViewById(R.id.spinner1);
@@ -59,12 +59,9 @@ public class MainActivity extends Activity implements Runnable{
             indicatorAdapter = ArrayAdapter.createFromResource(this, R.array.indicatorListView, android.R.layout.simple_spinner_item);
 
             textView1 = (TextView) findViewById(R.id.textViewJaonTest);
+            
+            
         }
   
-		@Override
-		public void run() {
-			// this is our second threth where we create new object queryBuilder which is creating the query building string and calling the jsonParser
-			
-			 Log.v("hfbsfiusd","dfsdfsd");
-		}
+		
 }
