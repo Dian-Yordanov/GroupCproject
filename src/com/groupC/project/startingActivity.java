@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 
-public class startingActivity  extends Activity {
+public class StartingActivity  extends Activity {
 	
 	Button countryList;
 	Button indicators;
@@ -29,14 +29,14 @@ protected void onCreate(Bundle savedInstanceState) {
 
 /*
 public void gotoCountryList(View view){
-    Intent i = new Intent(startingActivity.this, MainActivity.class);
+    Intent i = new Intent(StartingActivity.this, IndicatorActivity.class);
     startActivity(i);    
 
 }
 */
 
 public void gotoIndicators(View view){
-    Intent i = new Intent(startingActivity.this, MainActivity.class);
+    Intent i = new Intent(StartingActivity.this, IndicatorActivity.class);
     startActivity(i);    
 
 }

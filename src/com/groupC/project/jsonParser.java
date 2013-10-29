@@ -14,8 +14,8 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import android.os.StrictMode;
 import android.util.Log;
 
-public class jsonParser {
-        public jsonParser(){
+public class JsonParser {
+        public JsonParser(){
                 
         }
         public String readData(String url) {

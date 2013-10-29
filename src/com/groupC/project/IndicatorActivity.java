@@ -17,7 +17,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class MainActivity extends Activity{
+public class IndicatorActivity extends Activity{
 	
         public static TextView textView1;
         public static Spinner countryListView;
@@ -33,7 +33,7 @@ public class MainActivity extends Activity{
                 super.onCreate(savedInstanceState);
               
                  uiBuidler();       
-                 queryBuilder qBuilder = new queryBuilder();
+                 QueryBuilder qBuilder = new QueryBuilder();
                  
         }
 

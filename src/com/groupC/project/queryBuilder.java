@@ -11,10 +11,10 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 
 //todo change the name of the methods 
-//make the mainActivity take only one object and that object is the query builder taking json data via jsonParser 
+//make the mainActivity take only one object and that object is the query builder taking json data via JsonParser 
 
 
-public class queryBuilder implements OnItemSelectedListener{
+public class QueryBuilder implements OnItemSelectedListener{
     public static String infoParsed;
     public static String part1 = "http://api.worldbank.org/countries/";
     public static String countryName;
@@ -24,23 +24,23 @@ public class queryBuilder implements OnItemSelectedListener{
     public static JSONArray dataArray = new JSONArray();
     public static JSONObject dataObject = new JSONObject();
     public static String displayInfo;
-public queryBuilder(){
+public QueryBuilder(){
 	JsonAndJdaughter();
 	
 	
-	MainActivity.countryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-	MainActivity.countryListView.setAdapter(MainActivity.countryAdapter);
-	MainActivity.countryListView.setOnItemSelectedListener(this);
+	IndicatorActivity.countryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+	IndicatorActivity.countryListView.setAdapter(IndicatorActivity.countryAdapter);
+	IndicatorActivity.countryListView.setOnItemSelectedListener(this);
     
 	
-	MainActivity.indicatorAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-	MainActivity.indicatorListView.setAdapter(MainActivity.indicatorAdapter);
-	MainActivity.indicatorListView.setOnItemSelectedListener(this);
+	IndicatorActivity.indicatorAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+	IndicatorActivity.indicatorListView.setAdapter(IndicatorActivity.indicatorAdapter);
+	IndicatorActivity.indicatorListView.setOnItemSelectedListener(this);
     
 }
 
 public void JsonAndJdaughter(){
-    //that class is passing the Json data from jsonParser.java
+    //that class is passing the Json data from JsonParser.java
     //also in oirder to make the parser working i need a sdk permission:
     /*
      
@@ -55,7 +55,7 @@ android:targetSdkVersion="17" />
     //i am also using a textView1 to display the source Json
     //the think is that son.readData(String) reads only about that string and that string should be changed 
 	
-    jsonParser son = new jsonParser();
+    JsonParser son = new JsonParser();
     
     
     
@@ -65,8 +65,8 @@ android:targetSdkVersion="17" />
             
             
     
-    MainActivity.textView1.setMovementMethod(new ScrollingMovementMethod());
-    MainActivity.textView1.setText(infoParsed);
+    IndicatorActivity.textView1.setMovementMethod(new ScrollingMovementMethod());
+    IndicatorActivity.textView1.setText(infoParsed);
 
     Jdog();
 
@@ -92,10 +92,11 @@ displayInfo +=id+" " + value+" " //+ date
 }       
 } catch (JSONException e) { 
     e.printStackTrace();
-Log.e("MainActivity","data did not parse"); 
+Log.e("IndicatorActivity","data did not parse"); 
 } 
 
-MainActivity.textView1.setText(displayInfo);
+//this can cause problems with speed and make unable the progress bar threat TODO 
+IndicatorActivity.textView1.setText(displayInfo);
 
     
     
@@ -131,7 +132,7 @@ public String countryQueryConstructor(){
      //format=json  						part 8 
 	 //now the query is build from part1 + part2 + part 5 + part 6 + part 7 + part 8 and in order to just use the parts we all ready have from countryAndIndicatorQueryConstructor() 
 	 //we will use part1, part 2 and part 5 + part 6 + part 7 + part 8
-	 // where part 1 = queryBuilder.part1 ; part 2 = countryName; part 5 to part 8 = queryBuilder.part5
+	 // where part 1 = QueryBuilder.part1 ; part 2 = countryName; part 5 to part 8 = QueryBuilder.part5
 	
 	return part1+countryName + part5;
 }
@@ -140,8 +141,8 @@ public String countryQueryConstructor(){
 public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,long arg3) {
 // TODO Auto-generated method stub
 Log.v("something", "something");
-countryName = MainActivity.countryListView.getSelectedItem().toString();
-indicatorName = MainActivity.indicatorListView.getSelectedItem().toString();
+countryName = IndicatorActivity.countryListView.getSelectedItem().toString();
+indicatorName = IndicatorActivity.indicatorListView.getSelectedItem().toString();
 JsonAndJdaughter();			
 }
 
