@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
-import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -38,13 +37,6 @@ public class MainActivity extends Activity{
                  
         }
 
-        @Override
-        public boolean onCreateOptionsMenu(Menu menu) {
-                // Inflate the menu; this adds items to the action bar if it is present.
-                getMenuInflater().inflate(R.menu.main, menu);
-                return true;
-        }
-        
         public void uiBuidler(){
         	
         	setContentView(R.layout.activity_main);
