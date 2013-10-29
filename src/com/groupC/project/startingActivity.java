@@ -12,6 +12,8 @@ protected void onCreate(Bundle savedInstanceState) {
     setContentView(R.layout.starting_activity);   
     
     Log.v("sdsd","sdsd");
+    
+    
 }
 
 }

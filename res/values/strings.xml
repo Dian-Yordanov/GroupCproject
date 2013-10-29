@@ -252,5 +252,9 @@
         <item >1.2_ACCESS.ELECTRICITY.RURAL</item>
         <item >1.3_ACCESS.ELECTRICITY.URBAN</item>
     	</string-array>
+ 	   	<string name="CList">Country List</string>
+    	<string name="Indicator">Indicators</string>
+    	<string name="Favourite">Favourites</string>
+    	<string name="About">About Us</string>
     
 </resources>
