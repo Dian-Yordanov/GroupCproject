@@ -62,6 +62,8 @@ public class MainActivity extends Activity{
             
             
         }
-  
+        public void loadingScreen(){
+        	// loading screen is a 
+        }
 		
 }
