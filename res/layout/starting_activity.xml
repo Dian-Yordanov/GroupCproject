@@ -25,7 +25,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.01"
-        android:text="@string/Indicator" />
+        android:text="@string/Indicator" 
+        android:onClick="gotoIndicators"/>
 
     <Button
         android:id="@+id/Favourites"
