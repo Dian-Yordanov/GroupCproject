@@ -17,44 +17,41 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class IndicatorActivity extends Activity{
-	
-        public static TextView textView1;
-        public static Spinner countryListView;
-        public static Spinner indicatorListView;
-        //AdapterView adapterView;
-        public static ArrayAdapter<CharSequence> countryAdapter;
-        public static ArrayAdapter<CharSequence> indicatorAdapter;    
+public class IndicatorActivity extends Activity {
 
-        //String info;
+	public static TextView textView1;
+	public static Spinner countryListView;
+	public static Spinner indicatorListView;
+	// AdapterView adapterView;
+	public static ArrayAdapter<CharSequence> countryAdapter;
+	public static ArrayAdapter<CharSequence> indicatorAdapter;
 
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-                super.onCreate(savedInstanceState);
-              
-                 uiBuidler();       
-                 QueryBuilder qBuilder = new QueryBuilder();
-                 
-        }
+	// String info;
 
-        public void uiBuidler(){
-        	
-        	setContentView(R.layout.activity_main);
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
 
-        	
-            countryListView = (Spinner) findViewById(R.id.spinner1);
-            indicatorListView = (Spinner) findViewById(R.id.spinner2);
-            
-            countryAdapter = ArrayAdapter.createFromResource(this, R.array.countryListView, android.R.layout.simple_spinner_item);
-            indicatorAdapter = ArrayAdapter.createFromResource(this, R.array.indicatorListView, android.R.layout.simple_spinner_item);
+		uiBuidler();
+		QueryBuilder qBuilder = new QueryBuilder();
 
-            textView1 = (TextView) findViewById(R.id.textViewJaonTest);
-            
-            
-            
-            
-			
-        }
-        
-		
+	}
+
+	public void uiBuidler() {
+
+		setContentView(R.layout.activity_main);
+
+		countryListView = (Spinner) findViewById(R.id.spinner1);
+		indicatorListView = (Spinner) findViewById(R.id.spinner2);
+
+		countryAdapter = ArrayAdapter.createFromResource(this,
+				R.array.countryListView, android.R.layout.simple_spinner_item);
+		indicatorAdapter = ArrayAdapter
+				.createFromResource(this, R.array.indicatorListView,
+						android.R.layout.simple_spinner_item);
+
+		textView1 = (TextView) findViewById(R.id.textViewJaonTest);
+
+	}
+
 }
