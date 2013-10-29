@@ -8,7 +8,6 @@ import org.json.JSONObject;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.Menu;
@@ -20,23 +19,23 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 public class MainActivity extends Activity{
-        
-        
+	
         public static TextView textView1;
         public static Spinner countryListView;
         public static Spinner indicatorListView;
         //AdapterView adapterView;
         public static ArrayAdapter<CharSequence> countryAdapter;
-        public static ArrayAdapter<CharSequence> indicatorAdapter;        
+        public static ArrayAdapter<CharSequence> indicatorAdapter;    
 
         //String info;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
                 super.onCreate(savedInstanceState);
-               
-                 uiBuidler();
+              
+                 uiBuidler();       
                  queryBuilder qBuilder = new queryBuilder();
+                 
         }
 
         @Override
@@ -48,10 +47,9 @@ public class MainActivity extends Activity{
         
         public void uiBuidler(){
         	
-        	
-        	
         	setContentView(R.layout.activity_main);
-        	       	
+
+        	
             countryListView = (Spinner) findViewById(R.id.spinner1);
             indicatorListView = (Spinner) findViewById(R.id.spinner2);
             
@@ -61,9 +59,10 @@ public class MainActivity extends Activity{
             textView1 = (TextView) findViewById(R.id.textViewJaonTest);
             
             
+            
+            
+			
         }
-        public void loadingScreen(){
-        	// loading screen is a 
-        }
+        
 		
 }

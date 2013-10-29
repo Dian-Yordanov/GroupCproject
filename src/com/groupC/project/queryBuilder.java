@@ -8,7 +8,6 @@ import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.AdapterView.OnItemSelectedListener;
 
 //todo change the name of the methods 
@@ -24,6 +23,7 @@ public class queryBuilder implements OnItemSelectedListener{
     public static String part5;   
     public static JSONArray dataArray = new JSONArray();
     public static JSONObject dataObject = new JSONObject();
+    public static String displayInfo;
 public queryBuilder(){
 	JsonAndJdaughter();
 	
@@ -75,8 +75,7 @@ android:targetSdkVersion="17" />
 public void Jdog(){
     //the Jdog takes the Jstring that the Json and Jdaugther throw and return them a Json Array (As every good dog does)
     
-
-String displayInfo = "";
+displayInfo = "";
 
 try { 
 
@@ -95,7 +94,7 @@ Log.e("MainActivity","data did not parse");
 } 
 
 MainActivity.textView1.setText(displayInfo);
-    
+
     
     
     
