@@ -19,7 +19,7 @@ public class CountryActivity  extends Activity {
 		super.onCreate(savedInstanceState);
 
 		uiBuidlerCountryActivity();
-		//QueryBuilder qBuilder1 = new QueryBuilder();
+		QueryBuilder qBuilder1 = new QueryBuilder();
 
 	}
 

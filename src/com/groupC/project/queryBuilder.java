@@ -13,7 +13,7 @@ import android.widget.AdapterView.OnItemSelectedListener;
 //todo change the name of the methods 
 //make the mainActivity take only one object and that object is the query builder taking json data via JsonParser 
 
-public class QueryBuilder implements OnItemSelectedListener {
+public class QueryBuilder {
 	public static String infoParsed;
 	public static String part1 = "http://api.worldbank.org/countries/";
 	public static String countryName;
@@ -27,18 +27,12 @@ public class QueryBuilder implements OnItemSelectedListener {
 	public QueryBuilder() {
 		JsonAndJdaughter();
 
-		IndicatorActivity.countryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);		
-		IndicatorActivity.countryListView.setAdapter(IndicatorActivity.countryAdapter);		
-		IndicatorActivity.countryListView.setOnItemSelectedListener(this);
 
-		IndicatorActivity.indicatorAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);		
-		IndicatorActivity.indicatorListView.setAdapter(IndicatorActivity.indicatorAdapter);	
-		IndicatorActivity.indicatorListView.setOnItemSelectedListener(this);
 
 		
 	}
 
-	public void JsonAndJdaughter() {
+	public static void JsonAndJdaughter() {
 		// that class is passing the Json data from JsonParser.java
 		// also in oirder to make the parser working i need a sdk permission:
 		/*
@@ -63,13 +57,13 @@ public class QueryBuilder implements OnItemSelectedListener {
 
 
 		//TODO this may create problems with multi-threating and should be redone 
-		IndicatorActivity.textView1.setText(infoParsed);
+		//IndicatorActivity.textView1.setText(infoParsed);
 
 		Jdog();
 
 	}
 
-	public void Jdog() {
+	public static void Jdog() {
 		// the Jdog takes the Jstring that the Json and Jdaugther throw and
 		// return them a Json Array (As every good dog does)
 
@@ -95,11 +89,11 @@ public class QueryBuilder implements OnItemSelectedListener {
 
 		// this can cause problems with speed and make unable the progress bar
 		// threat TODO
-		IndicatorActivity.textView1.setText(displayInfo);
+		//IndicatorActivity.textView1.setText(displayInfo);
 
 	}
 
-	public String countryAndIndicatorQueryConstructor() {
+	public static String countryAndIndicatorQueryConstructor() {
 		// countryAndIndicatorQueryConstructor() will construct api calls
 		// http://api.worldbank.org/countries/ABW/indicators/1.1_TOTAL.FINAL.ENERGY.CONSUM?per_page=50&date=1960:2013&format=json
 		// http://api.worldbank.org/countries/BGR/indicators/1.1_ACCESS.ELECTRICITY.TOT?per_page=10&date=1960:2013&format=json
@@ -142,24 +136,6 @@ public class QueryBuilder implements OnItemSelectedListener {
 		return part1 + countryName + part5;
 	}
 
-	@Override
-	public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,
-			long arg3) {
-		// TODO Auto-generated method stub
-		Log.v("something", "something");
-		countryName = IndicatorActivity.countryListView.getSelectedItem()
-				.toString();
-		indicatorName = IndicatorActivity.indicatorListView.getSelectedItem()
-				.toString();
-		JsonAndJdaughter();
-	}
-
-	@Override
-	public void onNothingSelected(AdapterView<?> arg0) {
-		// TODO Auto-generated method stub
-		Log.v("something", "something");
-		countryName = "ABW";
-		indicatorName = "1.1_ACCESS.ELECTRICITY.TOT";
-	}
+	
 
 }
