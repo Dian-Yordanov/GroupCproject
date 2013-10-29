@@ -27,18 +27,15 @@ public class QueryBuilder implements OnItemSelectedListener {
 	public QueryBuilder() {
 		JsonAndJdaughter();
 
-		IndicatorActivity.countryAdapter
-				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		IndicatorActivity.countryListView
-				.setAdapter(IndicatorActivity.countryAdapter);
+		IndicatorActivity.countryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);		
+		IndicatorActivity.countryListView.setAdapter(IndicatorActivity.countryAdapter);		
 		IndicatorActivity.countryListView.setOnItemSelectedListener(this);
 
-		IndicatorActivity.indicatorAdapter
-				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		IndicatorActivity.indicatorListView
-				.setAdapter(IndicatorActivity.indicatorAdapter);
+		IndicatorActivity.indicatorAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);		
+		IndicatorActivity.indicatorListView.setAdapter(IndicatorActivity.indicatorAdapter);	
 		IndicatorActivity.indicatorListView.setOnItemSelectedListener(this);
 
+		
 	}
 
 	public void JsonAndJdaughter() {
@@ -62,8 +59,10 @@ public class QueryBuilder implements OnItemSelectedListener {
 
 		infoParsed = son.readData(countryAndIndicatorQueryConstructor());
 
-		IndicatorActivity.textView1
-				.setMovementMethod(new ScrollingMovementMethod());
+		
+
+
+		//TODO this may create problems with multi-threating and should be redone 
 		IndicatorActivity.textView1.setText(infoParsed);
 
 		Jdog();

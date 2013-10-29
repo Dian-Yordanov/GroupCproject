@@ -10,7 +10,7 @@ import android.widget.Spinner;
 
 public class StartingActivity extends Activity {
 
-	Button countryList;
+	Button countries;
 	Button indicators;
 	Button favourites;
 	Button aboutUs;
@@ -21,19 +21,18 @@ public class StartingActivity extends Activity {
 		setContentView(R.layout.starting_activity);
 
 		indicators = (Button) findViewById(R.id.Indicators);
+		countries = (Button) findViewById(R.id.CountryList);
+	}
+
+	public void gotoCountryView(View view) {
+		Intent i = new Intent(StartingActivity.this, CountryActivity.class);
+		startActivity(i);
 
 	}
 
-	/*
-	 * public void gotoCountryList(View view){ Intent i = new
-	 * Intent(StartingActivity.this, IndicatorActivity.class); startActivity(i);
-	 * 
-	 * }
-	 */
-
-	public void gotoIndicators(View view) {
-		Intent i = new Intent(StartingActivity.this, IndicatorActivity.class);
-		startActivity(i);
+	public void gotoIndicatorsView(View view) {
+		Intent ii = new Intent(StartingActivity.this, IndicatorActivity.class);
+		startActivity(ii);
 
 	}
 

@@ -32,14 +32,14 @@ public class IndicatorActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		uiBuidler();
+		uiBuidlerIndicatorActivity();
 		QueryBuilder qBuilder = new QueryBuilder();
 
 	}
 
-	public void uiBuidler() {
+	public void uiBuidlerIndicatorActivity() {
 
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.indicator_activity);
 
 		countryListView = (Spinner) findViewById(R.id.spinner1);
 		indicatorListView = (Spinner) findViewById(R.id.spinner2);
@@ -51,7 +51,7 @@ public class IndicatorActivity extends Activity {
 						android.R.layout.simple_spinner_item);
 
 		textView1 = (TextView) findViewById(R.id.textViewJaonTest);
-
+		textView1.setMovementMethod(new ScrollingMovementMethod());
 	}
 
 }
