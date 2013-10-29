@@ -86,7 +86,9 @@ JSONObject country = (JSONObject) countries.get(i);
 JSONObject indicator = country.getJSONObject("country");
 String id = indicator.getString("id"); 
 String value = indicator.getString("value"); 
-displayInfo +=id+value;
+//String date = indicator.getString("date"); 
+displayInfo +=id+" " + value+" " //+ date
++"\n";
 }       
 } catch (JSONException e) { 
     e.printStackTrace();
