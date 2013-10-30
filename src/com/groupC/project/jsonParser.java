@@ -19,7 +19,7 @@ public class JsonParser {
 
 	}
 
-	public String readData(String url) {
+	public static String readData(String url) {
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
 				.permitAll().build();
 		StrictMode.setThreadPolicy(policy);
