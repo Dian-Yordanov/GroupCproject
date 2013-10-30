@@ -34,13 +34,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.01"
-        android:text="@string/Favourite" />
+        android:text="@string/Favourite" 
+        android:onClick="gotoFavouritesView"/>
 
     <Button
         android:id="@+id/About"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.01"
-        android:text="About Us" />
+        android:text="About Us" 
+        android:onClick="gotoAboutUsView"/>
 
 </LinearLayout>

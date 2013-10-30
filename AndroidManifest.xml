@@ -33,6 +33,14 @@
             android:name="com.groupC.project.IndicatorActivity"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name="com.groupC.project.FavouritesActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.groupC.project.AboutUsActivity"
+            android:label="@string/app_name" >
+        </activity>
     </application>
 
 </manifest>

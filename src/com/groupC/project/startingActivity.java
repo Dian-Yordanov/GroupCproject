@@ -22,6 +22,8 @@ public class StartingActivity extends Activity {
 
 		indicators = (Button) findViewById(R.id.Indicators);
 		countries = (Button) findViewById(R.id.CountryList);
+		favourites = (Button) findViewById(R.id.Favourites);
+		aboutUs = (Button) findViewById(R.id.About);
 	}
 
 	public void gotoCountryView(View view) {
@@ -31,8 +33,19 @@ public class StartingActivity extends Activity {
 	}
 
 	public void gotoIndicatorsView(View view) {
-		Intent ii = new Intent(StartingActivity.this, IndicatorActivity.class);
-		startActivity(ii);
+		Intent i = new Intent(StartingActivity.this, IndicatorActivity.class);
+		startActivity(i);
+
+	}
+	public void gotoAboutUsView(View view) {
+		Intent i = new Intent(StartingActivity.this, AboutUsActivity.class);
+		startActivity(i);
+
+	}
+
+	public void gotoFavouritesView(View view) {
+		Intent i = new Intent(StartingActivity.this, FavouritesActivity.class);
+		startActivity(i);
 
 	}
 
