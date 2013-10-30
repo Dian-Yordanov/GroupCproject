@@ -26,13 +26,13 @@ public class IndicatorActivity extends Activity implements OnItemSelectedListene
 	public static ArrayAdapter<CharSequence> countryAdapter;
 	public static ArrayAdapter<CharSequence> indicatorAdapter;
 
-	// String info;
-
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
 		uiBuidlerIndicatorActivity();
+		
 		QueryBuilder qBuilder = new QueryBuilder();
 
 	}
@@ -79,6 +79,10 @@ public class IndicatorActivity extends Activity implements OnItemSelectedListene
 		QueryBuilder.p2CountryName = "ABW";
 		QueryBuilder.p4IndicatorName = "1.1_ACCESS.ELECTRICITY.TOT";
 		
+	}
+	public static String countryAndIndicatorQueryConstructor() {	
+	return (QueryBuilder.p1ApiAddress + QueryBuilder.p2CountryName + QueryBuilder.p3Indicators + QueryBuilder.p4IndicatorName
+			+ QueryBuilder.p5BeginningOfIdentifiers + QueryBuilder.p6ItemsPerPage + QueryBuilder.p7Date + QueryBuilder.p8Format);
 	}
 
 }

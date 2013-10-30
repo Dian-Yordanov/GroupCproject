@@ -72,7 +72,7 @@ public class QueryBuilder {
 	}
 //make public static void with string and be called from indictorActivity directly 
 	public static void jsonParserReader() {
-		infoParsed = JsonParser.readData(countryAndIndicatorQueryConstructor());
+		infoParsed = JsonParser.readData(IndicatorActivity.countryAndIndicatorQueryConstructor());
 		jsonStringIntoJsonArrayTransformer();
 
 	}
@@ -95,13 +95,9 @@ public class QueryBuilder {
 		}
 	}
 
-	public static String countryAndIndicatorQueryConstructor() {	
-	return (p1ApiAddress + p2CountryName + p3Indicators + p4IndicatorName + p5BeginningOfIdentifiers + p6ItemsPerPage + p7Date + p8Format);
-	}
 
-	public String countryQueryConstructor() {	
-	return (p1ApiAddress + p2CountryName +  p5BeginningOfIdentifiers + p6ItemsPerPage + p7Date + p8Format);
-	}
+
+	
 
 	
 
