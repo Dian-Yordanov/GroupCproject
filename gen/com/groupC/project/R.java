@@ -28,16 +28,19 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int About=0x7f080009;
-        public static final int CountryList=0x7f080006;
-        public static final int Favourites=0x7f080008;
-        public static final int Indicators=0x7f080007;
-        public static final int spinner1=0x7f080003;
-        public static final int spinner2=0x7f080004;
-        public static final int spinnerViewCountryView=0x7f080001;
-        public static final int textView1=0x7f080000;
-        public static final int textViewCountryView=0x7f080002;
-        public static final int textViewJaonTest=0x7f080005;
+        public static final int About=0x7f08000c;
+        public static final int CountryList=0x7f080009;
+        public static final int Favourites=0x7f08000b;
+        public static final int Indicators=0x7f08000a;
+        public static final int spinner1=0x7f080006;
+        public static final int spinner2=0x7f080007;
+        public static final int spinnerViewCountryView=0x7f080004;
+        public static final int textView1=0x7f080001;
+        public static final int textView2=0x7f080000;
+        public static final int textView3=0x7f080003;
+        public static final int textView4=0x7f080002;
+        public static final int textViewCountryView=0x7f080005;
+        public static final int textViewShowingCandI=0x7f080008;
     }
     public static final class layout {
         public static final int aboutus_activity=0x7f030000;

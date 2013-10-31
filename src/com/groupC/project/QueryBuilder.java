@@ -51,54 +51,173 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
-
+ 
 public class QueryBuilder {
 	public static String infoParsed;
 	public static String displayInfo;
+	
 	public static JSONArray dataArray = new JSONArray();
 	public static JSONObject dataObject = new JSONObject();
+	public static JSONArray jsonMainArr;
+	public static JSONObject jsonInfo;
+	
+	public static JSONObject indicatorInfo;
+	public static JSONObject countryInfo;
+	
+	public static JSONObject regionInfo;
+	public static JSONObject adminRegionInfo;
+	public static JSONObject incomeLevelInfo;
+	public static JSONObject lendingTypeInfo;
+	
+	static String idIndicator;
+	static String valueIndicator;
+	static String idCountry;
+	static String valueCountry;
+	static String valueInfoStr;
+	static String decimalInfoStr;
+	static String dateInfoStr;
+	
+	private static String idRegion;
+	private static String valueRegion;
+	private static String idIncomeLevel;
+	private static String valueIncomeLevel;
+	private static String idAdminRegion;
+	private static String valueAdminRegion;
+	private static String idLendingType;
+	private static String valueLendingType;
+	private static String idInfo;
+	private static String iso2CodeInfo;
+	private static String nameInfo;
+	private static String capitalCityInfo;
+	private static String longitudeInfo;
+	private static String latitudeInfo;
 	
 	public static String p1ApiAddress = "http://api.worldbank.org/countries/";
-	public static String p2CountryName;
+	public static String p2CountryName = "";
 	public static String p3Indicators = "/indicators/";
-	public static String p4IndicatorName;
+	public static String p4IndicatorName = "";
 	public static String p5BeginningOfIdentifiers = "?";
 	public static String p6ItemsPerPage = "per_page=10&";
 	public static String p7Date = "date=1960:2013&";
 	public static String p8Format = "format=json";
-
-	public QueryBuilder() {
-		jsonParserReader();
+	
+	public static String nameOftheClassCallingThisClass;
+	
+	public QueryBuilder(String urlparser) {
+		//IndicatorActivity.countryAndIndicatorQueryConstructor() 
+		jsonParserReader(urlparser);
+		
 	}
 //make public static void with string and be called from indictorActivity directly 
-	public static void jsonParserReader() {
-		infoParsed = JsonParser.readData(IndicatorActivity.countryAndIndicatorQueryConstructor());
+	public static void jsonParserReader(String url) {
+		infoParsed = JsonParser.readData(url);
 		jsonStringIntoJsonArrayTransformer();
-
+ 
 	}
-
+ 
 	public static void jsonStringIntoJsonArrayTransformer() {
 		displayInfo = "";
 		try {
-			JSONArray jsonMainArr = new JSONArray(infoParsed);
+			jsonMainArr = new JSONArray(infoParsed);
 			JSONArray countries = jsonMainArr.getJSONArray(1);
 			for (int i = 0; i < countries.length(); i++) {
-				JSONObject country = (JSONObject) countries.get(i);
-				JSONObject indicator = country.getJSONObject("country");
-				String id = indicator.getString("id");
-				String value = indicator.getString("value");
-				displayInfo += id + " " + value + " "+ "\n";
+				jsonInfo = (JSONObject) countries.get(i);
+				
+				if(nameOftheClassCallingThisClass=="IndicatorActivity")jsonObjectExtractorForCountryAndIndicator();
+				if(nameOftheClassCallingThisClass=="CountryActivity")jsonObjectExtractorForCountry();
+ 
+						
 			}
 		} catch (JSONException e) {
 			e.printStackTrace();
-			Log.e("IndicatorActivity", "data did not parse");
+			Log.e("QueryBuilder", "data did not parse");
 		}
 	}
-
-
-
-	
-
-	
-
+ 
+	public static void jsonObjectExtractorForCountryAndIndicator() {
+		try {
+			indicatorInfo = jsonInfo.getJSONObject("indicator");
+			countryInfo = jsonInfo.getJSONObject("country");
+ 
+			idIndicator = indicatorInfo.getString("id");
+			valueIndicator = indicatorInfo.getString("value");
+ 
+			idCountry = countryInfo.getString("id");
+			valueCountry = countryInfo.getString("value");
+ 
+			valueInfoStr = jsonInfo.getString("value");
+			decimalInfoStr = jsonInfo.getString("decimal");
+			dateInfoStr = jsonInfo.getString("date");
+ 
+			displayInfo += idIndicator + " " + valueIndicator + " " + idCountry
+					+ " " + valueCountry + " " + valueInfoStr + " "
+					+ decimalInfoStr + " " + dateInfoStr + "\n";
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+	}
+ 
+	public static void jsonObjectExtractorForCountry() {
+		try {
+			regionInfo = jsonInfo.getJSONObject("region");
+			adminRegionInfo = jsonInfo.getJSONObject("adminregion");
+			incomeLevelInfo = jsonInfo.getJSONObject("incomeLevel");
+			lendingTypeInfo = jsonInfo.getJSONObject("lendingType");
+ 
+			idRegion = regionInfo.getString("id");
+			valueRegion = regionInfo.getString("value");
+ 
+			idAdminRegion = adminRegionInfo.getString("id");
+			valueAdminRegion = adminRegionInfo.getString("value");
+ 
+			idIncomeLevel = incomeLevelInfo.getString("id");
+			valueIncomeLevel = incomeLevelInfo.getString("value");
+ 
+			idLendingType = lendingTypeInfo.getString("id");
+			valueLendingType = lendingTypeInfo.getString("value");
+ 
+			idInfo = jsonInfo.getString("id");
+			iso2CodeInfo = jsonInfo.getString("iso2Code");
+			nameInfo = jsonInfo.getString("name");
+			capitalCityInfo = jsonInfo.getString("capitalCity");
+			longitudeInfo = jsonInfo.getString("longitude");
+			latitudeInfo = jsonInfo.getString("latitude");
+ 
+			displayInfo += idRegion + " " + valueRegion + " " + idAdminRegion
+					+ " " + valueAdminRegion + " " + idIncomeLevel + " "
+					+ valueIncomeLevel + " " + idLendingType + " " + valueLendingType 
+					+ idInfo + " " + iso2CodeInfo + " " + nameInfo
+					+ capitalCityInfo + " " + longitudeInfo + " " + latitudeInfo 
+					+ "\n";
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+	}
+	/*
+	 *  {
+      "id": "ABW",
+      "iso2Code": "AW",
+      "name": "Aruba",
+      "region": {
+        "id": "LCN",
+        "value": "Latin America & Caribbean (all income levels)"
+      },
+      "adminregion": {
+        "id": "",
+        "value": ""
+      },
+      "incomeLevel": {
+        "id": "NOC",
+        "value": "High income: nonOECD"
+      },
+      "lendingType": {
+        "id": "LNX",
+        "value": "Not classified"
+      },
+      "capitalCity": "Oranjestad",
+      "longitude": "-70.0167",
+      "latitude": "12.5167"
+    }
+	 */
+ 
 }
