@@ -31,8 +31,9 @@ public class CountryActivity  extends Activity implements OnItemSelectedListener
 		
 		countryList = (Spinner) findViewById(R.id.spinnerViewCountryView);
 		
-		countryListAdapter = ArrayAdapter.createFromResource(this,
-				R.array.countryListView, android.R.layout.simple_spinner_item);
+		countryListAdapter = ArrayAdapter.createFromResource(this,R.array.countryListView, android.R.layout.simple_spinner_item);
+		countryList.setAdapter(countryListAdapter);		
+		countryList.setOnItemSelectedListener(this);
 		
 		displayedText = (TextView) findViewById(R.id.textViewCountryView);
 		displayedText.setMovementMethod(new ScrollingMovementMethod());
@@ -43,18 +44,20 @@ public class CountryActivity  extends Activity implements OnItemSelectedListener
 	public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,long arg3) {
 		Log.v("something", "something");
 		QueryBuilder.p2CountryName = countryList.getSelectedItem().toString();
-		//QueryBuilder.jsonParserReader();
-		//textView1.setText(QueryBuilder.displayInfo);
+		QueryBuilder.jsonParserReader();
+		displayedText.setText(QueryBuilder.displayInfo);
 	}
 
 	@Override
 	public void onNothingSelected(AdapterView<?> arg0) {
 		QueryBuilder.p2CountryName = "ABW";
-		QueryBuilder.p4IndicatorName = "1.1_ACCESS.ELECTRICITY.TOT";
+		//QueryBuilder.p4IndicatorName = "1.1_ACCESS.ELECTRICITY.TOT";
 		
 	}
 	public String countryQueryConstructor() {	
+		Log.v("",QueryBuilder.p1ApiAddress + QueryBuilder.p2CountryName +  QueryBuilder.p5BeginningOfIdentifiers + QueryBuilder.p6ItemsPerPage + QueryBuilder.p7Date + QueryBuilder.p8Format);
 		return (QueryBuilder.p1ApiAddress + QueryBuilder.p2CountryName +  QueryBuilder.p5BeginningOfIdentifiers 
 				+ QueryBuilder.p6ItemsPerPage + QueryBuilder.p7Date + QueryBuilder.p8Format);
+		
 		}
 }
