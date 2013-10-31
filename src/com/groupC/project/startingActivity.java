@@ -14,7 +14,7 @@ public class StartingActivity extends Activity {
 	Button indicators;
 	Button favourites;
 	Button aboutUs;
-
+//test
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
