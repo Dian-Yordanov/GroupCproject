@@ -132,6 +132,10 @@ public class QueryBuilder {
 			e.printStackTrace();
 			Log.e("QueryBuilder", "data did not parse");
 		}
+		
+		Log.v("tag",p2CountryName);
+		Log.v("tag",p4IndicatorName);
+		p2CountryName = "";
 	}
  
 	public static void jsonObjectExtractorForCountryAndIndicator() {
@@ -193,31 +197,4 @@ public class QueryBuilder {
 			e.printStackTrace();
 		}
 	}
-	/*
-	 *  {
-      "id": "ABW",
-      "iso2Code": "AW",
-      "name": "Aruba",
-      "region": {
-        "id": "LCN",
-        "value": "Latin America & Caribbean (all income levels)"
-      },
-      "adminregion": {
-        "id": "",
-        "value": ""
-      },
-      "incomeLevel": {
-        "id": "NOC",
-        "value": "High income: nonOECD"
-      },
-      "lendingType": {
-        "id": "LNX",
-        "value": "Not classified"
-      },
-      "capitalCity": "Oranjestad",
-      "longitude": "-70.0167",
-      "latitude": "12.5167"
-    }
-	 */
- 
 }
