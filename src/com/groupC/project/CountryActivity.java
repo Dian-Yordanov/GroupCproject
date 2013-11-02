@@ -1,6 +1,7 @@
 package com.groupC.project;
  
 import android.app.Activity;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
@@ -16,6 +17,9 @@ public class CountryActivity  extends Activity implements OnItemSelectedListener
 	public static TextView displayedText;
 	public static Spinner countryList;
 	public static ArrayAdapter<CharSequence> countryListAdapter;
+	Resources res;
+	String[] countries;
+	String stringUsedForCallingQueryBuilder ="";
  
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +28,10 @@ public class CountryActivity  extends Activity implements OnItemSelectedListener
 		uiBuidlerCountryActivity();
 		QueryBuilder.nameOftheClassCallingThisClass = "CountryActivity";
 		QueryBuilder qBuilder1 = new QueryBuilder(countryQueryConstructor());
- 
+		
+		res = getResources();
+		countries= res.getStringArray(R.array.countryListView);
+		
 	}
  
 	public void uiBuidlerCountryActivity() {
@@ -32,18 +39,25 @@ public class CountryActivity  extends Activity implements OnItemSelectedListener
 		
 		countryList = (Spinner) findViewById(R.id.spinnerViewCountryView);
 		
-		countryListAdapter = ArrayAdapter.createFromResource(this,R.array.countryListView, android.R.layout.simple_spinner_item);
+		countryListAdapter = ArrayAdapter.createFromResource(this,R.array.countryNames, android.R.layout.simple_spinner_item);
 		countryList.setAdapter(countryListAdapter);		
 		countryList.setOnItemSelectedListener(this);
 		
 		displayedText = (TextView) findViewById(R.id.textViewCountryView);
+		
+
+
 	}
 	
  
 	@Override
 	public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,long arg3) {
-		Log.v("something", "something");
-		QueryBuilder.p2CountryName = countryList.getSelectedItem().toString();
+		
+		Log.v("",countries[countryList.getSelectedItemPosition()]);
+		stringUsedForCallingQueryBuilder = countries[countryList.getSelectedItemPosition()];
+		
+		QueryBuilder.p2CountryName = stringUsedForCallingQueryBuilder;
+			//	countryList.getSelectedItem().toString();
 		QueryBuilder.jsonParserReader(countryQueryConstructor());
 		displayedText.setText(QueryBuilder.displayInfo);
 	}

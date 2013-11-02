@@ -136,6 +136,7 @@ public class QueryBuilder {
 		Log.v("tag",p2CountryName);
 		Log.v("tag",p4IndicatorName);
 		p2CountryName = "";
+		p4IndicatorName = "";
 	}
  
 	public static void jsonObjectExtractorForCountryAndIndicator() {
