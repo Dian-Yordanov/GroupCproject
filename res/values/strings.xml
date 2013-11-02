@@ -2,259 +2,511 @@
 <resources>
 
     <string name="app_name">WorldBankApp</string>
-	<string-array name="countryListView">
-<item >AFG</item>
-<item >ALB</item>
-<item >DZA</item>
-<item >ASM</item>
-<item >AND</item>
-<item >AGO</item>
-<item >AIA</item>
-<item >ATA</item>
-<item >ATG</item>
-<item >ARG</item>
-<item >ARM</item>
-<item >ABW</item>
-<item >AUS</item>
-<item >AUT</item>
-<item >AZE</item>
-<item >BHS</item>
-<item >BHR</item>
-<item >BGD</item>
-<item >BRB</item>
-<item >BLR</item>
-<item >BEL</item>
-<item >BLZ</item>
-<item >BEN</item>
-<item >BMU</item>
-<item >BTN</item>
-<item >BOL</item>
-<item >BIH</item>
-<item >BWA</item>
-<item >BVT</item>
-<item >BRA</item>
-<item >IOT</item>
-<item >BRN</item>
-<item >BGR</item>
-<item >BFA</item>
-<item >BDI</item>
-<item >KHM</item>
-<item >CMR</item>
-<item >CAN</item>
-<item >CPV</item>
-<item >CYM</item>
-<item >CAF</item>
-<item >TCD</item>
-<item >CHL</item>
-<item >CHN</item>
-<item >CXR</item>
-<item >CCK</item>
-<item >COL</item>
-<item >COM</item>
-<item >COG</item>
-<item >COD</item>
-<item >COK</item>
-<item >CRI</item>
-<item >CIV</item>
-<item >HRV</item>
-<item >CUB</item>
-<item >CYP</item>
-<item >CZE</item>
-<item >DNK</item>
-<item >DJI</item>
-<item >DMA</item>
-<item >DOM</item>
-<item >TMP</item>
-<item >ECU</item>
-<item >EGY</item>
-<item >SLV</item>
-<item >GNQ</item>
-<item >ERI</item>
-<item >EST</item>
-<item >ETH</item>
-<item >FLK</item>
-<item >FRO</item>
-<item >FJI</item>
-<item >FIN</item>
-<item >FRA</item>
-<item >FXX</item>
-<item >GUF</item>
-<item >PYF</item>
-<item >ATF</item>
-<item >GAB</item>
-<item >GMB</item>
-<item >GEO</item>
-<item >DEU</item>
-<item >GHA</item>
-<item >GIB</item>
-<item >GRC</item>
-<item >GRL</item>
-<item >GRD</item>
-<item >GLP</item>
-<item >GUM</item>
-<item >GTM</item>
-<item >GIN</item>
-<item >GNB</item>
-<item >GUY</item>
-<item >HTI</item>
-<item >HMD</item>
-<item >VAT</item>
-<item >HND</item>
-<item >HKG</item>
-<item >HUN</item>
-<item >ISL</item>
-<item >IND</item>
-<item >IDN</item>
-<item >IRN</item>
-<item >IRQ</item>
-<item >IRL</item>
-<item >ISR</item>
-<item >ITA</item>
-<item >JAM</item>
-<item >JPN</item>
-<item >JOR</item>
-<item >KAZ</item>
-<item >KEN</item>
-<item >KIR</item>
-<item >PRK</item>
-<item >KOR</item>
-<item >KWT</item>
-<item >KGZ</item>
-<item >LAO</item>
-<item >LVA</item>
-<item >LBN</item>
-<item >LSO</item>
-<item >LBR</item>
-<item >LBY</item>
-<item >LIE</item>
-<item >LTU</item>
-<item >LUX</item>
-<item >MAC</item>
-<item >MKD</item>
-<item >MDG</item>
-<item >MWI</item>
-<item >MYS</item>
-<item >MDV</item>
-<item >MLI</item>
-<item >MLT</item>
-<item >MHL</item>
-<item >MTQ</item>
-<item >MRT</item>
-<item >MUS</item>
-<item >MYT</item>
-<item >MEX</item>
-<item >FSM</item>
-<item >MDA</item>
-<item >MCO</item>
-<item >MNG</item>
-<item >MNE</item>
-<item >MSR</item>
-<item >MAR</item>
-<item >MOZ</item>
-<item >MMR</item>
-<item >NAM</item>
-<item >NRU</item>
-<item >NPL</item>
-<item >NLD</item>
-<item >ANT</item>
-<item >NCL</item>
-<item >NZL</item>
-<item >NIC</item>
-<item >NER</item>
-<item >NGA</item>
-<item >NIU</item>
-<item >NFK</item>
-<item >MNP</item>
-<item >NOR</item>
-<item >OMN</item>
-<item >PAK</item>
-<item >PLW</item>
-<item >PAN</item>
-<item >PNG</item>
-<item >PRY</item>
-<item >PER</item>
-<item >PHL</item>
-<item >PCN</item>
-<item >POL</item>
-<item >PRT</item>
-<item >PRI</item>
-<item >QAT</item>
-<item >REU</item>
-<item >ROM</item>
-<item >RUS</item>
-<item >RWA</item>
-<item >KNA</item>
-<item >LCA</item>
-<item >VCT</item>
-<item >WSM</item>
-<item >SMR</item>
-<item >STP</item>
-<item >SAU</item>
-<item >SEN</item>
-<item >SRB</item>
-<item >SYC</item>
-<item >SLE</item>
-<item >SGP</item>
-<item >SVK</item>
-<item >SVN</item>
-<item >SLB</item>
-<item >SOM</item>
-<item >ZAF</item>
-<item >SSD</item>
-<item >SGS</item>
-<item >ESP</item>
-<item >LKA</item>
-<item >SHN</item>
-<item >SPM</item>
-<item >SDN</item>
-<item >SUR</item>
-<item >SJM</item>
-<item >SWZ</item>
-<item >SWE</item>
-<item >CHE</item>
-<item >SYR</item>
-<item >TWN</item>
-<item >TJK</item>
-<item >TZA</item>
-<item >THA</item>
-<item >TGO</item>
-<item >TKL</item>
-<item >TON</item>
-<item >TTO</item>
-<item >TUN</item>
-<item >TUR</item>
-<item >TKM</item>
-<item >TCA</item>
-<item >TUV</item>
-<item >UGA</item>
-<item >UKR</item>
-<item >ARE</item>
-<item >GBR</item>
-<item >USA</item>
-<item >UMI</item>
-<item >URY</item>
-<item >UZB</item>
-<item >VUT</item>
-<item >VEN</item>
-<item >VNM</item>
-<item >VGB</item>
-<item >VIR</item>
-<item >WLF</item>
-<item >ESH</item>
-<item >YEM</item>
-<item >ZMB</item>
-<item >ZWE</item>
-    	</string-array>
-    	<string-array name="indicatorListView">
-        <item >1.1_ACCESS.ELECTRICITY.TOT</item>
-        <item >1.1_TOTAL.FINAL.ENERGY.CONSUM</item>
-        <item >1.1_YOUTH.LITERACY.RATE</item>
-        <item >1.2_ACCESS.ELECTRICITY.RURAL</item>
-        <item >1.3_ACCESS.ELECTRICITY.URBAN</item>
-    	</string-array>
- 	   	<string name="CList">Country List</string>
-    	<string name="Indicator">Indicators</string>
-    	<string name="Favourite">Favourites</string>
-    	<string name="About">About Us</string>
+
+    <string-array name="countryListView">
+        <item>AFG</item>
+        <item>ALB</item>
+        <item>DZA</item>
+        <item>ASM</item>
+        <item>AND</item>
+        <item>AGO</item>
+        <item>AIA</item>
+        <item>ATA</item>
+        <item>ATG</item>
+        <item>ARG</item>
+        <item>ARM</item>
+        <item>ABW</item>
+        <item>AUS</item>
+        <item>AUT</item>
+        <item>AZE</item>
+        <item>BHS</item>
+        <item>BHR</item>
+        <item>BGD</item>
+        <item>BRB</item>
+        <item>BLR</item>
+        <item>BEL</item>
+        <item>BLZ</item>
+        <item>BEN</item>
+        <item>BMU</item>
+        <item>BTN</item>
+        <item>BOL</item>
+        <item>BIH</item>
+        <item>BWA</item>
+        <item>BVT</item>
+        <item>BRA</item>
+        <item>IOT</item>
+        <item>BRN</item>
+        <item>BGR</item>
+        <item>BFA</item>
+        <item>BDI</item>
+        <item>KHM</item>
+        <item>CMR</item>
+        <item>CAN</item>
+        <item>CPV</item>
+        <item>CYM</item>
+        <item>CAF</item>
+        <item>TCD</item>
+        <item>CHL</item>
+        <item>CHN</item>
+        <item>CXR</item>
+        <item>CCK</item>
+        <item>COL</item>
+        <item>COM</item>
+        <item>COG</item>
+        <item>COD</item>
+        <item>COK</item>
+        <item>CRI</item>
+        <item>CIV</item>
+        <item>HRV</item>
+        <item>CUB</item>
+        <item>CYP</item>
+        <item>CZE</item>
+        <item>DNK</item>
+        <item>DJI</item>
+        <item>DMA</item>
+        <item>DOM</item>
+        <item>TMP</item>
+        <item>ECU</item>
+        <item>EGY</item>
+        <item>SLV</item>
+        <item>GNQ</item>
+        <item>ERI</item>
+        <item>EST</item>
+        <item>ETH</item>
+        <item>FLK</item>
+        <item>FRO</item>
+        <item>FJI</item>
+        <item>FIN</item>
+        <item>FRA</item>
+        <item>FXX</item>
+        <item>GUF</item>
+        <item>PYF</item>
+        <item>ATF</item>
+        <item>GAB</item>
+        <item>GMB</item>
+        <item>GEO</item>
+        <item>DEU</item>
+        <item>GHA</item>
+        <item>GIB</item>
+        <item>GRC</item>
+        <item>GRL</item>
+        <item>GRD</item>
+        <item>GLP</item>
+        <item>GUM</item>
+        <item>GTM</item>
+        <item>GIN</item>
+        <item>GNB</item>
+        <item>GUY</item>
+        <item>HTI</item>
+        <item>HMD</item>
+        <item>VAT</item>
+        <item>HND</item>
+        <item>HKG</item>
+        <item>HUN</item>
+        <item>ISL</item>
+        <item>IND</item>
+        <item>IDN</item>
+        <item>IRN</item>
+        <item>IRQ</item>
+        <item>IRL</item>
+        <item>ISR</item>
+        <item>ITA</item>
+        <item>JAM</item>
+        <item>JPN</item>
+        <item>JOR</item>
+        <item>KAZ</item>
+        <item>KEN</item>
+        <item>KIR</item>
+        <item>PRK</item>
+        <item>KOR</item>
+        <item>KWT</item>
+        <item>KGZ</item>
+        <item>LAO</item>
+        <item>LVA</item>
+        <item>LBN</item>
+        <item>LSO</item>
+        <item>LBR</item>
+        <item>LBY</item>
+        <item>LIE</item>
+        <item>LTU</item>
+        <item>LUX</item>
+        <item>MAC</item>
+        <item>MKD</item>
+        <item>MDG</item>
+        <item>MWI</item>
+        <item>MYS</item>
+        <item>MDV</item>
+        <item>MLI</item>
+        <item>MLT</item>
+        <item>MHL</item>
+        <item>MTQ</item>
+        <item>MRT</item>
+        <item>MUS</item>
+        <item>MYT</item>
+        <item>MEX</item>
+        <item>FSM</item>
+        <item>MDA</item>
+        <item>MCO</item>
+        <item>MNG</item>
+        <item>MNE</item>
+        <item>MSR</item>
+        <item>MAR</item>
+        <item>MOZ</item>
+        <item>MMR</item>
+        <item>NAM</item>
+        <item>NRU</item>
+        <item>NPL</item>
+        <item>NLD</item>
+        <item>ANT</item>
+        <item>NCL</item>
+        <item>NZL</item>
+        <item>NIC</item>
+        <item>NER</item>
+        <item>NGA</item>
+        <item>NIU</item>
+        <item>NFK</item>
+        <item>MNP</item>
+        <item>NOR</item>
+        <item>OMN</item>
+        <item>PAK</item>
+        <item>PLW</item>
+        <item>PAN</item>
+        <item>PNG</item>
+        <item>PRY</item>
+        <item>PER</item>
+        <item>PHL</item>
+        <item>PCN</item>
+        <item>POL</item>
+        <item>PRT</item>
+        <item>PRI</item>
+        <item>QAT</item>
+        <item>REU</item>
+        <item>ROM</item>
+        <item>RUS</item>
+        <item>RWA</item>
+        <item>KNA</item>
+        <item>LCA</item>
+        <item>VCT</item>
+        <item>WSM</item>
+        <item>SMR</item>
+        <item>STP</item>
+        <item>SAU</item>
+        <item>SEN</item>
+        <item>SRB</item>
+        <item>SYC</item>
+        <item>SLE</item>
+        <item>SGP</item>
+        <item>SVK</item>
+        <item>SVN</item>
+        <item>SLB</item>
+        <item>SOM</item>
+        <item>ZAF</item>
+        <item>SSD</item>
+        <item>SGS</item>
+        <item>ESP</item>
+        <item>LKA</item>
+        <item>SHN</item>
+        <item>SPM</item>
+        <item>SDN</item>
+        <item>SUR</item>
+        <item>SJM</item>
+        <item>SWZ</item>
+        <item>SWE</item>
+        <item>CHE</item>
+        <item>SYR</item>
+        <item>TWN</item>
+        <item>TJK</item>
+        <item>TZA</item>
+        <item>THA</item>
+        <item>TGO</item>
+        <item>TKL</item>
+        <item>TON</item>
+        <item>TTO</item>
+        <item>TUN</item>
+        <item>TUR</item>
+        <item>TKM</item>
+        <item>TCA</item>
+        <item>TUV</item>
+        <item>UGA</item>
+        <item>UKR</item>
+        <item>ARE</item>
+        <item>GBR</item>
+        <item>USA</item>
+        <item>UMI</item>
+        <item>URY</item>
+        <item>UZB</item>
+        <item>VUT</item>
+        <item>VEN</item>
+        <item>VNM</item>
+        <item>VGB</item>
+        <item>VIR</item>
+        <item>WLF</item>
+        <item>ESH</item>
+        <item>YEM</item>
+        <item>ZMB</item>
+        <item>ZWE</item>
+    </string-array>
     
+    <string-array name="countryArrayWithOnly2letters">
+<item>AF</item>
+<item>AL</item>
+<item>DZ</item>
+<item>AS</item>
+<item>AD</item>
+<item>AO</item>
+<item>AI</item>
+<item>AQ</item>
+<item>AG</item>
+<item>AR</item>
+<item>AM</item>
+<item>AW</item>
+<item>AU</item>
+<item>AT</item>
+<item>AZ</item>
+<item>BS</item>
+<item>BH</item>
+<item>BD</item>
+<item>BB</item>
+<item>BY</item>
+<item>BE</item>
+<item>BZ</item>
+<item>BJ</item>
+<item>BM</item>
+<item>BT</item>
+<item>BO</item>
+<item>BA</item>
+<item>BW</item>
+<item>BV</item>
+<item>BR</item>
+<item>IO</item>
+<item>BN</item>
+<item>BG</item>
+<item>BF</item>
+<item>BI</item>
+<item>KH</item>
+<item>CM</item>
+<item>CA</item>
+<item>CV</item>
+<item>KY</item>
+<item>CF</item>
+<item>TD</item>
+<item>CL</item>
+<item>CN</item>
+<item>CX</item>
+<item>CC</item>
+<item>CO</item>
+<item>KM</item>
+<item>CG</item>
+<item>CD</item>
+<item>CK</item>
+<item>CR</item>
+<item>CI</item>
+<item>HR</item>
+<item>CU</item>
+<item>CY</item>
+<item>CZ</item>
+<item>DK</item>
+<item>DJ</item>
+<item>DM</item>
+<item>DO</item>
+<item>TP</item>
+<item>EC</item>
+<item>EG</item>
+<item>SV</item>
+<item>GQ</item>
+<item>ER</item>
+<item>EE</item>
+<item>ET</item>
+<item>FK</item>
+<item>FO</item>
+<item>FJ</item>
+<item>FI</item>
+<item>FR</item>
+<item>FX</item>
+<item>GF</item>
+<item>PF</item>
+<item>TF</item>
+<item>GA</item>
+<item>GM</item>
+<item>GE</item>
+<item>DE</item>
+<item>GH</item>
+<item>GI</item>
+<item>GR</item>
+<item>GL</item>
+<item>GD</item>
+<item>GP</item>
+<item>GU</item>
+<item>GT</item>
+<item>GN</item>
+<item>GW</item>
+<item>GY</item>
+<item>HT</item>
+<item>HM</item>
+<item>VA</item>
+<item>HN</item>
+<item>HK</item>
+<item>HU</item>
+<item>IS</item>
+<item>IN</item>
+<item>ID</item>
+<item>IR</item>
+<item>IQ</item>
+<item>IE</item>
+<item>IL</item>
+<item>IT</item>
+<item>JM</item>
+<item>JP</item>
+<item>JO</item>
+<item>KZ</item>
+<item>KE</item>
+<item>KI</item>
+<item>KP</item>
+<item>KR</item>
+<item>KW</item>
+<item>KG</item>
+<item>LA</item>
+<item>LV</item>
+<item>LB</item>
+<item>LS</item>
+<item>LR</item>
+<item>LY</item>
+<item>LI</item>
+<item>LT</item>
+<item>LU</item>
+<item>MO</item>
+<item>MK</item>
+<item>MG</item>
+<item>MW</item>
+<item>MY</item>
+<item>MV</item>
+<item>ML</item>
+<item>MT</item>
+<item>MH</item>
+<item>MQ</item>
+<item>MR</item>
+<item>MU</item>
+<item>YT</item>
+<item>MX</item>
+<item>FM</item>
+<item>MD</item>
+<item>MC</item>
+<item>MN</item>
+<item>ME</item>
+<item>MS</item>
+<item>MA</item>
+<item>MZ</item>
+<item>MM</item>
+<item>NA</item>
+<item>NR</item>
+<item>NP</item>
+<item>NL</item>
+<item>AN</item>
+<item>NC</item>
+<item>NZ</item>
+<item>NI</item>
+<item>NE</item>
+<item>NG</item>
+<item>NU</item>
+<item>NF</item>
+<item>MP</item>
+<item>NO</item>
+<item>OM</item>
+<item>PK</item>
+<item>PW</item>
+<item>PA</item>
+<item>PG</item>
+<item>PY</item>
+<item>PE</item>
+<item>PH</item>
+<item>PN</item>
+<item>PL</item>
+<item>PT</item>
+<item>PR</item>
+<item>QA</item>
+<item>RE</item>
+<item>RO</item>
+<item>RU</item>
+<item>RW</item>
+<item>KN</item>
+<item>LC</item>
+<item>VC</item>
+<item>WS</item>
+<item>SM</item>
+<item>ST</item>
+<item>SA</item>
+<item>SN</item>
+<item>RS</item>
+<item>SC</item>
+<item>SL</item>
+<item>SG</item>
+<item>SK</item>
+<item>SI</item>
+<item>SB</item>
+<item>SO</item>
+<item>ZA</item>
+<item>SS</item>
+<item>GS</item>
+<item>ES</item>
+<item>LK</item>
+<item>SH</item>
+<item>PM</item>
+<item>SD</item>
+<item>SR</item>
+<item>SJ</item>
+<item>SZ</item>
+<item>SE</item>
+<item>CH</item>
+<item>SY</item>
+<item>TW</item>
+<item>TJ</item>
+<item>TZ</item>
+<item>TH</item>
+<item>TG</item>
+<item>TK</item>
+<item>TO</item>
+<item>TT</item>
+<item>TN</item>
+<item>TR</item>
+<item>TM</item>
+<item>TC</item>
+<item>TV</item>
+<item>UG</item>
+<item>UA</item>
+<item>AE</item>
+<item>GB</item>
+<item>US</item>
+<item>UM</item>
+<item>UY</item>
+<item>UZ</item>
+<item>VU</item>
+<item>VE</item>
+<item>VN</item>
+<item>VG</item>
+<item>VI</item>
+<item>WF</item>
+<item>EH</item>
+<item>YE</item>
+<item>ZM</item>
+<item>ZW</item>
+ 	</string-array>   
+    
+<string-array name="countryNames">
+    
+    
+</string-array>
+    
+    <string-array name="indicatorListView">
+        <item>1.1_ACCESS.ELECTRICITY.TOT</item>
+        <item>1.1_TOTAL.FINAL.ENERGY.CONSUM</item>
+        <item>1.1_YOUTH.LITERACY.RATE</item>
+        <item>1.2_ACCESS.ELECTRICITY.RURAL</item>
+        <item>1.3_ACCESS.ELECTRICITY.URBAN</item>
+    </string-array>
+
+    <string name="CList">Country List</string>
+    <string name="Indicator">Indicators</string>
+    <string name="Favourite">Favourites</string>
+    <string name="About">About Us</string>
+
 </resources>
