@@ -8,6 +8,7 @@ import org.json.JSONObject;
  
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.res.Resources;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
@@ -26,6 +27,11 @@ public class IndicatorActivity extends Activity implements OnItemSelectedListene
 	public static ArrayAdapter<CharSequence> countryAdapter;
 	public static ArrayAdapter<CharSequence> indicatorAdapter;
  
+	private Resources res;
+	private String[] countries;
+	private String stringUsedForCallingQueryBuilder ="";
+	//private String[] indicators;
+	//private String stringUsedForCallingQueryBuilder ="";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +41,9 @@ public class IndicatorActivity extends Activity implements OnItemSelectedListene
 		QueryBuilder.nameOftheClassCallingThisClass = "IndicatorActivity";
 		QueryBuilder qBuilder = new QueryBuilder(countryAndIndicatorQueryConstructor());
  
+		res = getResources();
+		countries= res.getStringArray(R.array.countryListView);
+
 	}
  
 	public void uiBuidlerIndicatorActivity() {
@@ -44,7 +53,7 @@ public class IndicatorActivity extends Activity implements OnItemSelectedListene
 		countryListView = (Spinner) findViewById(R.id.spinner1);
 		indicatorListView = (Spinner) findViewById(R.id.spinner2);
  
-		countryAdapter = ArrayAdapter.createFromResource(this,R.array.countryListView, 
+		countryAdapter = ArrayAdapter.createFromResource(this,R.array.countryNames, 
 				android.R.layout.simple_spinner_item);
 		indicatorAdapter = ArrayAdapter.createFromResource(this, R.array.indicatorListView,
 				android.R.layout.simple_spinner_item);
@@ -66,8 +75,13 @@ public class IndicatorActivity extends Activity implements OnItemSelectedListene
 	}
 	@Override
 	public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,long arg3) {
-		Log.v("something", "something");
-		QueryBuilder.p2CountryName = countryListView.getSelectedItem().toString();
+		
+	stringUsedForCallingQueryBuilder = countries[countryListView.getSelectedItemPosition()];		
+	QueryBuilder.p2CountryName = stringUsedForCallingQueryBuilder;
+	//	countryList.getSelectedItem().toString();
+
+		
+		//QueryBuilder.p2CountryName = countryListView.getSelectedItem().toString();
 		QueryBuilder.p4IndicatorName = indicatorListView.getSelectedItem().toString();
 		QueryBuilder.jsonParserReader(countryAndIndicatorQueryConstructor());
 		textView1.setText(QueryBuilder.displayInfo);

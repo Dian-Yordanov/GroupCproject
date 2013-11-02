@@ -17,9 +17,10 @@ public class CountryActivity  extends Activity implements OnItemSelectedListener
 	public static TextView displayedText;
 	public static Spinner countryList;
 	public static ArrayAdapter<CharSequence> countryListAdapter;
-	Resources res;
-	String[] countries;
-	String stringUsedForCallingQueryBuilder ="";
+	
+	private Resources res;
+	private String[] countries;
+	private String stringUsedForCallingQueryBuilder ="";
  
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
