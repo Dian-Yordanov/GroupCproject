@@ -20,6 +20,7 @@ public class CountryActivity  extends Activity implements OnItemSelectedListener
 	
 	private Resources res;
 	private String[] countries;
+	private String[] countriesByTwoLetters;
 	private String stringUsedForCallingQueryBuilder ="";
  
 	@Override
@@ -32,7 +33,7 @@ public class CountryActivity  extends Activity implements OnItemSelectedListener
 		
 		res = getResources();
 		countries= res.getStringArray(R.array.countryListView);
-		
+		countriesByTwoLetters = res.getStringArray(R.array.countryArrayWithOnly2letters);
 	}
  
 	public void uiBuidlerCountryActivity() {
@@ -55,6 +56,7 @@ public class CountryActivity  extends Activity implements OnItemSelectedListener
 	public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,long arg3) {
 		
 		stringUsedForCallingQueryBuilder = countries[countryList.getSelectedItemPosition()];
+		Log.v("tagg",countriesByTwoLetters[3]);
 		
 		QueryBuilder.p2CountryName = stringUsedForCallingQueryBuilder;
 			//	countryList.getSelectedItem().toString();
