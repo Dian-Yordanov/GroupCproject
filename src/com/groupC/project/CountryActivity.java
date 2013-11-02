@@ -54,7 +54,6 @@ public class CountryActivity  extends Activity implements OnItemSelectedListener
 	@Override
 	public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,long arg3) {
 		
-		Log.v("",countries[countryList.getSelectedItemPosition()]);
 		stringUsedForCallingQueryBuilder = countries[countryList.getSelectedItemPosition()];
 		
 		QueryBuilder.p2CountryName = stringUsedForCallingQueryBuilder;

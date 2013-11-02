@@ -78,13 +78,9 @@ public class IndicatorActivity extends Activity implements OnItemSelectedListene
 		
 	stringUsedForCallingQueryBuilder = countries[countryListView.getSelectedItemPosition()];		
 	QueryBuilder.p2CountryName = stringUsedForCallingQueryBuilder;
-	//	countryList.getSelectedItem().toString();
-
-		
-		//QueryBuilder.p2CountryName = countryListView.getSelectedItem().toString();
-		QueryBuilder.p4IndicatorName = indicatorListView.getSelectedItem().toString();
-		QueryBuilder.jsonParserReader(countryAndIndicatorQueryConstructor());
-		textView1.setText(QueryBuilder.displayInfo);
+	QueryBuilder.p4IndicatorName = indicatorListView.getSelectedItem().toString();
+	QueryBuilder.jsonParserReader(countryAndIndicatorQueryConstructor());
+	textView1.setText(QueryBuilder.displayInfo);
 	}
  
 	@Override
