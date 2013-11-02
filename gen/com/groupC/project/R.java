@@ -11,7 +11,8 @@ public final class R {
     public static final class array {
         public static final int countryArrayWithOnly2letters=0x7f060001;
         public static final int countryListView=0x7f060000;
-        public static final int indicatorListView=0x7f060002;
+        public static final int countryNames=0x7f060002;
+        public static final int indicatorListView=0x7f060003;
     }
     public static final class attr {
     }
