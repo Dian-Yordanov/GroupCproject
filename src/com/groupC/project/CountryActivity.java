@@ -37,7 +37,6 @@ public class CountryActivity  extends Activity implements OnItemSelectedListener
 		countryList.setOnItemSelectedListener(this);
 		
 		displayedText = (TextView) findViewById(R.id.textViewCountryView);
-		displayedText.setMovementMethod(new ScrollingMovementMethod());
 	}
 	
  

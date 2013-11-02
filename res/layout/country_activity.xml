@@ -10,12 +10,18 @@
         android:id="@+id/spinnerViewCountryView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/textViewCountryView"
+    
+    <ScrollView
+        android:id="@+id/scrollView1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.60"
-        android:text="TextView" />
+        android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textViewCountryView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.60"
+                android:text="TextView" />
+    </ScrollView>
 
 </LinearLayout>

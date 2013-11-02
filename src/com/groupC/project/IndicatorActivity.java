@@ -50,7 +50,6 @@ public class IndicatorActivity extends Activity implements OnItemSelectedListene
 				android.R.layout.simple_spinner_item);
  
 		textView1 = (TextView) findViewById(R.id.textViewShowingCandI);
-		textView1.setMovementMethod(new ScrollingMovementMethod());
 		
 		//TODO: remove the self class indicators 
 		
