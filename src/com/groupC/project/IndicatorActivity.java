@@ -34,7 +34,8 @@ public class IndicatorActivity extends Activity implements OnItemSelectedListene
 	// AdapterView adapterView;
 	public static ArrayAdapter<CharSequence> countryAdapter;
 	public static ArrayAdapter<CharSequence> indicatorAdapter;
- 
+	public static GraphView graphView;
+
 	private Resources res;
 	private String[] countries;
 	private String stringUsedForCallingQueryBuilder ="";
@@ -83,7 +84,7 @@ public class IndicatorActivity extends Activity implements OnItemSelectedListene
 
 			graphLayout = (LinearLayout) findViewById(R.id.layout1);  	
 			
-			
+			//graphView = new LineGraphView(this, "GraphViewDemo");
 			
 
 	}
@@ -95,55 +96,28 @@ public class IndicatorActivity extends Activity implements OnItemSelectedListene
 	QueryBuilder.p4IndicatorName = indicatorListView.getSelectedItem().toString();
 	QueryBuilder.jsonParserReader(countryAndIndicatorQueryConstructor());
 	textView1.setText(QueryBuilder.displayInfo);
-	graphViewCreator();
+	
+	
+	graphView = new LineGraphView(this, "GraphViewDemo");
+	GraphViewCreator GVC = new GraphViewCreator();
+   // IndicatorActivity.graphLayout.removeAllViews();
+   // IndicatorActivity.graphLayout.addView(graphView); 
 	}
  
 	@Override
 	public void onNothingSelected(AdapterView<?> arg0) {
 		QueryBuilder.p2CountryName = "ABW";
 		QueryBuilder.p4IndicatorName = "1.1_ACCESS.ELECTRICITY.TOT";
-		graphViewCreator();
+		
+	graphView = new LineGraphView(this, "GraphViewDemo");
+	GraphViewCreator GVC1 = new GraphViewCreator();
+	
+
 		
 	}
 	public static String countryAndIndicatorQueryConstructor() {	
 	return (QueryBuilder.p1ApiAddress + QueryBuilder.p2CountryName + QueryBuilder.p3Indicators + QueryBuilder.p4IndicatorName
 			+ QueryBuilder.p5BeginningOfIdentifiers + QueryBuilder.p6ItemsPerPage + QueryBuilder.p7Date + QueryBuilder.p8Format);
 	}
-	public void graphViewCreator(){
-		
-		GraphViewData[] graphViewData = new GraphViewData[70];
-		Log.v("bugs?","bbb");
-		Log.v("bugs?",Integer.toString(QueryBuilder.arrayNumber));
-		//to be changed
-		for(int i=0;i<QueryBuilder.arrayNumber;i++){		
-			Log.v("",QueryBuilder.years[i]+ " " + QueryBuilder.values[i]);
-			graphViewData[i] = new GraphViewData(QueryBuilder.years[i],QueryBuilder.values[i]);
-		}
-		
-	 
-		GraphViewSeries exampleSeries = new GraphViewSeries(
-				new GraphViewData[] {
-
-						graphViewData[0], 
-						graphViewData[1], 
-						graphViewData[2],
-						graphViewData[3], 
-						graphViewData[4], 
-						graphViewData[5],
-						graphViewData[6], 
-						graphViewData[7], 
-						graphViewData[8],
-						graphViewData[9]
-								});
-		GraphView graphView;
-		graphView = new LineGraphView(this // context
-				, "GraphViewDemo" // heading
-		);
-			
-			 ((LineGraphView) graphView).setDrawBackground(true);
-             ((LineGraphView) graphView).setBackgroundColor(Color.rgb(80, 30, 30));
-			graphView.addSeries(exampleSeries); // data  
-			  
-			graphLayout.addView(graphView);  
-	}
+	
 }
