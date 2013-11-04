@@ -186,12 +186,22 @@ public class QueryBuilder {
 			longitudeInfo = jsonInfo.getString("longitude");
 			latitudeInfo = jsonInfo.getString("latitude");
  
-			displayInfo += idRegion + " " + valueRegion + " " + idAdminRegion
-					+ " " + valueAdminRegion + " " + idIncomeLevel + " "
-					+ valueIncomeLevel + " " + idLendingType + " " + valueLendingType 
-					+ idInfo + " " + iso2CodeInfo + " " + nameInfo
-					+ capitalCityInfo + " " + longitudeInfo + " " + latitudeInfo 
-					+ "\n";
+			displayInfo += 
+					"Country id: " + idInfo + "\n" + 
+					"Iso code: " + iso2CodeInfo + "\n" + 
+					"Country name: " + nameInfo + "\n" + 
+					"Capital city: " + capitalCityInfo + "\n" + 
+					"Longitude: " + longitudeInfo + "\n" + 
+					"Latitude: " + latitudeInfo  + "\n" + 
+					"Region id: " + idRegion + "\n" +
+					"Region location: " + valueRegion + "\n" + 
+					"Administration location id: " +  idAdminRegion + "\n" + 
+					"Administration location: " + valueAdminRegion + "\n" + 
+					"Income level id: " + idIncomeLevel + "\n" + 
+					"Income level: " + valueIncomeLevel + "\n" + 
+					"Lending type id: " + idLendingType + "\n" + 
+					"Lending type: " + valueLendingType + "\n" + 
+					"Logo: " + "\n";
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
