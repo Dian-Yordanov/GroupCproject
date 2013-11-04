@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
  
@@ -23,6 +24,7 @@ public class IndicatorActivity extends Activity implements OnItemSelectedListene
 	public static TextView textView1;
 	public static Spinner countryListView;
 	public static Spinner indicatorListView;
+	public static LinearLayout graphLayout;
 	// AdapterView adapterView;
 	public static ArrayAdapter<CharSequence> countryAdapter;
 	public static ArrayAdapter<CharSequence> indicatorAdapter;
@@ -70,7 +72,9 @@ public class IndicatorActivity extends Activity implements OnItemSelectedListene
 		indicatorListView.setAdapter(indicatorAdapter);	
 		indicatorListView.setOnItemSelectedListener(this);
 		
+		indicatorListView = (Spinner) findViewById(R.id.spinner2);
 		
+		graphLayout = (LinearLayout) findViewById(R.id.layout1);
 		
 	}
 	@Override
@@ -93,5 +97,5 @@ public class IndicatorActivity extends Activity implements OnItemSelectedListene
 	return (QueryBuilder.p1ApiAddress + QueryBuilder.p2CountryName + QueryBuilder.p3Indicators + QueryBuilder.p4IndicatorName
 			+ QueryBuilder.p5BeginningOfIdentifiers + QueryBuilder.p6ItemsPerPage + QueryBuilder.p7Date + QueryBuilder.p8Format);
 	}
- 
+	
 }
