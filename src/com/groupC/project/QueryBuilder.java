@@ -101,6 +101,10 @@ public class QueryBuilder {
 	public static String p7Date = "date=1960:2013&";
 	public static String p8Format = "format=json";
 	
+	public static int[] years = new int[70];
+	public static double[] values = new double[70];
+	public static int arrayNumber = 0;
+	
 	public static String nameOftheClassCallingThisClass;
 	
 	public QueryBuilder(String urlparser) {
@@ -125,8 +129,8 @@ public class QueryBuilder {
 				
 				if(nameOftheClassCallingThisClass=="IndicatorActivity")jsonObjectExtractorForCountryAndIndicator();
 				if(nameOftheClassCallingThisClass=="CountryActivity")jsonObjectExtractorForCountry();
- 
-						
+				
+
 			}
 		} catch (JSONException e) {
 			e.printStackTrace();
@@ -155,6 +159,16 @@ public class QueryBuilder {
 			displayInfo += idIndicator + " " + valueIndicator + " " + idCountry
 					+ " " + valueCountry + " " + valueInfoStr + " "
 					+ decimalInfoStr + " " + dateInfoStr + "\n";
+			
+			if(valueInfoStr=="null"){values[arrayNumber] = 0.0;}
+			else {values[arrayNumber] = Double.parseDouble(valueInfoStr);}
+			years[arrayNumber] = Integer.parseInt(dateInfoStr);
+			
+			
+				Log.v("values",values[arrayNumber] + " ");
+				Log.v("years",years[arrayNumber]+ " ");
+				arrayNumber++;
+			
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}

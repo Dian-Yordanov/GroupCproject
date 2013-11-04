@@ -83,6 +83,8 @@ public class IndicatorActivity extends Activity implements OnItemSelectedListene
 
 			graphLayout = (LinearLayout) findViewById(R.id.layout1);  
 			graphViewCreator();
+			
+			
 
 	}
 	@Override
