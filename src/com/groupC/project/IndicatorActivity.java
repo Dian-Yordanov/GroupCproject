@@ -5,10 +5,16 @@ import java.util.Iterator;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.GraphViewSeries;
+import com.jjoe64.graphview.LineGraphView;
+import com.jjoe64.graphview.GraphView.GraphViewData;
  
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
@@ -74,8 +80,10 @@ public class IndicatorActivity extends Activity implements OnItemSelectedListene
 		
 		indicatorListView = (Spinner) findViewById(R.id.spinner2);
 		
-		graphLayout = (LinearLayout) findViewById(R.id.layout1);
-		
+
+			graphLayout = (LinearLayout) findViewById(R.id.layout1);  
+			graphViewCreator();
+
 	}
 	@Override
 	public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,long arg3) {
@@ -97,5 +105,25 @@ public class IndicatorActivity extends Activity implements OnItemSelectedListene
 	return (QueryBuilder.p1ApiAddress + QueryBuilder.p2CountryName + QueryBuilder.p3Indicators + QueryBuilder.p4IndicatorName
 			+ QueryBuilder.p5BeginningOfIdentifiers + QueryBuilder.p6ItemsPerPage + QueryBuilder.p7Date + QueryBuilder.p8Format);
 	}
-	
+	public void graphViewCreator(){
+		GraphViewSeries exampleSeries = new GraphViewSeries(new GraphViewData[] {
+                new GraphViewData(1, 2.0d)
+                , new GraphViewData(2, 1.5d)
+                , new GraphViewData(2.5, 3.0d) // another frequency
+                , new GraphViewData(3, 2.5d)
+                , new GraphViewData(4, 1.0d)
+                , new GraphViewData(5, 3.0d)
+			});
+			GraphView graphView ;
+			graphView = new LineGraphView(  
+			      this // context  
+			      , "GraphViewDemo" // heading  
+			);  
+			
+			 ((LineGraphView) graphView).setDrawBackground(true);
+             ((LineGraphView) graphView).setBackgroundColor(Color.rgb(80, 30, 30));
+			graphView.addSeries(exampleSeries); // data  
+			  
+			graphLayout.addView(graphView);  
+	}
 }
