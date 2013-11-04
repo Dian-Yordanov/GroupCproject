@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -16,12 +17,14 @@ public class CountryActivity  extends Activity implements OnItemSelectedListener
  
 	public static TextView displayedText;
 	public static Spinner countryList;
+	public static ImageView flagView;
 	public static ArrayAdapter<CharSequence> countryListAdapter;
 	
 	private Resources res;
 	private String[] countries;
 	private String[] countriesByTwoLetters;
 	private String stringUsedForCallingQueryBuilder ="";
+	private String stringUsedForCallingFlagDownloader = "";
  
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +49,7 @@ public class CountryActivity  extends Activity implements OnItemSelectedListener
 		countryList.setOnItemSelectedListener(this);
 		
 		displayedText = (TextView) findViewById(R.id.textViewCountryView);
+		flagView = (ImageView) findViewById(R.id.imageView1);
 		
 
 
@@ -56,10 +60,13 @@ public class CountryActivity  extends Activity implements OnItemSelectedListener
 	public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,long arg3) {
 		
 		stringUsedForCallingQueryBuilder = countries[countryList.getSelectedItemPosition()];
-		Log.v("tagg",countriesByTwoLetters[3]);
+		stringUsedForCallingFlagDownloader = countriesByTwoLetters[countryList.getSelectedItemPosition()];
+		Log.v("tagg",countriesByTwoLetters[countryList.getSelectedItemPosition()]);
 		
 		QueryBuilder.p2CountryName = stringUsedForCallingQueryBuilder;
+		CountryPicturesQueryBuilder.countryCode = stringUsedForCallingFlagDownloader;
 			//	countryList.getSelectedItem().toString();
+		CountryPicturesQueryBuilder.flagQuery();
 		QueryBuilder.jsonParserReader(countryQueryConstructor());
 		displayedText.setText(QueryBuilder.displayInfo);
 	}
