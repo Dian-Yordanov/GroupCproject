@@ -201,7 +201,7 @@ public class QueryBuilder {
 					"Income level: " + valueIncomeLevel + "\n" + 
 					"Lending type id: " + idLendingType + "\n" + 
 					"Lending type: " + valueLendingType + "\n" + 
-					"Logo: " + "\n";
+					"Logo and country map:" + "\n";
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
