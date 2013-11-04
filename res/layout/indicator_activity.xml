@@ -41,7 +41,7 @@
 
             <LinearLayout
 		    android:orientation="vertical"
-			android:layout_width="fill_parent"
+			android:layout_width="1000dip"
 			android:layout_height="250dip"
 			android:id="@+id/layout1">
             </LinearLayout>

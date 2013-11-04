@@ -81,8 +81,8 @@ public class IndicatorActivity extends Activity implements OnItemSelectedListene
 		indicatorListView = (Spinner) findViewById(R.id.spinner2);
 		
 
-			graphLayout = (LinearLayout) findViewById(R.id.layout1);  
-			graphViewCreator();
+			graphLayout = (LinearLayout) findViewById(R.id.layout1);  	
+			
 			
 			
 
@@ -95,12 +95,14 @@ public class IndicatorActivity extends Activity implements OnItemSelectedListene
 	QueryBuilder.p4IndicatorName = indicatorListView.getSelectedItem().toString();
 	QueryBuilder.jsonParserReader(countryAndIndicatorQueryConstructor());
 	textView1.setText(QueryBuilder.displayInfo);
+	graphViewCreator();
 	}
  
 	@Override
 	public void onNothingSelected(AdapterView<?> arg0) {
 		QueryBuilder.p2CountryName = "ABW";
 		QueryBuilder.p4IndicatorName = "1.1_ACCESS.ELECTRICITY.TOT";
+		graphViewCreator();
 		
 	}
 	public static String countryAndIndicatorQueryConstructor() {	
@@ -108,19 +110,35 @@ public class IndicatorActivity extends Activity implements OnItemSelectedListene
 			+ QueryBuilder.p5BeginningOfIdentifiers + QueryBuilder.p6ItemsPerPage + QueryBuilder.p7Date + QueryBuilder.p8Format);
 	}
 	public void graphViewCreator(){
-		GraphViewSeries exampleSeries = new GraphViewSeries(new GraphViewData[] {
-                new GraphViewData(1, 2.0d)
-                , new GraphViewData(2, 1.5d)
-                , new GraphViewData(2.5, 3.0d) // another frequency
-                , new GraphViewData(3, 2.5d)
-                , new GraphViewData(4, 1.0d)
-                , new GraphViewData(5, 3.0d)
-			});
-			GraphView graphView ;
-			graphView = new LineGraphView(  
-			      this // context  
-			      , "GraphViewDemo" // heading  
-			);  
+		
+		GraphViewData[] graphViewData = new GraphViewData[70];
+		Log.v("bugs?","bbb");
+		Log.v("bugs?",Integer.toString(QueryBuilder.arrayNumber));
+		//to be changed
+		for(int i=0;i<QueryBuilder.arrayNumber;i++){		
+			Log.v("",QueryBuilder.years[i]+ " " + QueryBuilder.values[i]);
+			graphViewData[i] = new GraphViewData(QueryBuilder.years[i],QueryBuilder.values[i]);
+		}
+		
+	 
+		GraphViewSeries exampleSeries = new GraphViewSeries(
+				new GraphViewData[] {
+
+						graphViewData[0], 
+						graphViewData[1], 
+						graphViewData[2],
+						graphViewData[3], 
+						graphViewData[4], 
+						graphViewData[5],
+						graphViewData[6], 
+						graphViewData[7], 
+						graphViewData[8],
+						graphViewData[9]
+								});
+		GraphView graphView;
+		graphView = new LineGraphView(this // context
+				, "GraphViewDemo" // heading
+		);
 			
 			 ((LineGraphView) graphView).setDrawBackground(true);
              ((LineGraphView) graphView).setBackgroundColor(Color.rgb(80, 30, 30));
