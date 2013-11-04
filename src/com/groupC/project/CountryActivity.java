@@ -18,13 +18,16 @@ public class CountryActivity  extends Activity implements OnItemSelectedListener
 	public static TextView displayedText;
 	public static Spinner countryList;
 	public static ImageView flagView;
+	public static ImageView countryView;
 	public static ArrayAdapter<CharSequence> countryListAdapter;
 	
 	private Resources res;
 	private String[] countries;
 	private String[] countriesByTwoLetters;
+	private String[] countryNames;
 	private String stringUsedForCallingQueryBuilder ="";
 	private String stringUsedForCallingFlagDownloader = "";
+	private String stringUsedForCallingCountryMapDownloader = "";
  
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,7 @@ public class CountryActivity  extends Activity implements OnItemSelectedListener
 		res = getResources();
 		countries= res.getStringArray(R.array.countryListView);
 		countriesByTwoLetters = res.getStringArray(R.array.countryArrayWithOnly2letters);
+		countryNames =res.getStringArray(R.array.countryNames);
 	}
  
 	public void uiBuidlerCountryActivity() {
@@ -49,7 +53,9 @@ public class CountryActivity  extends Activity implements OnItemSelectedListener
 		countryList.setOnItemSelectedListener(this);
 		
 		displayedText = (TextView) findViewById(R.id.textViewCountryView);
+		
 		flagView = (ImageView) findViewById(R.id.imageView1);
+		countryView = (ImageView) findViewById(R.id.imageView2);
 		
 
 
@@ -61,10 +67,13 @@ public class CountryActivity  extends Activity implements OnItemSelectedListener
 		
 		stringUsedForCallingQueryBuilder = countries[countryList.getSelectedItemPosition()];
 		stringUsedForCallingFlagDownloader = countriesByTwoLetters[countryList.getSelectedItemPosition()];
+		stringUsedForCallingCountryMapDownloader = countryNames[countryList.getSelectedItemPosition()];
+				
 		Log.v("tagg",countriesByTwoLetters[countryList.getSelectedItemPosition()]);
 		
 		QueryBuilder.p2CountryName = stringUsedForCallingQueryBuilder;
 		CountryPicturesQueryBuilder.countryCode = stringUsedForCallingFlagDownloader;
+		CountryPicturesQueryBuilder.countryName = countryNameForCountryLocationCall();
 			//	countryList.getSelectedItem().toString();
 		CountryPicturesQueryBuilder.flagQuery();
 		QueryBuilder.jsonParserReader(countryQueryConstructor());
@@ -82,4 +91,12 @@ public class CountryActivity  extends Activity implements OnItemSelectedListener
 		return (QueryBuilder.p1ApiAddress + QueryBuilder.p2CountryName +  QueryBuilder.p5BeginningOfIdentifiers + QueryBuilder.p6ItemsPerPage + QueryBuilder.p7Date + QueryBuilder.p8Format);
 		
 		}
+	public String countryNameForCountryLocationCall(){
+		String stringToBeReturned ="";
+		stringToBeReturned = stringUsedForCallingCountryMapDownloader;
+		stringToBeReturned = stringToBeReturned.toLowerCase();
+		//if(stringToBeReturned.contains(" ")){stringToBeReturned = stringUsedForCallingFlagDownloader;}
+		if(stringToBeReturned.length() > 6){stringToBeReturned = stringToBeReturned.substring(0, 6);}
+		return stringToBeReturned;
+	}
 }

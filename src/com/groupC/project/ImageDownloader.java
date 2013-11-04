@@ -14,7 +14,6 @@ import android.util.Log;
 import android.widget.ImageView;
 
 public class ImageDownloader {
-	static Bitmap bitmap;
 	public ImageDownloader(){}
 	
 	/*
@@ -38,6 +37,7 @@ public class ImageDownloader {
 	 */
 	
 	public static Bitmap loadBitmap(String url){
+		Bitmap bitmap = null;
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
 		.permitAll().build();
 		StrictMode.setThreadPolicy(policy);
