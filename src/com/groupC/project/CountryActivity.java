@@ -95,8 +95,8 @@ public class CountryActivity  extends Activity implements OnItemSelectedListener
 		String stringToBeReturned ="";
 		stringToBeReturned = stringUsedForCallingCountryMapDownloader;
 		stringToBeReturned = stringToBeReturned.toLowerCase();
-		//if(stringToBeReturned.contains(" ")){stringToBeReturned = stringUsedForCallingFlagDownloader;}
-		if(stringToBeReturned.length() > 6){stringToBeReturned = stringToBeReturned.substring(0, 6);}
+		if(stringToBeReturned.contains(" ")){stringToBeReturned = stringUsedForCallingFlagDownloader.toLowerCase();}
+		if(stringToBeReturned.length() > 7){stringToBeReturned = stringToBeReturned.substring(0, 7);}
 		return stringToBeReturned;
 	}
 }

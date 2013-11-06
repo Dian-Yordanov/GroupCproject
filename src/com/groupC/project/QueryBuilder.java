@@ -46,6 +46,13 @@ package com.groupC.project;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import com.jjoe64.graphview.GraphView.GraphViewData;
+import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.GraphViewSeries;
+import com.jjoe64.graphview.LineGraphView;
+
+import android.graphics.Color;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
@@ -101,11 +108,17 @@ public class QueryBuilder {
 	public static String p7Date = "date=1960:2013&";
 	public static String p8Format = "format=json";
 	
-	public static int[] years = new int[70];
-	public static double[] values = new double[70];
+	public static double[] years = new double[200];
+	public static double[] values = new double[200];
 	public static int arrayNumber = 0;
 	
 	public static String nameOftheClassCallingThisClass;
+	
+	public static boolean called = false;
+	public static int num = 50;
+	public static GraphViewData[] data = new GraphViewData[num];
+	public static GraphViewData[] data2 = new GraphViewData[2*num];
+	public static GraphViewSeries exampleSeries;
 	
 	public QueryBuilder(String urlparser) {
 		//IndicatorActivity.countryAndIndicatorQueryConstructor() 
@@ -127,6 +140,13 @@ public class QueryBuilder {
 			for (int i = 0; i < countries.length(); i++) {
 				jsonInfo = (JSONObject) countries.get(i);
 				
+				//for(int i=0;i<150;i++){
+				
+				
+				
+				//}
+				//GraphViewCreator.graphViewCreator();
+				
 				if(nameOftheClassCallingThisClass=="IndicatorActivity")jsonObjectExtractorForCountryAndIndicator();
 				if(nameOftheClassCallingThisClass=="CountryActivity")jsonObjectExtractorForCountry();
 				
@@ -137,8 +157,11 @@ public class QueryBuilder {
 			Log.e("QueryBuilder", "data did not parse");
 		}
 		
+		
+		
 		p2CountryName = "";
 		p4IndicatorName = "";
+		
 	}
  
 	public static void jsonObjectExtractorForCountryAndIndicator() {
@@ -162,13 +185,21 @@ public class QueryBuilder {
 			
 			if(valueInfoStr=="null"){values[arrayNumber] = 0.0;}
 			else {values[arrayNumber] = Double.parseDouble(valueInfoStr);}
-			years[arrayNumber] = Integer.parseInt(dateInfoStr);
+			years[arrayNumber] = Double.parseDouble(dateInfoStr);
+			
+			//for(int i=0;i<150;i++){
+			//	GraphViewCreator.data[arrayNumber] = new GraphViewData(arrayNumber,arrayNumber*2);
+			//}
+			//GraphViewCreator.graphViewCreator();
 			
 			
-				Log.v("values",values[arrayNumber] + " ");
-				Log.v("years",years[arrayNumber]+ " ");
-				arrayNumber++;
+			arrayNumber++;
 			
+			if(arrayNumber>=10 && 0==arrayNumber%10){
+			graphCreatorViewValues(arrayNumber);
+			}
+
+				
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
@@ -220,4 +251,14 @@ public class QueryBuilder {
 			e.printStackTrace();
 		}
 	}
+	public static void graphCreatorViewValues(int i){		
+		exampleSeries = new GraphViewSeries(new GraphViewData[] {new GraphViewData(0, 0d)});
+		for(int ii=1;ii<i;ii++){
+		exampleSeries.appendData(new GraphViewData(values[ii], years[ii]), true, 1000);		
+		}
+		Log.v("pls","work"+i);
+		if(i==10){GraphViewCreator GVC = new GraphViewCreator();}
+
+	}
+	
 }

@@ -42,6 +42,8 @@ public class IndicatorActivity extends Activity implements OnItemSelectedListene
 	//private String[] indicators;
 	//private String stringUsedForCallingQueryBuilder ="";
 	
+
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -69,8 +71,6 @@ public class IndicatorActivity extends Activity implements OnItemSelectedListene
  
 		textView1 = (TextView) findViewById(R.id.textViewShowingCandI);
 		
-		//TODO: remove the self class indicators 
-		
 		countryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);		
 		countryListView.setAdapter(countryAdapter);		
 		countryListView.setOnItemSelectedListener(this);
@@ -81,12 +81,13 @@ public class IndicatorActivity extends Activity implements OnItemSelectedListene
 		
 		indicatorListView = (Spinner) findViewById(R.id.spinner2);
 		
-
-			graphLayout = (LinearLayout) findViewById(R.id.layout1);  	
+		graphLayout = (LinearLayout) findViewById(R.id.layout1);  
+		//GraphViewCreator.graphViewCreator();
+				
 			
-			//graphView = new LineGraphView(this, "GraphViewDemo");
 			
-
+			
+			
 	}
 	@Override
 	public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,long arg3) {
@@ -97,11 +98,10 @@ public class IndicatorActivity extends Activity implements OnItemSelectedListene
 	QueryBuilder.jsonParserReader(countryAndIndicatorQueryConstructor());
 	textView1.setText(QueryBuilder.displayInfo);
 	
+
 	
-	graphView = new LineGraphView(this, "GraphViewDemo");
-	GraphViewCreator GVC = new GraphViewCreator();
-   // IndicatorActivity.graphLayout.removeAllViews();
-   // IndicatorActivity.graphLayout.addView(graphView); 
+	//GraphViewCreator GG = new GraphViewCreator();
+	
 	}
  
 	@Override
@@ -109,15 +109,27 @@ public class IndicatorActivity extends Activity implements OnItemSelectedListene
 		QueryBuilder.p2CountryName = "ABW";
 		QueryBuilder.p4IndicatorName = "1.1_ACCESS.ELECTRICITY.TOT";
 		
-	graphView = new LineGraphView(this, "GraphViewDemo");
-	GraphViewCreator GVC1 = new GraphViewCreator();
-	
-
+		
+		
 		
 	}
 	public static String countryAndIndicatorQueryConstructor() {	
 	return (QueryBuilder.p1ApiAddress + QueryBuilder.p2CountryName + QueryBuilder.p3Indicators + QueryBuilder.p4IndicatorName
 			+ QueryBuilder.p5BeginningOfIdentifiers + QueryBuilder.p6ItemsPerPage + QueryBuilder.p7Date + QueryBuilder.p8Format);
 	}
+	public static void buildGraph(){
+
+		 GraphView graphView = new LineGraphView(IndicatorActivity.graphLayout .getContext(),"GraphViewDemo");
+		 graphView.addSeries(QueryBuilder.exampleSeries);
+			// set view port, start=2, size=40
+		 graphView.setViewPort(0, 40);
+		 graphView.setScrollable(true);
+			// optional - activate scaling / zooming
+		 graphView.setScalable(true);
+
+			
+			IndicatorActivity.graphLayout.addView(graphView);
+	}
+	
 	
 }
