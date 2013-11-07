@@ -79,7 +79,7 @@ public class IndicatorActivity extends Activity implements OnItemSelectedListene
 		indicatorListView.setAdapter(indicatorAdapter);	
 		indicatorListView.setOnItemSelectedListener(this);
 		
-		indicatorListView = (Spinner) findViewById(R.id.spinner2);
+		//indicatorListView = (Spinner) findViewById(R.id.spinner2);
 		
 
 		//GraphViewCreator.graphViewCreator();
