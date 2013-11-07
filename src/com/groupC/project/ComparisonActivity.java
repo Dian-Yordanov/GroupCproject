@@ -3,6 +3,7 @@ package com.groupC.project;
 import android.app.Activity;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -23,8 +24,10 @@ public class ComparisonActivity extends Activity implements OnItemSelectedListen
 	public static ArrayAdapter<CharSequence> indicatorAdapter;
 	public static ArrayAdapter<CharSequence> country2Adapter;
 	
-	private Resources res;
-	private String[] countries;
+	private Resources res1;
+	private Resources res2;
+	private String[] countries1;
+	private String[] countries2;
 	
 	private static boolean country1IsTouched = false;
 	private static boolean indicatorIsTouched = false;
@@ -47,8 +50,10 @@ public class ComparisonActivity extends Activity implements OnItemSelectedListen
 		 
 		setContentView(R.layout.comparison_activity);
  
-		res = getResources();
-		countries= res.getStringArray(R.array.countryListView);
+		res1 = getResources();
+		res2 = getResources();
+		countries1= res1.getStringArray(R.array.countryListView);
+		countries2= res2.getStringArray(R.array.countryListView);
 		
 		textViewComparison = (TextView) findViewById(R.id.textView1);
 		country1Spinner = (Spinner) findViewById(R.id.country1Spinner);
@@ -105,14 +110,12 @@ public class ComparisonActivity extends Activity implements OnItemSelectedListen
 		country2Spinner.setEnabled(true);
 	}
 	public void onSpinnerCountry2Select(){
-		indicatorSpinner.setEnabled(false);
-		country2Spinner.setEnabled(false);
-		country1IsTouched = false;
-		indicatorIsTouched = false;
-		country2IsTouched = false;
+
 		
-		stringUsedForCallingQueryBuilderCountry1 = countries[country1Spinner.getSelectedItemPosition()];	
-		stringUsedForCallingQueryBuilderCountry2 = countries[country2Spinner.getSelectedItemPosition()];	
+		stringUsedForCallingQueryBuilderCountry1 = countries1[country1Spinner.getSelectedItemPosition()];	
+		stringUsedForCallingQueryBuilderCountry2 = countries2[country2Spinner.getSelectedItemPosition()];
+		Log.v("adasd",country2Spinner.getSelectedItemPosition() + "1122222244444441212dsd");
+		
 		
 		QueryBuilder.p2CountryName = stringUsedForCallingQueryBuilderCountry1;
 		QueryBuilder.p2Country2Name = stringUsedForCallingQueryBuilderCountry2;
@@ -122,15 +125,32 @@ public class ComparisonActivity extends Activity implements OnItemSelectedListen
 		String textViewComparisonText1;
 		textViewComparisonText1 = QueryBuilder.displayInfo;
 		
+		Log.v("adasd",QueryBuilder.displayInfo + "dsd");
+		QueryBuilder.displayInfo = "";
+		QueryBuilder.infoParsed = "";
+		//QueryBuilder.p2CountryName = "";
+		//QueryBuilder.p4IndicatorName = "";
+		
 		//QueryBuilder.jsonParserReader(comparisonQueryConstructor(QueryBuilder.p2Country2Name));
-		//String textViewComparisonText2;
-		//textViewComparisonText2 = QueryBuilder.displayInfo;
+
+		Log.v("adasd",QueryBuilder.p2Country2Name + "111212dsd");
+		
+		Log.v("adasd",comparisonQueryConstructor(QueryBuilder.p2Country2Name) + "121121211212dsd");
+		
+		QueryBuilder.jsonParserReader(comparisonQueryConstructor(QueryBuilder.p2Country2Name));
+		String textViewComparisonText2;
+		textViewComparisonText2 = QueryBuilder.displayInfo;
+		Log.v("adasd",QueryBuilder.displayInfo + "dsd");
 		
 		
-		textViewComparison.setText(textViewComparisonText1); //+ textViewComparisonText2);
+		textViewComparison.setText(textViewComparisonText1 + textViewComparisonText2);
 		
 		
-		
+		indicatorSpinner.setEnabled(false);
+		country2Spinner.setEnabled(false);
+		country1IsTouched = false;
+		indicatorIsTouched = false;
+		country2IsTouched = false;
 		
 		setOnClickmethods();
 	}

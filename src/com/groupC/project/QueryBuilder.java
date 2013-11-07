@@ -63,6 +63,9 @@ public class QueryBuilder {
 	public static String infoParsed;
 	public static String displayInfo;
 	
+	public static String infoParsed1;
+	public static String displayInfo1;
+	
 	public static JSONArray dataArray = new JSONArray();
 	public static JSONObject dataObject = new JSONObject();
 	public static JSONArray jsonMainArr;
@@ -120,19 +123,14 @@ public class QueryBuilder {
 	public static GraphViewData[] data = new GraphViewData[num];
 	public static GraphViewData[] data2 = new GraphViewData[2*num];
 	
-	
-
-	
 	public QueryBuilder(String urlparser) {
-		//IndicatorActivity.countryAndIndicatorQueryConstructor() 
 		jsonParserReader(urlparser);
-		
 	}
-//make public static void with string and be called from indictorActivity directly 
 	public static void jsonParserReader(String url) {
 		infoParsed = JsonParser.readData(url);
 		jsonStringIntoJsonArrayTransformer();
- 
+
+		Log.v("adasd",QueryBuilder.displayInfo + "dsd");
 	}
  
 	public static void jsonStringIntoJsonArrayTransformer() {
@@ -142,29 +140,22 @@ public class QueryBuilder {
 			JSONArray countries = jsonMainArr.getJSONArray(1);
 			for (int i = 0; i < countries.length(); i++) {
 				jsonInfo = (JSONObject) countries.get(i);
-				
-				//for(int i=0;i<150;i++){
-				
-				
-				
-				//}
-				//GraphViewCreator.graphViewCreator();
-				
+
 				if(nameOftheClassCallingThisClass=="IndicatorActivity")jsonObjectExtractorForCountryAndIndicator();
 				if(nameOftheClassCallingThisClass=="CountryActivity")jsonObjectExtractorForCountry();
 				if(nameOftheClassCallingThisClass=="ComparisonActivity")jsonObjectExtractorForCountryAndIndicator();
 				
-
 			}
 		} catch (JSONException e) {
 			e.printStackTrace();
 			Log.e("QueryBuilder", "data did not parse");
 		}
-		
-		
-		
+	
+		if(nameOftheClassCallingThisClass=="IndicatorActivity" || nameOftheClassCallingThisClass=="CountryActivity" ){
 		p2CountryName = "";
 		p4IndicatorName = "";
+		p2Country2Name = "";
+		}
 		
 	}
  
@@ -191,24 +182,7 @@ public class QueryBuilder {
 			else {values[arrayNumber] = Double.parseDouble(valueInfoStr);}
 			years[arrayNumber] = Integer.parseInt(dateInfoStr);
 			
-			//for(int i=0;i<150;i++){
-			//	GraphViewCreator.data[arrayNumber] = new GraphViewData(arrayNumber,arrayNumber*2);
-			//}
-			//GraphViewCreator.graphViewCreator();
-				
-			
 			arrayNumber++;
-			
-			//if(arrayNumber >10){
-			//	 Log. v("years and values" + arrayNumber,Double.toString(QueryBuilder. years[arrayNumber -11]) + " "  + Double.toString(QueryBuilder.values[ arrayNumber-11]));
-			//	 
-			//	}
-			
-			
-			//if(arrayNumber>9 && 0==arrayNumber%10){
-			
-			//}
-
 				
 		} catch (JSONException e) {
 			e.printStackTrace();
