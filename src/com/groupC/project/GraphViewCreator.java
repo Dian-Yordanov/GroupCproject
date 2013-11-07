@@ -21,7 +21,7 @@ public class GraphViewCreator {
 	
 	public static void graphViewCreator() {  			
 		exampleSeries = new GraphViewSeries(new GraphViewData[] {new GraphViewData(QueryBuilder.years[0], QueryBuilder.values[0])});
-		graphView = new BarGraphView(IndicatorActivity.graphLayout .getContext(),"GraphViewDemo");
+		graphView = new LineGraphView(IndicatorActivity.graphLayout .getContext(),"");
 		graphView.addSeries(exampleSeries);	
 		 
 		while(ii!=QueryBuilder.arrayNumber){
@@ -32,8 +32,13 @@ public class GraphViewCreator {
 		Log.v("pls","work"+ii);
 		
 		 graphView.redrawAll();
-		 //graphView.setViewPort(0,100);
-		 graphView.setScrollable(true);
+		 
+		 graphView.getGraphViewStyle().setHorizontalLabelsColor(Color.BLACK);
+		 graphView.getGraphViewStyle().setVerticalLabelsColor(Color.BLACK);
+		 graphView.getGraphViewStyle().setVerticalLabelsWidth(100);
+		 
+	 	 //graphView.setViewPort(0,100);
+		 //graphView.setScrollable(true);
 		 //graphView.setScalable(true);
 		 
 		 IndicatorActivity.graphLayout.removeAllViews();
