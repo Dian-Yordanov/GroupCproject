@@ -17,6 +17,8 @@ public class GraphViewCreator {
 	public static GraphView graphView;
 	public static int ii=0;
 	
+	public static String nameOftheClassCallingThis;
+	
 	public GraphViewCreator(){
 		graphViewCreator();
 	}
@@ -30,11 +32,12 @@ public class GraphViewCreator {
 
 		 
 		exampleSeries1 = new GraphViewSeries("",seriesStyle,new GraphViewData[] {new GraphViewData(QueryBuilder.years[0], QueryBuilder.values[0])});
-		graphView = new LineGraphView(IndicatorActivity.graphLayout .getContext(),"");
+		if(nameOftheClassCallingThis == "IndicatorActivity"){graphView = new LineGraphView(IndicatorActivity.graphLayout .getContext(),"");}
+		if(nameOftheClassCallingThis == "ComparisonActivity"){graphView = new LineGraphView(ComparisonActivity.graphViewLayout .getContext(),"");}
 		graphView.addSeries(exampleSeries1);	
 		 
-		 ((LineGraphView) graphView).setDrawBackground(true);
-		 ((LineGraphView) graphView).setBackgroundColor(Color.CYAN);
+		 //((LineGraphView) graphView).setDrawBackground(true);
+		 //((LineGraphView) graphView).setBackgroundColor(Color.CYAN);
 		
 		while(ii!=QueryBuilder.arrayNumber){
 		exampleSeries1.appendData(new GraphViewData(QueryBuilder.years[ii],QueryBuilder.values[ii]), false, 1000);			
@@ -56,8 +59,11 @@ public class GraphViewCreator {
 		 //graphView.setScrollable(true);
 		 //graphView.setScalable(true);
 		 
-		 IndicatorActivity.graphLayout.removeAllViews();
-		 IndicatorActivity.graphLayout.addView(graphView);
+		 if(nameOftheClassCallingThis == "IndicatorActivity"){IndicatorActivity.graphLayout.removeAllViews();}
+		 if(nameOftheClassCallingThis == "IndicatorActivity"){IndicatorActivity.graphLayout.addView(graphView);}
+		 
+		 if(nameOftheClassCallingThis == "ComparisonActivity"){ComparisonActivity.graphViewLayout.removeAllViews();}
+		 if(nameOftheClassCallingThis == "ComparisonActivity"){ComparisonActivity.graphViewLayout.addView(graphView);}
 		 
 
 	}

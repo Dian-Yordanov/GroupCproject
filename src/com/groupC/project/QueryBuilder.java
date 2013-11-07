@@ -177,8 +177,12 @@ public class QueryBuilder {
 			else {values[arrayNumber] = Double.parseDouble(valueInfoStr);}
 			years[arrayNumber] = Integer.parseInt(dateInfoStr);
 			
+			Log.v("values"+arrayNumber,"" + values[arrayNumber] );
+			Log.v("years"+arrayNumber,"" + years[arrayNumber]);
+			
 			arrayNumber++;
 				
+
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}

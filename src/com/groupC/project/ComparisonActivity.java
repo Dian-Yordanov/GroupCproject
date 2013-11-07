@@ -46,6 +46,8 @@ public class ComparisonActivity extends Activity implements OnItemSelectedListen
 		
 		uiBuidlerComparisonActivity();
 		QueryBuilder.nameOftheClassCallingThisClass = "ComparisonActivity";
+		GraphViewCreator.nameOftheClassCallingThis= "ComparisonActivity";
+		
 		//QueryBuilder qBuilder = new QueryBuilder(countryAndIndicatorQueryConstructor());
 
 	}
@@ -137,7 +139,8 @@ public class ComparisonActivity extends Activity implements OnItemSelectedListen
 		textViewComparison.setText(textViewComparisonText1 + textViewComparisonText2);		
 		
 		graphViewLayout = (LinearLayout) findViewById(R.id.layout2);  
-		//GraphViewCreator.graphViewCreator();
+		GraphViewCreator.graphViewCreator();
+		
 		
 		QueryBuilder.p2Country2Name = "";
 		QueryBuilder.p2CountryName = "";
