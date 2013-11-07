@@ -114,8 +114,6 @@ public class ComparisonActivity extends Activity implements OnItemSelectedListen
 		
 		stringUsedForCallingQueryBuilderCountry1 = countries1[country1Spinner.getSelectedItemPosition()];	
 		stringUsedForCallingQueryBuilderCountry2 = countries2[country2Spinner.getSelectedItemPosition()];
-		Log.v("adasd",country2Spinner.getSelectedItemPosition() + "1122222244444441212dsd");
-		
 		
 		QueryBuilder.p2CountryName = stringUsedForCallingQueryBuilderCountry1;
 		QueryBuilder.p2Country2Name = stringUsedForCallingQueryBuilderCountry2;
@@ -125,25 +123,19 @@ public class ComparisonActivity extends Activity implements OnItemSelectedListen
 		String textViewComparisonText1;
 		textViewComparisonText1 = QueryBuilder.displayInfo;
 		
-		Log.v("adasd",QueryBuilder.displayInfo + "dsd");
 		QueryBuilder.displayInfo = "";
 		QueryBuilder.infoParsed = "";
-		//QueryBuilder.p2CountryName = "";
-		//QueryBuilder.p4IndicatorName = "";
-		
-		//QueryBuilder.jsonParserReader(comparisonQueryConstructor(QueryBuilder.p2Country2Name));
-
-		Log.v("adasd",QueryBuilder.p2Country2Name + "111212dsd");
-		
-		Log.v("adasd",comparisonQueryConstructor(QueryBuilder.p2Country2Name) + "121121211212dsd");
 		
 		QueryBuilder.jsonParserReader(comparisonQueryConstructor(QueryBuilder.p2Country2Name));
 		String textViewComparisonText2;
 		textViewComparisonText2 = QueryBuilder.displayInfo;
 		Log.v("adasd",QueryBuilder.displayInfo + "dsd");
+				
+		textViewComparison.setText(textViewComparisonText1 + textViewComparisonText2);		
 		
-		
-		textViewComparison.setText(textViewComparisonText1 + textViewComparisonText2);
+		QueryBuilder.p2Country2Name = "";
+		QueryBuilder.p2CountryName = "";
+		QueryBuilder.p4IndicatorName= "";
 		
 		
 		indicatorSpinner.setEnabled(false);
