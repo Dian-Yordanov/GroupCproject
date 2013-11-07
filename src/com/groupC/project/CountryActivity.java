@@ -69,7 +69,7 @@ public class CountryActivity  extends Activity implements OnItemSelectedListener
 		stringUsedForCallingFlagDownloader = countriesByTwoLetters[countryList.getSelectedItemPosition()];
 		stringUsedForCallingCountryMapDownloader = countryNames[countryList.getSelectedItemPosition()];
 				
-		Log.v("tagg",countriesByTwoLetters[countryList.getSelectedItemPosition()]);
+		//Log.v("tagg",countriesByTwoLetters[countryList.getSelectedItemPosition()]);
 		
 		QueryBuilder.p2CountryName = stringUsedForCallingQueryBuilder;
 		CountryPicturesQueryBuilder.countryCode = stringUsedForCallingFlagDownloader;
