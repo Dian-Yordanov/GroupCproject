@@ -39,7 +39,7 @@ public class ComparisonActivity extends Activity implements OnItemSelectedListen
 		super.onCreate(savedInstanceState);
 		
 		uiBuidlerComparisonActivity();
-		QueryBuilder.nameOftheClassCallingThisClass = "IndicatorActivity";
+		QueryBuilder.nameOftheClassCallingThisClass = "ComparisonActivity";
 		//QueryBuilder qBuilder = new QueryBuilder(countryAndIndicatorQueryConstructor());
 
 	}
@@ -115,15 +115,19 @@ public class ComparisonActivity extends Activity implements OnItemSelectedListen
 		stringUsedForCallingQueryBuilderCountry2 = countries[country2Spinner.getSelectedItemPosition()];	
 		
 		QueryBuilder.p2CountryName = stringUsedForCallingQueryBuilderCountry1;
-		//QueryBuilder.p2Country2Name = stringUsedForCallingQueryBuilderCountry2;
+		QueryBuilder.p2Country2Name = stringUsedForCallingQueryBuilderCountry2;
 		QueryBuilder.p4IndicatorName = indicatorSpinner.getSelectedItem().toString();
+		
 		QueryBuilder.jsonParserReader(comparisonQueryConstructor(QueryBuilder.p2CountryName));
+		String textViewComparisonText1;
+		textViewComparisonText1 = QueryBuilder.displayInfo;
+		
 		//QueryBuilder.jsonParserReader(comparisonQueryConstructor(QueryBuilder.p2Country2Name));
+		//String textViewComparisonText2;
+		//textViewComparisonText2 = QueryBuilder.displayInfo;
 		
-		String textViewComparisonText = (String) textViewComparison.getText();
-		textViewComparisonText = QueryBuilder.displayInfo;
 		
-		textViewComparison.setText(textViewComparisonText);
+		textViewComparison.setText(textViewComparisonText1); //+ textViewComparisonText2);
 		
 		
 		

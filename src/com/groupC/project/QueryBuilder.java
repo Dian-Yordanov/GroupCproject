@@ -152,6 +152,7 @@ public class QueryBuilder {
 				
 				if(nameOftheClassCallingThisClass=="IndicatorActivity")jsonObjectExtractorForCountryAndIndicator();
 				if(nameOftheClassCallingThisClass=="CountryActivity")jsonObjectExtractorForCountry();
+				if(nameOftheClassCallingThisClass=="ComparisonActivity")jsonObjectExtractorForCountryAndIndicator();
 				
 
 			}
