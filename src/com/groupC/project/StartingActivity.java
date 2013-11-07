@@ -44,7 +44,7 @@ public class StartingActivity extends Activity {
 	}
 
 	public void gotoFavouritesView(View view) {
-		Intent i = new Intent(StartingActivity.this, FavouritesActivity.class);
+		Intent i = new Intent(StartingActivity.this, ComparisonActivity.class);
 		startActivity(i);
 
 	}

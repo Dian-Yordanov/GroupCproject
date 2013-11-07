@@ -34,7 +34,7 @@
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.groupC.project.FavouritesActivity"
+            android:name="com.groupC.project.ComparisonActivity"
             android:label="@string/app_name" >
         </activity>
         <activity

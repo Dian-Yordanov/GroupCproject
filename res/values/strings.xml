@@ -744,7 +744,7 @@
 
     <string name="CList">Country List</string>
     <string name="Indicator">Indicators</string>
-    <string name="Favourite">Favourites</string>
+    <string name="Comparison">Comparison</string>
     <string name="About">About Us</string>
 
 </resources>
