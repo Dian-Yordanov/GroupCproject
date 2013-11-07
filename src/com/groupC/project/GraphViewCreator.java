@@ -6,6 +6,7 @@ import android.util.Log;
 import com.jjoe64.graphview.BarGraphView;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.GraphViewSeries;
+import com.jjoe64.graphview.GraphViewSeries.GraphViewSeriesStyle;
 import com.jjoe64.graphview.LineGraphView;
 import com.jjoe64.graphview.GraphView.GraphViewData;
 
@@ -19,11 +20,21 @@ public class GraphViewCreator {
 		graphViewCreator();
 	}
 	
-	public static void graphViewCreator() {  			
-		exampleSeries = new GraphViewSeries(new GraphViewData[] {new GraphViewData(QueryBuilder.years[0], QueryBuilder.values[0])});
+	public static void graphViewCreator() {
+
+		GraphViewSeriesStyle seriesStyle = new GraphViewSeriesStyle();
+		seriesStyle.color = Color.BLUE;
+		
+
+
+		 
+		exampleSeries = new GraphViewSeries("",seriesStyle,new GraphViewData[] {new GraphViewData(QueryBuilder.years[0], QueryBuilder.values[0])});
 		graphView = new LineGraphView(IndicatorActivity.graphLayout .getContext(),"");
 		graphView.addSeries(exampleSeries);	
 		 
+		 ((LineGraphView) graphView).setDrawBackground(true);
+		 ((LineGraphView) graphView).setBackgroundColor(Color.CYAN);
+		
 		while(ii!=QueryBuilder.arrayNumber){
 		exampleSeries.appendData(new GraphViewData(QueryBuilder.years[ii],QueryBuilder.values[ii]), false, 1000);			
 		ii++;
@@ -37,12 +48,17 @@ public class GraphViewCreator {
 		 graphView.getGraphViewStyle().setVerticalLabelsColor(Color.BLACK);
 		 graphView.getGraphViewStyle().setVerticalLabelsWidth(100);
 		 
+		 
+		 
+		 
 	 	 //graphView.setViewPort(0,100);
 		 //graphView.setScrollable(true);
 		 //graphView.setScalable(true);
 		 
 		 IndicatorActivity.graphLayout.removeAllViews();
 		 IndicatorActivity.graphLayout.addView(graphView);
+		 
+
 	}
 	//public static void graphCreatorViewValues(){		
 		
