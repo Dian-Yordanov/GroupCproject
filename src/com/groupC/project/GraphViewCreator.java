@@ -16,7 +16,7 @@ public class GraphViewCreator {
 	public static GraphViewSeries exampleSeries2;
 	public static GraphView graphView;
 	public static int ii=0;
-	private static int timesThisClassIsCalled =0;
+	//private static int timesThisClassIsCalled =0;
 	
 	public static String nameOftheClassCallingThis;
 	
@@ -25,44 +25,46 @@ public class GraphViewCreator {
 	}
 	
 	public static void graphViewCreator() {
-		if(timesThisClassIsCalled>1){GraphViewCreator.graphView.removeAllSeries();timesThisClassIsCalled--;}
+		//if(timesThisClassIsCalled>1){GraphViewCreator.graphView.removeAllSeries();timesThisClassIsCalled--;}
 		
 		GraphViewSeriesStyle seriesStyle = new GraphViewSeriesStyle();
 		seriesStyle.color = Color.BLUE;
 		
+		GraphViewSeriesStyle seriesStyle2 = new GraphViewSeriesStyle();
+		seriesStyle2.color = Color.RED;
 
 
 		 
 		exampleSeries1 = new GraphViewSeries("",seriesStyle,new GraphViewData[] {new GraphViewData(QueryBuilder.years[0], QueryBuilder.values[0])});
 		if(nameOftheClassCallingThis == "IndicatorActivity"){graphView = new BarGraphView(IndicatorActivity.graphLayout .getContext(),"");}
 		
-		if(nameOftheClassCallingThis == "ComparisonActivity"){graphView = new BarGraphView(ComparisonActivity.graphViewLayout .getContext(),"");
-		GraphViewSeriesStyle seriesStyle2 = new GraphViewSeriesStyle();
-		seriesStyle2.color = Color.RED;
-		exampleSeries2 = new GraphViewSeries("",seriesStyle2,new GraphViewData[] {new GraphViewData(QueryBuilder.years[0], QueryBuilder.values[0])});
-		graphView.addSeries(exampleSeries2);}
+		if(nameOftheClassCallingThis == "ComparisonActivity"){graphView = new BarGraphView(ComparisonActivity.graphViewLayout .getContext(),"");}
 		
+		exampleSeries2 = new GraphViewSeries("",seriesStyle2,new GraphViewData[] {new GraphViewData(QueryBuilder.years[0], QueryBuilder.values[0])});
+		
+		graphView.addSeries(exampleSeries2);
 		graphView.addSeries(exampleSeries1);	
 		 
 		 //((LineGraphView) graphView).setDrawBackground(true);
 		 //((LineGraphView) graphView).setBackgroundColor(Color.CYAN);
 		
 		while(ii!=QueryBuilder.arrayNumber){
-		exampleSeries1.appendData(new GraphViewData(QueryBuilder.years[ii],QueryBuilder.values[ii]), false, 1000);			
+		exampleSeries1.appendData(new GraphViewData(QueryBuilder.years[ii],QueryBuilder.values[ii]), false, 1000);		
+		exampleSeries2.appendData(new GraphViewData(QueryBuilder.years[ii+10],QueryBuilder.values[ii+10]), false, 1000);			
 		ii++;
 		Log.v("o"+ii,"o"+ii);
 		}
 		
-		while(ii!=QueryBuilder.arrayNumber){
-		exampleSeries2.appendData(new GraphViewData(QueryBuilder.years[ii],QueryBuilder.values[ii]), false, 1000);			
-		ii++;
-		Log.v("o"+ii,"o"+ii);
-		}
+		//while(ii!=QueryBuilder.arrayNumber){
+		//	
+		//ii++;
+		//Log.v("o"+ii,"o"+ii);
+		//}
 		
 		Log.v("pls","work"+ii);
 		
-		if(0==ii%20){timesThisClassIsCalled++;ii=0;}
-		Log.v("timesThisClassIsCalled","timesThisClassIsCalled"+timesThisClassIsCalled);
+		//if(0==ii%20){timesThisClassIsCalled++;ii=0;}
+		//Log.v("timesThisClassIsCalled","timesThisClassIsCalled"+timesThisClassIsCalled);
 		
 		 graphView.redrawAll();
 		 
