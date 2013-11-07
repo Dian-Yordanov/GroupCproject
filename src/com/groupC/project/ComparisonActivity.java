@@ -14,7 +14,7 @@ import android.widget.AdapterView.OnItemSelectedListener;
 
 public class ComparisonActivity extends Activity implements OnItemSelectedListener{
 
-	public static TextView textView2;
+	public static TextView textViewComparison;
 	private static Spinner country1Spinner;
 	private static Spinner indicatorSpinner;
 	private static Spinner country2Spinner;
@@ -30,11 +30,16 @@ public class ComparisonActivity extends Activity implements OnItemSelectedListen
 	private static boolean indicatorIsTouched = false;
 	private static boolean country2IsTouched = false;
 	
+	private String stringUsedForCallingQueryBuilder ="";
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
 		uiBuidlerComparisonActivity();
+		QueryBuilder.nameOftheClassCallingThisClass = "IndicatorActivity";
+		//QueryBuilder qBuilder = new QueryBuilder(countryAndIndicatorQueryConstructor());
 
 	}
 	public void uiBuidlerComparisonActivity() {
@@ -44,7 +49,7 @@ public class ComparisonActivity extends Activity implements OnItemSelectedListen
 		res = getResources();
 		countries= res.getStringArray(R.array.countryListView);
 		
-		textView2 = (TextView) findViewById(R.id.textView1);
+		textViewComparison = (TextView) findViewById(R.id.textView1);
 		country1Spinner = (Spinner) findViewById(R.id.country1Spinner);
 		indicatorSpinner = (Spinner) findViewById(R.id.indicatorSpinner);
 		country2Spinner = (Spinner) findViewById(R.id.country2Spinner);
@@ -82,6 +87,7 @@ public class ComparisonActivity extends Activity implements OnItemSelectedListen
 		
 		if(country1IsTouched == true) onSpinnerCountry1Select();
 		if(indicatorIsTouched == true) onSpinnerIndicatorSelect();
+		if(country2IsTouched == true) onSpinnerCountry2Select();
 
 	}
 
@@ -94,12 +100,27 @@ public class ComparisonActivity extends Activity implements OnItemSelectedListen
 	public void onSpinnerCountry1Select(){
 		indicatorSpinner.setEnabled(true);
 	}
-	public void onSpinnerCountry2Select(){
-		
-	}
 	public void onSpinnerIndicatorSelect(){
 		country2Spinner.setEnabled(true);
 	}
+	public void onSpinnerCountry2Select(){
+		indicatorSpinner.setEnabled(false);
+		country2Spinner.setEnabled(false);
+		country1IsTouched = false;
+		indicatorIsTouched = false;
+		
+		stringUsedForCallingQueryBuilder = countries[country1Spinner.getSelectedItemPosition()];		
+		QueryBuilder.p2CountryName = stringUsedForCallingQueryBuilder;
+		QueryBuilder.p4IndicatorName = indicatorSpinner.getSelectedItem().toString();
+		QueryBuilder.jsonParserReader(IndicatorActivity.countryAndIndicatorQueryConstructor());
+		textViewComparison.setText(QueryBuilder.displayInfo);
+		
+		
+		
+		
+		
+	}
+	
 	
 	public static void setOnClickmethods(){
 		
@@ -133,11 +154,6 @@ public class ComparisonActivity extends Activity implements OnItemSelectedListen
 			return false;
 		}
 	});	
-	
-		
-		
-		
-		
 	}
 	
 	
