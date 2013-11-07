@@ -16,6 +16,7 @@ public class GraphViewCreator {
 	public static GraphViewSeries exampleSeries2;
 	public static GraphView graphView;
 	public static int ii=0;
+	private static int timesThisClassIsCalled =0;
 	
 	public static String nameOftheClassCallingThis;
 	
@@ -24,7 +25,8 @@ public class GraphViewCreator {
 	}
 	
 	public static void graphViewCreator() {
-
+		if(timesThisClassIsCalled>1){GraphViewCreator.graphView.removeAllSeries();timesThisClassIsCalled--;}
+		
 		GraphViewSeriesStyle seriesStyle = new GraphViewSeriesStyle();
 		seriesStyle.color = Color.BLUE;
 		
@@ -32,9 +34,9 @@ public class GraphViewCreator {
 
 		 
 		exampleSeries1 = new GraphViewSeries("",seriesStyle,new GraphViewData[] {new GraphViewData(QueryBuilder.years[0], QueryBuilder.values[0])});
-		if(nameOftheClassCallingThis == "IndicatorActivity"){graphView = new LineGraphView(IndicatorActivity.graphLayout .getContext(),"");}
+		if(nameOftheClassCallingThis == "IndicatorActivity"){graphView = new BarGraphView(IndicatorActivity.graphLayout .getContext(),"");}
 		
-		if(nameOftheClassCallingThis == "ComparisonActivity"){graphView = new LineGraphView(ComparisonActivity.graphViewLayout .getContext(),"");
+		if(nameOftheClassCallingThis == "ComparisonActivity"){graphView = new BarGraphView(ComparisonActivity.graphViewLayout .getContext(),"");
 		GraphViewSeriesStyle seriesStyle2 = new GraphViewSeriesStyle();
 		seriesStyle2.color = Color.RED;
 		exampleSeries2 = new GraphViewSeries("",seriesStyle2,new GraphViewData[] {new GraphViewData(QueryBuilder.years[0], QueryBuilder.values[0])});
@@ -45,19 +47,22 @@ public class GraphViewCreator {
 		 //((LineGraphView) graphView).setDrawBackground(true);
 		 //((LineGraphView) graphView).setBackgroundColor(Color.CYAN);
 		
-		while(ii!=QueryBuilder.arrayNumber && ii<10){
+		while(ii!=QueryBuilder.arrayNumber){
 		exampleSeries1.appendData(new GraphViewData(QueryBuilder.years[ii],QueryBuilder.values[ii]), false, 1000);			
 		ii++;
 		Log.v("o"+ii,"o"+ii);
 		}
 		
-		while(ii!=QueryBuilder.arrayNumber && ii>=10){
+		while(ii!=QueryBuilder.arrayNumber){
 		exampleSeries2.appendData(new GraphViewData(QueryBuilder.years[ii],QueryBuilder.values[ii]), false, 1000);			
 		ii++;
 		Log.v("o"+ii,"o"+ii);
 		}
 		
 		Log.v("pls","work"+ii);
+		
+		if(0==ii%20){timesThisClassIsCalled++;ii=0;}
+		Log.v("timesThisClassIsCalled","timesThisClassIsCalled"+timesThisClassIsCalled);
 		
 		 graphView.redrawAll();
 		 

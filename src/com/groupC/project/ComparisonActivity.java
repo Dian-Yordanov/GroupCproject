@@ -142,6 +142,7 @@ public class ComparisonActivity extends Activity implements OnItemSelectedListen
 		GraphViewCreator.graphViewCreator();
 		
 		
+		GraphViewCreator.ii = 0;
 		QueryBuilder.p2Country2Name = "";
 		QueryBuilder.p2CountryName = "";
 		QueryBuilder.p4IndicatorName= "";
