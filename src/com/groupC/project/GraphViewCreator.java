@@ -33,17 +33,30 @@ public class GraphViewCreator {
 		 
 		exampleSeries1 = new GraphViewSeries("",seriesStyle,new GraphViewData[] {new GraphViewData(QueryBuilder.years[0], QueryBuilder.values[0])});
 		if(nameOftheClassCallingThis == "IndicatorActivity"){graphView = new LineGraphView(IndicatorActivity.graphLayout .getContext(),"");}
-		if(nameOftheClassCallingThis == "ComparisonActivity"){graphView = new LineGraphView(ComparisonActivity.graphViewLayout .getContext(),"");}
+		
+		if(nameOftheClassCallingThis == "ComparisonActivity"){graphView = new LineGraphView(ComparisonActivity.graphViewLayout .getContext(),"");
+		GraphViewSeriesStyle seriesStyle2 = new GraphViewSeriesStyle();
+		seriesStyle2.color = Color.RED;
+		exampleSeries2 = new GraphViewSeries("",seriesStyle2,new GraphViewData[] {new GraphViewData(QueryBuilder.years[0], QueryBuilder.values[0])});
+		graphView.addSeries(exampleSeries2);}
+		
 		graphView.addSeries(exampleSeries1);	
 		 
 		 //((LineGraphView) graphView).setDrawBackground(true);
 		 //((LineGraphView) graphView).setBackgroundColor(Color.CYAN);
 		
-		while(ii!=QueryBuilder.arrayNumber){
+		while(ii!=QueryBuilder.arrayNumber && ii<10){
 		exampleSeries1.appendData(new GraphViewData(QueryBuilder.years[ii],QueryBuilder.values[ii]), false, 1000);			
 		ii++;
 		Log.v("o"+ii,"o"+ii);
 		}
+		
+		while(ii!=QueryBuilder.arrayNumber && ii>=10){
+		exampleSeries2.appendData(new GraphViewData(QueryBuilder.years[ii],QueryBuilder.values[ii]), false, 1000);			
+		ii++;
+		Log.v("o"+ii,"o"+ii);
+		}
+		
 		Log.v("pls","work"+ii);
 		
 		 graphView.redrawAll();
