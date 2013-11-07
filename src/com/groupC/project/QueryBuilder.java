@@ -108,7 +108,7 @@ public class QueryBuilder {
 	public static String p7Date = "date=1960:2013&";
 	public static String p8Format = "format=json";
 	
-	public static double[] years = new double[200];
+	public static int[] years = new int[200];
 	public static double[] values = new double[200];
 	public static int arrayNumber = 0;
 	
@@ -118,7 +118,9 @@ public class QueryBuilder {
 	public static int num = 50;
 	public static GraphViewData[] data = new GraphViewData[num];
 	public static GraphViewData[] data2 = new GraphViewData[2*num];
-	public static GraphViewSeries exampleSeries;
+	
+	
+
 	
 	public QueryBuilder(String urlparser) {
 		//IndicatorActivity.countryAndIndicatorQueryConstructor() 
@@ -185,19 +187,25 @@ public class QueryBuilder {
 			
 			if(valueInfoStr=="null"){values[arrayNumber] = 0.0;}
 			else {values[arrayNumber] = Double.parseDouble(valueInfoStr);}
-			years[arrayNumber] = Double.parseDouble(dateInfoStr);
+			years[arrayNumber] = Integer.parseInt(dateInfoStr);
 			
 			//for(int i=0;i<150;i++){
 			//	GraphViewCreator.data[arrayNumber] = new GraphViewData(arrayNumber,arrayNumber*2);
 			//}
 			//GraphViewCreator.graphViewCreator();
-			
+				
 			
 			arrayNumber++;
 			
-			if(arrayNumber>=10 && 0==arrayNumber%10){
-			graphCreatorViewValues(arrayNumber);
-			}
+			//if(arrayNumber >10){
+			//	 Log. v("years and values" + arrayNumber,Double.toString(QueryBuilder. years[arrayNumber -11]) + " "  + Double.toString(QueryBuilder.values[ arrayNumber-11]));
+			//	 
+			//	}
+			
+			
+			//if(arrayNumber>9 && 0==arrayNumber%10){
+			
+			//}
 
 				
 		} catch (JSONException e) {
@@ -251,14 +259,6 @@ public class QueryBuilder {
 			e.printStackTrace();
 		}
 	}
-	public static void graphCreatorViewValues(int i){		
-		exampleSeries = new GraphViewSeries(new GraphViewData[] {new GraphViewData(0, 0d)});
-		for(int ii=1;ii<i;ii++){
-		exampleSeries.appendData(new GraphViewData(values[ii], years[ii]), true, 1000);		
-		}
-		Log.v("pls","work"+i);
-		if(i==10){GraphViewCreator GVC = new GraphViewCreator();}
-
-	}
+	
 	
 }
