@@ -63,9 +63,6 @@ public class QueryBuilder {
 	public static String infoParsed;
 	public static String displayInfo;
 	
-	public static String infoParsed1;
-	public static String displayInfo1;
-	
 	public static JSONArray dataArray = new JSONArray();
 	public static JSONObject dataObject = new JSONObject();
 	public static JSONArray jsonMainArr;
@@ -129,8 +126,6 @@ public class QueryBuilder {
 	public static void jsonParserReader(String url) {
 		infoParsed = JsonParser.readData(url);
 		jsonStringIntoJsonArrayTransformer();
-
-		Log.v("adasd",QueryBuilder.displayInfo + "dsd");
 	}
  
 	public static void jsonStringIntoJsonArrayTransformer() {

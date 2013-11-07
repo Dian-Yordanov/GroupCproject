@@ -12,7 +12,8 @@ import com.jjoe64.graphview.GraphView.GraphViewData;
 
 public class GraphViewCreator {
 	//static int num = 150;  
-	public static GraphViewSeries exampleSeries;
+	public static GraphViewSeries exampleSeries1;
+	public static GraphViewSeries exampleSeries2;
 	public static GraphView graphView;
 	public static int ii=0;
 	
@@ -28,15 +29,15 @@ public class GraphViewCreator {
 
 
 		 
-		exampleSeries = new GraphViewSeries("",seriesStyle,new GraphViewData[] {new GraphViewData(QueryBuilder.years[0], QueryBuilder.values[0])});
+		exampleSeries1 = new GraphViewSeries("",seriesStyle,new GraphViewData[] {new GraphViewData(QueryBuilder.years[0], QueryBuilder.values[0])});
 		graphView = new LineGraphView(IndicatorActivity.graphLayout .getContext(),"");
-		graphView.addSeries(exampleSeries);	
+		graphView.addSeries(exampleSeries1);	
 		 
 		 ((LineGraphView) graphView).setDrawBackground(true);
 		 ((LineGraphView) graphView).setBackgroundColor(Color.CYAN);
 		
 		while(ii!=QueryBuilder.arrayNumber){
-		exampleSeries.appendData(new GraphViewData(QueryBuilder.years[ii],QueryBuilder.values[ii]), false, 1000);			
+		exampleSeries1.appendData(new GraphViewData(QueryBuilder.years[ii],QueryBuilder.values[ii]), false, 1000);			
 		ii++;
 		Log.v("o"+ii,"o"+ii);
 		}

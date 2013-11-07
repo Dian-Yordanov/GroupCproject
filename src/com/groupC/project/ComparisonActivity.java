@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -35,6 +36,8 @@ public class ComparisonActivity extends Activity implements OnItemSelectedListen
 	
 	private String stringUsedForCallingQueryBuilderCountry1 ="";
 	private String stringUsedForCallingQueryBuilderCountry2 ="";
+	
+	public static LinearLayout graphViewLayout;
 	//private String textViewComparisonText="";
 	
 	@Override
@@ -82,6 +85,8 @@ public class ComparisonActivity extends Activity implements OnItemSelectedListen
 		indicatorSpinner.setEnabled(false);
 		country2Spinner.setEnabled(false);
 		
+		
+		
 		setOnClickmethods();
 
 		
@@ -110,7 +115,6 @@ public class ComparisonActivity extends Activity implements OnItemSelectedListen
 		country2Spinner.setEnabled(true);
 	}
 	public void onSpinnerCountry2Select(){
-
 		
 		stringUsedForCallingQueryBuilderCountry1 = countries1[country1Spinner.getSelectedItemPosition()];	
 		stringUsedForCallingQueryBuilderCountry2 = countries2[country2Spinner.getSelectedItemPosition()];
@@ -129,14 +133,15 @@ public class ComparisonActivity extends Activity implements OnItemSelectedListen
 		QueryBuilder.jsonParserReader(comparisonQueryConstructor(QueryBuilder.p2Country2Name));
 		String textViewComparisonText2;
 		textViewComparisonText2 = QueryBuilder.displayInfo;
-		Log.v("adasd",QueryBuilder.displayInfo + "dsd");
 				
 		textViewComparison.setText(textViewComparisonText1 + textViewComparisonText2);		
+		
+		graphViewLayout = (LinearLayout) findViewById(R.id.layout2);  
+		//GraphViewCreator.graphViewCreator();
 		
 		QueryBuilder.p2Country2Name = "";
 		QueryBuilder.p2CountryName = "";
 		QueryBuilder.p4IndicatorName= "";
-		
 		
 		indicatorSpinner.setEnabled(false);
 		country2Spinner.setEnabled(false);
