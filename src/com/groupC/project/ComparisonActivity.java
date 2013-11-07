@@ -30,8 +30,9 @@ public class ComparisonActivity extends Activity implements OnItemSelectedListen
 	private static boolean indicatorIsTouched = false;
 	private static boolean country2IsTouched = false;
 	
-	private String stringUsedForCallingQueryBuilder ="";
-	
+	private String stringUsedForCallingQueryBuilderCountry1 ="";
+	private String stringUsedForCallingQueryBuilderCountry2 ="";
+	//private String textViewComparisonText="";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -108,17 +109,26 @@ public class ComparisonActivity extends Activity implements OnItemSelectedListen
 		country2Spinner.setEnabled(false);
 		country1IsTouched = false;
 		indicatorIsTouched = false;
+		country2IsTouched = false;
 		
-		stringUsedForCallingQueryBuilder = countries[country1Spinner.getSelectedItemPosition()];		
-		QueryBuilder.p2CountryName = stringUsedForCallingQueryBuilder;
+		stringUsedForCallingQueryBuilderCountry1 = countries[country1Spinner.getSelectedItemPosition()];	
+		stringUsedForCallingQueryBuilderCountry2 = countries[country2Spinner.getSelectedItemPosition()];	
+		
+		QueryBuilder.p2CountryName = stringUsedForCallingQueryBuilderCountry1;
+		//QueryBuilder.p2Country2Name = stringUsedForCallingQueryBuilderCountry2;
 		QueryBuilder.p4IndicatorName = indicatorSpinner.getSelectedItem().toString();
-		QueryBuilder.jsonParserReader(IndicatorActivity.countryAndIndicatorQueryConstructor());
-		textViewComparison.setText(QueryBuilder.displayInfo);
+		QueryBuilder.jsonParserReader(comparisonQueryConstructor(QueryBuilder.p2CountryName));
+		//QueryBuilder.jsonParserReader(comparisonQueryConstructor(QueryBuilder.p2Country2Name));
+		
+		String textViewComparisonText = (String) textViewComparison.getText();
+		textViewComparisonText = QueryBuilder.displayInfo;
+		
+		textViewComparison.setText(textViewComparisonText);
 		
 		
 		
 		
-		
+		setOnClickmethods();
 	}
 	
 	
@@ -155,7 +165,10 @@ public class ComparisonActivity extends Activity implements OnItemSelectedListen
 		}
 	});	
 	}
-	
+	public static String comparisonQueryConstructor(String p2CountryName) {	
+		return (QueryBuilder.p1ApiAddress + p2CountryName + QueryBuilder.p3Indicators + QueryBuilder.p4IndicatorName
+				+ QueryBuilder.p5BeginningOfIdentifiers + QueryBuilder.p6ItemsPerPage + QueryBuilder.p7Date + QueryBuilder.p8Format);
+	}
 	
 	
 

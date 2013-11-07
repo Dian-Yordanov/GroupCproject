@@ -107,6 +107,7 @@ public class QueryBuilder {
 	public static String p6ItemsPerPage = "per_page=10&";
 	public static String p7Date = "date=1960:2013&";
 	public static String p8Format = "format=json";
+	public static String p2Country2Name = "";
 	
 	public static int[] years = new int[200];
 	public static double[] values = new double[200];
