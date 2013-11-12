@@ -30,10 +30,11 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int About=0x7f080014;
-        public static final int CountryList=0x7f080011;
-        public static final int Favourites=0x7f080013;
-        public static final int Indicators=0x7f080012;
+        public static final int About=0x7f080015;
+        public static final int CountryList=0x7f080012;
+        public static final int Favourites=0x7f080014;
+        public static final int Indicators=0x7f080013;
+        public static final int MyWorldBank=0x7f080011;
         public static final int country1Spinner=0x7f080005;
         public static final int country2Spinner=0x7f080007;
         public static final int imageView1=0x7f08000b;
