@@ -1,3 +1,4 @@
+//This will create the graphs based on the query it receives
 package com.groupC.project;
 
 import android.graphics.Color;
@@ -5,10 +6,9 @@ import android.util.Log;
 
 import com.jjoe64.graphview.BarGraphView;
 import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.GraphView.GraphViewData;
 import com.jjoe64.graphview.GraphViewSeries;
 import com.jjoe64.graphview.GraphViewSeries.GraphViewSeriesStyle;
-import com.jjoe64.graphview.LineGraphView;
-import com.jjoe64.graphview.GraphView.GraphViewData;
 
 public class GraphViewCreator {
 	//static int num = 150;  
