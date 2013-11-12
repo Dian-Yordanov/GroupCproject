@@ -46,7 +46,7 @@ public class ComparisonActivity extends Activity implements OnItemSelectedListen
 		
 		uiBuidlerComparisonActivity();
 		QueryBuilder.setNameOfClassCallingQueryBuilder(this.toString());
-		GraphViewCreator.nameOftheClassCallingThis= "ComparisonActivity";
+		GraphViewCreator.setNameOfClassCallingGraphViewCreator(this.toString());
 		
 		//QueryBuilder qBuilder = new QueryBuilder(countryAndIndicatorQueryConstructor());
 
@@ -103,11 +103,9 @@ public class ComparisonActivity extends Activity implements OnItemSelectedListen
 		if(country2IsTouched == true) onSpinnerCountry2Select();
 
 	}
-
 	@Override
 	public void onNothingSelected(AdapterView<?> arg0) {
 		//country1IsTouched = false;
-		
 		
 	}
 	public void onSpinnerCountry1Select(){

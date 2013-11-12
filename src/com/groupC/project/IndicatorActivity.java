@@ -52,7 +52,7 @@ public class IndicatorActivity extends Activity implements OnItemSelectedListene
 		QueryBuilder.setNameOfClassCallingQueryBuilder(this.toString());
 		QueryBuilder qBuilder = new QueryBuilder(countryAndIndicatorQueryConstructor());
  
-		GraphViewCreator.nameOftheClassCallingThis= "IndicatorActivity";
+		GraphViewCreator.setNameOfClassCallingGraphViewCreator(this.toString());
 		
 		res = getResources();
 		countries= res.getStringArray(R.array.countryListView);
