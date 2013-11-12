@@ -49,7 +49,7 @@ public class IndicatorActivity extends Activity implements OnItemSelectedListene
 		super.onCreate(savedInstanceState);
  
 		uiBuidlerIndicatorActivity();
-		QueryBuilder.nameOftheClassCallingThisClass = "IndicatorActivity";
+		QueryBuilder.setNameOfClassCallingQueryBuilder(this.toString());
 		QueryBuilder qBuilder = new QueryBuilder(countryAndIndicatorQueryConstructor());
  
 		GraphViewCreator.nameOftheClassCallingThis= "IndicatorActivity";
