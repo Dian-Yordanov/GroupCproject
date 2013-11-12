@@ -113,7 +113,7 @@ public class QueryBuilder {
 	public static double[] values = new double[200];
 	public static int arrayNumber = 0;
 	
-	public static String nameOftheClassCallingThisClass;
+	private static String nameOftheClassCallingThisClass;
 	
 	public static boolean called = false;
 	public static int num = 50;
@@ -127,7 +127,10 @@ public class QueryBuilder {
 		infoParsed = JsonParser.readData(url);
 		jsonStringIntoJsonArrayTransformer();
 	}
- 
+	
+	public static void setNameOfClassCallingQueryBuilder(String className) {
+		nameOftheClassCallingThisClass = className;
+	}
 	public static void jsonStringIntoJsonArrayTransformer() {
 		displayInfo = "";
 		try {

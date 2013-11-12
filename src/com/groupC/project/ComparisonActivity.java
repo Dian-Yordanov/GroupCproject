@@ -45,7 +45,7 @@ public class ComparisonActivity extends Activity implements OnItemSelectedListen
 		super.onCreate(savedInstanceState);
 		
 		uiBuidlerComparisonActivity();
-		QueryBuilder.nameOftheClassCallingThisClass = "ComparisonActivity";
+		QueryBuilder.setNameOfClassCallingQueryBuilder("ComparisonActivity");
 		GraphViewCreator.nameOftheClassCallingThis= "ComparisonActivity";
 		
 		//QueryBuilder qBuilder = new QueryBuilder(countryAndIndicatorQueryConstructor());
