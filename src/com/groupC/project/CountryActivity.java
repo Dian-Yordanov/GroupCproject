@@ -97,6 +97,7 @@ public class CountryActivity  extends Activity implements OnItemSelectedListener
 		stringToBeReturned = stringToBeReturned.toLowerCase();
 		if(stringToBeReturned.contains(" ")){stringToBeReturned = stringUsedForCallingFlagDownloader.toLowerCase();}
 		if(stringToBeReturned.length() > 7){stringToBeReturned = stringToBeReturned.substring(0, 7);}
+		if(stringToBeReturned.equals("afghani")){stringToBeReturned = "afghan";}
 		return stringToBeReturned;
 	}
 }
