@@ -34,7 +34,7 @@ public class CountryActivity  extends Activity implements OnItemSelectedListener
 		super.onCreate(savedInstanceState);
  
 		uiBuidlerCountryActivity();
-		QueryBuilder.setNameOfClassCallingQueryBuilder(this.toString());
+		QueryBuilder.setNameOfClassCallingQueryBuilder(this.getLocalClassName());
 		QueryBuilder qBuilder1 = new QueryBuilder(countryQueryConstructor());
 		
 		res = getResources();
