@@ -97,11 +97,11 @@ public class QueryBuilder {
 			for (int i = 0; i < countries.length(); i++) {
 				jsonInfo = (JSONObject) countries.get(i);
 
-				if(nameOftheClassCallingThisClass=="IndicatorActivity")
+				if(nameOftheClassCallingThisClass.equals("IndicatorActivity"))
 					jsonObjectExtractorForCountryAndIndicator();
-				if(nameOftheClassCallingThisClass=="CountryActivity")
+				if(nameOftheClassCallingThisClass.equals("CountryActivity"))
 					jsonObjectExtractorForCountry();
-				if(nameOftheClassCallingThisClass=="ComparisonActivity")
+				if(nameOftheClassCallingThisClass.equals("ComparisonActivity"))
 					jsonObjectExtractorForCountryAndIndicator();
 				
 			}
