@@ -40,9 +40,9 @@ public class GraphViewCreator {
 
 		 
 		exampleSeries1 = new GraphViewSeries("",seriesStyle,new GraphViewData[] {new GraphViewData(QueryBuilder.years[0], QueryBuilder.values[0])});
-		if(nameOfTheClassCallingThis == "IndicatorActivity"){graphView = new BarGraphView(IndicatorActivity.graphLayout .getContext(),"");}
+		if(nameOfTheClassCallingThis.equals("IndicatorActivity")){graphView = new BarGraphView(IndicatorActivity.graphLayout .getContext(),"");}
 		
-		if(nameOfTheClassCallingThis == "ComparisonActivity"){graphView = new BarGraphView(ComparisonActivity.graphViewLayout .getContext(),"");}
+		if(nameOfTheClassCallingThis.equals("ComparisonActivity")){graphView = new BarGraphView(ComparisonActivity.graphViewLayout .getContext(),"");}
 		
 		exampleSeries2 = new GraphViewSeries("",seriesStyle2,new GraphViewData[] {new GraphViewData(QueryBuilder.years[0], QueryBuilder.values[0])});
 		
