@@ -58,7 +58,6 @@ public class GraphViewCreator {
 		exampleSeries1.appendData(new GraphViewData(QueryBuilder.years[ii],QueryBuilder.values[ii]), false, 1000);		
 		exampleSeries2.appendData(new GraphViewData(QueryBuilder.years[ii+10],QueryBuilder.values[ii+10]), false, 1000);			
 		ii++;
-		Log.v("pls","work"+ii);
 		}
 		
 		//while(ii!=QueryBuilder.arrayNumber){

@@ -62,7 +62,7 @@ public class QueryBuilder {
 	public static String p3Indicators = "/indicators/";
 	public static String p4IndicatorName = "";
 	public static String p5BeginningOfIdentifiers = "?";
-	public static String p6ItemsPerPage = "per_page=10&";
+	public static String p6ItemsPerPage = "per_page=20&";
 	public static String p7Date = "date=1960:2013&";
 	public static String p8Format = "format=json";
 	public static String p2Country2Name = "";
