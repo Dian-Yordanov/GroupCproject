@@ -78,6 +78,8 @@ public class QueryBuilder {
 	public static GraphViewData[] data = new GraphViewData[num];
 	public static GraphViewData[] data2 = new GraphViewData[2*num];
 	
+	private static String thereIsNoInforamtionForTheFollowingYears = "";
+	
 	public QueryBuilder(String urlparser) {
 		jsonParserReader(urlparser);
 	}
@@ -97,12 +99,17 @@ public class QueryBuilder {
 			for (int i = 0; i <countries.length(); i++) {
 				jsonInfo = (JSONObject) countries.get(i);
 
+				//reverseArrayValues(arrayNumber,values);
+				//reverseArrayYears(arrayNumber,years);
+				
 				if(nameOftheClassCallingThisClass.equals("IndicatorActivity"))
 					jsonObjectExtractorForCountryAndIndicator();
 				if(nameOftheClassCallingThisClass.equals("CountryActivity"))
 					jsonObjectExtractorForCountry();
 				if(nameOftheClassCallingThisClass.equals("ComparisonActivity"))
 					jsonObjectExtractorForCountryAndIndicator();
+				
+
 				
 			}
 		} catch (JSONException e) {
@@ -133,16 +140,23 @@ public class QueryBuilder {
 			decimalInfoStr = jsonInfo.getString("decimal");
 			dateInfoStr = jsonInfo.getString("date");
  
+			
+			
+			years[arrayNumber] = Integer.parseInt(dateInfoStr);
+			if(valueInfoStr=="null"){values[arrayNumber] = 0.0;
+			thereIsNoInforamtionForTheFollowingYears +=Integer.toString(years[arrayNumber]) + " ";
+			//Log.v("this will be added to say that there was no information for the folloving years:",thereIsNoInforamtionForTheFollowingYears);
+			}
+			else {values[arrayNumber] = Double.parseDouble(valueInfoStr);}
+			
+			
+			Log.v("arrayNumber",Integer.toString(arrayNumber));
+			//Log.v("",Double.toString(values[arrayNumber]));
+			
 			displayInfo += idIndicator + " " + valueIndicator + " " + idCountry
 					+ " " + valueCountry + " " + valueInfoStr + " "
-					+ decimalInfoStr + " " + dateInfoStr + "\n";
-			
-			if(valueInfoStr=="null"){values[arrayNumber] = 0.0;}
-			else {values[arrayNumber] = Double.parseDouble(valueInfoStr);}
-			years[arrayNumber] = Integer.parseInt(dateInfoStr);
-			
-			Log.v("",dateInfoStr);
-			Log.v("",Double.toString(values[arrayNumber]));
+					+ decimalInfoStr + " " + dateInfoStr + "\n"
+					+ missingInformation() ;
 			
 			arrayNumber++;
 				
@@ -197,6 +211,30 @@ public class QueryBuilder {
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
+	}
+	private static void reverseArrayValues(int size, double[] array){
+		double temp;
+
+		for (int i = 0; i < size/2; i++)
+		  {
+		     temp = array[i];
+		     array[i] = array[size-1 - i];
+		     array[size-1 - i] = temp;
+		  }
+	}
+	private static void reverseArrayYears(int size, int[] array){
+		int temp;
+
+		for (int i = 0; i < size/2; i++)
+		  {
+		     temp = array[i];
+		     array[i] = array[size-1 - i];
+		     array[size-1 - i] = temp;
+		  }
+	}
+	private static String missingInformation(){
+		if(arrayNumber==41){return "We are sorry but there was no information for the following years: " + thereIsNoInforamtionForTheFollowingYears + "\n";}
+		else return "";
 	}
 	
 	

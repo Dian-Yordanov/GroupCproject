@@ -9,6 +9,7 @@ import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.GraphView.GraphViewData;
 import com.jjoe64.graphview.GraphViewSeries;
 import com.jjoe64.graphview.GraphViewSeries.GraphViewSeriesStyle;
+import com.jjoe64.graphview.LineGraphView;
 
 public class GraphViewCreator {
 	//static int num = 150;  
@@ -41,10 +42,10 @@ public class GraphViewCreator {
 		 
 		exampleSeries1 = new GraphViewSeries("",seriesStyle,new GraphViewData[] {new GraphViewData(QueryBuilder.years[0], QueryBuilder.values[0])});
 		if(nameOfTheClassCallingThis.equals("IndicatorActivity")){
-			graphView = new BarGraphView(IndicatorActivity.graphLayout .getContext(),"");}
+			graphView = new LineGraphView(IndicatorActivity.graphLayout .getContext(),"");}
 		
 		if(nameOfTheClassCallingThis.equals("ComparisonActivity")){
-			graphView = new BarGraphView(ComparisonActivity.graphViewLayout .getContext(),"");
+			graphView = new LineGraphView(ComparisonActivity.graphViewLayout .getContext(),"");
 		
 		exampleSeries2 = new GraphViewSeries("",seriesStyle2,new GraphViewData[] {new GraphViewData(QueryBuilder.years[0], QueryBuilder.values[0])});
 		
@@ -68,6 +69,7 @@ public class GraphViewCreator {
 		//Log.v("o"+ii,"o"+ii);
 		//}
 		
+		//graphView.setScalable(true);  
 		
 		
 		//if(0==ii%20){timesThisClassIsCalled++;ii=0;}
