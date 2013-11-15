@@ -62,7 +62,7 @@ public class QueryBuilder {
 	public static String p3Indicators = "/indicators/";
 	public static String p4IndicatorName = "";
 	public static String p5BeginningOfIdentifiers = "?";
-	public static String p6ItemsPerPage = "per_page=20&";
+	public static String p6ItemsPerPage = "per_page=21&";
 	public static String p7Date = "date=1960:2013&";
 	public static String p8Format = "format=json";
 	public static String p2Country2Name = "";
@@ -94,7 +94,7 @@ public class QueryBuilder {
 		try {
 			jsonMainArr = new JSONArray(infoParsed);
 			JSONArray countries = jsonMainArr.getJSONArray(1);
-			for (int i = 0; i < countries.length(); i++) {
+			for (int i = 0; i <countries.length(); i++) {
 				jsonInfo = (JSONObject) countries.get(i);
 
 				if(nameOftheClassCallingThisClass.equals("IndicatorActivity"))
@@ -141,6 +141,8 @@ public class QueryBuilder {
 			else {values[arrayNumber] = Double.parseDouble(valueInfoStr);}
 			years[arrayNumber] = Integer.parseInt(dateInfoStr);
 			
+			Log.v("",dateInfoStr);
+			Log.v("",Double.toString(values[arrayNumber]));
 			
 			arrayNumber++;
 				

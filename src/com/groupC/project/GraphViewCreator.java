@@ -40,15 +40,15 @@ public class GraphViewCreator {
 
 		 
 		exampleSeries1 = new GraphViewSeries("",seriesStyle,new GraphViewData[] {new GraphViewData(QueryBuilder.years[0], QueryBuilder.values[0])});
-		if(nameOfTheClassCallingThis.equals("IndicatorActivity")){Log.v("","afsdfsd");
+		if(nameOfTheClassCallingThis.equals("IndicatorActivity")){
 			graphView = new BarGraphView(IndicatorActivity.graphLayout .getContext(),"");}
 		
-		if(nameOfTheClassCallingThis.equals("ComparisonActivity")){Log.v("","afsdfsd");
-			graphView = new BarGraphView(ComparisonActivity.graphViewLayout .getContext(),"");}
+		if(nameOfTheClassCallingThis.equals("ComparisonActivity")){
+			graphView = new BarGraphView(ComparisonActivity.graphViewLayout .getContext(),"");
 		
 		exampleSeries2 = new GraphViewSeries("",seriesStyle2,new GraphViewData[] {new GraphViewData(QueryBuilder.years[0], QueryBuilder.values[0])});
 		
-		graphView.addSeries(exampleSeries2);
+		graphView.addSeries(exampleSeries2);}
 		graphView.addSeries(exampleSeries1);	
 		 
 		 //((LineGraphView) graphView).setDrawBackground(true);
@@ -56,7 +56,9 @@ public class GraphViewCreator {
 		
 		while(ii!=QueryBuilder.arrayNumber){
 		exampleSeries1.appendData(new GraphViewData(QueryBuilder.years[ii],QueryBuilder.values[ii]), false, 1000);		
-		exampleSeries2.appendData(new GraphViewData(QueryBuilder.years[ii+10],QueryBuilder.values[ii+10]), false, 1000);			
+		if(nameOfTheClassCallingThis.equals("ComparisonActivity")){
+			exampleSeries2.appendData(new GraphViewData(QueryBuilder.years[ii+20],QueryBuilder.values[ii+20]), false, 1000);			
+		}
 		ii++;
 		}
 		
