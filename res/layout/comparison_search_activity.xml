@@ -22,7 +22,6 @@
             android:ems="10" 
             android:text="Search a country">
 
-            <requestFocus />
         </EditText>
 
         <EditText

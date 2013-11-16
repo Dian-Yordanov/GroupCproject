@@ -1,5 +1,12 @@
-package com.groupC.project;
+package displayActivities;
 
+import com.groupC.project.R;
+import com.groupC.project.R.array;
+import com.groupC.project.R.id;
+import com.groupC.project.R.layout;
+
+import logicClasses.GraphViewCreator;
+import logicClasses.QueryBuilder;
 import android.app.Activity;
 import android.content.res.Resources;
 import android.os.Bundle;

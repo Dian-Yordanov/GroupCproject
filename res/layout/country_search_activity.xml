@@ -5,7 +5,7 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/CountryText"
+        android:id="@+id/countryText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Select a country you want to learn more about" />
@@ -17,7 +17,6 @@
         android:ems="10" 
         android:text="Search a country" >
 
-        <requestFocus />
     </EditText>
 
     <ListView

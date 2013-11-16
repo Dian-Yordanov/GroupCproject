@@ -1,11 +1,18 @@
-package com.groupC.project;
+package displayActivities;
  
 import java.util.Iterator;
+
+import logicClasses.GraphViewCreator;
+import logicClasses.QueryBuilder;
  
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.groupC.project.R;
+import com.groupC.project.R.array;
+import com.groupC.project.R.id;
+import com.groupC.project.R.layout;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.GraphViewSeries;
 import com.jjoe64.graphview.LineGraphView;

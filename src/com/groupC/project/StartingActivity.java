@@ -1,5 +1,9 @@
 package com.groupC.project;
 
+import displayActivities.AboutUsActivity;
+import searchActivities.ComparisonSearchActivity;
+import searchActivities.CountrySearchActivity;
+import searchActivities.IndicatorSearchActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

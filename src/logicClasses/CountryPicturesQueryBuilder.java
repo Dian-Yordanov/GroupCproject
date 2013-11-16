@@ -1,4 +1,6 @@
-package com.groupC.project;
+package logicClasses;
+
+import displayActivities.CountryActivity;
 
 import android.util.Log;
 

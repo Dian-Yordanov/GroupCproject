@@ -1,4 +1,4 @@
-package com.groupC.project;
+package logicClasses;
 
 import java.io.BufferedReader;
 import java.io.IOException;

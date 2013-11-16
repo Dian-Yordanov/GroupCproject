@@ -31,7 +31,6 @@ public final class R {
     }
     public static final class id {
         public static final int ComparisonText=0x7f080009;
-        public static final int CountryText=0x7f080014;
         public static final int MyWorldBank=0x7f080020;
         public static final int about=0x7f080024;
         public static final int comparisonCountryEditText1=0x7f08000a;
@@ -45,6 +44,7 @@ public final class R {
         public static final int country1Spinner=0x7f080005;
         public static final int country2Spinner=0x7f080007;
         public static final int countryListSearch=0x7f080021;
+        public static final int countryText=0x7f080014;
         public static final int imageView1=0x7f080012;
         public static final int imageView2=0x7f080013;
         public static final int indicatorCountryEditText1=0x7f08001c;

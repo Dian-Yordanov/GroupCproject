@@ -1,6 +1,9 @@
 
 
-package com.groupC.project;
+package displayActivities;
+
+import com.groupC.project.R;
+import com.groupC.project.R.layout;
 
 import android.app.Activity;
 import android.os.Bundle;
