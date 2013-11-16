@@ -4,6 +4,7 @@
     <string name="app_name">WorldBankApp</string>
 
     <string-array name="countryListView">
+        <item>Please select a country</item>
         <item>AFG</item>
         <item>ALB</item>
         <item>DZA</item>
@@ -247,6 +248,7 @@
         <item>ZWE</item>
     </string-array>
     <string-array name="countryArrayWithOnly2letters">
+        <item>Please select a country</item>
         <item>AF</item>
         <item>AL</item>
         <item>DZ</item>
@@ -491,6 +493,7 @@
     </string-array>
     
     <string-array name="countryNames">
+        <item>Please select a country</item>
         <item>Afghanistan</item>
         <item>Albania</item>
         <item>Algeria</item>
@@ -735,6 +738,7 @@
     </string-array>
     
 	<string-array name="indicatorListView">
+	    <item>Please select an indicator</item>
         <item>1.1_ACCESS.ELECTRICITY.TOT</item>
         <item>1.1_TOTAL.FINAL.ENERGY.CONSUM</item>
         <item>1.1_YOUTH.LITERACY.RATE</item>

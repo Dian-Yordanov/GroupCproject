@@ -163,6 +163,7 @@ public class ComparisonActivity extends Activity implements OnItemSelectedListen
 		public boolean onTouch(View v, MotionEvent event) {
 			// TODO Auto-generated method stub
 			if(event.getAction() == MotionEvent.ACTION_UP){
+				Log.v("",event.toString());
 				country1IsTouched = true;}
 			return false;
 		}
