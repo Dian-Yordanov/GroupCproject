@@ -8,7 +8,7 @@ public class CountrySearchActivity extends Activity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.aboutus_activity);
+		setContentView(R.layout.country_search_activity);
 
 	}
 

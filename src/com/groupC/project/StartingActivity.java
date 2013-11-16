@@ -26,13 +26,13 @@ public class StartingActivity extends Activity {
 		aboutUs = (Button) findViewById(R.id.about);
 	}
 
-	public void gotoCountryView(View view) {
+	public void gotoCountrySearchView(View view) {
 		Intent i = new Intent(StartingActivity.this, CountrySearchActivity.class);
 		startActivity(i);
 
 	}
 
-	public void gotoIndicatorsView(View view) {
+	public void gotoIndicatorsSearchView(View view) {
 		Intent i = new Intent(StartingActivity.this, IndicatorSearchActivity.class);
 		startActivity(i);
 
@@ -43,7 +43,7 @@ public class StartingActivity extends Activity {
 
 	}
 
-	public void gotoFavouritesView(View view) {
+	public void gotoComparisonSearchView(View view) {
 		Intent i = new Intent(StartingActivity.this, ComparisonSearchActivity.class);
 		startActivity(i);
 
