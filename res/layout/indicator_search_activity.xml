@@ -5,27 +5,29 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/indicatorText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="Select a country you wish to learn more about by an indicator" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
         <EditText
-            android:id="@+id/editText1"
-            android:layout_width="160dp"
+            android:id="@+id/indicatorCountryEditText1"
+            android:layout_width="149dp"
             android:layout_height="wrap_content"
-            android:ems="10" />
+            android:ems="10"
+            android:text="Search a country" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/indicatorCountryEditText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:ems="10" >
+            android:ems="10" 
+            android:text="Search an indicator">
 
             <requestFocus />
         </EditText>
@@ -37,14 +39,14 @@
         android:layout_height="wrap_content" >
 
         <ListView
-            android:id="@+id/listView1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" >
+            android:id="@+id/indicatorListView1"
+            android:layout_width="146dp"
+            android:layout_height="wrap_content" >
+
         </ListView>
 
         <ListView
-            android:id="@+id/listView2"
+            android:id="@+id/indicatorListView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1" >

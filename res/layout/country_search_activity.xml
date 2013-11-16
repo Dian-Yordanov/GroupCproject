@@ -5,22 +5,23 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/CountryText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="Select a country you want to learn more about" />
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/selectYourCountryEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10" >
+        android:ems="10" 
+        android:text="Search a country" >
 
         <requestFocus />
     </EditText>
 
     <ListView
-        android:id="@+id/listView1"
+        android:id="@+id/countriesListView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
     </ListView>
