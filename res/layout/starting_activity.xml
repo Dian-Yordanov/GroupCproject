@@ -14,31 +14,31 @@
         android:text="My WorldBank" />
 
     <Button
-        android:id="@+id/CountryList"
+        android:id="@+id/countryListSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.01"
         android:text="@string/CList" 
-        android:onClick="gotoCountryView"/>
+        android:onClick="gotoCountrySearchView"/>
 
     <Button
-        android:id="@+id/Indicators"
+        android:id="@+id/indicatorsSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.01"
         android:text="@string/Indicator" 
-        android:onClick="gotoIndicatorsView"/>
+        android:onClick="gotoIndicatorsSearchView"/>
 
     <Button
-        android:id="@+id/Favourites"
+        android:id="@+id/comparisonSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.01"
         android:text="@string/Comparison" 
-        android:onClick="gotoFavouritesView"/>
+        android:onClick="gotoComparisonSearchView"/>
 
     <Button
-        android:id="@+id/About"
+        android:id="@+id/about"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.01"

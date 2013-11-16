@@ -10,9 +10,9 @@ import android.widget.Spinner;
 
 public class StartingActivity extends Activity {
 
-	Button countries;
-	Button indicators;
-	Button favourites;
+	Button countriesSearch;
+	Button indicatorsSearch;
+	Button favouritesSearch;
 	Button aboutUs;
 //test
 	@Override
@@ -20,20 +20,20 @@ public class StartingActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.starting_activity);
 
-		indicators = (Button) findViewById(R.id.Indicators);
-		countries = (Button) findViewById(R.id.CountryList);
-		favourites = (Button) findViewById(R.id.Favourites);
-		aboutUs = (Button) findViewById(R.id.About);
+		indicatorsSearch = (Button) findViewById(R.id.indicatorsSearch);
+		countriesSearch = (Button) findViewById(R.id.countryListSearch);
+		favouritesSearch = (Button) findViewById(R.id.comparisonSearch);
+		aboutUs = (Button) findViewById(R.id.about);
 	}
 
 	public void gotoCountryView(View view) {
-		Intent i = new Intent(StartingActivity.this, CountryActivity.class);
+		Intent i = new Intent(StartingActivity.this, CountrySearchActivity.class);
 		startActivity(i);
 
 	}
 
 	public void gotoIndicatorsView(View view) {
-		Intent i = new Intent(StartingActivity.this, IndicatorActivity.class);
+		Intent i = new Intent(StartingActivity.this, IndicatorSearchActivity.class);
 		startActivity(i);
 
 	}
@@ -44,7 +44,7 @@ public class StartingActivity extends Activity {
 	}
 
 	public void gotoFavouritesView(View view) {
-		Intent i = new Intent(StartingActivity.this, ComparisonActivity.class);
+		Intent i = new Intent(StartingActivity.this, ComparisonSearchActivity.class);
 		startActivity(i);
 
 	}

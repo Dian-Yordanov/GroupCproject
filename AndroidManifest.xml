@@ -26,15 +26,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.groupC.project.CountryActivity"
+            android:name="com.groupC.project.CountrySearchActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.groupC.project.IndicatorActivity"
+            android:name="com.groupC.project.IndicatorSearchActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.groupC.project.ComparisonActivity"
+            android:name="com.groupC.project.ComparisonSearchActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
