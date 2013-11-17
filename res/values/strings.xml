@@ -10,8 +10,6 @@
         <item>ASM</item>
         <item>AND</item>
         <item>AGO</item>
-        <item>AIA</item>
-        <item>ATA</item>
         <item>ATG</item>
         <item>ARG</item>
         <item>ARM</item>
@@ -32,9 +30,7 @@
         <item>BOL</item>
         <item>BIH</item>
         <item>BWA</item>
-        <item>BVT</item>
         <item>BRA</item>
-        <item>IOT</item>
         <item>BRN</item>
         <item>BGR</item>
         <item>BFA</item>
@@ -48,13 +44,10 @@
         <item>TCD</item>
         <item>CHL</item>
         <item>CHN</item>
-        <item>CXR</item>
-        <item>CCK</item>
         <item>COL</item>
         <item>COM</item>
         <item>COG</item>
         <item>COD</item>
-        <item>COK</item>
         <item>CRI</item>
         <item>CIV</item>
         <item>HRV</item>
@@ -73,33 +66,25 @@
         <item>ERI</item>
         <item>EST</item>
         <item>ETH</item>
-        <item>FLK</item>
         <item>FRO</item>
         <item>FJI</item>
         <item>FIN</item>
         <item>FRA</item>
-        <item>FXX</item>
-        <item>GUF</item>
         <item>PYF</item>
-        <item>ATF</item>
         <item>GAB</item>
         <item>GMB</item>
         <item>GEO</item>
         <item>DEU</item>
         <item>GHA</item>
-        <item>GIB</item>
         <item>GRC</item>
         <item>GRL</item>
         <item>GRD</item>
-        <item>GLP</item>
         <item>GUM</item>
         <item>GTM</item>
         <item>GIN</item>
         <item>GNB</item>
         <item>GUY</item>
         <item>HTI</item>
-        <item>HMD</item>
-        <item>VAT</item>
         <item>HND</item>
         <item>HKG</item>
         <item>HUN</item>
@@ -130,7 +115,6 @@
         <item>LIE</item>
         <item>LTU</item>
         <item>LUX</item>
-        <item>MAC</item>
         <item>MKD</item>
         <item>MDG</item>
         <item>MWI</item>
@@ -139,32 +123,24 @@
         <item>MLI</item>
         <item>MLT</item>
         <item>MHL</item>
-        <item>MTQ</item>
         <item>MRT</item>
-        <item>MUS</item>
-        <item>MYT</item>
+        <item>MUS</item>     
         <item>MEX</item>
-        <item>FSM</item>
         <item>MDA</item>
         <item>MCO</item>
         <item>MNG</item>
         <item>MNE</item>
-        <item>MSR</item>
         <item>MAR</item>
         <item>MOZ</item>
         <item>MMR</item>
         <item>NAM</item>
-        <item>NRU</item>
         <item>NPL</item>
         <item>NLD</item>
-        <item>ANT</item>
         <item>NCL</item>
         <item>NZL</item>
         <item>NIC</item>
         <item>NER</item>
         <item>NGA</item>
-        <item>NIU</item>
-        <item>NFK</item>
         <item>MNP</item>
         <item>NOR</item>
         <item>OMN</item>
@@ -175,12 +151,10 @@
         <item>PRY</item>
         <item>PER</item>
         <item>PHL</item>
-        <item>PCN</item>
         <item>POL</item>
         <item>PRT</item>
         <item>PRI</item>
         <item>QAT</item>
-        <item>REU</item>
         <item>ROM</item>
         <item>RUS</item>
         <item>RWA</item>
@@ -202,24 +176,18 @@
         <item>SOM</item>
         <item>ZAF</item>
         <item>SSD</item>
-        <item>SGS</item>
         <item>ESP</item>
         <item>LKA</item>
-        <item>SHN</item>
-        <item>SPM</item>
         <item>SDN</item>
         <item>SUR</item>
-        <item>SJM</item>
         <item>SWZ</item>
         <item>SWE</item>
         <item>CHE</item>
-        <item>SYR</item>
-        <item>TWN</item>
+        <item>SYR</item>	
         <item>TJK</item>
         <item>TZA</item>
         <item>THA</item>
         <item>TGO</item>
-        <item>TKL</item>
         <item>TON</item>
         <item>TTO</item>
         <item>TUN</item>
@@ -232,33 +200,26 @@
         <item>ARE</item>
         <item>GBR</item>
         <item>USA</item>
-        <item>UMI</item>
         <item>URY</item>
         <item>UZB</item>
         <item>VUT</item>
         <item>VEN</item>
         <item>VNM</item>
-        <item>VGB</item>
-        <item>VIR</item>
-        <item>WLF</item>
-        <item>ESH</item>
         <item>YEM</item>
         <item>ZMB</item>
         <item>ZWE</item>
     </string-array>
-    <string-array name="countryArrayWithOnly2letters">
+    <string-array name="countryArrayWithOnly2letters">  
         <item>AF</item>
         <item>AL</item>
-        <item>DZ</item>
-        <item>AS</item>
+        <item>DZ</item>				
+        <item>AMERICAN_SAMOA</item>    
         <item>AD</item>
         <item>AO</item>
-        <item>AI</item>
-        <item>AQ</item>
         <item>AG</item>
         <item>AR</item>
         <item>AM</item>
-        <item>AW</item>
+        <item>ARUBA</item>   
         <item>AU</item>
         <item>AT</item>
         <item>AZ</item>
@@ -270,14 +231,13 @@
         <item>BE</item>
         <item>BZ</item>
         <item>BJ</item>
-        <item>BM</item>
+        <item>BERMUDA</item>     
+        <item>AF</item>
         <item>BT</item>
         <item>BO</item>
         <item>BA</item>
         <item>BW</item>
-        <item>BV</item>
-        <item>BR</item>
-        <item>IO</item>
+        <item>BR</item>   
         <item>BN</item>
         <item>BG</item>
         <item>BF</item>
@@ -285,19 +245,16 @@
         <item>KH</item>
         <item>CM</item>
         <item>CA</item>
-        <item>CV</item>
+        <item>CAYMAN_ISLANDS</item>   
         <item>KY</item>
         <item>CF</item>
         <item>TD</item>
         <item>CL</item>
         <item>CN</item>
-        <item>CX</item>
-        <item>CC</item>
         <item>CO</item>
         <item>KM</item>
         <item>CG</item>
-        <item>CD</item>
-        <item>CK</item>
+        <item>CD</item>	
         <item>CR</item>
         <item>CI</item>
         <item>HR</item>
@@ -307,43 +264,34 @@
         <item>DK</item>
         <item>DJ</item>
         <item>DM</item>
-        <item>DO</item>
-        <item>TP</item>
+        <item>EAST_TIMOR</item>      
         <item>EC</item>
         <item>EG</item>
         <item>SV</item>
         <item>GQ</item>
         <item>ER</item>
         <item>EE</item>
-        <item>ET</item>
-        <item>FK</item>
-        <item>FO</item>
+        <item>ET</item>		
+        <item>FAROE_ISLANDS</item>
         <item>FJ</item>
         <item>FI</item>
-        <item>FR</item>
-        <item>FX</item>
-        <item>GF</item>
-        <item>PF</item>
-        <item>TF</item>
+        <item>FR</item>		
+        <item>FRENCH_POLYNESIA</item> 	
         <item>GA</item>
         <item>GM</item>
         <item>GE</item>
         <item>DE</item>
         <item>GH</item>
-        <item>GI</item>
-        <item>GR</item>
+        <item>GREENLAND</item>	
         <item>GL</item>
-        <item>GD</item>
-        <item>GP</item>
+        <item>GUAM</item>	
         <item>GU</item>
         <item>GT</item>
         <item>GN</item>
         <item>GW</item>
         <item>GY</item>
-        <item>HT</item>
-        <item>HM</item>
-        <item>VA</item>
-        <item>HN</item>
+        <item>HT</item>	
+        <item>HONG_KONG</item>	   
         <item>HK</item>
         <item>HU</item>
         <item>IS</item>
@@ -373,7 +321,6 @@
         <item>LI</item>
         <item>LT</item>
         <item>LU</item>
-        <item>MO</item>
         <item>MK</item>
         <item>MG</item>
         <item>MW</item>
@@ -382,32 +329,24 @@
         <item>ML</item>
         <item>MT</item>
         <item>MH</item>
-        <item>MQ</item>
         <item>MR</item>
         <item>MU</item>
-        <item>YT</item>
         <item>MX</item>
-        <item>FM</item>
         <item>MD</item>
         <item>MC</item>
         <item>MN</item>
         <item>ME</item>
-        <item>MS</item>
         <item>MA</item>
         <item>MZ</item>
         <item>MM</item>
         <item>NA</item>
-        <item>NR</item>
         <item>NP</item>
-        <item>NL</item>
-        <item>AN</item>
+        <item>NEW_CALEDONIA</item>
         <item>NC</item>
         <item>NZ</item>
         <item>NI</item>
         <item>NE</item>
-        <item>NG</item>
-        <item>NU</item>
-        <item>NF</item>
+        <item>NORTHERN_MARIANA_ISLANDS</item>
         <item>MP</item>
         <item>NO</item>
         <item>OM</item>
@@ -418,12 +357,10 @@
         <item>PY</item>
         <item>PE</item>
         <item>PH</item>
-        <item>PN</item>
         <item>PL</item>
-        <item>PT</item>
-        <item>PR</item>
+        <item>PT</item>	
+        <item>PUERTO_RICO</item>	
         <item>QA</item>
-        <item>RE</item>
         <item>RO</item>
         <item>RU</item>
         <item>RW</item>
@@ -444,65 +381,52 @@
         <item>SB</item>
         <item>SO</item>
         <item>ZA</item>
-        <item>SS</item>
-        <item>GS</item>
+        <item>SOUTH_SUDAN</item>
         <item>ES</item>
         <item>LK</item>
-        <item>SH</item>
-        <item>PM</item>
         <item>SD</item>
         <item>SR</item>
-        <item>SJ</item>
         <item>SZ</item>
         <item>SE</item>
         <item>CH</item>
         <item>SY</item>
-        <item>TW</item>
         <item>TJ</item>
         <item>TZ</item>
         <item>TH</item>
         <item>TG</item>
-        <item>TK</item>
         <item>TO</item>
         <item>TT</item>
         <item>TN</item>
         <item>TR</item>
         <item>TM</item>
-        <item>TC</item>
+        <item>TURKS_AND_CAICOS_ISLANDS</item>
         <item>TV</item>
         <item>UG</item>
         <item>UA</item>
         <item>AE</item>
         <item>GB</item>
         <item>US</item>
-        <item>UM</item>
         <item>UY</item>
         <item>UZ</item>
         <item>VU</item>
         <item>VE</item>
         <item>VN</item>
-        <item>VG</item>
-        <item>VI</item>
-        <item>WF</item>
-        <item>EH</item>
         <item>YE</item>
         <item>ZM</item>
         <item>ZW</item>
     </string-array>
-    
+  
     <string-array name="countryNames">
         <item>Afghanistan</item>
         <item>Albania</item>
         <item>Algeria</item>
-        <item>American samoa</item>
+        <item>American samoa</item>	
         <item>Andorra</item>
         <item>Angola</item>
-        <item>Anguilla</item>
-        <item>Antarctica</item>
         <item>Antigua and Barbuda</item>
         <item>Argentina</item>
         <item>Armenia</item>
-        <item>Aruba</item>
+        <item>Aruba</item> 
         <item>Australia</item>
         <item>Austria</item>
         <item>Azerbaijan</item>
@@ -514,14 +438,12 @@
         <item>Belgium</item>
         <item>Belize</item>
         <item>Benin</item>
-        <item>Bermuda</item>
+        <item>Bermuda</item> 
         <item>Bhutan</item>
         <item>Bolivia</item>
         <item>Bosnia and Herzegowina</item>
         <item>Botswana</item>
-        <item>Bouvet Island</item>
         <item>Brazil</item>
-        <item>British Indian Ocean Territory</item>
         <item>Brunei darussalam</item>
         <item>Bulgaria</item>
         <item>Burkina Faso</item>
@@ -530,18 +452,15 @@
         <item>Cameroon</item>
         <item>Canada</item>
         <item>Cape Verde</item>
-        <item>Cayman Islands</item>
+        <item>Cayman Islands</item>  
         <item>Central African Republic</item>
         <item>Chad</item>
         <item>Chile</item>
         <item>China</item>
-        <item>Christmas Island</item>
-        <item>Cocos (keeling) Islands</item>
         <item>Colombia</item>
         <item>Comoros</item>
         <item>Congo</item>
         <item>Congo, the drc</item>
-        <item>Cook Islands</item>
         <item>Costa Rica</item>
         <item>Cote Divoire</item>
         <item>Croatia (local name: hrvatska)</item>
@@ -552,7 +471,7 @@
         <item>Djibouti</item>
         <item>Dominica</item>
         <item>Dominican Republic</item>
-        <item>East Timor</item>
+        <item>East Timor</item>   
         <item>Ecuador</item>
         <item>Egypt</item>
         <item>El Salvador</item>
@@ -560,40 +479,32 @@
         <item>Eritrea</item>
         <item>Estonia</item>
         <item>Ethiopia</item>
-        <item>Falkland Islands (Malvinas)</item>
-        <item>Faroe Islands</item>
+        <item>Faroe Islands</item>   
         <item>Fiji</item>
         <item>Finland</item>
         <item>France</item>
-        <item>France, Metropolitan</item>
-        <item>French Guiana</item>
-        <item>French Polynesia</item>
-        <item>French Southern Territories</item>
+        <item>French Polynesia</item>  
         <item>Gabon</item>
         <item>Gambia</item>
         <item>Georgia</item>
         <item>Germany</item>
         <item>Ghana</item>
-        <item>Gibraltar</item>
         <item>Greece</item>
-        <item>Greenland</item>
+        <item>Greenland</item>   
         <item>Grenada</item>
-        <item>Guadeloupe</item>
-        <item>Guam</item>
+        <item>Guam</item>   
         <item>Guatemala</item>
         <item>Guinea</item>
         <item>Guinea-bissau</item>
         <item>Guyana</item>
         <item>Haiti</item>
-        <item>Heard and McDonald Islands</item>
-        <item>Holy see (Vatican City State)</item>
         <item>Honduras</item>
-        <item>Hong Kong</item>
+        <item>Hong Kong</item>  
         <item>Hungary</item>
         <item>Iceland</item>
         <item>India</item>
         <item>Indonesia</item>
-        <item>Iran (islamic republic of)</item>
+        <item>Iran</item>
         <item>Iraq</item>
         <item>Ireland</item>
         <item>Israel</item>
@@ -604,8 +515,8 @@
         <item>Kazakhstan</item>
         <item>Kenya</item>
         <item>Kiribati</item>
-        <item>Korea, d.p.r.o.</item>
-        <item>Korea, Republic of</item>
+        <item>North Korea</item>
+        <item>South Korea</item>
         <item>Kuwait</item>
         <item>Kyrgyzstan</item>
         <item>Laos </item>
@@ -613,11 +524,10 @@
         <item>Lebanon</item>
         <item>Lesotho</item>
         <item>Liberia</item>
-        <item>Libyan Arab Jamahiriya</item>
+        <item>Libya</item>
         <item>Liechtenstein</item>
         <item>Lithuania</item>
         <item>Luxembourg</item>
-        <item>Macau</item>
         <item>Macedonia</item>
         <item>Madagascar</item>
         <item>Malawi</item>
@@ -626,33 +536,25 @@
         <item>Mali</item>
         <item>Malta</item>
         <item>Marshall islands</item>
-        <item>Martinique</item>
         <item>Mauritania</item>
         <item>Mauritius</item>
-        <item>Mayotte</item>
         <item>Mexico</item>
-        <item>Micronesia, federated states of</item>
         <item>Moldova, republic of</item>
         <item>Monaco</item>
         <item>Mongolia</item>
         <item>Montenegro</item>
-        <item>Montserrat</item>
         <item>Morocco</item>
         <item>Mozambique</item>
-        <item>Myanmar (Burma) </item>
+        <item>Myanmar</item>
         <item>Namibia</item>
-        <item>Nauru</item>
         <item>Nepal</item>
         <item>Netherlands</item>
-        <item>Netherlands Antilles</item>
-        <item>New caledonia</item>
+        <item>New caledonia</item>  
         <item>New zealand</item>
         <item>Nicaragua</item>
         <item>Niger</item>
         <item>Nigeria</item>
-        <item>Niue</item>
-        <item>Norfolk island</item>
-        <item>Northern Mariana Islands</item>
+        <item>Northern Mariana Islands</item> 
         <item>Norway</item>
         <item>Oman</item>
         <item>Pakistan</item>
@@ -662,12 +564,10 @@
         <item>Paraguay</item>
         <item>Peru</item>
         <item>Philippines</item>
-        <item>Pitcairn</item>
         <item>Poland</item>
         <item>Portugal</item>
         <item>Puerto rico</item>
         <item>Qatar</item>
-        <item>Reunion</item>
         <item>Romania</item>
         <item>Russian Federation</item>
         <item>Rwanda</item>
@@ -683,64 +583,105 @@
         <item>Seychelles</item>
         <item>Sierra Leone</item>
         <item>Singapore</item>
-        <item>Slovakia (Slovak Republic)</item>
+        <item>Slovakia</item>
         <item>Slovenia</item>
         <item>Solomon Islands</item>
         <item>Somalia</item>
         <item>South Africa</item>
-        <item>South Sudan</item>
-        <item>South Georgia and South s.s.</item>
+        <item>South Sudan</item>	
         <item>Spain</item>
         <item>Sri Lanka</item>
-        <item>St. Helena</item>
-        <item>St. Pierre and Miquelon</item>
         <item>Sudan</item>
-        <item>Suriname</item>
-        <item>Svalbard and jan Mayen Islands</item>
+        <item>Suriname</item>				
         <item>Swaziland</item>
         <item>Sweden</item>
         <item>Switzerland</item>
-        <item>Syrian Arab Republic</item>
-        <item>Taiwan, province of China</item>
+        <item>Syria</item>
         <item>Tajikistan</item>
-        <item>Tanzania, united republic of</item>
+        <item>Tanzania</item>
         <item>Thailand</item>
         <item>Togo</item>
-        <item>Tokelau</item>
         <item>Tonga</item>
         <item>Trinidad and Tobago</item>
         <item>Tunisia</item>
         <item>Turkey</item>
         <item>Turkmenistan</item>
-        <item>Turks and Caicos Islands</item>
+        <item>Turks and Caicos Islands</item>	
         <item>Tuvalu</item>
         <item>Uganda</item>
         <item>Ukraine</item>
         <item>United Arab Emirates</item>
         <item>United Kingdom</item>
         <item>United States</item>
-        <item>U.S. minor islands</item>
         <item>Uruguay</item>
         <item>Uzbekistan</item>
         <item>Vanuatu</item>
         <item>Venezuela</item>
         <item>Vietnam</item>
-        <item>Virgin Islands (British)</item>
-        <item>Virgin Islands (U.S.)</item>
-        <item>Wallis and Futuna Islands</item>
-        <item>Western Sahara</item>
         <item>Yemen</item>
         <item>Zambia</item>
         <item>Zimbabwe</item>
     </string-array>
     
 	<string-array name="indicatorListView">
-        <item>1.1_ACCESS.ELECTRICITY.TOT</item>
-        <item>1.1_TOTAL.FINAL.ENERGY.CONSUM</item>
-        <item>1.1_YOUTH.LITERACY.RATE</item>
-        <item>1.2_ACCESS.ELECTRICITY.RURAL</item>
-        <item>1.3_ACCESS.ELECTRICITY.URBAN</item>
+        <item>GC.DOD.TOTL.GD.ZS</item>
+        <item>NE.EXP.GNFS.ZS</item>
+        <item>NY.GDP.MKTP.CD</item>
+        <item>NY.GDP.PCAP.CD</item>
+        <item>FP.CPI.TOTL.ZG</item>
+        <item>SH.XPD.PCAP</item>
+        <item>NE.EXP.GNFS.ZS</item>
+        <item>SH.XPD.PUBL</item>
+        <item>SP.DYN.CBRT.IN</item>
+        <item>SP.DYN.CDRT.IN</item>
+        <item>SP.DYN.LE00.IN</item>
+        <item>SP.POP.GROW</item>
+        <item>SP.POP.TOTL</item>
+        <item>ER.H2O.FWTL.K3</item>
+        <item>EG.USE.ELEC.KH</item>
+        <item>IT.NET.BBND.P2</item>
+        <item>IS.ROD.PAVE.ZS</item>
+        <item>SL.EMP.TOTL.SP.ZS</item>
+        <item>SL.UEM.TOTL.ZS</item>
+        <item>GB.XPD.RSDV.GD.ZS</item>
+        <item>SE.XPD.TOTL.GB.ZS</item>
+        <item>SP.RUR.TOTL.ZS</item>
+        <item>IE.PPI.WATR.CD</item>
+        <item>NE.IMP.GNFS.ZS</item>
+               
     </string-array>
+    
+	<string-array name="indicatorMeaningListView">
+        <item>Central government debt, total (% of GDP)</item>
+        <item>Exports of goods and services (% of GDP)</item>
+        <item>GDP (current US$)</item>
+        <item>GDP per capita (current US$)</item>
+        <item>Inflation, consumer prices (annual %)</item>
+        <item>Imports of goods and services (% of GDP)</item>
+        <item>Health expenditure per capita (current US$)</item>
+        <item>Health expenditure, public (% of total health expenditure)</item>
+        <item>Birth rate, crude (per 1,000 people)</item>
+        <item>Death rate, crude (per 1,000 people)</item>
+        <item>Life expectancy at birth, total (years)</item>
+        <item>Population growth (annual %)</item>
+        <item>Population (Total)</item>
+        <item>Annual freshwater withdrawals, total (billion cubic meters)</item>
+        <item>Electric power consumption (kWh)</item>
+        <item>Fixed broadband Internet subscribers (per 100 people)</item>
+        <item>Roads, paved (% of total roads)</item>
+        <item>Employment to population ratio, 15+, total (%)</item>
+        <item>Unemployment, total (% of total labor force)</item>
+        <item>Research and development expenditure (% of GDP)</item>
+        <item>Public spending on education, total (% of government expenditure)</item>
+        <item>Rural population (% of total population)</item>
+        <item>Investment in water and sanitation with private participation (current US$)</item>
+        <item>Imports of goods and services (% of GDP)</item>
+        
+    </string-array>
+    
+	
+	
+    
 
     <string name="CList">Country List</string>
     <string name="Indicator">Indicators</string>
