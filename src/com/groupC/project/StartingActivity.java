@@ -1,4 +1,4 @@
-package logicClasses;
+package com.groupC.project;
 import com.groupC.project.*;
 import com.groupC.project.R.id;
 import com.groupC.project.R.layout;

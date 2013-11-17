@@ -21,7 +21,8 @@ public class CountryPicturesQueryBuilder {
 	public CountryPicturesQueryBuilder(){}
 	public static void flagQuery(){
 		countryCode = countryCode .toLowerCase();
-		//CountryActivity.flagView.setImageBitmap(ImageDownloader.loadBitmap(urlBuilderFlagsBeginning + countryCode  + urlBuilderFlagsEnd));
-		//CountryActivity.countryView.setImageBitmap(ImageDownloader.loadBitmap(urlBuilderCountryLocationBeginning + countryName + urlBuilderCountryLocationEnd));
+		Log.v("dsad",countryCode);	
+		CountryActivity.flagView.setImageBitmap(ImageDownloader.loadBitmap(urlBuilderFlagsBeginning + countryCode  + urlBuilderFlagsEnd));
+		CountryActivity.countryView.setImageBitmap(ImageDownloader.loadBitmap(urlBuilderCountryLocationBeginning + countryName + urlBuilderCountryLocationEnd));
 	}
 }

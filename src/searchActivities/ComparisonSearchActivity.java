@@ -1,4 +1,4 @@
-package logicClasses;
+package searchActivities;
 
 import com.groupC.project.*;
 import displayActivities.*;

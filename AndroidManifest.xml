@@ -17,7 +17,7 @@
         android:label="@string/app_name"
         android:theme="@style/android:Theme.Holo.Light.NoActionBar.Fullscreen" >
         <activity
-            android:name="logicClasses.StartingActivity"
+            android:name="com.groupC.project.StartingActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,19 +25,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="logicClasses.CountrySearchActivity"
+            android:name="searchActivities.CountrySearchActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="logicClasses.IndicatorSearchActivity"
+            android:name="searchActivities.IndicatorSearchActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="logicClasses.ComparisonSearchActivity"
+            android:name="searchActivities.ComparisonSearchActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="logicClasses.AboutUsActivity"
+            android:name="displayActivities.AboutUsActivity"
             android:label="@string/app_name" >
         </activity>
     </application>

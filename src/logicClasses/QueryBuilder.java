@@ -107,11 +107,11 @@ public class QueryBuilder {
 				//reverseArrayValues(arrayNumber,values);
 				//reverseArrayYears(arrayNumber,years);
 				
-				if(nameOftheClassCallingThisClass.equals("logicClasses.IndicatorSearchActivity"))
+				if(nameOftheClassCallingThisClass.equals("searchActivities.IndicatorSearchActivity"))
 					jsonObjectExtractorForCountryAndIndicator();
-				if(nameOftheClassCallingThisClass.equals("logicClasses.CountrySearchActivity"))
+				if(nameOftheClassCallingThisClass.equals("searchActivities.CountrySearchActivity"))
 					jsonObjectExtractorForCountry();
-				if(nameOftheClassCallingThisClass.equals("logicClasses.ComparisonSearchActivity"))
+				if(nameOftheClassCallingThisClass.equals("searchActivities.ComparisonSearchActivity"))
 					jsonObjectExtractorForCountryAndIndicator();
 				
 
@@ -122,7 +122,7 @@ public class QueryBuilder {
 			Log.e("QueryBuilder", "data did not parse");
 		}
 	
-		if(nameOftheClassCallingThisClass=="logicClasses.IndicatorSearchActivity" || nameOftheClassCallingThisClass=="logicClasses.CountrySearchActivity" ){
+		if(nameOftheClassCallingThisClass=="searchActivities.IndicatorSearchActivity" || nameOftheClassCallingThisClass=="searchActivities.CountrySearchActivity" ){
 		p2CountryName = "";
 		p4IndicatorName = "";
 		p2Country2Name = "";

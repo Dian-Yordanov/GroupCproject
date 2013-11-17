@@ -1,7 +1,7 @@
 
 
 
-package logicClasses;
+package displayActivities;
 import com.groupC.project.*;
 import displayActivities.*;
 import logicClasses.*;

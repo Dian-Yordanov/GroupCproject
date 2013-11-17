@@ -1,4 +1,4 @@
-package logicClasses;
+package searchActivities;
 
 import com.groupC.project.*;
 import displayActivities.*;
@@ -70,21 +70,15 @@ public class CountrySearchActivity extends Activity {
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
 				// TODO Auto-generated method stub
-				Log.v("dswwwad",Integer.toString(arg2));
-				Log.v("dswwwad",countries[arg2]);
 				stringUsedForCallingQueryBuilder = countries[arg2];
 				stringUsedForCallingFlagDownloader = countriesByTwoLetters[arg2];
 				stringUsedForCallingCountryMapDownloader = countryNames[arg2];
-				
-					
+									
 				QueryBuilder.p2CountryName = stringUsedForCallingQueryBuilder;					
 				CountryPicturesQueryBuilder.countryCode = stringUsedForCallingFlagDownloader;
-				Log.v("dsad",CountryPicturesQueryBuilder.countryCode = stringUsedForCallingFlagDownloader);	
 				CountryPicturesQueryBuilder.countryName = countryNameForCountryLocationCall();
-				
-				QueryBuilder.jsonParserReader(countryQueryConstructor());
-				
 				CountryPicturesQueryBuilder.flagQuery();
+				QueryBuilder.jsonParserReader(countryQueryConstructor());
 				
 				Log.v("dsad",QueryBuilder.displayInfo.toString() + " 45 ");		
 				
