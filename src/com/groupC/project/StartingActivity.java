@@ -12,7 +12,7 @@ public class StartingActivity extends Activity {
 
 	Button countries;
 	Button indicators;
-	Button favourites;
+	Button comparison;
 	Button aboutUs;
 //test
 	@Override
@@ -22,7 +22,7 @@ public class StartingActivity extends Activity {
 
 		indicators = (Button) findViewById(R.id.Indicators);
 		countries = (Button) findViewById(R.id.CountryList);
-		favourites = (Button) findViewById(R.id.Favourites);
+		comparison = (Button) findViewById(R.id.Comparison);
 		aboutUs = (Button) findViewById(R.id.About);
 	}
 
@@ -43,7 +43,7 @@ public class StartingActivity extends Activity {
 
 	}
 
-	public void gotoFavouritesView(View view) {
+	public void gotoComparisonView(View view) {
 		Intent i = new Intent(StartingActivity.this, ComparisonActivity.class);
 		startActivity(i);
 
