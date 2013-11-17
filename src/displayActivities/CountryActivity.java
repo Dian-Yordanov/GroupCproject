@@ -1,5 +1,6 @@
 package displayActivities;
 import com.groupC.project.*;
+
 import displayActivities.*;
 import logicClasses.*;
 import searchActivities.*;
@@ -10,6 +11,7 @@ import com.groupC.project.R.id;
 import com.groupC.project.R.layout;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
@@ -50,6 +52,11 @@ public class CountryActivity  extends Activity{
 		displayedText.setText(QueryBuilder.displayInfo);
 		flagView.setImageBitmap(CountryPicturesQueryBuilder.flag);
 		countryView.setImageBitmap(CountryPicturesQueryBuilder.map);
+	}
+	public void gotoCountrySearchView(View view) {
+		Intent i = new Intent(CountryActivity.this, CountrySearchActivity.class);
+		startActivity(i);
+
 	}
 	
 }

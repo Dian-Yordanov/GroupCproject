@@ -15,7 +15,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.60"
-            android:text="Choose to see information for another country" />
+            android:text="Choose to see information for another country" 
+            android:onClick="gotoCountrySearchView"/>
 
         <TextView
             android:id="@+id/textViewCountryView"
