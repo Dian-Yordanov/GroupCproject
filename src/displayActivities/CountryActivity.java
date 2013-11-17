@@ -48,6 +48,8 @@ public class CountryActivity  extends Activity{
 		countryView = (ImageView) findViewById(R.id.imageView2);
 		
 		displayedText.setText(QueryBuilder.displayInfo);
+		flagView.setImageBitmap(CountryPicturesQueryBuilder.flag);
+		countryView.setImageBitmap(CountryPicturesQueryBuilder.map);
 	}
 	
 }

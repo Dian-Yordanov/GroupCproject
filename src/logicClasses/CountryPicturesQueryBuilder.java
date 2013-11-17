@@ -24,8 +24,9 @@ public class CountryPicturesQueryBuilder {
 	
 	public CountryPicturesQueryBuilder(){}
 	public static void flagQuery(){
-		countryCode = countryCode .toLowerCase();
-		flag = ImageDownloader.loadBitmap(urlBuilderFlagsBeginning + countryCode  + urlBuilderFlagsEnd);
+		//countryCode = countryCode.toLowerCase();
+		flag = ImageDownloader.loadBitmap(urlBuilderFlagsBeginning + countryCode.toLowerCase()  + urlBuilderFlagsEnd);
+		Log.v("",urlBuilderFlagsBeginning + countryCode.toLowerCase()  + urlBuilderFlagsEnd);
 		map = ImageDownloader.loadBitmap(urlBuilderCountryLocationBeginning + countryName + urlBuilderCountryLocationEnd);
 		//CountryActivity.flagView.setImageBitmap(ImageDownloader.loadBitmap(urlBuilderFlagsBeginning + countryCode  + urlBuilderFlagsEnd));
 		//CountryActivity.countryView.setImageBitmap(ImageDownloader.loadBitmap(urlBuilderCountryLocationBeginning + countryName + urlBuilderCountryLocationEnd));

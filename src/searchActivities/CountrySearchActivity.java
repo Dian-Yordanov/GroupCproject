@@ -1,6 +1,7 @@
 package searchActivities;
 
 import com.groupC.project.*;
+
 import displayActivities.*;
 import logicClasses.*;
 import searchActivities.*;
@@ -10,6 +11,7 @@ import com.groupC.project.R.id;
 import com.groupC.project.R.layout;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
@@ -80,6 +82,7 @@ public class CountrySearchActivity extends Activity {
 				CountryPicturesQueryBuilder.flagQuery();
 				QueryBuilder.jsonParserReader(countryQueryConstructor());				
 				
+				gotoCountryActivity();
 			}});
 	}
 
@@ -115,6 +118,10 @@ public class CountrySearchActivity extends Activity {
 		if(stringToBeReturned.length() > 7){stringToBeReturned = stringToBeReturned.substring(0, 7);}
 		if(stringToBeReturned.equals("afghani")){stringToBeReturned = "afghan";}
 		return stringToBeReturned;
+	}
+	public void gotoCountryActivity(){
+		Intent i = new Intent(CountrySearchActivity.this, CountryActivity.class);
+		startActivity(i);
 	}
 
 }

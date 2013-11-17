@@ -40,6 +40,10 @@
             android:name="displayActivities.AboutUsActivity"
             android:label="@string/app_name" >
         </activity>
+                <activity
+            android:name="displayActivities.CountryActivity"
+            android:label="@string/app_name" >
+        </activity>
     </application>
 
 </manifest>
