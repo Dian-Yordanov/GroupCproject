@@ -78,9 +78,7 @@ public class CountrySearchActivity extends Activity {
 				CountryPicturesQueryBuilder.countryCode = stringUsedForCallingFlagDownloader;
 				CountryPicturesQueryBuilder.countryName = countryNameForCountryLocationCall();
 				CountryPicturesQueryBuilder.flagQuery();
-				QueryBuilder.jsonParserReader(countryQueryConstructor());
-				
-				Log.v("dsad",QueryBuilder.displayInfo.toString() + " 45 ");		
+				QueryBuilder.jsonParserReader(countryQueryConstructor());				
 				
 			}});
 	}

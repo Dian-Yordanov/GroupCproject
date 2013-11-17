@@ -5,6 +5,7 @@ import logicClasses.*;
 import searchActivities.*;
 
 
+import android.graphics.Bitmap;
 import android.util.Log;
 
 public class CountryPicturesQueryBuilder {
@@ -18,11 +19,15 @@ public class CountryPicturesQueryBuilder {
 	private static String urlBuilderCountryLocationEnd =".gif";
 	public static String countryName= "";
 	
+	public static Bitmap flag;
+	public static Bitmap map;
+	
 	public CountryPicturesQueryBuilder(){}
 	public static void flagQuery(){
 		countryCode = countryCode .toLowerCase();
-		Log.v("dsad",countryCode);	
-		CountryActivity.flagView.setImageBitmap(ImageDownloader.loadBitmap(urlBuilderFlagsBeginning + countryCode  + urlBuilderFlagsEnd));
-		CountryActivity.countryView.setImageBitmap(ImageDownloader.loadBitmap(urlBuilderCountryLocationBeginning + countryName + urlBuilderCountryLocationEnd));
+		flag = ImageDownloader.loadBitmap(urlBuilderFlagsBeginning + countryCode  + urlBuilderFlagsEnd);
+		map = ImageDownloader.loadBitmap(urlBuilderCountryLocationBeginning + countryName + urlBuilderCountryLocationEnd);
+		//CountryActivity.flagView.setImageBitmap(ImageDownloader.loadBitmap(urlBuilderFlagsBeginning + countryCode  + urlBuilderFlagsEnd));
+		//CountryActivity.countryView.setImageBitmap(ImageDownloader.loadBitmap(urlBuilderCountryLocationBeginning + countryName + urlBuilderCountryLocationEnd));
 	}
 }
