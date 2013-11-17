@@ -9,6 +9,8 @@ import searchActivities.*;
 import android.app.Activity;
 import android.os.Bundle;
 
+
+
 public class IndicatorSearchActivity extends Activity{
 	
 	@Override

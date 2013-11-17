@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -18,7 +17,7 @@
 
         <EditText
             android:id="@+id/indicatorCountryEditText1"
-            android:layout_width="149dp"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:text="Search a country" />
@@ -27,9 +26,8 @@
             android:id="@+id/indicatorCountryEditText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10" 
-            android:text="Search an indicator">
+            android:ems="10"
+            android:text="Search an indicator" >
 
             <requestFocus />
         </EditText>
@@ -42,18 +40,16 @@
 
         <ListView
             android:id="@+id/indicatorListView1"
-            android:layout_width="146dp"
-            android:layout_height="wrap_content" >
-
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.51" >
         </ListView>
 
         <ListView
             android:id="@+id/indicatorListView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" >
+            android:layout_width="142dp"
+            android:layout_height="wrap_content" >
         </ListView>
-
     </LinearLayout>
 
 </LinearLayout>
