@@ -45,6 +45,7 @@ public final class R {
         public static final int country2Spinner=0x7f080007;
         public static final int countryListSearch=0x7f080021;
         public static final int countryText=0x7f080014;
+        public static final int goBackToCountrySearch=0x7f080010;
         public static final int imageView1=0x7f080012;
         public static final int imageView2=0x7f080013;
         public static final int indicatorCountryEditText1=0x7f08001c;
@@ -60,7 +61,6 @@ public final class R {
         public static final int selectYourCountryEditText=0x7f080015;
         public static final int spinner1=0x7f080017;
         public static final int spinner2=0x7f080018;
-        public static final int spinnerViewCountryView=0x7f080010;
         public static final int textView1=0x7f080001;
         public static final int textView2=0x7f080000;
         public static final int textView3=0x7f080003;

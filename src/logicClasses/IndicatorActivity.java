@@ -1,9 +1,11 @@
-package displayActivities;
- 
+package logicClasses;
+import com.groupC.project.*;
+import displayActivities.*;
+import logicClasses.*;
+import searchActivities.*;
+
 import java.util.Iterator;
 
-import logicClasses.GraphViewCreator;
-import logicClasses.QueryBuilder;
  
 import org.json.JSONArray;
 import org.json.JSONException;

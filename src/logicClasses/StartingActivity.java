@@ -1,9 +1,11 @@
-package com.groupC.project;
+package logicClasses;
+import com.groupC.project.*;
+import com.groupC.project.R.id;
+import com.groupC.project.R.layout;
 
-import displayActivities.AboutUsActivity;
-import searchActivities.ComparisonSearchActivity;
-import searchActivities.CountrySearchActivity;
-import searchActivities.IndicatorSearchActivity;
+import displayActivities.*;
+import logicClasses.*;
+import searchActivities.*;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

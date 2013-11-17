@@ -1,5 +1,10 @@
 package logicClasses;
 
+import com.groupC.project.*;
+import displayActivities.*;
+import logicClasses.*;
+import searchActivities.*;
+
 		
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -102,11 +107,11 @@ public class QueryBuilder {
 				//reverseArrayValues(arrayNumber,values);
 				//reverseArrayYears(arrayNumber,years);
 				
-				if(nameOftheClassCallingThisClass.equals("IndicatorActivity"))
+				if(nameOftheClassCallingThisClass.equals("logicClasses.IndicatorSearchActivity"))
 					jsonObjectExtractorForCountryAndIndicator();
-				if(nameOftheClassCallingThisClass.equals("CountryActivity"))
+				if(nameOftheClassCallingThisClass.equals("logicClasses.CountrySearchActivity"))
 					jsonObjectExtractorForCountry();
-				if(nameOftheClassCallingThisClass.equals("ComparisonActivity"))
+				if(nameOftheClassCallingThisClass.equals("logicClasses.ComparisonSearchActivity"))
 					jsonObjectExtractorForCountryAndIndicator();
 				
 
@@ -117,7 +122,7 @@ public class QueryBuilder {
 			Log.e("QueryBuilder", "data did not parse");
 		}
 	
-		if(nameOftheClassCallingThisClass=="IndicatorActivity" || nameOftheClassCallingThisClass=="CountryActivity" ){
+		if(nameOftheClassCallingThisClass=="logicClasses.IndicatorSearchActivity" || nameOftheClassCallingThisClass=="logicClasses.CountrySearchActivity" ){
 		p2CountryName = "";
 		p4IndicatorName = "";
 		p2Country2Name = "";

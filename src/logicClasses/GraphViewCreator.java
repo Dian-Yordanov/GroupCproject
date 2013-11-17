@@ -1,5 +1,9 @@
 //This will create the graphs based on the query it receives
 package logicClasses;
+import com.groupC.project.*;
+import displayActivities.*;
+import logicClasses.*;
+import searchActivities.*;
 
 import android.graphics.Color;
 import android.util.Log;
@@ -11,8 +15,6 @@ import com.jjoe64.graphview.GraphViewSeries;
 import com.jjoe64.graphview.GraphViewSeries.GraphViewSeriesStyle;
 import com.jjoe64.graphview.LineGraphView;
 
-import displayActivities.ComparisonActivity;
-import displayActivities.IndicatorActivity;
 
 public class GraphViewCreator {
 	//static int num = 150;  

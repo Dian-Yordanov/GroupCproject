@@ -1,12 +1,14 @@
-package displayActivities;
+package logicClasses;
+import com.groupC.project.*;
+import displayActivities.*;
+import logicClasses.*;
+import searchActivities.*;
 
 import com.groupC.project.R;
 import com.groupC.project.R.array;
 import com.groupC.project.R.id;
 import com.groupC.project.R.layout;
 
-import logicClasses.GraphViewCreator;
-import logicClasses.QueryBuilder;
 import android.app.Activity;
 import android.content.res.Resources;
 import android.os.Bundle;

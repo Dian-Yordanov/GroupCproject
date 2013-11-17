@@ -1,6 +1,9 @@
 package logicClasses;
+import com.groupC.project.*;
+import displayActivities.*;
+import logicClasses.*;
+import searchActivities.*;
 
-import displayActivities.CountryActivity;
 
 import android.util.Log;
 
@@ -17,8 +20,8 @@ public class CountryPicturesQueryBuilder {
 	
 	public CountryPicturesQueryBuilder(){}
 	public static void flagQuery(){
-		CountryActivity.flagView.setImageBitmap(ImageDownloader.loadBitmap(urlBuilderFlagsBeginning + countryCode.toLowerCase() + urlBuilderFlagsEnd));
-		Log.v("taggs",urlBuilderCountryLocationBeginning + countryName + urlBuilderCountryLocationEnd);
-		CountryActivity.countryView.setImageBitmap(ImageDownloader.loadBitmap(urlBuilderCountryLocationBeginning + countryName + urlBuilderCountryLocationEnd));
+		countryCode = countryCode .toLowerCase();
+		//CountryActivity.flagView.setImageBitmap(ImageDownloader.loadBitmap(urlBuilderFlagsBeginning + countryCode  + urlBuilderFlagsEnd));
+		//CountryActivity.countryView.setImageBitmap(ImageDownloader.loadBitmap(urlBuilderCountryLocationBeginning + countryName + urlBuilderCountryLocationEnd));
 	}
 }

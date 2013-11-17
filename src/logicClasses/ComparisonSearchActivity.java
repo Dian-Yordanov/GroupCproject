@@ -1,6 +1,10 @@
-package searchActivities;
+package logicClasses;
 
-import com.groupC.project.R;
+import com.groupC.project.*;
+import displayActivities.*;
+import logicClasses.*;
+import searchActivities.*;
+
 import com.groupC.project.R.layout;
 
 import android.app.Activity;
