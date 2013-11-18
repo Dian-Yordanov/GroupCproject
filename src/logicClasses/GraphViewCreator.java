@@ -1,5 +1,9 @@
 //This will create the graphs based on the query it receives
-package com.groupC.project;
+package logicClasses;
+import com.groupC.project.*;
+import displayActivities.*;
+import logicClasses.*;
+import searchActivities.*;
 
 import android.graphics.Color;
 import android.util.Log;
@@ -10,6 +14,7 @@ import com.jjoe64.graphview.GraphView.GraphViewData;
 import com.jjoe64.graphview.GraphViewSeries;
 import com.jjoe64.graphview.GraphViewSeries.GraphViewSeriesStyle;
 import com.jjoe64.graphview.LineGraphView;
+
 
 public class GraphViewCreator {
 	//static int num = 150;  
@@ -30,7 +35,6 @@ public class GraphViewCreator {
 	}
 	
 	public static void graphViewCreator() {
-		//if(timesThisClassIsCalled>1){GraphViewCreator.graphView.removeAllSeries();timesThisClassIsCalled--;}
 		
 		GraphViewSeriesStyle seriesStyle = new GraphViewSeriesStyle();
 		seriesStyle.color = Color.BLUE;
@@ -39,41 +43,27 @@ public class GraphViewCreator {
 		seriesStyle2.color = Color.RED;
 
 
-		 
 		exampleSeries1 = new GraphViewSeries("",seriesStyle,new GraphViewData[] {new GraphViewData(QueryBuilder.years[0], QueryBuilder.values[0])});
-		if(nameOfTheClassCallingThis.equals("IndicatorActivity")){
-			graphView = new LineGraphView(IndicatorActivity.graphLayout .getContext(),"");}
+		if(nameOfTheClassCallingThis.equals("searchActivities.IndicatorSearchActivity")){
+			graphView = new LineGraphView(displayActivities.IndicatorActivity.graphLayout .getContext(),"");}
 		
-		if(nameOfTheClassCallingThis.equals("ComparisonActivity")){
-			graphView = new LineGraphView(ComparisonActivity.graphViewLayout .getContext(),"");
+		if(nameOfTheClassCallingThis.equals("searchActivities.ComparisonSearchActivity")){
+			graphView = new LineGraphView(displayActivities.ComparisonActivity.graphViewLayout .getContext(),"");
 		
 		exampleSeries2 = new GraphViewSeries("",seriesStyle2,new GraphViewData[] {new GraphViewData(QueryBuilder.years[0], QueryBuilder.values[0])});
 		
 		graphView.addSeries(exampleSeries2);}
 		graphView.addSeries(exampleSeries1);	
 		 
-		 //((LineGraphView) graphView).setDrawBackground(true);
-		 //((LineGraphView) graphView).setBackgroundColor(Color.CYAN);
 		
 		while(ii!=QueryBuilder.arrayNumber){
 		exampleSeries1.appendData(new GraphViewData(QueryBuilder.years[ii],QueryBuilder.values[ii]), false, 1000);		
-		if(nameOfTheClassCallingThis.equals("ComparisonActivity")){
-			exampleSeries2.appendData(new GraphViewData(QueryBuilder.years[ii+20],QueryBuilder.values[ii+20]), false, 1000);			
+		if(nameOfTheClassCallingThis.equals("searchActivities.ComparisonSearchActivity")){
+			exampleSeries2.appendData(new GraphViewData(QueryBuilder.years[ii+10],QueryBuilder.values[ii+20]), false, 1000);			
 		}
 		ii++;
 		}
 		
-		//while(ii!=QueryBuilder.arrayNumber){
-		//	
-		//ii++;
-		//Log.v("o"+ii,"o"+ii);
-		//}
-		
-		//graphView.setScalable(true);  
-		
-		
-		//if(0==ii%20){timesThisClassIsCalled++;ii=0;}
-		//Log.v("timesThisClassIsCalled","timesThisClassIsCalled"+timesThisClassIsCalled);
 		
 		 graphView.redrawAll();
 		 
@@ -81,24 +71,12 @@ public class GraphViewCreator {
 		 graphView.getGraphViewStyle().setVerticalLabelsColor(Color.BLACK);
 		 graphView.getGraphViewStyle().setVerticalLabelsWidth(100);
 		 
+		 if(nameOfTheClassCallingThis.equals("searchActivities.IndicatorSearchActivity")){IndicatorActivity.graphLayout.removeAllViews();}
+		 if(nameOfTheClassCallingThis.equals("searchActivities.IndicatorSearchActivity")){IndicatorActivity.graphLayout.addView(graphView);}
 		 
-		 
-		 
-	 	 //graphView.setViewPort(0,100);
-		 //graphView.setScrollable(true);
-		 //graphView.setScalable(true);
-		 
-		 if(nameOfTheClassCallingThis.equals("IndicatorActivity")){IndicatorActivity.graphLayout.removeAllViews();}
-		 if(nameOfTheClassCallingThis.equals( "IndicatorActivity")){IndicatorActivity.graphLayout.addView(graphView);}
-		 
-		 if(nameOfTheClassCallingThis.equals("ComparisonActivity")){ComparisonActivity.graphViewLayout.removeAllViews();}
-		 if(nameOfTheClassCallingThis.equals("ComparisonActivity")){ComparisonActivity.graphViewLayout.addView(graphView);}
+		 if(nameOfTheClassCallingThis.equals("searchActivities.ComparisonSearchActivity")){ComparisonActivity.graphViewLayout.removeAllViews();}
+		 if(nameOfTheClassCallingThis.equals("searchActivities.ComparisonSearchActivity")){ComparisonActivity.graphViewLayout.addView(graphView);}
 		 
 
 	}
-	//public static void graphCreatorViewValues(){		
-		
-		//GraphViewCreator GVC = new GraphViewCreator();
-
-	//}
 }

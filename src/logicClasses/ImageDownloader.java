@@ -1,4 +1,9 @@
-package com.groupC.project;
+package logicClasses;
+
+import com.groupC.project.*;
+import displayActivities.*;
+import logicClasses.*;
+import searchActivities.*;
 
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;
@@ -12,6 +17,7 @@ import android.graphics.BitmapFactory;
 import android.os.StrictMode;
 import android.util.Log;
 import android.widget.ImageView;
+
 
 public class ImageDownloader {
 	public ImageDownloader(){}

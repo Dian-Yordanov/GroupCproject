@@ -21,26 +21,38 @@
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.groupC.project.CountryActivity"
+            android:name="searchActivities.CountrySearchActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.groupC.project.IndicatorActivity"
+            android:name="searchActivities.IndicatorSearchActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.groupC.project.ComparisonActivity"
+            android:name="searchActivities.ComparisonSearchActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.groupC.project.AboutUsActivity"
+            android:name="displayActivities.AboutUsActivity"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name="displayActivities.CountryActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="displayActivities.IndicatorActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="displayActivities.ComparisonActivity"
+            android:label="@string/app_name" >
+        </activity>
+        
     </application>
 
 </manifest>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:descendantFocusability="beforeDescendants"
+  	android:focusableInTouchMode="true">
+
+    <TextView
+        android:id="@+id/countryText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="  Choose a country you want to learn more about" />
+
+    <EditText
+        android:id="@+id/selectYourCountryEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Search a country" >
+
+    </EditText>
+
+    <ListView
+        android:id="@+id/countriesListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+</LinearLayout>
