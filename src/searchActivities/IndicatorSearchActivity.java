@@ -8,6 +8,7 @@ import searchActivities.*;
 
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -85,7 +86,12 @@ public class IndicatorSearchActivity extends Activity{
 			
 			while(itemlist1IsSelected && itemlist2IsSelected ){
 				callQueryBuilderAndGraphView();
-				 Log.v("hi",QueryBuilder. displayInfo + "hi");
+				indicatorListView1.setBackgroundColor(0xcbcbcb);
+				indicatorListView1.setEnabled(true);
+				indicatorListView1.getChildAt(arg2).setBackgroundColor(0xcbcbcb);
+				indicatorListView2.setBackgroundColor(0xcbcbcb);
+				indicatorListView2.setEnabled(true);
+				indicatorListView2.getChildAt(arg2).setBackgroundColor(0xcbcbcb);
 			}
 		}});
 
@@ -108,7 +114,12 @@ public class IndicatorSearchActivity extends Activity{
 			
 			while(itemlist1IsSelected && itemlist2IsSelected ){
 				callQueryBuilderAndGraphView();
-				 Log.v("hi",QueryBuilder. displayInfo + "hi");
+				indicatorListView1.setBackgroundColor(0xcbcbcb);
+				indicatorListView1.setEnabled(true);
+				indicatorListView1.getChildAt(arg2).setBackgroundColor(0xcbcbcb);
+				indicatorListView2.setBackgroundColor(0xcbcbcb);
+				indicatorListView2.setEnabled(true);
+				indicatorListView2.getChildAt(arg2).setBackgroundColor(0xcbcbcb);
 			}
 		}});
 	
@@ -131,15 +142,21 @@ public class IndicatorSearchActivity extends Activity{
 	         
 	      QueryBuilder. jsonParserReader(countryAndIndicatorQueryConstructor ());
 	    //  textView1 .setText(QueryBuilder. displayInfo);	      
-	      Log.v("hi",QueryBuilder. displayInfo + "hi");
 	    //  graphLayout = (LinearLayout) findViewById(R.id. layout1); must be done in the indicatorActivity
 	    //  GraphViewCreator. graphViewCreator();
-			
+	      		
+
 		itemlist1IsSelected = false;
 		itemlist2IsSelected = false;
+		
+		gotoInidcatorActivity();
 	}
 	public static String countryAndIndicatorQueryConstructor() {	
 		return (QueryBuilder.p1ApiAddress + QueryBuilder.p2CountryName + QueryBuilder.p3Indicators + QueryBuilder.p4IndicatorName
 				+ QueryBuilder.p5BeginningOfIdentifiers + QueryBuilder.p6ItemsPerPage + QueryBuilder.p7Date + QueryBuilder.p8Format);
+	}
+	public void gotoInidcatorActivity(){
+		Intent i = new Intent(IndicatorSearchActivity.this, IndicatorActivity.class);
+		startActivity(i);
 	}
 }

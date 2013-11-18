@@ -53,7 +53,8 @@ public class IndicatorActivity extends Activity{
  
 		setContentView(R.layout.indicator_activity);
 		textView1 = (TextView) findViewById(R.id.textViewShowingCandI);
-								
+		textView1.setText(QueryBuilder.displayInfo);	
+		
 	}
 	
 }
