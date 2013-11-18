@@ -39,7 +39,7 @@ public class IndicatorActivity extends Activity{
 	public static TextView textView1;
 	public static LinearLayout graphLayout;
 	
-	public static GraphView graphView;
+	//public static GraphView graphView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

@@ -35,7 +35,6 @@ public class GraphViewCreator {
 	}
 	
 	public static void graphViewCreator() {
-		//if(timesThisClassIsCalled>1){GraphViewCreator.graphView.removeAllSeries();timesThisClassIsCalled--;}
 		
 		GraphViewSeriesStyle seriesStyle = new GraphViewSeriesStyle();
 		seriesStyle.color = Color.BLUE;
@@ -46,18 +45,16 @@ public class GraphViewCreator {
 
 		exampleSeries1 = new GraphViewSeries("",seriesStyle,new GraphViewData[] {new GraphViewData(QueryBuilder.years[0], QueryBuilder.values[0])});
 		if(nameOfTheClassCallingThis.equals("searchActivities.IndicatorSearchActivity")){
-			graphView = new LineGraphView(IndicatorActivity.graphLayout .getContext(),"");}
+			graphView = new LineGraphView(displayActivities.IndicatorActivity.graphLayout .getContext(),"");}
 		
 		if(nameOfTheClassCallingThis.equals("searchActivities.ComparisonSearchActivity")){
-			graphView = new LineGraphView(ComparisonActivity.graphViewLayout .getContext(),"");
+			graphView = new LineGraphView(displayActivities.ComparisonActivity.graphViewLayout .getContext(),"");
 		
 		exampleSeries2 = new GraphViewSeries("",seriesStyle2,new GraphViewData[] {new GraphViewData(QueryBuilder.years[0], QueryBuilder.values[0])});
 		
 		graphView.addSeries(exampleSeries2);}
 		graphView.addSeries(exampleSeries1);	
 		 
-		 //((LineGraphView) graphView).setDrawBackground(true);
-		 //((LineGraphView) graphView).setBackgroundColor(Color.CYAN);
 		
 		while(ii!=QueryBuilder.arrayNumber){
 		exampleSeries1.appendData(new GraphViewData(QueryBuilder.years[ii],QueryBuilder.values[ii]), false, 1000);		
@@ -67,17 +64,6 @@ public class GraphViewCreator {
 		ii++;
 		}
 		
-		//while(ii!=QueryBuilder.arrayNumber){
-		//	
-		//ii++;
-		//Log.v("o"+ii,"o"+ii);
-		//}
-		
-		//graphView.setScalable(true);  
-		
-		
-		//if(0==ii%20){timesThisClassIsCalled++;ii=0;}
-		//Log.v("timesThisClassIsCalled","timesThisClassIsCalled"+timesThisClassIsCalled);
 		
 		 graphView.redrawAll();
 		 
@@ -85,24 +71,13 @@ public class GraphViewCreator {
 		 graphView.getGraphViewStyle().setVerticalLabelsColor(Color.BLACK);
 		 graphView.getGraphViewStyle().setVerticalLabelsWidth(100);
 		 
-		 
-		 
-		 
-	 	 //graphView.setViewPort(0,100);
-		 //graphView.setScrollable(true);
-		 //graphView.setScalable(true);
-		 
-		 if(nameOfTheClassCallingThis.equals("searchActivities.ComparisonSearchActivity")){IndicatorActivity.graphLayout.removeAllViews();}
-		 if(nameOfTheClassCallingThis.equals("searchActivities.ComparisonSearchActivity")){IndicatorActivity.graphLayout.addView(graphView);}
+		 Log.v("",nameOfTheClassCallingThis);
+		 if(nameOfTheClassCallingThis.equals("searchActivities.IndicatorSearchActivity")){IndicatorActivity.graphLayout.removeAllViews();}
+		 if(nameOfTheClassCallingThis.equals("searchActivities.IndicatorSearchActivity")){IndicatorActivity.graphLayout.addView(graphView);}
 		 
 		 if(nameOfTheClassCallingThis.equals("searchActivities.ComparisonSearchActivity")){ComparisonActivity.graphViewLayout.removeAllViews();}
 		 if(nameOfTheClassCallingThis.equals("searchActivities.ComparisonSearchActivity")){ComparisonActivity.graphViewLayout.addView(graphView);}
 		 
 
 	}
-	//public static void graphCreatorViewValues(){		
-		
-		//GraphViewCreator GVC = new GraphViewCreator();
-
-	//}
 }
