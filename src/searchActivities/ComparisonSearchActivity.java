@@ -107,7 +107,7 @@ public class ComparisonSearchActivity extends Activity{
 				selectedViewFromItemList1.setBackgroundColor(0x80FFFFFF);
 				
 				
-				stringUsedForCallingQueryBuilderCountry1 = countries1[arg2];
+				stringUsedForCallingQueryBuilderCountry1 = countries1[selectedItemPositionCountry1];
 				QueryBuilder. p2CountryName = stringUsedForCallingQueryBuilderCountry1;	 
 				
 				itemlist1IsSelected = true;
@@ -173,8 +173,8 @@ public class ComparisonSearchActivity extends Activity{
 				selectedViewFromItemList3.setBackgroundColor(0x80FFFFFF);
 				
 				selectedItemPositionCountry2 = arg2;
-				stringUsedForCallingQueryBuilderCountry2 = countries2[arg2];
-				QueryBuilder. p2CountryName = stringUsedForCallingQueryBuilderCountry2;	 
+				stringUsedForCallingQueryBuilderCountry2 = countries2[selectedItemPositionCountry2];
+				QueryBuilder. p2Country2Name = stringUsedForCallingQueryBuilderCountry2;	 
 				
 				itemlist3IsSelected = true;
 				
