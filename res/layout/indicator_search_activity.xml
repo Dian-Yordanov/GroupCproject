@@ -29,7 +29,6 @@
             android:ems="10"
             android:text="Search an indicator" >
 
-            <requestFocus />
         </EditText>
 
     </LinearLayout>
