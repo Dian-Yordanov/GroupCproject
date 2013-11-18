@@ -14,7 +14,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0.77"
-        android:text="Choose to see information for another country, or another indicator" />
+        android:text="Choose to see information for another country, or another indicator" 
+        android:onClick="gotoIndicatorSearchView"/>
  
             <TextView
         android:id="@+id/textViewShowingCandI"

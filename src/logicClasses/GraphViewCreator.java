@@ -71,7 +71,6 @@ public class GraphViewCreator {
 		 graphView.getGraphViewStyle().setVerticalLabelsColor(Color.BLACK);
 		 graphView.getGraphViewStyle().setVerticalLabelsWidth(100);
 		 
-		 Log.v("",nameOfTheClassCallingThis);
 		 if(nameOfTheClassCallingThis.equals("searchActivities.IndicatorSearchActivity")){IndicatorActivity.graphLayout.removeAllViews();}
 		 if(nameOfTheClassCallingThis.equals("searchActivities.IndicatorSearchActivity")){IndicatorActivity.graphLayout.addView(graphView);}
 		 

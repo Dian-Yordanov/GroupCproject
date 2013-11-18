@@ -22,6 +22,7 @@ import com.jjoe64.graphview.GraphView.GraphViewData;
  
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.text.method.ScrollingMovementMethod;
@@ -57,5 +58,10 @@ public class IndicatorActivity extends Activity{
 		
 	    graphLayout = (LinearLayout) findViewById(R.id. layout1); 
 	    GraphViewCreator.graphViewCreator();
+	}
+	public void gotoIndicatorSearchView(View view) {
+		Intent i = new Intent(IndicatorActivity.this, IndicatorSearchActivity.class);
+		startActivity(i);
+
 	}
 }
