@@ -32,9 +32,9 @@ public class ComparisonSearchActivity extends Activity{
 	private String[] countries1;
 	private String[] countries2;
 	
-	private static boolean country1IsTouched = false;
-	private static boolean indicatorIsTouched = false;
-	private static boolean country2IsTouched = false;
+	private static boolean itemlist1IsSelected = false;
+	private static boolean itemlist2IsSelected = false;
+	private static boolean itemlist3IsSelected = false;
 	
 	private String stringUsedForCallingQueryBuilderCountry1 ="";
 	private String stringUsedForCallingQueryBuilderCountry2 ="";
@@ -71,6 +71,15 @@ public class ComparisonSearchActivity extends Activity{
 		createEditOptions(comparisonCountryEditText1);
 		createEditOptions(comparisonIndicatorEditText);
 		createEditOptions(comparisonCountryEditText2);
+		
+		country1Adapter = ArrayAdapter.createFromResource(this,R.array.countryNames, android.R.layout.simple_list_item_1);
+		comparisonCountryListView1.setAdapter(country1Adapter);
+		
+		indicatorAdapter = ArrayAdapter.createFromResource(this,R.array.indicatorListView, android.R.layout.simple_list_item_1);
+		comparisonIndicatorListView .setAdapter(indicatorAdapter);
+		
+		country2Adapter = ArrayAdapter.createFromResource(this,R.array.countryNames, android.R.layout.simple_list_item_1);
+		comparisonCountryListView2.setAdapter(country2Adapter);
 		
 	}
 	private void createEditOptions(final EditText editTextToGetOptions) {
