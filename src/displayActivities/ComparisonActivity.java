@@ -10,6 +10,7 @@ import com.groupC.project.R.id;
 import com.groupC.project.R.layout;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
@@ -44,6 +45,11 @@ public class ComparisonActivity extends Activity{
 		
         graphViewLayout = (LinearLayout) findViewById(R.id. layout2); 
         GraphViewCreator. graphViewCreator();
+
+	}
+	public void gotoComparisonSearchView(View view) {
+		Intent i = new Intent(ComparisonActivity.this, ComparisonSearchActivity.class);
+		startActivity(i);
 
 	}
 }
