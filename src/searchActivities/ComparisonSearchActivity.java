@@ -118,7 +118,7 @@ public class ComparisonSearchActivity extends Activity{
 				}
 			}});
 		
-		indicatorAdapter = ArrayAdapter.createFromResource(this,R.array.indicatorListView, android.R.layout.simple_list_item_1);
+		indicatorAdapter = ArrayAdapter.createFromResource(this,R.array.indicatorMeaningListView, android.R.layout.simple_list_item_1);
 		comparisonIndicatorListView .setAdapter(indicatorAdapter);
 		comparisonIndicatorListView.setOnItemClickListener(new OnItemClickListener(){
 			@Override

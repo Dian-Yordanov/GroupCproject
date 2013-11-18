@@ -96,7 +96,7 @@ public class IndicatorSearchActivity extends Activity{
 			}
 		}});
 
-	indicatorAdapter = ArrayAdapter.createFromResource(this,R.array.indicatorListView, android.R.layout.simple_list_item_1);
+	indicatorAdapter = ArrayAdapter.createFromResource(this,R.array.indicatorMeaningListView, android.R.layout.simple_list_item_1);
 	indicatorListView2.setAdapter(indicatorAdapter);
 	indicatorListView2.setOnItemClickListener(new OnItemClickListener(){
 		@Override
