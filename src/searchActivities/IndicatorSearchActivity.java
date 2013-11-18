@@ -9,9 +9,11 @@ import searchActivities.*;
 
 import android.app.Activity;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
+import android.widget.AdapterView.OnItemClickListener;
 
 public class IndicatorSearchActivity extends Activity{
 	TextView indicatorText;
@@ -32,10 +34,10 @@ public class IndicatorSearchActivity extends Activity{
 		super.onCreate(savedInstanceState);
 		
 		indicatorSearchActivityUiBuilder();
-	//	QueryBuilder.setNameOfClassCallingQueryBuilder(this.getLocalClassName());
+		QueryBuilder.setNameOfClassCallingQueryBuilder(this.getLocalClassName());
 		//QueryBuilder qBuilder = new QueryBuilder(countryAndIndicatorQueryConstructor());
 		
-	//	GraphViewCreator.setNameOfClassCallingGraphViewCreator(this.getLocalClassName());
+		GraphViewCreator.setNameOfClassCallingGraphViewCreator(this.getLocalClassName());
 		
 		res = getResources();
 		countries= res.getStringArray(R.array.countryListView);
@@ -56,6 +58,18 @@ public class IndicatorSearchActivity extends Activity{
 	
 	countryAdapter = ArrayAdapter.createFromResource(this,R.array.countryNames, android.R.layout.simple_list_item_1);
 	indicatorListView1.setAdapter(countryAdapter);
+	indicatorListView1.setOnItemClickListener(new OnItemClickListener(){
+		@Override
+		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+				long arg3) {
+			// TODO Auto-generated method stub
+			arg1.setSelected(true);
+			indicatorListView1.setBackgroundColor(0xAFAFAFAA);
+			indicatorListView1.setEnabled(false);
+			indicatorListView1.getChildAt(arg2).setBackgroundColor(0x80FFFFFF);
+		}});
+
+
 	
 	indicatorAdapter = ArrayAdapter.createFromResource(this,R.array.indicatorListView, android.R.layout.simple_list_item_1);
 	indicatorListView2.setAdapter(indicatorAdapter);
@@ -71,5 +85,9 @@ public class IndicatorSearchActivity extends Activity{
 						}
 					}
 				});
+	}
+	public static String countryAndIndicatorQueryConstructor() {	
+		return (QueryBuilder.p1ApiAddress + QueryBuilder.p2CountryName + QueryBuilder.p3Indicators + QueryBuilder.p4IndicatorName
+				+ QueryBuilder.p5BeginningOfIdentifiers + QueryBuilder.p6ItemsPerPage + QueryBuilder.p7Date + QueryBuilder.p8Format);
 	}
 }

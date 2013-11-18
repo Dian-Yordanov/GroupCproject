@@ -56,11 +56,4 @@ public class IndicatorActivity extends Activity{
 								
 	}
 	
-	public static String countryAndIndicatorQueryConstructor() {	
-	return (QueryBuilder.p1ApiAddress + QueryBuilder.p2CountryName + QueryBuilder.p3Indicators + QueryBuilder.p4IndicatorName
-			+ QueryBuilder.p5BeginningOfIdentifiers + QueryBuilder.p6ItemsPerPage + QueryBuilder.p7Date + QueryBuilder.p8Format);
-	}
-	
-	
-	
 }
