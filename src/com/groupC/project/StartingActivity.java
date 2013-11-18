@@ -18,7 +18,7 @@ public class StartingActivity extends Activity {
 
 	Button countriesSearch;
 	Button indicatorsSearch;
-	Button favouritesSearch;
+	Button comparisonSearch;
 	Button aboutUs;
 //test
 	@Override
@@ -28,7 +28,7 @@ public class StartingActivity extends Activity {
 
 		indicatorsSearch = (Button) findViewById(R.id.indicatorsSearch);
 		countriesSearch = (Button) findViewById(R.id.countryListSearch);
-		favouritesSearch = (Button) findViewById(R.id.comparisonSearch);
+		comparisonSearch = (Button) findViewById(R.id.comparisonSearch);
 		aboutUs = (Button) findViewById(R.id.about);
 	}
 
