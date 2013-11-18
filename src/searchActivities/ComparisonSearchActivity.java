@@ -13,6 +13,7 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
+import android.widget.AdapterView.OnItemClickListener;
 
 public class ComparisonSearchActivity extends Activity{
 	TextView comparisonText;
@@ -27,10 +28,12 @@ public class ComparisonSearchActivity extends Activity{
 	public static ArrayAdapter<CharSequence> indicatorAdapter;
 	public static ArrayAdapter<CharSequence> country2Adapter;
 	
+	private Resources res;
 	private Resources res1;
 	private Resources res2;
 	private String[] countries1;
 	private String[] countries2;
+	private String[] indicators;
 	
 	private static boolean itemlist1IsSelected = false;
 	private static boolean itemlist2IsSelected = false;
@@ -38,6 +41,11 @@ public class ComparisonSearchActivity extends Activity{
 	
 	private String stringUsedForCallingQueryBuilderCountry1 ="";
 	private String stringUsedForCallingQueryBuilderCountry2 ="";
+	
+	private static int selectedItemPositionCountry1;
+	private static int selectedItemPositionCountry2;
+	private static int selectedItemPositionIndicator;
+	private static String selectedItemTextIndicator;
 	
 	//private String textViewComparisonText="";
 	
@@ -55,8 +63,10 @@ public class ComparisonSearchActivity extends Activity{
 		
 		res1 = getResources();
 		res2 = getResources();
+		res = getResources();
 		countries1= res1.getStringArray(R.array.countryListView);
 		countries2= res2.getStringArray(R.array.countryListView);
+		indicators = res.getStringArray(R.array.indicatorListView);
 		
 		comparisonText = (TextView) findViewById(R.id.ComparisonText);
 		
@@ -74,12 +84,99 @@ public class ComparisonSearchActivity extends Activity{
 		
 		country1Adapter = ArrayAdapter.createFromResource(this,R.array.countryNames, android.R.layout.simple_list_item_1);
 		comparisonCountryListView1.setAdapter(country1Adapter);
+		comparisonCountryListView1.setOnItemClickListener(new OnItemClickListener(){
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+				arg1.setSelected(true);
+				comparisonCountryListView1.setBackgroundColor(0xAFAFAFAA);
+				comparisonCountryListView1.setEnabled(false);
+				comparisonCountryListView1.getChildAt(arg2).setBackgroundColor(0x80FFFFFF);
+				
+				selectedItemPositionCountry1 = arg2;
+				stringUsedForCallingQueryBuilderCountry1 = countries1[arg2];
+				QueryBuilder. p2CountryName = stringUsedForCallingQueryBuilderCountry1;	 
+				
+				itemlist1IsSelected = true;
+				
+				while(itemlist1IsSelected && itemlist2IsSelected && itemlist3IsSelected){
+					comparisonCallQueryBuilderAndGraphView();
+					comparisonCountryListView1.setBackgroundColor(0xcbcbcb);
+					comparisonCountryListView1.setEnabled(true);
+					comparisonCountryListView1.getChildAt(selectedItemPositionCountry1).setBackgroundColor(0xcbcbcb);
+					comparisonCountryListView2.setBackgroundColor(0xcbcbcb);
+					comparisonCountryListView2.setEnabled(true);
+					comparisonCountryListView2.getChildAt(selectedItemPositionCountry2).setBackgroundColor(0xcbcbcb);
+					comparisonIndicatorListView.setBackgroundColor(0xcbcbcb);
+					comparisonIndicatorListView.setEnabled(true);
+					comparisonIndicatorListView.getChildAt(selectedItemPositionIndicator).setBackgroundColor(0xcbcbcb);
+				}
+			}});
 		
 		indicatorAdapter = ArrayAdapter.createFromResource(this,R.array.indicatorListView, android.R.layout.simple_list_item_1);
 		comparisonIndicatorListView .setAdapter(indicatorAdapter);
+		comparisonIndicatorListView.setOnItemClickListener(new OnItemClickListener(){
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+				arg1.setSelected(true);
+				comparisonIndicatorListView.setBackgroundColor(0xAFAFAFAA);
+				comparisonIndicatorListView.setEnabled(false);
+				comparisonIndicatorListView.getChildAt(arg2).setBackgroundColor(0x80FFFFFF);
+				
+				selectedItemPositionIndicator = arg2;
+				selectedItemTextIndicator = indicators[arg2];
+				QueryBuilder.p4IndicatorName = selectedItemTextIndicator;	 
+				
+				itemlist2IsSelected = true;
+				
+				while(itemlist1IsSelected && itemlist2IsSelected && itemlist3IsSelected){
+					comparisonCallQueryBuilderAndGraphView();
+					comparisonCountryListView1.setBackgroundColor(0xcbcbcb);
+					comparisonCountryListView1.setEnabled(true);
+					comparisonCountryListView1.getChildAt(selectedItemPositionCountry1).setBackgroundColor(0xcbcbcb);
+					comparisonCountryListView2.setBackgroundColor(0xcbcbcb);
+					comparisonCountryListView2.setEnabled(true);
+					comparisonCountryListView2.getChildAt(selectedItemPositionCountry2).setBackgroundColor(0xcbcbcb);
+					comparisonIndicatorListView.setBackgroundColor(0xcbcbcb);
+					comparisonIndicatorListView.setEnabled(true);
+					comparisonIndicatorListView.getChildAt(selectedItemPositionIndicator).setBackgroundColor(0xcbcbcb);
+				}
+			}});
 		
 		country2Adapter = ArrayAdapter.createFromResource(this,R.array.countryNames, android.R.layout.simple_list_item_1);
 		comparisonCountryListView2.setAdapter(country2Adapter);
+		comparisonCountryListView2.setOnItemClickListener(new OnItemClickListener(){
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+				arg1.setSelected(true);
+				comparisonCountryListView2.setBackgroundColor(0xAFAFAFAA);
+				comparisonCountryListView2.setEnabled(false);
+				comparisonCountryListView2.getChildAt(arg2).setBackgroundColor(0x80FFFFFF);
+				
+				selectedItemPositionCountry2 = arg2;
+				stringUsedForCallingQueryBuilderCountry2 = countries2[arg2];
+				QueryBuilder. p2CountryName = stringUsedForCallingQueryBuilderCountry2;	 
+				
+				itemlist3IsSelected = true;
+				
+				while(itemlist1IsSelected && itemlist2IsSelected && itemlist3IsSelected){
+					comparisonCallQueryBuilderAndGraphView();
+					comparisonCountryListView1.setBackgroundColor(0xcbcbcb);
+					comparisonCountryListView1.setEnabled(true);
+					comparisonCountryListView1.getChildAt(selectedItemPositionCountry1).setBackgroundColor(0xcbcbcb);
+					comparisonCountryListView2.setBackgroundColor(0xcbcbcb);
+					comparisonCountryListView2.setEnabled(true);
+					comparisonCountryListView2.getChildAt(selectedItemPositionCountry2).setBackgroundColor(0xcbcbcb);
+					comparisonIndicatorListView.setBackgroundColor(0xcbcbcb);
+					comparisonIndicatorListView.setEnabled(true);
+					comparisonIndicatorListView.getChildAt(selectedItemPositionIndicator).setBackgroundColor(0xcbcbcb);
+				}
+			}});
 		
 	}
 	private void createEditOptions(final EditText editTextToGetOptions) {
@@ -97,6 +194,11 @@ public class ComparisonSearchActivity extends Activity{
 	public static String comparisonQueryConstructor(String p2CountryName) {	
 	return (QueryBuilder.p1ApiAddress + p2CountryName + QueryBuilder.p3Indicators + QueryBuilder.p4IndicatorName
 			+ QueryBuilder.p5BeginningOfIdentifiers + QueryBuilder.p6ItemsPerPage + QueryBuilder.p7Date + QueryBuilder.p8Format);
+	}
+	private void comparisonCallQueryBuilderAndGraphView(){
+		itemlist1IsSelected = false;
+		itemlist2IsSelected = false;
+		itemlist3IsSelected = false;
 	}
 
 
