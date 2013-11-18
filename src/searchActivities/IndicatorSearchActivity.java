@@ -36,6 +36,7 @@ public class IndicatorSearchActivity extends Activity{
 	private static boolean itemlist2IsSelected = false;
 	
 	private static int selectedItemPositionCountry;
+	private static int selectedItemPositionIndicator;
 	private static String selectedItemTextIndicator;
 	
 	@Override
@@ -88,10 +89,10 @@ public class IndicatorSearchActivity extends Activity{
 				callQueryBuilderAndGraphView();
 				indicatorListView1.setBackgroundColor(0xcbcbcb);
 				indicatorListView1.setEnabled(true);
-				indicatorListView1.getChildAt(arg2).setBackgroundColor(0xcbcbcb);
+				indicatorListView1.getChildAt(selectedItemPositionCountry ).setBackgroundColor(0xcbcbcb);
 				indicatorListView2.setBackgroundColor(0xcbcbcb);
 				indicatorListView2.setEnabled(true);
-				indicatorListView2.getChildAt(arg2).setBackgroundColor(0xcbcbcb);
+				indicatorListView2.getChildAt(selectedItemPositionIndicator ).setBackgroundColor(0xcbcbcb);
 			}
 		}});
 
@@ -108,6 +109,7 @@ public class IndicatorSearchActivity extends Activity{
 			indicatorListView2.getChildAt(arg2).setBackgroundColor(0x80FFFFFF);
 			
 			selectedItemTextIndicator = indicators[arg2];
+			selectedItemPositionIndicator = arg2;
 			QueryBuilder. p4IndicatorName = selectedItemTextIndicator;
 			
 			itemlist2IsSelected = true;
@@ -116,10 +118,10 @@ public class IndicatorSearchActivity extends Activity{
 				callQueryBuilderAndGraphView();
 				indicatorListView1.setBackgroundColor(0xcbcbcb);
 				indicatorListView1.setEnabled(true);
-				indicatorListView1.getChildAt(arg2).setBackgroundColor(0xcbcbcb);
+				indicatorListView1.getChildAt(selectedItemPositionCountry ).setBackgroundColor(0xcbcbcb);
 				indicatorListView2.setBackgroundColor(0xcbcbcb);
 				indicatorListView2.setEnabled(true);
-				indicatorListView2.getChildAt(arg2).setBackgroundColor(0xcbcbcb);
+				indicatorListView2.getChildAt(selectedItemPositionIndicator ).setBackgroundColor(0xcbcbcb);
 			}
 		}});
 	
