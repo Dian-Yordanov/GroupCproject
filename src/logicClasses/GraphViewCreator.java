@@ -44,12 +44,11 @@ public class GraphViewCreator {
 		seriesStyle2.color = Color.RED;
 
 
-		 
 		exampleSeries1 = new GraphViewSeries("",seriesStyle,new GraphViewData[] {new GraphViewData(QueryBuilder.years[0], QueryBuilder.values[0])});
-		if(nameOfTheClassCallingThis.equals("IndicatorActivity")){
+		if(nameOfTheClassCallingThis.equals("searchActivities.IndicatorSearchActivity")){
 			graphView = new LineGraphView(IndicatorActivity.graphLayout .getContext(),"");}
 		
-		if(nameOfTheClassCallingThis.equals("ComparisonActivity")){
+		if(nameOfTheClassCallingThis.equals("searchActivities.ComparisonSearchActivity")){
 			graphView = new LineGraphView(ComparisonActivity.graphViewLayout .getContext(),"");
 		
 		exampleSeries2 = new GraphViewSeries("",seriesStyle2,new GraphViewData[] {new GraphViewData(QueryBuilder.years[0], QueryBuilder.values[0])});
@@ -62,7 +61,7 @@ public class GraphViewCreator {
 		
 		while(ii!=QueryBuilder.arrayNumber){
 		exampleSeries1.appendData(new GraphViewData(QueryBuilder.years[ii],QueryBuilder.values[ii]), false, 1000);		
-		if(nameOfTheClassCallingThis.equals("ComparisonActivity")){
+		if(nameOfTheClassCallingThis.equals("searchActivities.ComparisonSearchActivity")){
 			exampleSeries2.appendData(new GraphViewData(QueryBuilder.years[ii+20],QueryBuilder.values[ii+20]), false, 1000);			
 		}
 		ii++;
@@ -93,11 +92,11 @@ public class GraphViewCreator {
 		 //graphView.setScrollable(true);
 		 //graphView.setScalable(true);
 		 
-		 if(nameOfTheClassCallingThis.equals("IndicatorActivity")){IndicatorActivity.graphLayout.removeAllViews();}
-		 if(nameOfTheClassCallingThis.equals( "IndicatorActivity")){IndicatorActivity.graphLayout.addView(graphView);}
+		 if(nameOfTheClassCallingThis.equals("searchActivities.ComparisonSearchActivity")){IndicatorActivity.graphLayout.removeAllViews();}
+		 if(nameOfTheClassCallingThis.equals("searchActivities.ComparisonSearchActivity")){IndicatorActivity.graphLayout.addView(graphView);}
 		 
-		 if(nameOfTheClassCallingThis.equals("ComparisonActivity")){ComparisonActivity.graphViewLayout.removeAllViews();}
-		 if(nameOfTheClassCallingThis.equals("ComparisonActivity")){ComparisonActivity.graphViewLayout.addView(graphView);}
+		 if(nameOfTheClassCallingThis.equals("searchActivities.ComparisonSearchActivity")){ComparisonActivity.graphViewLayout.removeAllViews();}
+		 if(nameOfTheClassCallingThis.equals("searchActivities.ComparisonSearchActivity")){ComparisonActivity.graphViewLayout.addView(graphView);}
 		 
 
 	}

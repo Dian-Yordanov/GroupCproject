@@ -44,17 +44,18 @@ public class IndicatorActivity extends Activity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
- 
+
 		uiBuidlerIndicatorActivity();
 
 	}
- 
+
 	public void uiBuidlerIndicatorActivity() {
  
 		setContentView(R.layout.indicator_activity);
 		textView1 = (TextView) findViewById(R.id.textViewShowingCandI);
 		textView1.setText(QueryBuilder.displayInfo);	
 		
+	    graphLayout = (LinearLayout) findViewById(R.id. layout1); 
+	    GraphViewCreator.graphViewCreator();
 	}
-	
 }

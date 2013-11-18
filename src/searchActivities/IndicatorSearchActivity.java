@@ -142,10 +142,7 @@ public class IndicatorSearchActivity extends Activity{
 	         
 	      QueryBuilder. jsonParserReader(countryAndIndicatorQueryConstructor ());
 	    //  textView1 .setText(QueryBuilder. displayInfo);	      
-	    //  graphLayout = (LinearLayout) findViewById(R.id. layout1); must be done in the indicatorActivity
-	    //  GraphViewCreator. graphViewCreator();
-	      		
-
+	   	      	
 		itemlist1IsSelected = false;
 		itemlist2IsSelected = false;
 		
