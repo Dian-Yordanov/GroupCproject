@@ -11,6 +11,7 @@ import android.app.Activity;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.*;
 import android.widget.AdapterView.OnItemClickListener;
@@ -27,10 +28,14 @@ public class IndicatorSearchActivity extends Activity{
 	
 	private Resources res;
 	private String[] countries;
+	private String[] indicators;
 	private String stringUsedForCallingQueryBuilder ="";
 	
 	private static boolean itemlist1IsSelected = false;
 	private static boolean itemlist2IsSelected = false;
+	
+	private static int selectedItemPositionCountry;
+	private static String selectedItemTextIndicator;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +49,8 @@ public class IndicatorSearchActivity extends Activity{
 		
 		res = getResources();
 		countries= res.getStringArray(R.array.countryListView);
-
+		indicators = res.getStringArray(R.array.indicatorListView);
+		
 	}
 	private void indicatorSearchActivityUiBuilder(){
 	setContentView(R.layout.indicator_search_activity);
@@ -70,7 +76,17 @@ public class IndicatorSearchActivity extends Activity{
 			indicatorListView1.setBackgroundColor(0xAFAFAFAA);
 			indicatorListView1.setEnabled(false);
 			indicatorListView1.getChildAt(arg2).setBackgroundColor(0x80FFFFFF);
+			
+			selectedItemPositionCountry = arg2;
+			stringUsedForCallingQueryBuilder = countries[arg2];
+			QueryBuilder. p2CountryName = stringUsedForCallingQueryBuilder;	 
+			
 			itemlist1IsSelected = true;
+			
+			while(itemlist1IsSelected && itemlist2IsSelected ){
+				callQueryBuilderAndGraphView();
+				 Log.v("hi",QueryBuilder. displayInfo + "hi");
+			}
 		}});
 
 	indicatorAdapter = ArrayAdapter.createFromResource(this,R.array.indicatorListView, android.R.layout.simple_list_item_1);
@@ -84,8 +100,19 @@ public class IndicatorSearchActivity extends Activity{
 			indicatorListView2.setBackgroundColor(0xAFAFAFAA);
 			indicatorListView2.setEnabled(false);
 			indicatorListView2.getChildAt(arg2).setBackgroundColor(0x80FFFFFF);
+			
+			selectedItemTextIndicator = indicators[arg2];
+			QueryBuilder. p4IndicatorName = selectedItemTextIndicator;
+			
 			itemlist2IsSelected = true;
+			
+			while(itemlist1IsSelected && itemlist2IsSelected ){
+				callQueryBuilderAndGraphView();
+				 Log.v("hi",QueryBuilder. displayInfo + "hi");
+			}
 		}});
+	
+	
 	}
 	
 	private void createEditOptions(final EditText editTextToGetOptions) {
@@ -98,6 +125,18 @@ public class IndicatorSearchActivity extends Activity{
 						}
 					}
 				});
+	}
+	private void callQueryBuilderAndGraphView(){
+		         
+	         
+	      QueryBuilder. jsonParserReader(countryAndIndicatorQueryConstructor ());
+	    //  textView1 .setText(QueryBuilder. displayInfo);	      
+	      Log.v("hi",QueryBuilder. displayInfo + "hi");
+	    //  graphLayout = (LinearLayout) findViewById(R.id. layout1); must be done in the indicatorActivity
+	    //  GraphViewCreator. graphViewCreator();
+			
+		itemlist1IsSelected = false;
+		itemlist2IsSelected = false;
 	}
 	public static String countryAndIndicatorQueryConstructor() {	
 		return (QueryBuilder.p1ApiAddress + QueryBuilder.p2CountryName + QueryBuilder.p3Indicators + QueryBuilder.p4IndicatorName
