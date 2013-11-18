@@ -59,7 +59,7 @@ public class GraphViewCreator {
 		while(ii!=QueryBuilder.arrayNumber){
 		exampleSeries1.appendData(new GraphViewData(QueryBuilder.years[ii],QueryBuilder.values[ii]), false, 1000);		
 		if(nameOfTheClassCallingThis.equals("searchActivities.ComparisonSearchActivity")){
-			exampleSeries2.appendData(new GraphViewData(QueryBuilder.years[ii+20],QueryBuilder.values[ii+20]), false, 1000);			
+			exampleSeries2.appendData(new GraphViewData(QueryBuilder.years[ii+10],QueryBuilder.values[ii+20]), false, 1000);			
 		}
 		ii++;
 		}

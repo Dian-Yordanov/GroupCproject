@@ -40,9 +40,10 @@ public class ComparisonActivity extends Activity{
  
 		
 		textViewComparison = (TextView) findViewById(R.id.textView1);
+		textViewComparison.setText(ComparisonSearchActivity.textViewComparisonText1 + ComparisonSearchActivity.textViewComparisonText2);
 		
-        graphViewLayout = (LinearLayout) findViewById(R.id. layout2); 
-        GraphViewCreator. graphViewCreator();
+        //graphViewLayout = (LinearLayout) findViewById(R.id. layout2); 
+       // GraphViewCreator. graphViewCreator();
 
 	}
 }

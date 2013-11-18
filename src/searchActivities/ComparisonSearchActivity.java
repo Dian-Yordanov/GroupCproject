@@ -9,6 +9,7 @@ import searchActivities.*;
 import com.groupC.project.R.layout;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
@@ -46,6 +47,9 @@ public class ComparisonSearchActivity extends Activity{
 	private static int selectedItemPositionCountry2;
 	private static int selectedItemPositionIndicator;
 	private static String selectedItemTextIndicator;
+	
+	public static String textViewComparisonText1;
+	public static String textViewComparisonText2;
 	
 	//private String textViewComparisonText="";
 	
@@ -196,10 +200,28 @@ public class ComparisonSearchActivity extends Activity{
 			+ QueryBuilder.p5BeginningOfIdentifiers + QueryBuilder.p6ItemsPerPage + QueryBuilder.p7Date + QueryBuilder.p8Format);
 	}
 	private void comparisonCallQueryBuilderAndGraphView(){
+  
+        QueryBuilder. jsonParserReader(comparisonQueryConstructor (QueryBuilder.p2CountryName));
+        textViewComparisonText1 ="";
+        textViewComparisonText1 = QueryBuilder. displayInfo;
+        
+        QueryBuilder. displayInfo = "" ;
+        QueryBuilder. infoParsed = "" ;
+        
+        QueryBuilder. jsonParserReader(comparisonQueryConstructor (QueryBuilder.p2Country2Name));
+        textViewComparisonText2 ="";
+        textViewComparisonText2 = QueryBuilder. displayInfo;
+
+		
 		itemlist1IsSelected = false;
 		itemlist2IsSelected = false;
 		itemlist3IsSelected = false;
+		
+		gotoComparisonActivity();
 	}
-
+	public void gotoComparisonActivity(){
+		Intent i = new Intent(ComparisonSearchActivity.this, ComparisonActivity.class);
+		startActivity(i);
+	}
 
 }
