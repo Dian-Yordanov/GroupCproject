@@ -7,26 +7,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-        <Spinner
-            android:id="@+id/country1Spinner"
-            android:layout_width="110dp"
-            android:layout_height="wrap_content" />
-
-        <Spinner
-            android:id="@+id/indicatorSpinner"
-            android:layout_width="130dp"
-            android:layout_height="wrap_content" />
-
-        <Spinner
-            android:id="@+id/country2Spinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-    </LinearLayout>
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose another two countries to compare" 
+        android:onClick="gotoComparisonSearchView"/>
 
     <TextView
         android:id="@+id/textView1"

@@ -70,9 +70,6 @@ public class ComparisonActivity extends Activity implements OnItemSelectedListen
 		countries2= res2.getStringArray(R.array.countryListView);
 		
 		textViewComparison = (TextView) findViewById(R.id.textView1);
-		country1Spinner = (Spinner) findViewById(R.id.country1Spinner);
-		indicatorSpinner = (Spinner) findViewById(R.id.indicatorSpinner);
-		country2Spinner = (Spinner) findViewById(R.id.country2Spinner);
 		
 		country1Adapter = ArrayAdapter.createFromResource(this,R.array.countryNames, 
 				android.R.layout.simple_spinner_item);

@@ -19,10 +19,11 @@ public class ComparisonSearchActivity extends Activity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.comparison_search_activity);
-		//countryText = (TextView) findViewById(R.id.c);
+		comparisonSearchActivityBuildUi();
+		
 	}
 	private void comparisonSearchActivityBuildUi(){
+		setContentView(R.layout.comparison_search_activity);
 		
 	}
 
