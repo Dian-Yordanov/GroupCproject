@@ -29,6 +29,9 @@ public class IndicatorSearchActivity extends Activity{
 	private String[] countries;
 	private String stringUsedForCallingQueryBuilder ="";
 	
+	private static boolean itemlist1IsSelected = false;
+	private static boolean itemlist2IsSelected = false;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -67,12 +70,22 @@ public class IndicatorSearchActivity extends Activity{
 			indicatorListView1.setBackgroundColor(0xAFAFAFAA);
 			indicatorListView1.setEnabled(false);
 			indicatorListView1.getChildAt(arg2).setBackgroundColor(0x80FFFFFF);
+			itemlist1IsSelected = true;
 		}});
 
-
-	
 	indicatorAdapter = ArrayAdapter.createFromResource(this,R.array.indicatorListView, android.R.layout.simple_list_item_1);
 	indicatorListView2.setAdapter(indicatorAdapter);
+	indicatorListView2.setOnItemClickListener(new OnItemClickListener(){
+		@Override
+		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+				long arg3) {
+			// TODO Auto-generated method stub
+			arg1.setSelected(true);
+			indicatorListView2.setBackgroundColor(0xAFAFAFAA);
+			indicatorListView2.setEnabled(false);
+			indicatorListView2.getChildAt(arg2).setBackgroundColor(0x80FFFFFF);
+			itemlist2IsSelected = true;
+		}});
 	}
 	
 	private void createEditOptions(final EditText editTextToGetOptions) {
