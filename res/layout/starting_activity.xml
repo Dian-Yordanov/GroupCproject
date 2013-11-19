@@ -18,34 +18,40 @@
         android:id="@+id/countryListSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:layout_weight="0.01"
+        android:layout_gravity="center"
+        android:scaleType="fitXY" 
         android:background="@drawable/countrylist"
-        android:onClick="gotoCountrySearchView"
-        android:scaleType="fitXY" />
+        android:onClick="gotoCountrySearchView"/>
 
     <Button
         android:id="@+id/indicatorsSearch"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0.01"
-        android:text="@string/Indicator" 
-        android:onClick="gotoIndicatorsSearchView"/>
+        android:onClick="gotoIndicatorsSearchView"
+        android:scaleType="fitXY" 
+        android:background="@drawable/indicators"
+        android:layout_gravity="center"/>
 
     <Button
         android:id="@+id/comparisonSearch"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0.01"
-        android:text="@string/Comparison" 
-        android:onClick="gotoComparisonSearchView"/>
+        android:onClick="gotoComparisonSearchView"
+        android:scaleType="fitXY" 
+        android:background="@drawable/compare"
+        android:layout_gravity="center"/>
 
     <Button
         android:id="@+id/about"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0.01"
-        android:text="About Us" 
-        android:onClick="gotoAboutUsView"/>
+        android:onClick="gotoAboutUsView"
+        android:scaleType="fitXY" 
+        android:background="@drawable/aboutus"
+        android:layout_gravity="center"/>
 
 </LinearLayout>
