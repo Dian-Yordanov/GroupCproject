@@ -10,16 +10,19 @@
         android:id="@+id/MyWorldBank"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_weight="0.07"
         android:text="My WorldBank" />
 
     <Button
         android:id="@+id/countryListSearch"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_weight="0.01"
-        android:text="@string/CList" 
-        android:onClick="gotoCountrySearchView"/>
+        android:background="@drawable/countrylist"
+        android:onClick="gotoCountrySearchView"
+        android:scaleType="fitXY" />
 
     <Button
         android:id="@+id/indicatorsSearch"
