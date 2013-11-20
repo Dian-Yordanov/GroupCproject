@@ -89,15 +89,9 @@ public class IndicatorSearchActivity extends Activity{
 			
 			itemlist1IsSelected = true;
 			
-			while(itemlist1IsSelected && itemlist2IsSelected ){
-				callQueryBuilderAndGraphView();
-				indicatorListView1.setBackgroundColor(0xcbcbcb);
-				indicatorListView1.setEnabled(true);
-				selectedViewFromItemList1.setBackgroundColor(0xcbcbcb);
-				indicatorListView2.setBackgroundColor(0xcbcbcb);
-				indicatorListView2.setEnabled(true);
-				selectedViewFromItemList2.setBackgroundColor(0xcbcbcb);
-			}
+			
+				logicClassesCall();
+		
 		}});
 
 	indicatorAdapter = ArrayAdapter.createFromResource(this,R.array.indicatorMeaningListView, android.R.layout.simple_list_item_1);
@@ -119,15 +113,9 @@ public class IndicatorSearchActivity extends Activity{
 			
 			itemlist2IsSelected = true;
 			
-			while(itemlist1IsSelected && itemlist2IsSelected ){
-				callQueryBuilderAndGraphView();
-				indicatorListView1.setBackgroundColor(0xcbcbcb);
-				indicatorListView1.setEnabled(true);
-				selectedViewFromItemList1.setBackgroundColor(0xcbcbcb);
-				indicatorListView2.setBackgroundColor(0xcbcbcb);
-				indicatorListView2.setEnabled(true);
-				selectedViewFromItemList2.setBackgroundColor(0xcbcbcb);
-			}
+
+				logicClassesCall();
+
 		}});
 	
 	
@@ -162,5 +150,16 @@ public class IndicatorSearchActivity extends Activity{
 	public void gotoInidcatorActivity(){
 		Intent i = new Intent(IndicatorSearchActivity.this, IndicatorActivity.class);
 		startActivity(i);
+	}
+	private void logicClassesCall(){
+		while(itemlist1IsSelected && itemlist2IsSelected ){
+		callQueryBuilderAndGraphView();
+		indicatorListView1.setBackgroundColor(0xcbcbcb);
+		indicatorListView1.setEnabled(true);
+		selectedViewFromItemList1.setBackgroundColor(0xcbcbcb);
+		indicatorListView2.setBackgroundColor(0xcbcbcb);
+		indicatorListView2.setEnabled(true);
+		selectedViewFromItemList2.setBackgroundColor(0xcbcbcb);
+		}
 	}
 }

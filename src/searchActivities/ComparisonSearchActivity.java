@@ -233,5 +233,8 @@ public class ComparisonSearchActivity extends Activity{
 		Intent i = new Intent(ComparisonSearchActivity.this, ComparisonActivity.class);
 		startActivity(i);
 	}
+	private void logicClassesCall(){
+		
+	}
 
 }
