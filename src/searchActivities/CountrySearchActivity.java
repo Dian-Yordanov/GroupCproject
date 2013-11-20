@@ -21,6 +21,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -28,9 +29,10 @@ import android.widget.TextView;
 public class CountrySearchActivity extends Activity {
 	
 	TextView countryText;
-	EditText selectYourCountryEditText;
+	AutoCompleteTextView selectYourCountryAutoCompleteText;
 	ListView countriesListView;
 	private static ArrayAdapter<CharSequence> countryListAdapter;
+	private static ArrayAdapter<String> autoCompleteAdapter;
 	
 	private Resources res;
 	private String[] countries;
@@ -44,26 +46,31 @@ public class CountrySearchActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		comparisonSearchActivityBuildUi();
-		QueryBuilder.setNameOfClassCallingQueryBuilder(this.getLocalClassName());
-		//QueryBuilder qBuilder1 = new QueryBuilder(countryQueryConstructor());
-		
 		res = getResources();
 		countries= res.getStringArray(R.array.countryListView);
 		countriesByTwoLetters = res.getStringArray(R.array.countryArrayWithOnly2letters);
 		countryNames =res.getStringArray(R.array.countryNames);
+		
+		comparisonSearchActivityBuildUi();
+		QueryBuilder.setNameOfClassCallingQueryBuilder(this.getLocalClassName());
+		
+		
 
 	}
 
 	private void comparisonSearchActivityBuildUi() {
 		setContentView(R.layout.country_search_activity);
 		countryText = (TextView) findViewById(R.id.countryText);
-		selectYourCountryEditText = (EditText) findViewById(R.id.selectYourCountryEditText);
+		selectYourCountryAutoCompleteText = (AutoCompleteTextView) findViewById(R.id.selectYourCountryAutoCompleteText);
 		countriesListView = (ListView) findViewById(R.id.countriesListView);
 		
 		countryText.setTextSize(18);
 		createEditOptions();
 		
+		autoCompleteAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line,countryNames);
+        selectYourCountryAutoCompleteText.setAdapter(autoCompleteAdapter);
+        selectYourCountryAutoCompleteText.setThreshold(1);
+        
 		countryListAdapter = ArrayAdapter.createFromResource(this,R.array.countryNames, android.R.layout.simple_list_item_1);
 		countriesListView.setAdapter(countryListAdapter);		
 		countriesListView.setOnItemClickListener(new OnItemClickListener(){
@@ -87,12 +94,12 @@ public class CountrySearchActivity extends Activity {
 	}
 
 	private void createEditOptions() {
-		selectYourCountryEditText
+		selectYourCountryAutoCompleteText
 				.setOnFocusChangeListener(new View.OnFocusChangeListener() {
 					@Override
 					public void onFocusChange(View v, boolean hasFocus) {
 						if (hasFocus) {
-							selectYourCountryEditText.setText("");
+							selectYourCountryAutoCompleteText.setText("");
 						}
 					}
 				});

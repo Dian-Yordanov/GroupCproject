@@ -12,13 +12,13 @@
         android:layout_height="wrap_content"
         android:text="  Choose a country you want to learn more about" />
 
-    <EditText
-        android:id="@+id/selectYourCountryEditText"
+    <AutoCompleteTextView
+        android:id="@+id/selectYourCountryAutoCompleteText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Search a country" >
 
-    </EditText>
+    </AutoCompleteTextView>
 
     <ListView
         android:id="@+id/countriesListView"
