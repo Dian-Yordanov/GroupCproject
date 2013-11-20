@@ -37,8 +37,6 @@ public class StartingActivity extends Activity {
 		aboutUs = (Button) findViewById(R.id.about);
 		
 		gettingTheScreenSize();
-		Log.v("taggg",Integer.toString(screenWidth));
-		Log.v("taggg",Integer.toString(screenHeight));
 	}
 
 	public void gotoCountrySearchView(View view) {
