@@ -9,49 +9,60 @@
 
     <ImageView
         android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.01"
+        android:src="@drawable/title2" 
+        android:layout_gravity="center"/>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.01"
-        android:src="@drawable/title" />
+        android:orientation="vertical" >
+    </LinearLayout>
 
     <Button
         android:id="@+id/countryListSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="0.01"
         android:layout_gravity="center"
-        android:scaleType="fitXY" 
         android:background="@drawable/countrylist"
-        android:onClick="gotoCountrySearchView"/>
+        android:onClick="gotoCountrySearchView"
+        android:scaleType="fitXY" />
 
     <Button
         android:id="@+id/indicatorsSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="0.01"
-        android:onClick="gotoIndicatorsSearchView"
-        android:scaleType="fitXY" 
+        android:layout_gravity="center"
         android:background="@drawable/indicators"
-        android:layout_gravity="center"/>
+        android:onClick="gotoIndicatorsSearchView"
+        android:scaleType="fitXY" />
 
     <Button
         android:id="@+id/comparisonSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="0.01"
-        android:onClick="gotoComparisonSearchView"
-        android:scaleType="fitXY" 
+        android:layout_gravity="center"
         android:background="@drawable/compare"
-        android:layout_gravity="center"/>
+        android:onClick="gotoComparisonSearchView"
+        android:scaleType="fitXY" />
 
     <Button
         android:id="@+id/about"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="0.01"
-        android:onClick="gotoAboutUsView"
-        android:scaleType="fitXY" 
+        android:layout_gravity="center"
         android:background="@drawable/aboutus"
-        android:layout_gravity="center"/>
+        android:onClick="gotoAboutUsView"
+        android:scaleType="fitXY" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.01"
+        android:orientation="vertical" >
+    </LinearLayout>
 
 </LinearLayout>

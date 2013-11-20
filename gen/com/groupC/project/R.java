@@ -39,6 +39,7 @@ public final class R {
         public static final int julian=0x7f020008;
         public static final int oday=0x7f020009;
         public static final int title=0x7f02000a;
+        public static final int title2=0x7f02000b;
     }
     public static final class id {
         public static final int ComparisonText=0x7f08000b;
