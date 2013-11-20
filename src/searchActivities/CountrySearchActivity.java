@@ -1,5 +1,7 @@
 package searchActivities;
 
+import java.lang.reflect.Array;
+
 import com.groupC.project.*;
 
 import displayActivities.*;
@@ -67,9 +69,23 @@ public class CountrySearchActivity extends Activity {
 		countryText.setTextSize(18);
 		createEditOptions();
 		
-		autoCompleteAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line,countryNames);
+		autoCompleteAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1,countryNames);
         selectYourCountryAutoCompleteText.setAdapter(autoCompleteAdapter);
         selectYourCountryAutoCompleteText.setThreshold(1);
+        selectYourCountryAutoCompleteText.setOnItemClickListener(new OnItemClickListener(){
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+				Log.v("your selected item",""+arg0.getItemAtPosition(arg2)+" "+arg0.getSelectedItemPosition() 
+						+" "+ arg2+" "+getArrayIndex(countryNames, arg0.getItemAtPosition(arg2).toString()));
+				stringUsedForCallingQueryBuilder = countries[arg2];
+				stringUsedForCallingFlagDownloader = countriesByTwoLetters[arg2];
+				stringUsedForCallingCountryMapDownloader = countryNames[arg2];			
+				logicClassesCall();
+				
+			}});
         
 		countryListAdapter = ArrayAdapter.createFromResource(this,R.array.countryNames, android.R.layout.simple_list_item_1);
 		countriesListView.setAdapter(countryListAdapter);		
@@ -83,13 +99,8 @@ public class CountrySearchActivity extends Activity {
 				stringUsedForCallingFlagDownloader = countriesByTwoLetters[arg2];
 				stringUsedForCallingCountryMapDownloader = countryNames[arg2];
 									
-				QueryBuilder.p2CountryName = stringUsedForCallingQueryBuilder;					
-				CountryPicturesQueryBuilder.countryCode = stringUsedForCallingFlagDownloader;
-				CountryPicturesQueryBuilder.countryName = countryNameForCountryLocationCall();
-				CountryPicturesQueryBuilder.flagQuery();
-				QueryBuilder.jsonParserReader(countryQueryConstructor());				
+				logicClassesCall();
 				
-				gotoCountryActivity();
 			}});
 	}
 
@@ -203,5 +214,22 @@ public class CountrySearchActivity extends Activity {
 		Intent i = new Intent(CountrySearchActivity.this, CountryActivity.class);
 		startActivity(i);
 	}
-
+	private void logicClassesCall(){
+		QueryBuilder.p2CountryName = stringUsedForCallingQueryBuilder;					
+		CountryPicturesQueryBuilder.countryCode = stringUsedForCallingFlagDownloader;
+		CountryPicturesQueryBuilder.countryName = countryNameForCountryLocationCall();
+		CountryPicturesQueryBuilder.flagQuery();
+		QueryBuilder.jsonParserReader(countryQueryConstructor());				
+		
+		gotoCountryActivity();
+	}
+	public final int getArrayIndex(String[] myArray, String myObject) {
+	    int ArraySize = Array.getLength(myArray);// get the size of the array
+	    for (int i = 0; i < ArraySize; i++) {
+	        if (myArray[i].equals(myObject)) {
+	            return (i);
+	        }
+	    }
+	    return (-1);// didn't find what I was looking for
+	}
 }

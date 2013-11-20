@@ -55,7 +55,6 @@ public class CountryActivity  extends Activity{
 		flagView = (ImageView) findViewById(R.id.imageView1);
 		countryView = (ImageView) findViewById(R.id.imageView2);
 		
-
 		imageResize();
 		
 		displayedText.setText(QueryBuilder.displayInfo);
