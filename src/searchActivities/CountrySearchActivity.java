@@ -80,9 +80,9 @@ public class CountrySearchActivity extends Activity {
 				// TODO Auto-generated method stub
 				Log.v("your selected item",""+arg0.getItemAtPosition(arg2)+" "+arg0.getSelectedItemPosition() 
 						+" "+ arg2+" "+getArrayIndex(countryNames, arg0.getItemAtPosition(arg2).toString()));
-				stringUsedForCallingQueryBuilder = countries[arg2];
-				stringUsedForCallingFlagDownloader = countriesByTwoLetters[arg2];
-				stringUsedForCallingCountryMapDownloader = countryNames[arg2];			
+				stringUsedForCallingQueryBuilder = countries[getArrayIndex(countryNames, arg0.getItemAtPosition(arg2).toString())];
+				stringUsedForCallingFlagDownloader = countriesByTwoLetters[getArrayIndex(countryNames, arg0.getItemAtPosition(arg2).toString())];
+				stringUsedForCallingCountryMapDownloader = countryNames[getArrayIndex(countryNames, arg0.getItemAtPosition(arg2).toString())];			
 				logicClassesCall();
 				
 			}});
