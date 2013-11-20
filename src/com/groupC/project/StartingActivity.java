@@ -8,8 +8,10 @@ import logicClasses.*;
 import searchActivities.*;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Display;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -20,7 +22,10 @@ public class StartingActivity extends Activity {
 	Button indicatorsSearch;
 	Button comparisonSearch;
 	Button aboutUs;
-//test
+	
+	public static int screenWidth;
+	public static int screenHeight;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -30,6 +35,10 @@ public class StartingActivity extends Activity {
 		countriesSearch = (Button) findViewById(R.id.countryListSearch);
 		comparisonSearch = (Button) findViewById(R.id.comparisonSearch);
 		aboutUs = (Button) findViewById(R.id.about);
+		
+		gettingTheScreenSize();
+		Log.v("taggg",Integer.toString(screenWidth));
+		Log.v("taggg",Integer.toString(screenHeight));
 	}
 
 	public void gotoCountrySearchView(View view) {
@@ -53,6 +62,11 @@ public class StartingActivity extends Activity {
 		Intent i = new Intent(StartingActivity.this, ComparisonSearchActivity.class);
 		startActivity(i);
 
+	}
+	public void gettingTheScreenSize(){
+		Display display = getWindowManager().getDefaultDisplay(); 
+		screenWidth = display.getWidth();  // deprecated
+		screenHeight= display.getHeight();  // deprecated
 	}
 
 }
