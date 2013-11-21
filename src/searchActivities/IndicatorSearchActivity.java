@@ -47,6 +47,8 @@ public class IndicatorSearchActivity extends Activity{
 	private static View selectedViewFromItemList1;
 	private static View selectedViewFromItemList2;
 	
+	//private String nameOfAdapterCallingThisMethod ="";
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -82,7 +84,7 @@ public class IndicatorSearchActivity extends Activity{
 		@Override
 		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 				long arg3) {
-			settingCountryAsSelected(arg0,arg1,arg2,arg3);
+			settingCountryAsSelected(arg0,arg1,arg2,arg3, "countryAdapter");
 		}});
 	
 	autoCompleteAdapterCountry = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1,countryNames);
@@ -93,7 +95,7 @@ public class IndicatorSearchActivity extends Activity{
 		@Override
 		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 				long arg3) {
-			settingCountryAsSelected(arg0,arg1,arg2,arg3);
+			settingCountryAsSelected(arg0,arg1,arg2,arg3, "autoCompleteAdapterCountry");
 		}});
 
 	indicatorAdapter = ArrayAdapter.createFromResource(this,R.array.indicatorMeaningListView, android.R.layout.simple_list_item_1);
@@ -102,7 +104,7 @@ public class IndicatorSearchActivity extends Activity{
 		@Override
 		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 				long arg3) {
-			settingIndicatorAsSelected(arg0,arg1,arg2,arg3);
+			settingIndicatorAsSelected(arg0,arg1,arg2,arg3, "indicatorAdapter");
 		}});
 	autoCompleteAdapterIndicator = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line,indicatorNames);
     selectYourIndicatorAutoCompleteText.setAdapter(autoCompleteAdapterIndicator);
@@ -112,7 +114,7 @@ public class IndicatorSearchActivity extends Activity{
 		@Override
 		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 				long arg3) {
-			settingIndicatorAsSelected(arg0,arg1,arg2,arg3);
+			settingIndicatorAsSelected(arg0,arg1,arg2,arg3, "autoCompleteAdapterIndicator");
 		}});
 	
 	
@@ -168,7 +170,7 @@ public class IndicatorSearchActivity extends Activity{
 		}
 	}
 	private void settingCountryAsSelected(AdapterView<?> arg0, View arg1, int arg2,
-			long arg3){
+			long arg3, String nameOfAdapterCallingThisMethodCountry){
 		selectedViewFromItemList1 = arg1;
 		selectedViewFromItemList1 .setSelected(true);
 		indicatorListView1.setBackgroundColor(0xAFAFAFAA);
@@ -178,15 +180,22 @@ public class IndicatorSearchActivity extends Activity{
 		selectYourCountryAutoCompleteText.setTextColor(Color.BLACK);
 		selectYourCountryAutoCompleteText.setBackgroundColor(0xAFAFAFAA);
 		
+		if(nameOfAdapterCallingThisMethodCountry == "countryAdapter"){
 		selectedItemPositionCountry = arg2;
 		stringUsedForCallingQueryBuilder = countries[arg2];
 		QueryBuilder. p2CountryName = stringUsedForCallingQueryBuilder;	 
+		}
+		else if(nameOfAdapterCallingThisMethodCountry == "autoCompleteAdapterCountry"){
+		selectedItemPositionCountry = CountrySearchActivity.getArrayIndex(countryNames, arg0.getItemAtPosition(arg2).toString());
+		stringUsedForCallingQueryBuilder = countries[selectedItemPositionCountry];
+		QueryBuilder. p2CountryName = stringUsedForCallingQueryBuilder;	 
+		}
 		
 		itemlist1IsSelected = true;
 		logicClassesCall();
 	}
 	private void settingIndicatorAsSelected(AdapterView<?> arg0, View arg1, int arg2,
-			long arg3){
+			long arg3, String nameOfAdapterCallingThisMethodIndicator){
 		selectedViewFromItemList2 = arg1;
 		selectedViewFromItemList2.setSelected(true);
 		indicatorListView2.setBackgroundColor(0xAFAFAFAA);
@@ -196,10 +205,16 @@ public class IndicatorSearchActivity extends Activity{
 		selectYourIndicatorAutoCompleteText.setTextColor(Color.BLACK);
 		selectYourIndicatorAutoCompleteText.setBackgroundColor(0xAFAFAFAA);
 		
-		
+		if(nameOfAdapterCallingThisMethodIndicator == "indicatorAdapter"){
 		selectedItemTextIndicator = indicators[arg2];
 		selectedItemPositionIndicator = arg2;
 		QueryBuilder. p4IndicatorName = selectedItemTextIndicator;
+		}
+		else if(nameOfAdapterCallingThisMethodIndicator == "autoCompleteAdapterIndicator"){
+		selectedItemTextIndicator = indicators[CountrySearchActivity.getArrayIndex(indicatorNames, arg0.getItemAtPosition(arg2).toString())];
+		selectedItemPositionIndicator = CountrySearchActivity.getArrayIndex(indicatorNames, arg0.getItemAtPosition(arg2).toString());
+		QueryBuilder. p4IndicatorName = selectedItemTextIndicator;
+		}
 		
 		itemlist2IsSelected = true;
 		logicClassesCall();

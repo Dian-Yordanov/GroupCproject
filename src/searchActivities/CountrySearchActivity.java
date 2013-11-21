@@ -224,7 +224,7 @@ public class CountrySearchActivity extends Activity {
 
 		gotoCountryActivity();
 	}
-	public final int getArrayIndex(String[] myArray, String myObject) {
+	public final static int getArrayIndex(String[] myArray, String myObject) {
 	    int ArraySize = Array.getLength(myArray);// get the size of the array
 	    for (int i = 0; i < ArraySize; i++) {
 	        if (myArray[i].equals(myObject)) {
