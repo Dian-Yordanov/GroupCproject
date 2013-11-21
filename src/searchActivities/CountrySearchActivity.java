@@ -78,8 +78,6 @@ public class CountrySearchActivity extends Activity {
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
 				// TODO Auto-generated method stub
-				Log.v("your selected item",""+arg0.getItemAtPosition(arg2)+" "+arg0.getSelectedItemPosition() 
-						+" "+ arg2+" "+getArrayIndex(countryNames, arg0.getItemAtPosition(arg2).toString()));
 				stringUsedForCallingQueryBuilder = countries[getArrayIndex(countryNames, arg0.getItemAtPosition(arg2).toString())];
 				stringUsedForCallingFlagDownloader = countriesByTwoLetters[getArrayIndex(countryNames, arg0.getItemAtPosition(arg2).toString())];
 				stringUsedForCallingCountryMapDownloader = countryNames[getArrayIndex(countryNames, arg0.getItemAtPosition(arg2).toString())];			

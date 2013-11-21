@@ -19,13 +19,16 @@ import android.widget.AdapterView.OnItemClickListener;
 
 public class IndicatorSearchActivity extends Activity{
 	TextView indicatorText;
-	EditText indicatorCountryEditText1;
-	EditText indicatorCountryEditText2;
+	AutoCompleteTextView selectYourCountryAutoCompleteText;
+	AutoCompleteTextView selectYourIndicatorAutoCompleteText;
 	ListView indicatorListView1;
 	ListView indicatorListView2;
 	
 	public static ArrayAdapter<CharSequence> countryAdapter;
 	public static ArrayAdapter<CharSequence> indicatorAdapter;
+	
+	private static ArrayAdapter<String> autoCompleteAdapterCountry;
+	private static ArrayAdapter<String> autoCompleteAdapterIndicator;
 	
 	private Resources res;
 	private String[] countries;
@@ -46,29 +49,28 @@ public class IndicatorSearchActivity extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		indicatorSearchActivityUiBuilder();
-		QueryBuilder.setNameOfClassCallingQueryBuilder(this.getLocalClassName());
-		//QueryBuilder qBuilder = new QueryBuilder(countryAndIndicatorQueryConstructor());
-		
-		GraphViewCreator.setNameOfClassCallingGraphViewCreator(this.getLocalClassName());
-		
 		res = getResources();
 		countries= res.getStringArray(R.array.countryListView);
 		indicators = res.getStringArray(R.array.indicatorListView);
 		
+		indicatorSearchActivityUiBuilder();
+		QueryBuilder.setNameOfClassCallingQueryBuilder(this.getLocalClassName());
+		
+		GraphViewCreator.setNameOfClassCallingGraphViewCreator(this.getLocalClassName());
+	
 	}
 	private void indicatorSearchActivityUiBuilder(){
 	setContentView(R.layout.indicator_search_activity);
 	indicatorText = (TextView) findViewById(R.id.indicatorText);
 	
-	indicatorCountryEditText1 = (EditText) findViewById(R.id.indicatorCountryEditText1);
-	indicatorCountryEditText2 = (EditText) findViewById(R.id.indicatorCountryEditText2);
+	selectYourCountryAutoCompleteText = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextViewCountry);
+	selectYourIndicatorAutoCompleteText = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextViewIndicator);
 	
 	indicatorListView1 = (ListView) findViewById(R.id.indicatorListView1);
 	indicatorListView2 = (ListView) findViewById(R.id.indicatorListView2);
 	
-	createEditOptions(indicatorCountryEditText1);
-	createEditOptions(indicatorCountryEditText2);
+	createEditOptions(selectYourCountryAutoCompleteText);
+	createEditOptions(selectYourIndicatorAutoCompleteText);
 	
 	countryAdapter = ArrayAdapter.createFromResource(this,R.array.countryNames, android.R.layout.simple_list_item_1);
 	indicatorListView1.setAdapter(countryAdapter);
@@ -82,6 +84,8 @@ public class IndicatorSearchActivity extends Activity{
 			indicatorListView1.setBackgroundColor(0xAFAFAFAA);
 			indicatorListView1.setEnabled(false);
 			selectedViewFromItemList1.setBackgroundColor(0x80FFFFFF);
+			selectYourCountryAutoCompleteText.setEnabled(false);
+			selectYourCountryAutoCompleteText.setBackgroundColor(0xAFAFAFAA);
 			
 			selectedItemPositionCountry = arg2;
 			stringUsedForCallingQueryBuilder = countries[arg2];
@@ -121,13 +125,13 @@ public class IndicatorSearchActivity extends Activity{
 	
 	}
 	
-	private void createEditOptions(final EditText editTextToGetOptions) {
-		editTextToGetOptions
+	private void createEditOptions(final AutoCompleteTextView autoCompleteTextViewToGetOptions) {
+		autoCompleteTextViewToGetOptions
 				.setOnFocusChangeListener(new View.OnFocusChangeListener() {
 					@Override
 					public void onFocusChange(View v, boolean hasFocus) {
 						if (hasFocus) {
-							editTextToGetOptions.setText("");
+							autoCompleteTextViewToGetOptions.setText("");
 						}
 					}
 				});

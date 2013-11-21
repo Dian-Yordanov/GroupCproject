@@ -45,6 +45,8 @@ public final class R {
         public static final int ComparisonText=0x7f08000c;
         public static final int RelativeLayout1=0x7f080000;
         public static final int about=0x7f080022;
+        public static final int autoCompleteTextViewCountry=0x7f08001b;
+        public static final int autoCompleteTextViewIndicator=0x7f08001c;
         public static final int button1=0x7f08000a;
         public static final int comparisonCountryEditText1=0x7f08000d;
         public static final int comparisonCountryEditText2=0x7f08000f;
@@ -61,8 +63,6 @@ public final class R {
         public static final int imageView2=0x7f080008;
         public static final int imageView3=0x7f080002;
         public static final int imageView4=0x7f080004;
-        public static final int indicatorCountryEditText1=0x7f08001b;
-        public static final int indicatorCountryEditText2=0x7f08001c;
         public static final int indicatorListView1=0x7f08001d;
         public static final int indicatorListView2=0x7f08001e;
         public static final int indicatorText=0x7f08001a;
