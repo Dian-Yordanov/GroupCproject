@@ -90,6 +90,7 @@ public class IndicatorSearchActivity extends Activity{
 	autoCompleteAdapterCountry = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1,countryNames);
     selectYourCountryAutoCompleteText.setAdapter(autoCompleteAdapterCountry);
     selectYourCountryAutoCompleteText.setThreshold(1);
+    selectYourCountryAutoCompleteText.setDropDownWidth(StartingActivity.screenWidth);
     selectYourCountryAutoCompleteText.setOnItemClickListener(new OnItemClickListener(){
 
 		@Override
@@ -109,6 +110,7 @@ public class IndicatorSearchActivity extends Activity{
 	autoCompleteAdapterIndicator = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line,indicatorNames);
     selectYourIndicatorAutoCompleteText.setAdapter(autoCompleteAdapterIndicator);
     selectYourIndicatorAutoCompleteText.setThreshold(1);
+    selectYourIndicatorAutoCompleteText.setDropDownWidth(StartingActivity.screenWidth);
     selectYourIndicatorAutoCompleteText.setOnItemClickListener(new OnItemClickListener(){
 
 		@Override
