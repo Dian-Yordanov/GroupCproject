@@ -1,5 +1,6 @@
 package searchActivities;
 
+
 import com.groupC.project.*;
 
 import displayActivities.*;
@@ -8,12 +9,16 @@ import searchActivities.*;
 
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.*;
 import android.widget.AdapterView.OnItemClickListener;
 
@@ -46,6 +51,8 @@ public class IndicatorSearchActivity extends Activity{
 	
 	private static View selectedViewFromItemList1;
 	private static View selectedViewFromItemList2;
+	
+	View lineView;
 	
 	//private String nameOfAdapterCallingThisMethod ="";
 	
@@ -85,9 +92,13 @@ public class IndicatorSearchActivity extends Activity{
 		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 				long arg3) {
 			settingCountryAsSelected(arg0,arg1,arg2,arg3, "countryAdapter");
-		}});
+		}}
+	);
 	
-	autoCompleteAdapterCountry = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1,countryNames);
+	
+	
+	
+	autoCompleteAdapterCountry = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line,countryNames);
     selectYourCountryAutoCompleteText.setAdapter(autoCompleteAdapterCountry);
     selectYourCountryAutoCompleteText.setThreshold(1);
     selectYourCountryAutoCompleteText.setDropDownWidth(StartingActivity.screenWidth);
@@ -107,10 +118,13 @@ public class IndicatorSearchActivity extends Activity{
 				long arg3) {
 			settingIndicatorAsSelected(arg0,arg1,arg2,arg3, "indicatorAdapter");
 		}});
-	autoCompleteAdapterIndicator = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line,indicatorNames);
+	
+	
+	autoCompleteAdapterIndicator = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1,indicatorNames);
     selectYourIndicatorAutoCompleteText.setAdapter(autoCompleteAdapterIndicator);
     selectYourIndicatorAutoCompleteText.setThreshold(1);
     selectYourIndicatorAutoCompleteText.setDropDownWidth(StartingActivity.screenWidth);
+    
     selectYourIndicatorAutoCompleteText.setOnItemClickListener(new OnItemClickListener(){
 
 		@Override
@@ -221,4 +235,6 @@ public class IndicatorSearchActivity extends Activity{
 		itemlist2IsSelected = true;
 		logicClassesCall();
 	}
+	
+
 }
