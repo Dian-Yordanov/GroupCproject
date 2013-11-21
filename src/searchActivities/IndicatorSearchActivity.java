@@ -23,6 +23,8 @@ public class IndicatorSearchActivity extends Activity{
 	AutoCompleteTextView selectYourIndicatorAutoCompleteText;
 	ListView indicatorListView1;
 	ListView indicatorListView2;
+	private String[] countryNames;
+	private String[] indicatorNames;
 	
 	public static ArrayAdapter<CharSequence> countryAdapter;
 	public static ArrayAdapter<CharSequence> indicatorAdapter;
@@ -52,6 +54,8 @@ public class IndicatorSearchActivity extends Activity{
 		res = getResources();
 		countries= res.getStringArray(R.array.countryListView);
 		indicators = res.getStringArray(R.array.indicatorListView);
+		countryNames =res.getStringArray(R.array.countryNames);
+		indicatorNames =res.getStringArray(R.array.indicatorMeaningListView);
 		
 		indicatorSearchActivityUiBuilder();
 		QueryBuilder.setNameOfClassCallingQueryBuilder(this.getLocalClassName());
@@ -69,8 +73,8 @@ public class IndicatorSearchActivity extends Activity{
 	indicatorListView1 = (ListView) findViewById(R.id.indicatorListView1);
 	indicatorListView2 = (ListView) findViewById(R.id.indicatorListView2);
 	
-	createEditOptions(selectYourCountryAutoCompleteText);
-	createEditOptions(selectYourIndicatorAutoCompleteText);
+	//createEditOptions(selectYourCountryAutoCompleteText);
+	//createEditOptions(selectYourIndicatorAutoCompleteText);
 	
 	countryAdapter = ArrayAdapter.createFromResource(this,R.array.countryNames, android.R.layout.simple_list_item_1);
 	indicatorListView1.setAdapter(countryAdapter);
@@ -78,24 +82,18 @@ public class IndicatorSearchActivity extends Activity{
 		@Override
 		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 				long arg3) {
-			// TODO Auto-generated method stub
-			selectedViewFromItemList1 = arg1;
-			selectedViewFromItemList1 .setSelected(true);
-			indicatorListView1.setBackgroundColor(0xAFAFAFAA);
-			indicatorListView1.setEnabled(false);
-			selectedViewFromItemList1.setBackgroundColor(0x80FFFFFF);
-			selectYourCountryAutoCompleteText.setEnabled(false);
-			selectYourCountryAutoCompleteText.setBackgroundColor(0xAFAFAFAA);
-			
-			selectedItemPositionCountry = arg2;
-			stringUsedForCallingQueryBuilder = countries[arg2];
-			QueryBuilder. p2CountryName = stringUsedForCallingQueryBuilder;	 
-			
-			itemlist1IsSelected = true;
-			
-			
-				logicClassesCall();
-		
+			settingCountryAsSelected(arg0,arg1,arg2,arg3);
+		}});
+	
+	autoCompleteAdapterCountry = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1,countryNames);
+    selectYourCountryAutoCompleteText.setAdapter(autoCompleteAdapterCountry);
+    selectYourCountryAutoCompleteText.setThreshold(1);
+    selectYourCountryAutoCompleteText.setOnItemClickListener(new OnItemClickListener(){
+
+		@Override
+		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+				long arg3) {
+			settingCountryAsSelected(arg0,arg1,arg2,arg3);
 		}});
 
 	indicatorAdapter = ArrayAdapter.createFromResource(this,R.array.indicatorMeaningListView, android.R.layout.simple_list_item_1);
@@ -104,22 +102,17 @@ public class IndicatorSearchActivity extends Activity{
 		@Override
 		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 				long arg3) {
-			// TODO Auto-generated method stub
-			selectedViewFromItemList2 = arg1;
-			selectedViewFromItemList2.setSelected(true);
-			indicatorListView2.setBackgroundColor(0xAFAFAFAA);
-			indicatorListView2.setEnabled(false);
-			selectedViewFromItemList2.setBackgroundColor(0x80FFFFFF);
-			
-			selectedItemTextIndicator = indicators[arg2];
-			selectedItemPositionIndicator = arg2;
-			QueryBuilder. p4IndicatorName = selectedItemTextIndicator;
-			
-			itemlist2IsSelected = true;
-			
+			settingIndicatorAsSelected(arg0,arg1,arg2,arg3);
+		}});
+	autoCompleteAdapterIndicator = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line,indicatorNames);
+    selectYourIndicatorAutoCompleteText.setAdapter(autoCompleteAdapterIndicator);
+    selectYourIndicatorAutoCompleteText.setThreshold(1);
+    selectYourIndicatorAutoCompleteText.setOnItemClickListener(new OnItemClickListener(){
 
-				logicClassesCall();
-
+		@Override
+		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+				long arg3) {
+			settingIndicatorAsSelected(arg0,arg1,arg2,arg3);
 		}});
 	
 	
@@ -164,6 +157,47 @@ public class IndicatorSearchActivity extends Activity{
 		indicatorListView2.setBackgroundColor(0xcbcbcb);
 		indicatorListView2.setEnabled(true);
 		selectedViewFromItemList2.setBackgroundColor(0xcbcbcb);
+		selectYourCountryAutoCompleteText.setEnabled(true);
+		selectYourCountryAutoCompleteText.setBackgroundColor(0xcbcbcb);
+		selectYourIndicatorAutoCompleteText.setEnabled(true);
+		selectYourIndicatorAutoCompleteText.setBackgroundColor(0xcbcbcb);
+		selectYourIndicatorAutoCompleteText.setText("");
+		selectYourCountryAutoCompleteText.setText("");
 		}
+	}
+	private void settingCountryAsSelected(AdapterView<?> arg0, View arg1, int arg2,
+			long arg3){
+		selectedViewFromItemList1 = arg1;
+		selectedViewFromItemList1 .setSelected(true);
+		indicatorListView1.setBackgroundColor(0xAFAFAFAA);
+		indicatorListView1.setEnabled(false);
+		selectedViewFromItemList1.setBackgroundColor(0x80FFFFFF);
+		selectYourCountryAutoCompleteText.setEnabled(false);
+		selectYourCountryAutoCompleteText.setBackgroundColor(0xAFAFAFAA);
+		
+		selectedItemPositionCountry = arg2;
+		stringUsedForCallingQueryBuilder = countries[arg2];
+		QueryBuilder. p2CountryName = stringUsedForCallingQueryBuilder;	 
+		
+		itemlist1IsSelected = true;
+		logicClassesCall();
+	}
+	private void settingIndicatorAsSelected(AdapterView<?> arg0, View arg1, int arg2,
+			long arg3){
+		selectedViewFromItemList2 = arg1;
+		selectedViewFromItemList2.setSelected(true);
+		indicatorListView2.setBackgroundColor(0xAFAFAFAA);
+		indicatorListView2.setEnabled(false);
+		selectedViewFromItemList2.setBackgroundColor(0x80FFFFFF);
+		selectYourIndicatorAutoCompleteText.setEnabled(false);
+		selectYourIndicatorAutoCompleteText.setBackgroundColor(0xAFAFAFAA);
+		
+		
+		selectedItemTextIndicator = indicators[arg2];
+		selectedItemPositionIndicator = arg2;
+		QueryBuilder. p4IndicatorName = selectedItemTextIndicator;
+		
+		itemlist2IsSelected = true;
+		logicClassesCall();
 	}
 }

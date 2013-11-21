@@ -20,14 +20,16 @@
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:text="Search a country" />
+            android:hint="Search a country"
+            android:text="" />
 
         <AutoCompleteTextView
             android:id="@+id/autoCompleteTextViewIndicator"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:text="Search an indicator" >
+            android:hint="Search an indicator"
+            android:text="" >
 
         </AutoCompleteTextView>
 
