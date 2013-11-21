@@ -213,22 +213,30 @@
         <item>ZMB</item>
         <item>ZWE</item>
     </string-array>
-    <string-array name="countryArrayWithOnly2letters">  
+        
+    
+    
+    <string-array name="countryArrayWithOnly2letters"> 
+       
         <item>AF</item>
         <item>AL</item>
 <<<<<<< HEAD
         <item>DZ</item>				
 =======
         <item>DZ</item>                                
+<<<<<<< HEAD
 >>>>>>> origin/Dian_ImprovingDataRecieved
         <item>AMERICAN_SAMOA</item>    
+=======
+        <item>AS</item>    
+>>>>>>> 6e0708526a50b2eab5f4ad84a461775ab13110fb
         <item>AD</item>
         <item>AO</item>
         <item>AG</item>
         <item>AR</item>
         <item>AM</item>
-        <item>ARUBA</item>   
-        <item>AU</item>
+        <item>AW</item>
+        <item>AU</item>   
         <item>AT</item>
         <item>AZ</item>
         <item>BS</item>
@@ -239,9 +247,8 @@
         <item>BE</item>
         <item>BZ</item>
         <item>BJ</item>
-        <item>BERMUDA</item>     
-        <item>AF</item>
-        <item>BT</item>
+        <item>BM</item>     
+        <item>BT</item>  
         <item>BO</item>
         <item>BA</item>
         <item>BW</item>
@@ -253,8 +260,8 @@
         <item>KH</item>
         <item>CM</item>
         <item>CA</item>
-        <item>CAYMAN_ISLANDS</item>   
-        <item>KY</item>
+        <item>CV</item>
+        <item>KY</item>   
         <item>CF</item>
         <item>TD</item>
         <item>CL</item>
@@ -275,13 +282,14 @@
         <item>CZ</item>
         <item>DK</item>
         <item>DJ</item>
-        <item>DM</item>
-        <item>EAST_TIMOR</item>      
+        <item>DM</item>		
+        <item>DO</item>	
+        <item>TP</item>      	
         <item>EC</item>
         <item>EG</item>
         <item>SV</item>
-        <item>GQ</item>
-        <item>ER</item>
+        <item>GQ</item>		  
+        <item>ER</item>       
         <item>EE</item>
 <<<<<<< HEAD
         <item>ET</item>		
@@ -292,17 +300,22 @@
         <item>FRENCH_POLYNESIA</item> 	
 =======
         <item>ET</item>                
-        <item>FAROE_ISLANDS</item>
+        <item>FO</item>
         <item>FJ</item>
         <item>FI</item>
         <item>FR</item>                
+<<<<<<< HEAD
         <item>FRENCH_POLYNESIA</item>         
 >>>>>>> origin/Dian_ImprovingDataRecieved
+=======
+        <item>PF</item>         
+>>>>>>> 6e0708526a50b2eab5f4ad84a461775ab13110fb
         <item>GA</item>
         <item>GM</item>
         <item>GE</item>
         <item>DE</item>
         <item>GH</item>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <item>GREENLAND</item>	
         <item>GL</item>
@@ -313,10 +326,17 @@
         <item>GUAM</item>        
 >>>>>>> origin/Dian_ImprovingDataRecieved
         <item>GU</item>
+=======
+        <item>GR</item>
+        <item>GL</item>        
+        <item>GD</item>
+        <item>GU</item>        
+>>>>>>> 6e0708526a50b2eab5f4ad84a461775ab13110fb
         <item>GT</item>
         <item>GN</item>
         <item>GW</item>
         <item>GY</item>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <item>HT</item>	
         <item>HONG_KONG</item>	   
@@ -325,6 +345,11 @@
         <item>HONG_KONG</item>           
 >>>>>>> origin/Dian_ImprovingDataRecieved
         <item>HK</item>
+=======
+        <item>HT</item> 
+        <item>HN</item>       
+        <item>HK</item>           
+>>>>>>> 6e0708526a50b2eab5f4ad84a461775ab13110fb
         <item>HU</item>
         <item>IS</item>
         <item>IN</item>
@@ -373,12 +398,12 @@
         <item>MM</item>
         <item>NA</item>
         <item>NP</item>
-        <item>NEW_CALEDONIA</item>
+        <item>NL</item>
         <item>NC</item>
         <item>NZ</item>
         <item>NI</item>
         <item>NE</item>
-        <item>NORTHERN_MARIANA_ISLANDS</item>
+        <item>NG</item>
         <item>MP</item>
         <item>NO</item>
         <item>OM</item>
@@ -395,8 +420,12 @@
         <item>PUERTO_RICO</item>	
 =======
         <item>PT</item>        
+<<<<<<< HEAD
         <item>PUERTO_RICO</item>        
 >>>>>>> origin/Dian_ImprovingDataRecieved
+=======
+        <item>PR</item>        
+>>>>>>> 6e0708526a50b2eab5f4ad84a461775ab13110fb
         <item>QA</item>
         <item>RO</item>
         <item>RU</item>
@@ -418,7 +447,7 @@
         <item>SB</item>
         <item>SO</item>
         <item>ZA</item>
-        <item>SOUTH_SUDAN</item>
+        <item>SS</item>
         <item>ES</item>
         <item>LK</item>
         <item>SD</item>
@@ -436,7 +465,7 @@
         <item>TN</item>
         <item>TR</item>
         <item>TM</item>
-        <item>TURKS_AND_CAICOS_ISLANDS</item>
+        <item>TC</item>
         <item>TV</item>
         <item>UG</item>
         <item>UA</item>
@@ -453,6 +482,7 @@
         <item>ZW</item>
     </string-array>
   
+    
     <string-array name="countryNames">
         <item>Afghanistan</item>
         <item>Albania</item>
@@ -480,7 +510,7 @@
         <item>Belize</item>
         <item>Benin</item>
         <item>Bermuda</item> 
-        <item>Bhutan</item>
+        <item>Bhutan</item>   
         <item>Bolivia</item>
         <item>Bosnia and Herzegowina</item>
         <item>Botswana</item>
@@ -504,15 +534,15 @@
         <item>Congo, the drc</item>
         <item>Costa Rica</item>
         <item>Cote Divoire</item>
-        <item>Croatia (local name: hrvatska)</item>
+        <item>Croatia</item>
         <item>Cuba</item>
         <item>Cyprus</item>
         <item>Czech Republic</item>
         <item>Denmark</item>
         <item>Djibouti</item>
-        <item>Dominica</item>
-        <item>Dominican Republic</item>
-        <item>East Timor</item>   
+        <item>Dominica</item>	
+        <item>Dominican Republic</item>	
+        <item>East Timor</item> 
         <item>Ecuador</item>
         <item>Egypt</item>
         <item>El Salvador</item>
