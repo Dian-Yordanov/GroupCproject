@@ -16,8 +16,9 @@
         android:id="@+id/selectYourCountryAutoCompleteText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-         android:hint="Search a country"
-            android:text="" >
+        android:hint="Select a country"
+        android:text=""
+        android:textColorHint="@android:color/black" >
 
     </AutoCompleteTextView>
 

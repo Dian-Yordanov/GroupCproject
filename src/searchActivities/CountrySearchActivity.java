@@ -67,7 +67,7 @@ public class CountrySearchActivity extends Activity {
 		countriesListView = (ListView) findViewById(R.id.countriesListView);
 		
 		countryText.setTextSize(18);
-		//createEditOptions();
+		createEditOptions();
 		
 		autoCompleteAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1,countryNames);
         selectYourCountryAutoCompleteText.setAdapter(autoCompleteAdapter);
@@ -108,7 +108,7 @@ public class CountrySearchActivity extends Activity {
 					@Override
 					public void onFocusChange(View v, boolean hasFocus) {
 						if (hasFocus) {
-							selectYourCountryAutoCompleteText.setText("");
+							selectYourCountryAutoCompleteText.setHint("");
 						}
 					}
 				});
@@ -220,7 +220,8 @@ public class CountrySearchActivity extends Activity {
 		QueryBuilder.jsonParserReader(countryQueryConstructor());				
 		
 		selectYourCountryAutoCompleteText.setText("");
-		
+		selectYourCountryAutoCompleteText.setHint("Select another country");
+
 		gotoCountryActivity();
 	}
 	public final int getArrayIndex(String[] myArray, String myObject) {
