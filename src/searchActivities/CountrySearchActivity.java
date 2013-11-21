@@ -67,7 +67,7 @@ public class CountrySearchActivity extends Activity {
 		countriesListView = (ListView) findViewById(R.id.countriesListView);
 		
 		countryText.setTextSize(18);
-		createEditOptions();
+		//createEditOptions();
 		
 		autoCompleteAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1,countryNames);
         selectYourCountryAutoCompleteText.setAdapter(autoCompleteAdapter);
@@ -218,6 +218,8 @@ public class CountrySearchActivity extends Activity {
 		CountryPicturesQueryBuilder.countryName = countryNameForCountryLocationCall();
 		CountryPicturesQueryBuilder.flagQuery();
 		QueryBuilder.jsonParserReader(countryQueryConstructor());				
+		
+		selectYourCountryAutoCompleteText.setText("");
 		
 		gotoCountryActivity();
 	}
