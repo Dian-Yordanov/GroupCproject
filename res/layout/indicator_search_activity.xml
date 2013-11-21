@@ -21,15 +21,17 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Search a country"
-            android:text="" />
+            android:text=""
+            android:textColorHint="@android:color/black" />
 
         <AutoCompleteTextView
             android:id="@+id/autoCompleteTextViewIndicator"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Search an indicator"
-            android:text="" >
+            android:hint="Search a country"
+            android:text=""
+            android:textColorHint="@android:color/black" >
 
         </AutoCompleteTextView>
 

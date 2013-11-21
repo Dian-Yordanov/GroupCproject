@@ -73,8 +73,8 @@ public class IndicatorSearchActivity extends Activity{
 	indicatorListView1 = (ListView) findViewById(R.id.indicatorListView1);
 	indicatorListView2 = (ListView) findViewById(R.id.indicatorListView2);
 	
-	//createEditOptions(selectYourCountryAutoCompleteText);
-	//createEditOptions(selectYourIndicatorAutoCompleteText);
+	createEditOptions(selectYourCountryAutoCompleteText);
+	createEditOptions(selectYourIndicatorAutoCompleteText);
 	
 	countryAdapter = ArrayAdapter.createFromResource(this,R.array.countryNames, android.R.layout.simple_list_item_1);
 	indicatorListView1.setAdapter(countryAdapter);
@@ -162,7 +162,9 @@ public class IndicatorSearchActivity extends Activity{
 		selectYourIndicatorAutoCompleteText.setEnabled(true);
 		selectYourIndicatorAutoCompleteText.setBackgroundColor(0xcbcbcb);
 		selectYourIndicatorAutoCompleteText.setText("");
+		selectYourIndicatorAutoCompleteText.setHint("Select another country");
 		selectYourCountryAutoCompleteText.setText("");
+		selectYourCountryAutoCompleteText.setHint("Select another indicator");
 		}
 	}
 	private void settingCountryAsSelected(AdapterView<?> arg0, View arg1, int arg2,
@@ -173,6 +175,7 @@ public class IndicatorSearchActivity extends Activity{
 		indicatorListView1.setEnabled(false);
 		selectedViewFromItemList1.setBackgroundColor(0x80FFFFFF);
 		selectYourCountryAutoCompleteText.setEnabled(false);
+		selectYourCountryAutoCompleteText.setTextColor(Color.BLACK);
 		selectYourCountryAutoCompleteText.setBackgroundColor(0xAFAFAFAA);
 		
 		selectedItemPositionCountry = arg2;
@@ -190,6 +193,7 @@ public class IndicatorSearchActivity extends Activity{
 		indicatorListView2.setEnabled(false);
 		selectedViewFromItemList2.setBackgroundColor(0x80FFFFFF);
 		selectYourIndicatorAutoCompleteText.setEnabled(false);
+		selectYourIndicatorAutoCompleteText.setTextColor(Color.BLACK);
 		selectYourIndicatorAutoCompleteText.setBackgroundColor(0xAFAFAFAA);
 		
 		
