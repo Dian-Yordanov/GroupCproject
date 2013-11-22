@@ -38,12 +38,18 @@ public  View view;
     	final LayoutInflater inflater = LayoutInflater.from(getContext());
         final View view = inflater.inflate(R.layout.dropdown_multiline_item, someViewGroup, false);
         
+        /*
         for(int i=0;i<this.getCount();i++){
     		Log.v(Integer.toString(i),this.getItem(i));	
     		setTextOfTheView(view, i);
     	}
-        ((TextView) view.findViewById(R.id.item)).setText(this.getItem(0));
-        ((TextView) view.findViewById(R.id.item1)).setText(this.getItem(1));
+    	*/
+        
+        TextView textView0 = (TextView)view.findViewById(R.id.item);
+        textView0.setText(this.getItem(0));
+        TextView textView1 = (TextView)view.findViewById(R.id.item1);
+        textView1.setText(this.getItem(1));
+        textView0.setText("");
         
 		return view;
 		
