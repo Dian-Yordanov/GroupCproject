@@ -27,14 +27,9 @@ public  View view;
 		// TODO Auto-generated constructor stub
 		
     }
-    @Override
-    public View getView(int someInt, View someView, ViewGroup someViewGroup){
-
-    	
-    
-   
+    	@Override
+    	public View getView(int someInt, View someView, ViewGroup someViewGroup){
     	this.setDropDownViewResource(R.array.indicatorMeaningListView);
-    	
     	final LayoutInflater inflater = LayoutInflater.from(getContext());
         final View view = inflater.inflate(R.layout.dropdown_multiline_item, someViewGroup, false);
         
@@ -44,12 +39,17 @@ public  View view;
     		setTextOfTheView(view, i);
     	}
     	*/
-        
+        Log.v("0",this.getItem(0));
+    	Log.v("1",this.getItem(1));
+    	
+    	
         TextView textView0 = (TextView)view.findViewById(R.id.item);
-        textView0.setText(this.getItem(0));
-        TextView textView1 = (TextView)view.findViewById(R.id.item1);
-        textView1.setText(this.getItem(1));
-        textView0.setText("");
+        textView0.setText(this.getItem(someInt));
+        //TextView textView1 = (TextView)view.findViewById(R.id.item1);
+        //textView1.setText(this.getItem(1));
+        
+        //Log.v("1",.toString());
+        
         
 		return view;
 		
