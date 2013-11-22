@@ -1,13 +1,13 @@
 package searchActivities;
-
-
+ 
+ 
 import com.groupC.project.*;
-
+ 
 import displayActivities.*;
 import logicClasses.*;
 import searchActivities.*;
-
-
+ 
+ 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -21,21 +21,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
 import android.widget.AdapterView.OnItemClickListener;
-
+ 
 public class IndicatorSearchActivity extends Activity{
 	TextView indicatorText;
 	AutoCompleteTextView selectYourCountryAutoCompleteText;
 	AutoCompleteTextView selectYourIndicatorAutoCompleteText;
 	ListView indicatorListView1;
 	ListView indicatorListView2;
-	private String[] countryNames;
-	private String[] indicatorNames;
+	public static String[] countryNames;
+	public static String[] indicatorNames;
 	
 	public static ArrayAdapter<CharSequence> countryAdapter;
 	public static ArrayAdapter<CharSequence> indicatorAdapter;
 	
-	private static ArrayAdapter<String> autoCompleteAdapterCountry;
-	private static ArrayAdapter<String> autoCompleteAdapterIndicator;
+	private static CustomAutoCompleteTextViewAdapter autoCompleteAdapterCountry;
+	private static CustomAutoCompleteTextViewAdapter autoCompleteAdapterIndicator;
 	
 	private Resources res;
 	private String[] countries;
@@ -46,7 +46,7 @@ public class IndicatorSearchActivity extends Activity{
 	private static boolean itemlist2IsSelected = false;
 	
 	private static int selectedItemPositionCountry;
-	private static int selectedItemPositionIndicator;
+	public static int selectedItemPositionIndicator;
 	private static String selectedItemTextIndicator;
 	
 	private static View selectedViewFromItemList1;
@@ -98,18 +98,19 @@ public class IndicatorSearchActivity extends Activity{
 	
 	
 	
-	autoCompleteAdapterCountry = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line,countryNames);
+	autoCompleteAdapterCountry = new CustomAutoCompleteTextViewAdapter(this, android.R.layout.simple_dropdown_item_1line,countryNames);
     selectYourCountryAutoCompleteText.setAdapter(autoCompleteAdapterCountry);
     selectYourCountryAutoCompleteText.setThreshold(1);
     selectYourCountryAutoCompleteText.setDropDownWidth(StartingActivity.screenWidth);
     selectYourCountryAutoCompleteText.setOnItemClickListener(new OnItemClickListener(){
-
+ 
 		@Override
 		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 				long arg3) {
 			settingCountryAsSelected(arg0,arg1,arg2,arg3, "autoCompleteAdapterCountry");
+			
 		}});
-
+ 
 	indicatorAdapter = ArrayAdapter.createFromResource(this,R.array.indicatorMeaningListView, android.R.layout.simple_list_item_1);
 	indicatorListView2.setAdapter(indicatorAdapter);
 	indicatorListView2.setOnItemClickListener(new OnItemClickListener(){
@@ -120,13 +121,13 @@ public class IndicatorSearchActivity extends Activity{
 		}});
 	
 	
-	autoCompleteAdapterIndicator = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1,indicatorNames);
+	autoCompleteAdapterIndicator = new CustomAutoCompleteTextViewAdapter(this, android.R.layout.simple_expandable_list_item_1,indicatorNames);
     selectYourIndicatorAutoCompleteText.setAdapter(autoCompleteAdapterIndicator);
     selectYourIndicatorAutoCompleteText.setThreshold(1);
     selectYourIndicatorAutoCompleteText.setDropDownWidth(StartingActivity.screenWidth);
     
     selectYourIndicatorAutoCompleteText.setOnItemClickListener(new OnItemClickListener(){
-
+ 
 		@Override
 		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 				long arg3) {
@@ -236,5 +237,5 @@ public class IndicatorSearchActivity extends Activity{
 		logicClassesCall();
 	}
 	
-
+ 
 }
