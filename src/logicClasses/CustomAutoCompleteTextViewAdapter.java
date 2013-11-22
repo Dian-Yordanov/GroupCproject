@@ -29,10 +29,7 @@ public  View view;
     }
     @Override
     public View getView(int someInt, View someView, ViewGroup someViewGroup){
-    	Log.v("",this.getItem(0));
-    	Log.v("",this.getItem(1));
-    	Log.v("",Integer.toString(this.getViewTypeCount()));
-    	Log.v("",Integer.toString(this.getCount()));
+
     	
     
    
@@ -42,9 +39,11 @@ public  View view;
         final View view = inflater.inflate(R.layout.dropdown_multiline_item, someViewGroup, false);
         
         for(int i=0;i<this.getCount();i++){
-    		Log.v("",this.getItem(i));	
+    		Log.v(Integer.toString(i),this.getItem(i));	
     		setTextOfTheView(view, i);
     	}
+        ((TextView) view.findViewById(R.id.item)).setText(this.getItem(0));
+        ((TextView) view.findViewById(R.id.item1)).setText(this.getItem(1));
         
 		return view;
 		
