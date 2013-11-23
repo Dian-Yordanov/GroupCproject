@@ -194,13 +194,14 @@ public class ComparisonSearchActivity extends Activity{
 			}});
 		
 	}
-	private void createEditOptions(final EditText editTextToGetOptions) {
-		editTextToGetOptions
+	private void createEditOptions(final AutoCompleteTextView autoCompleteTextViewToGetOptions) {
+		autoCompleteTextViewToGetOptions
 				.setOnFocusChangeListener(new View.OnFocusChangeListener() {
 					@Override
 					public void onFocusChange(View v, boolean hasFocus) {
 						if (hasFocus) {
-							editTextToGetOptions.setText("");
+							autoCompleteTextViewToGetOptions.setText("");
+							autoCompleteTextViewToGetOptions.setHint("");
 						}
 					}
 				});

@@ -139,6 +139,7 @@ public class IndicatorSearchActivity extends Activity{
 					public void onFocusChange(View v, boolean hasFocus) {
 						if (hasFocus) {
 							autoCompleteTextViewToGetOptions.setText("");
+							autoCompleteTextViewToGetOptions.setHint("");
 						}
 					}
 				});
