@@ -36,7 +36,11 @@ public class IndicatorSearchActivity extends Activity{
 	private static boolean itemlist2IsSelected = false;
 	
 	private static int selectedItemPositionCountry;
+	private static int selectedItemPositionIndicator;
 	private static String selectedItemTextIndicator;
+	
+	private static View selectedViewFromItemList1;
+	private static View selectedViewFromItemList2;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -73,10 +77,11 @@ public class IndicatorSearchActivity extends Activity{
 		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 				long arg3) {
 			// TODO Auto-generated method stub
-			arg1.setSelected(true);
+			selectedViewFromItemList1 = arg1;
+			selectedViewFromItemList1 .setSelected(true);
 			indicatorListView1.setBackgroundColor(0xAFAFAFAA);
 			indicatorListView1.setEnabled(false);
-			indicatorListView1.getChildAt(arg2).setBackgroundColor(0x80FFFFFF);
+			selectedViewFromItemList1.setBackgroundColor(0x80FFFFFF);
 			
 			selectedItemPositionCountry = arg2;
 			stringUsedForCallingQueryBuilder = countries[arg2];
@@ -88,26 +93,28 @@ public class IndicatorSearchActivity extends Activity{
 				callQueryBuilderAndGraphView();
 				indicatorListView1.setBackgroundColor(0xcbcbcb);
 				indicatorListView1.setEnabled(true);
-				indicatorListView1.getChildAt(arg2).setBackgroundColor(0xcbcbcb);
+				selectedViewFromItemList1.setBackgroundColor(0xcbcbcb);
 				indicatorListView2.setBackgroundColor(0xcbcbcb);
 				indicatorListView2.setEnabled(true);
-				indicatorListView2.getChildAt(arg2).setBackgroundColor(0xcbcbcb);
+				selectedViewFromItemList2.setBackgroundColor(0xcbcbcb);
 			}
 		}});
 
-	indicatorAdapter = ArrayAdapter.createFromResource(this,R.array.indicatorListView, android.R.layout.simple_list_item_1);
+	indicatorAdapter = ArrayAdapter.createFromResource(this,R.array.indicatorMeaningListView, android.R.layout.simple_list_item_1);
 	indicatorListView2.setAdapter(indicatorAdapter);
 	indicatorListView2.setOnItemClickListener(new OnItemClickListener(){
 		@Override
 		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 				long arg3) {
 			// TODO Auto-generated method stub
-			arg1.setSelected(true);
+			selectedViewFromItemList2 = arg1;
+			selectedViewFromItemList2.setSelected(true);
 			indicatorListView2.setBackgroundColor(0xAFAFAFAA);
 			indicatorListView2.setEnabled(false);
-			indicatorListView2.getChildAt(arg2).setBackgroundColor(0x80FFFFFF);
+			selectedViewFromItemList2.setBackgroundColor(0x80FFFFFF);
 			
 			selectedItemTextIndicator = indicators[arg2];
+			selectedItemPositionIndicator = arg2;
 			QueryBuilder. p4IndicatorName = selectedItemTextIndicator;
 			
 			itemlist2IsSelected = true;
@@ -116,10 +123,10 @@ public class IndicatorSearchActivity extends Activity{
 				callQueryBuilderAndGraphView();
 				indicatorListView1.setBackgroundColor(0xcbcbcb);
 				indicatorListView1.setEnabled(true);
-				indicatorListView1.getChildAt(arg2).setBackgroundColor(0xcbcbcb);
+				selectedViewFromItemList1.setBackgroundColor(0xcbcbcb);
 				indicatorListView2.setBackgroundColor(0xcbcbcb);
 				indicatorListView2.setEnabled(true);
-				indicatorListView2.getChildAt(arg2).setBackgroundColor(0xcbcbcb);
+				selectedViewFromItemList2.setBackgroundColor(0xcbcbcb);
 			}
 		}});
 	
