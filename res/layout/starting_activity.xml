@@ -41,16 +41,8 @@
         android:scaleType="fitXY" />
 
     <Button
-<<<<<<< HEAD
-        android:id="@+id/Comparison"
-=======
         android:id="@+id/comparisonSearch"
-<<<<<<< HEAD
->>>>>>> origin/Dian_ImprovingDataRecieved
-        android:layout_width="match_parent"
-=======
         android:layout_width="wrap_content"
->>>>>>> 6e0708526a50b2eab5f4ad84a461775ab13110fb
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="@drawable/compare"

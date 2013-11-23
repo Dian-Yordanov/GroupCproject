@@ -183,11 +183,7 @@
         <item>SWZ</item>
         <item>SWE</item>
         <item>CHE</item>
-<<<<<<< HEAD
-        <item>SYR</item>	
-=======
         <item>SYR</item>        
->>>>>>> origin/Dian_ImprovingDataRecieved
         <item>TJK</item>
         <item>TZA</item>
         <item>THA</item>
@@ -220,16 +216,8 @@
        
         <item>AF</item>
         <item>AL</item>
-<<<<<<< HEAD
-        <item>DZ</item>				
-=======
         <item>DZ</item>                                
-<<<<<<< HEAD
->>>>>>> origin/Dian_ImprovingDataRecieved
-        <item>AMERICAN_SAMOA</item>    
-=======
         <item>AS</item>    
->>>>>>> 6e0708526a50b2eab5f4ad84a461775ab13110fb
         <item>AD</item>
         <item>AO</item>
         <item>AG</item>
@@ -269,11 +257,7 @@
         <item>CO</item>
         <item>KM</item>
         <item>CG</item>
-<<<<<<< HEAD
-        <item>CD</item>	
-=======
         <item>CD</item>        
->>>>>>> origin/Dian_ImprovingDataRecieved
         <item>CR</item>
         <item>CI</item>
         <item>HR</item>
@@ -291,65 +275,35 @@
         <item>GQ</item>		  
         <item>ER</item>       
         <item>EE</item>
-<<<<<<< HEAD
         <item>ET</item>		
         <item>FAROE_ISLANDS</item>
         <item>FJ</item>
         <item>FI</item>
         <item>FR</item>		
         <item>FRENCH_POLYNESIA</item> 	
-=======
-        <item>ET</item>                
-        <item>FO</item>
-        <item>FJ</item>
-        <item>FI</item>
-        <item>FR</item>                
-<<<<<<< HEAD
-        <item>FRENCH_POLYNESIA</item>         
->>>>>>> origin/Dian_ImprovingDataRecieved
-=======
         <item>PF</item>         
->>>>>>> 6e0708526a50b2eab5f4ad84a461775ab13110fb
         <item>GA</item>
         <item>GM</item>
         <item>GE</item>
         <item>DE</item>
         <item>GH</item>
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <item>GREENLAND</item>	
-        <item>GL</item>
-        <item>GUAM</item>	
-=======
         <item>GREENLAND</item>        
         <item>GL</item>
         <item>GUAM</item>        
->>>>>>> origin/Dian_ImprovingDataRecieved
         <item>GU</item>
-=======
         <item>GR</item>
         <item>GL</item>        
         <item>GD</item>
         <item>GU</item>        
->>>>>>> 6e0708526a50b2eab5f4ad84a461775ab13110fb
         <item>GT</item>
         <item>GN</item>
         <item>GW</item>
         <item>GY</item>
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <item>HT</item>	
-        <item>HONG_KONG</item>	   
-=======
         <item>HT</item>        
         <item>HONG_KONG</item>           
->>>>>>> origin/Dian_ImprovingDataRecieved
         <item>HK</item>
-=======
         <item>HT</item> 
-        <item>HN</item>       
-        <item>HK</item>           
->>>>>>> 6e0708526a50b2eab5f4ad84a461775ab13110fb
+        <item>HN</item>                 
         <item>HU</item>
         <item>IS</item>
         <item>IN</item>
@@ -415,17 +369,9 @@
         <item>PE</item>
         <item>PH</item>
         <item>PL</item>
-<<<<<<< HEAD
-        <item>PT</item>	
-        <item>PUERTO_RICO</item>	
-=======
         <item>PT</item>        
-<<<<<<< HEAD
         <item>PUERTO_RICO</item>        
->>>>>>> origin/Dian_ImprovingDataRecieved
-=======
         <item>PR</item>        
->>>>>>> 6e0708526a50b2eab5f4ad84a461775ab13110fb
         <item>QA</item>
         <item>RO</item>
         <item>RU</item>
@@ -487,11 +433,7 @@
         <item>Afghanistan</item>
         <item>Albania</item>
         <item>Algeria</item>
-<<<<<<< HEAD
-        <item>American samoa</item>	
-=======
         <item>American samoa</item>        
->>>>>>> origin/Dian_ImprovingDataRecieved
         <item>Andorra</item>
         <item>Angola</item>
         <item>Antigua and Barbuda</item>
@@ -659,19 +601,11 @@
         <item>Solomon Islands</item>
         <item>Somalia</item>
         <item>South Africa</item>
-<<<<<<< HEAD
-        <item>South Sudan</item>	
-        <item>Spain</item>
-        <item>Sri Lanka</item>
-        <item>Sudan</item>
-        <item>Suriname</item>				
-=======
         <item>South Sudan</item>        
         <item>Spain</item>
         <item>Sri Lanka</item>
         <item>Sudan</item>
         <item>Suriname</item>                                
->>>>>>> origin/Dian_ImprovingDataRecieved
         <item>Swaziland</item>
         <item>Sweden</item>
         <item>Switzerland</item>
@@ -685,11 +619,7 @@
         <item>Tunisia</item>
         <item>Turkey</item>
         <item>Turkmenistan</item>
-<<<<<<< HEAD
-        <item>Turks and Caicos Islands</item>	
-=======
         <item>Turks and Caicos Islands</item>        
->>>>>>> origin/Dian_ImprovingDataRecieved
         <item>Tuvalu</item>
         <item>Uganda</item>
         <item>Ukraine</item>
@@ -706,11 +636,7 @@
         <item>Zimbabwe</item>
     </string-array>
     
-<<<<<<< HEAD
-	<string-array name="indicatorListView">
-=======
         <string-array name="indicatorListView">
->>>>>>> origin/Dian_ImprovingDataRecieved
         <item>GC.DOD.TOTL.GD.ZS</item>
         <item>NE.EXP.GNFS.ZS</item>
         <item>NY.GDP.MKTP.CD</item>
@@ -738,11 +664,7 @@
                
     </string-array>
     
-<<<<<<< HEAD
-	<string-array name="indicatorMeaningListView">
-=======
         <string-array name="indicatorMeaningListView">
->>>>>>> origin/Dian_ImprovingDataRecieved
         <item>Central government debt, total (% of GDP)</item>
         <item>Exports of goods and services (% of GDP)</item>
         <item>GDP (current US$)</item>
@@ -769,15 +691,6 @@
         <item>Imports of goods and services (% of GDP)</item>
         
     </string-array>
-    
-<<<<<<< HEAD
-	
-	
-=======
-        
-        
->>>>>>> origin/Dian_ImprovingDataRecieved
-    
 
     <string name="CList">Country List</string>
     <string name="Indicator">Indicators</string>

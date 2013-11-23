@@ -17,16 +17,10 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 public class StartingActivity extends Activity {
-
-<<<<<<< HEAD
-	Button countries;
-	Button indicators;
-	Button comparison;
-=======
+	
 	Button countriesSearch;
 	Button indicatorsSearch;
 	Button comparisonSearch;
->>>>>>> origin/Dian_ImprovingDataRecieved
 	Button aboutUs;
 	
 	public static int screenWidth;
@@ -37,32 +31,13 @@ public class StartingActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.starting_activity);
 
-<<<<<<< HEAD
-		indicators = (Button) findViewById(R.id.Indicators);
-		countries = (Button) findViewById(R.id.CountryList);
-		comparison = (Button) findViewById(R.id.Comparison);
-		aboutUs = (Button) findViewById(R.id.About);
-=======
+
 		indicatorsSearch = (Button) findViewById(R.id.indicatorsSearch);
 		countriesSearch = (Button) findViewById(R.id.countryListSearch);
 		comparisonSearch = (Button) findViewById(R.id.comparisonSearch);
 		aboutUs = (Button) findViewById(R.id.about);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> origin/Dian_ImprovingDataRecieved
-=======
 		
 		gettingTheScreenSize();
->>>>>>> 6e0708526a50b2eab5f4ad84a461775ab13110fb
-=======
-		
-		gettingTheScreenSize();
->>>>>>> origin/Dian_autocomplete
-=======
-		
-		gettingTheScreenSize();
->>>>>>> origin/Dian_autocomplete
 	}
 
 	public void gotoCountrySearchView(View view) {
@@ -81,14 +56,8 @@ public class StartingActivity extends Activity {
 		startActivity(i);
 
 	}
-
-<<<<<<< HEAD
-	public void gotoComparisonView(View view) {
-		Intent i = new Intent(StartingActivity.this, ComparisonActivity.class);
-=======
 	public void gotoComparisonSearchView(View view) {
 		Intent i = new Intent(StartingActivity.this, ComparisonSearchActivity.class);
->>>>>>> origin/Dian_ImprovingDataRecieved
 		startActivity(i);
 
 	}
