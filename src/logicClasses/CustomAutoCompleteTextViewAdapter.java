@@ -24,32 +24,16 @@ public  View view;
     public CustomAutoCompleteTextViewAdapter(Context context,
 		int textViewResourceId, String[] countryNames) {
 		super(context, textViewResourceId, countryNames);
-		// TODO Auto-generated constructor stub
 		
     }
     	@Override
     	public View getView(int someInt, View someView, ViewGroup someViewGroup){
     	this.setDropDownViewResource(R.array.indicatorMeaningListView);
     	final LayoutInflater inflater = LayoutInflater.from(getContext());
-        final View view = inflater.inflate(R.layout.dropdown_multiline_item, someViewGroup, false);
-        
-        /*
-        for(int i=0;i<this.getCount();i++){
-    		Log.v(Integer.toString(i),this.getItem(i));	
-    		setTextOfTheView(view, i);
-    	}
-    	*/
-        Log.v("0",this.getItem(0));
-    	Log.v("1",this.getItem(1));
-    	
+        final View view = inflater.inflate(R.layout.dropdown_multiline_item, someViewGroup, false);    	
     	
         TextView textView0 = (TextView)view.findViewById(R.id.item);
         textView0.setText(this.getItem(someInt));
-        //TextView textView1 = (TextView)view.findViewById(R.id.item1);
-        //textView1.setText(this.getItem(1));
-        
-        //Log.v("1",.toString());
-        
         
 		return view;
 		

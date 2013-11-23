@@ -53,9 +53,7 @@ public class IndicatorSearchActivity extends Activity{
 	private static View selectedViewFromItemList2;
 	
 	View lineView;
-	
-	//private String nameOfAdapterCallingThisMethod ="";
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -94,9 +92,6 @@ public class IndicatorSearchActivity extends Activity{
 			settingCountryAsSelected(arg0,arg1,arg2,arg3, "countryAdapter");
 		}}
 	);
-	
-	
-	
 	
 	autoCompleteAdapterCountry = new CustomAutoCompleteTextViewAdapter(this, android.R.layout.simple_dropdown_item_1line,countryNames);
     selectYourCountryAutoCompleteText.setAdapter(autoCompleteAdapterCountry);
@@ -181,9 +176,9 @@ public class IndicatorSearchActivity extends Activity{
 		selectYourIndicatorAutoCompleteText.setEnabled(true);
 		selectYourIndicatorAutoCompleteText.setBackgroundColor(0xcbcbcb);
 		selectYourIndicatorAutoCompleteText.setText("");
-		selectYourIndicatorAutoCompleteText.setHint("Select another country");
+		selectYourIndicatorAutoCompleteText.setHint("Select another indicator");
 		selectYourCountryAutoCompleteText.setText("");
-		selectYourCountryAutoCompleteText.setHint("Select another indicator");
+		selectYourCountryAutoCompleteText.setHint("Select another country");
 		}
 	}
 	private void settingCountryAsSelected(AdapterView<?> arg0, View arg1, int arg2,
