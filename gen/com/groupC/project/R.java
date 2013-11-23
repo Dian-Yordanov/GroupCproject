@@ -51,6 +51,7 @@ public final class R {
     public static final class id {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         public static final int ComparisonText=0x7f08000b;
         public static final int about=0x7f080021;
         public static final int button1=0x7f080009;
@@ -95,6 +96,8 @@ public final class R {
         public static final int comparisonIndicatorEditText=0x7f08000e;
         public static final int comparisonSearch=0x7f080021;
 =======
+=======
+>>>>>>> origin/Dian_autocomplete
         public static final int ComparisonText=0x7f08000c;
         public static final int LinearLayout1=0x7f080018;
         public static final int RelativeLayout1=0x7f080000;
@@ -106,11 +109,15 @@ public final class R {
         public static final int autoCompleteTextViewIndicator=0x7f08001e;
         public static final int button1=0x7f08000a;
         public static final int comparisonSearch=0x7f080023;
+<<<<<<< HEAD
+>>>>>>> origin/Dian_autocomplete
+=======
 >>>>>>> origin/Dian_autocomplete
         public static final int comparisonlistView1=0x7f080010;
         public static final int comparisonlistView2=0x7f080011;
         public static final int comparisonlistView3=0x7f080012;
         public static final int countriesListView=0x7f080017;
+<<<<<<< HEAD
 <<<<<<< HEAD
         public static final int countryListSearch=0x7f08001f;
         public static final int countryText=0x7f080015;
@@ -137,6 +144,8 @@ public final class R {
         public static final int textViewShowingCandI=0x7f080018;
 >>>>>>> origin/Dian_newBranch
 =======
+=======
+>>>>>>> origin/Dian_autocomplete
         public static final int countryListSearch=0x7f080021;
         public static final int countryText=0x7f080015;
         public static final int goBackToCountrySearch=0x7f080013;
@@ -159,6 +168,9 @@ public final class R {
         public static final int textView4=0x7f080003;
         public static final int textViewCountryView=0x7f080014;
         public static final int textViewShowingCandI=0x7f08001a;
+<<<<<<< HEAD
+>>>>>>> origin/Dian_autocomplete
+=======
 >>>>>>> origin/Dian_autocomplete
     }
     public static final class layout {
