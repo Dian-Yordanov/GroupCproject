@@ -109,6 +109,7 @@ public class CountrySearchActivity extends Activity {
 					public void onFocusChange(View v, boolean hasFocus) {
 						if (hasFocus) {
 							selectYourCountryAutoCompleteText.setHint("");
+							selectYourCountryAutoCompleteText.setText("");
 						}
 					}
 				});
@@ -220,7 +221,7 @@ public class CountrySearchActivity extends Activity {
 		QueryBuilder.jsonParserReader(countryQueryConstructor());				
 		
 		selectYourCountryAutoCompleteText.setText("");
-		selectYourCountryAutoCompleteText.setHint("Select another country");
+		selectYourCountryAutoCompleteText.setHint("");
 
 		gotoCountryActivity();
 	}
