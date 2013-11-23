@@ -46,12 +46,12 @@ public final class R {
         public static final int LinearLayout1=0x7f080018;
         public static final int RelativeLayout1=0x7f080000;
         public static final int about=0x7f080024;
+        public static final int autoCompleteComparisonTextViewCountry1=0x7f08000d;
+        public static final int autoCompleteComparisonTextViewCountry2=0x7f08000f;
+        public static final int autoCompleteComparisonTextViewIndicator=0x7f08000e;
         public static final int autoCompleteTextViewCountry=0x7f08001d;
         public static final int autoCompleteTextViewIndicator=0x7f08001e;
         public static final int button1=0x7f08000a;
-        public static final int comparisonCountryEditText1=0x7f08000d;
-        public static final int comparisonCountryEditText2=0x7f08000f;
-        public static final int comparisonIndicatorEditText=0x7f08000e;
         public static final int comparisonSearch=0x7f080023;
         public static final int comparisonlistView1=0x7f080010;
         public static final int comparisonlistView2=0x7f080011;

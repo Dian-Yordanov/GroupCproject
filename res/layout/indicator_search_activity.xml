@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Search a country"
+            android:hint="Search an indicator"
             android:text=""
             android:textColorHint="@android:color/black" >
 

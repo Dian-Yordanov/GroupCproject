@@ -19,9 +19,9 @@ import android.widget.AdapterView.OnItemClickListener;
 
 public class ComparisonSearchActivity extends Activity{
 	TextView comparisonText;
-	EditText comparisonCountryEditText1;
-	EditText comparisonIndicatorEditText;
-	EditText comparisonCountryEditText2;
+	AutoCompleteTextView comparisonCountryEditText1;
+	AutoCompleteTextView comparisonIndicatorEditText;
+	AutoCompleteTextView comparisonCountryEditText2;
 	ListView comparisonCountryListView1;
 	ListView comparisonIndicatorListView;
 	ListView comparisonCountryListView2;
@@ -56,8 +56,9 @@ public class ComparisonSearchActivity extends Activity{
 	private static View selectedViewFromItemList2;
 	private static View selectedViewFromItemList3;
 	
-	//private String textViewComparisonText="";
-	
+	private static CustomAutoCompleteTextViewAdapter autoCompleteAdapterCountry1;
+	private static CustomAutoCompleteTextViewAdapter autoCompleteAdapterIndicator;
+	private static CustomAutoCompleteTextViewAdapter autoCompleteAdapterCountry2;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -79,9 +80,9 @@ public class ComparisonSearchActivity extends Activity{
 		
 		comparisonText = (TextView) findViewById(R.id.ComparisonText);
 		
-		comparisonCountryEditText1 = (EditText) findViewById(R.id.comparisonCountryEditText1);
-		comparisonIndicatorEditText = (EditText) findViewById(R.id.comparisonIndicatorEditText);
-		comparisonCountryEditText2 = (EditText) findViewById(R.id.comparisonCountryEditText2);
+		comparisonCountryEditText1 = (AutoCompleteTextView) findViewById(R.id.autoCompleteComparisonTextViewCountry1);
+		comparisonIndicatorEditText = (AutoCompleteTextView) findViewById(R.id.autoCompleteComparisonTextViewIndicator);
+		comparisonCountryEditText2 = (AutoCompleteTextView) findViewById(R.id.autoCompleteComparisonTextViewCountry2);
 		
 		comparisonCountryListView1 = (ListView) findViewById(R.id.comparisonlistView1);
 		comparisonIndicatorListView = (ListView) findViewById(R.id.comparisonlistView2);
