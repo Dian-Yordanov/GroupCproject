@@ -142,7 +142,7 @@ public class ComparisonSearchActivity extends Activity{
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
-				settingCountry2AsSelected(arg0,arg1,arg2,arg3, "autoCompleteAdapterIndicator");
+				settingIndicatorAsSelected(arg0,arg1,arg2,arg3, "autoCompleteAdapterIndicator");
 				
 			}});
 		
@@ -215,6 +215,7 @@ public class ComparisonSearchActivity extends Activity{
 			long arg3, String nameOfAdapterCallingThisMethodCountry1){
 		selectedViewFromItemList1 = arg1;
 		selectedViewFromItemList1.setSelected(true);
+		
 		comparisonCountryListView1.setBackgroundColor(0xAFAFAFAA);
 		comparisonCountryListView1.setEnabled(false);		
 		selectedViewFromItemList1.setBackgroundColor(0x80FFFFFF);
@@ -242,6 +243,7 @@ public class ComparisonSearchActivity extends Activity{
 			long arg3, String nameOfAdapterCallingThisMethodIndicator){
 		selectedViewFromItemList2 = arg1;
 		selectedViewFromItemList2.setSelected(true);
+		
 		comparisonIndicatorListView.setBackgroundColor(0xAFAFAFAA);
 		comparisonIndicatorListView.setEnabled(false);
 		selectedViewFromItemList2.setBackgroundColor(0x80FFFFFF);
@@ -269,6 +271,7 @@ public class ComparisonSearchActivity extends Activity{
 			long arg3, String nameOfAdapterCallingThisMethodCountry2){
 		selectedViewFromItemList3 = arg1;
 		selectedViewFromItemList3.setSelected(true);
+		
 		comparisonCountryListView2.setBackgroundColor(0xAFAFAFAA);
 		comparisonCountryListView2.setEnabled(false);
 		selectedViewFromItemList3.setBackgroundColor(0x80FFFFFF);
@@ -295,12 +298,15 @@ public class ComparisonSearchActivity extends Activity{
 	private void logicClassesCall(){
 		while(itemlist1IsSelected && itemlist2IsSelected && itemlist3IsSelected){
 			comparisonCallQueryBuilderAndGraphView();
+			
 			comparisonCountryListView1.setBackgroundColor(0xcbcbcb);
 			comparisonCountryListView1.setEnabled(true);
 			selectedViewFromItemList1.setBackgroundColor(0xcbcbcb);
+			
 			comparisonCountryListView2.setBackgroundColor(0xcbcbcb);
 			comparisonCountryListView2.setEnabled(true);
 			selectedViewFromItemList2.setBackgroundColor(0xcbcbcb);
+			
 			comparisonIndicatorListView.setBackgroundColor(0xcbcbcb);
 			comparisonIndicatorListView.setEnabled(true);
 			selectedViewFromItemList3.setBackgroundColor(0xcbcbcb);
