@@ -130,8 +130,22 @@ public class ComparisonSearchActivity extends Activity{
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
-				settingIndicatorAsSelected(arg0,arg1,arg2,arg3, "autoCompleteAdapterIndicator");
+				settingIndicatorAsSelected(arg0,arg1,arg2,arg3, "indicatorAdapter");
 			}});
+		
+		autoCompleteAdapterIndicator = new CustomAutoCompleteTextViewAdapter(this, android.R.layout.simple_dropdown_item_1line,indicatorNamesComparison);
+		comparisonIndicatorEditText.setAdapter(autoCompleteAdapterIndicator);
+		comparisonIndicatorEditText.setThreshold(1);
+		comparisonIndicatorEditText.setDropDownWidth(StartingActivity.screenWidth);
+		comparisonIndicatorEditText.setOnItemClickListener(new OnItemClickListener(){
+	 
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				settingCountry2AsSelected(arg0,arg1,arg2,arg3, "autoCompleteAdapterIndicator");
+				
+			}});
+		
 		
 		country2Adapter = ArrayAdapter.createFromResource(this,R.array.countryNames, android.R.layout.simple_list_item_1);
 		comparisonCountryListView2.setAdapter(country2Adapter);
@@ -232,9 +246,21 @@ public class ComparisonSearchActivity extends Activity{
 		comparisonIndicatorListView.setEnabled(false);
 		selectedViewFromItemList2.setBackgroundColor(0x80FFFFFF);
 		
-		selectedItemPositionIndicator = arg2;
-		selectedItemTextIndicator = indicators[arg2];
-		QueryBuilder.p4IndicatorName = selectedItemTextIndicator;	 
+		comparisonIndicatorEditText.setEnabled(false);
+		comparisonIndicatorEditText.setTextColor(Color.BLACK);
+		comparisonIndicatorEditText.setBackgroundColor(0xAFAFAFAA);
+		
+		if (nameOfAdapterCallingThisMethodIndicator == "indicatorAdapter") {
+			selectedItemPositionIndicator = arg2;
+			selectedItemTextIndicator = indicators[selectedItemPositionIndicator];
+			QueryBuilder.p4IndicatorName = selectedItemTextIndicator;
+		} else if (nameOfAdapterCallingThisMethodIndicator == "autoCompleteAdapterIndicator") {
+			selectedItemPositionIndicator = arg2;
+			selectedItemPositionIndicator = CountrySearchActivity.getArrayIndex(
+					indicatorNamesComparison, arg0.getItemAtPosition(arg2)
+							.toString());
+			QueryBuilder.p4IndicatorName = selectedItemTextIndicator;
+		}
 		
 		itemlist2IsSelected = true;
 		logicClassesCall();
@@ -288,6 +314,12 @@ public class ComparisonSearchActivity extends Activity{
 			comparisonCountryEditText2.setBackgroundColor(0xcbcbcb);
 			comparisonCountryEditText2.setText("");
 			comparisonCountryEditText2.setHint("Select another country");
+			
+			comparisonIndicatorEditText.setEnabled(true);
+			comparisonIndicatorEditText.setBackgroundColor(0xcbcbcb);
+			comparisonIndicatorEditText.setText("");
+			comparisonIndicatorEditText.setHint("Select another indicator");
+			
 			
 		}
 	}
