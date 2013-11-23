@@ -48,11 +48,16 @@ public class StartingActivity extends Activity {
 		comparisonSearch = (Button) findViewById(R.id.comparisonSearch);
 		aboutUs = (Button) findViewById(R.id.about);
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/Dian_ImprovingDataRecieved
 =======
 		
 		gettingTheScreenSize();
 >>>>>>> 6e0708526a50b2eab5f4ad84a461775ab13110fb
+=======
+		
+		gettingTheScreenSize();
+>>>>>>> origin/Dian_autocomplete
 	}
 
 	public void gotoCountrySearchView(View view) {

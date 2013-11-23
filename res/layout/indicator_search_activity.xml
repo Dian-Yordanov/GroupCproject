@@ -15,21 +15,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
-        <EditText
-            android:id="@+id/indicatorCountryEditText1"
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextViewCountry"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:text="Search a country" />
+            android:hint="Search a country"
+            android:text=""
+            android:textColorHint="@android:color/black" />
 
-        <EditText
-            android:id="@+id/indicatorCountryEditText2"
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextViewIndicator"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:text="Search an indicator" >
+            android:hint="Search an indicator"
+            android:text=""
+            android:textColorHint="@android:color/black" >
 
-        </EditText>
+        </AutoCompleteTextView>
 
     </LinearLayout>
 
@@ -39,7 +43,7 @@
 
         <ListView
             android:id="@+id/indicatorListView1"
-            android:layout_width="155dp"
+            android:layout_width="160dp"
             android:layout_height="wrap_content" >
 
         </ListView>

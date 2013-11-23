@@ -1,5 +1,7 @@
 package searchActivities;
 
+import java.lang.reflect.Array;
+
 import com.groupC.project.*;
 
 import displayActivities.*;
@@ -21,6 +23,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -28,9 +31,10 @@ import android.widget.TextView;
 public class CountrySearchActivity extends Activity {
 	
 	TextView countryText;
-	EditText selectYourCountryEditText;
+	AutoCompleteTextView selectYourCountryAutoCompleteText;
 	ListView countriesListView;
 	private static ArrayAdapter<CharSequence> countryListAdapter;
+	private static  CustomAutoCompleteTextViewAdapter autoCompleteAdapter;
 	
 	private Resources res;
 	private String[] countries;
@@ -44,26 +48,43 @@ public class CountrySearchActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		comparisonSearchActivityBuildUi();
-		QueryBuilder.setNameOfClassCallingQueryBuilder(this.getLocalClassName());
-		//QueryBuilder qBuilder1 = new QueryBuilder(countryQueryConstructor());
-		
 		res = getResources();
 		countries= res.getStringArray(R.array.countryListView);
 		countriesByTwoLetters = res.getStringArray(R.array.countryArrayWithOnly2letters);
 		countryNames =res.getStringArray(R.array.countryNames);
+		
+		comparisonSearchActivityBuildUi();
+		QueryBuilder.setNameOfClassCallingQueryBuilder(this.getLocalClassName());
+		
+		
 
 	}
 
 	private void comparisonSearchActivityBuildUi() {
 		setContentView(R.layout.country_search_activity);
 		countryText = (TextView) findViewById(R.id.countryText);
-		selectYourCountryEditText = (EditText) findViewById(R.id.selectYourCountryEditText);
+		selectYourCountryAutoCompleteText = (AutoCompleteTextView) findViewById(R.id.selectYourCountryAutoCompleteText);
 		countriesListView = (ListView) findViewById(R.id.countriesListView);
 		
 		countryText.setTextSize(18);
 		createEditOptions();
 		
+		autoCompleteAdapter = new  CustomAutoCompleteTextViewAdapter(this, android.R.layout.simple_expandable_list_item_1,countryNames);
+        selectYourCountryAutoCompleteText.setAdapter(autoCompleteAdapter);
+        selectYourCountryAutoCompleteText.setThreshold(1);
+        selectYourCountryAutoCompleteText.setOnItemClickListener(new OnItemClickListener(){
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+				stringUsedForCallingQueryBuilder = countries[getArrayIndex(countryNames, arg0.getItemAtPosition(arg2).toString())];
+				stringUsedForCallingFlagDownloader = countriesByTwoLetters[getArrayIndex(countryNames, arg0.getItemAtPosition(arg2).toString())];
+				stringUsedForCallingCountryMapDownloader = countryNames[getArrayIndex(countryNames, arg0.getItemAtPosition(arg2).toString())];			
+				logicClassesCall();
+				
+			}});
+        
 		countryListAdapter = ArrayAdapter.createFromResource(this,R.array.countryNames, android.R.layout.simple_list_item_1);
 		countriesListView.setAdapter(countryListAdapter);		
 		countriesListView.setOnItemClickListener(new OnItemClickListener(){
@@ -76,23 +97,19 @@ public class CountrySearchActivity extends Activity {
 				stringUsedForCallingFlagDownloader = countriesByTwoLetters[arg2];
 				stringUsedForCallingCountryMapDownloader = countryNames[arg2];
 									
-				QueryBuilder.p2CountryName = stringUsedForCallingQueryBuilder;					
-				CountryPicturesQueryBuilder.countryCode = stringUsedForCallingFlagDownloader;
-				CountryPicturesQueryBuilder.countryName = countryNameForCountryLocationCall();
-				CountryPicturesQueryBuilder.flagQuery();
-				QueryBuilder.jsonParserReader(countryQueryConstructor());				
+				logicClassesCall();
 				
-				gotoCountryActivity();
 			}});
 	}
 
 	private void createEditOptions() {
-		selectYourCountryEditText
+		selectYourCountryAutoCompleteText
 				.setOnFocusChangeListener(new View.OnFocusChangeListener() {
 					@Override
 					public void onFocusChange(View v, boolean hasFocus) {
 						if (hasFocus) {
-							selectYourCountryEditText.setText("");
+							selectYourCountryAutoCompleteText.setHint("");
+							selectYourCountryAutoCompleteText.setText("");
 						}
 					}
 				});
@@ -196,5 +213,25 @@ public class CountrySearchActivity extends Activity {
 		Intent i = new Intent(CountrySearchActivity.this, CountryActivity.class);
 		startActivity(i);
 	}
+	private void logicClassesCall(){
+		QueryBuilder.p2CountryName = stringUsedForCallingQueryBuilder;					
+		CountryPicturesQueryBuilder.countryCode = stringUsedForCallingFlagDownloader;
+		CountryPicturesQueryBuilder.countryName = countryNameForCountryLocationCall();
+		CountryPicturesQueryBuilder.flagQuery();
+		QueryBuilder.jsonParserReader(countryQueryConstructor());				
+		
+		selectYourCountryAutoCompleteText.setText("");
+		selectYourCountryAutoCompleteText.setHint("");
 
+		gotoCountryActivity();
+	}
+	public final static int getArrayIndex(String[] myArray, String myObject) {
+	    int ArraySize = Array.getLength(myArray);// get the size of the array
+	    for (int i = 0; i < ArraySize; i++) {
+	        if (myArray[i].equals(myObject)) {
+	            return (i);
+	        }
+	    }
+	    return (-1);// didn't find what I was looking for
+	}
 }

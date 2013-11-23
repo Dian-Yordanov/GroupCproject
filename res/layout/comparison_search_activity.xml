@@ -16,31 +16,32 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
-        <EditText
-            android:id="@+id/comparisonCountryEditText1"
-            android:layout_width="wrap_content"
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteComparisonTextViewCountry1"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10" 
-            android:text="Search a country">
+            android:ems="10"
+            android:hint="Search a country"
+            android:text=""
+            android:textColorHint="@android:color/black" />
 
-        </EditText>
-
-        <EditText
-            android:id="@+id/comparisonIndicatorEditText"
-            android:layout_width="wrap_content"
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteComparisonTextViewIndicator"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10" 
-            android:text="Search an indicator"/>
-
-        <EditText
-            android:id="@+id/comparisonCountryEditText2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10" 
-            android:text="Search a country"/>
+            android:ems="10"
+            android:hint="Search an indicator"
+            android:text=""
+            android:textColorHint="@android:color/black" />
+            
+         <AutoCompleteTextView
+             android:id="@+id/autoCompleteComparisonTextViewCountry2"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:ems="10"
+             android:hint="Search a country"
+             android:text=""
+             android:textColorHint="@android:color/black" />
 
     </LinearLayout>
 
