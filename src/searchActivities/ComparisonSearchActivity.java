@@ -61,16 +61,13 @@ public class ComparisonSearchActivity extends Activity{
 	private static CustomAutoCompleteTextViewAdapter autoCompleteAdapterIndicator;
 	private static CustomAutoCompleteTextViewAdapter autoCompleteAdapterCountry2;
 	
+	public static String[] country1NamesComparison;
+	public static String[] indicatorNamesComparison;
+	public static String[] country2NamesComparison;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		comparisonSearchActivityBuildUi();
-		QueryBuilder.setNameOfClassCallingQueryBuilder(this.getLocalClassName());
-		GraphViewCreator.setNameOfClassCallingGraphViewCreator(this.getLocalClassName());
-		
-	}
-	private void comparisonSearchActivityBuildUi(){
-		setContentView(R.layout.comparison_search_activity);
 		
 		res1 = getResources();
 		res2 = getResources();
@@ -78,7 +75,18 @@ public class ComparisonSearchActivity extends Activity{
 		countries1= res1.getStringArray(R.array.countryListView);
 		countries2= res2.getStringArray(R.array.countryListView);
 		indicators = res.getStringArray(R.array.indicatorListView);
+		country1NamesComparison =res.getStringArray(R.array.countryNames);
+		indicatorNamesComparison =res.getStringArray(R.array.indicatorMeaningListView);
+		country2NamesComparison =res.getStringArray(R.array.countryNames);
 		
+		comparisonSearchActivityBuildUi();
+		QueryBuilder.setNameOfClassCallingQueryBuilder(this.getLocalClassName());
+		GraphViewCreator.setNameOfClassCallingGraphViewCreator(this.getLocalClassName());
+		
+	}
+	private void comparisonSearchActivityBuildUi(){
+		setContentView(R.layout.comparison_search_activity);
+			
 		comparisonText = (TextView) findViewById(R.id.ComparisonText);
 		
 		comparisonCountryEditText1 = (AutoCompleteTextView) findViewById(R.id.autoCompleteComparisonTextViewCountry1);
@@ -96,6 +104,19 @@ public class ComparisonSearchActivity extends Activity{
 		country1Adapter = ArrayAdapter.createFromResource(this,R.array.countryNames, android.R.layout.simple_list_item_1);
 		comparisonCountryListView1.setAdapter(country1Adapter);
 		comparisonCountryListView1.setOnItemClickListener(new OnItemClickListener(){
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				settingCountry1AsSelected(arg0,arg1,arg2,arg3, "country1Adapter");
+				
+			}});
+		
+		autoCompleteAdapterCountry1 = new CustomAutoCompleteTextViewAdapter(this, android.R.layout.simple_dropdown_item_1line,country1NamesComparison);
+		comparisonCountryEditText1.setAdapter(autoCompleteAdapterCountry1);
+		comparisonCountryEditText1.setThreshold(1);
+		comparisonCountryEditText1.setDropDownWidth(StartingActivity.screenWidth);
+		comparisonCountryEditText1.setOnItemClickListener(new OnItemClickListener(){
+	 
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
@@ -166,19 +187,28 @@ public class ComparisonSearchActivity extends Activity{
 	private void settingCountry1AsSelected(AdapterView<?> arg0, View arg1, int arg2,
 			long arg3, String nameOfAdapterCallingThisMethodCountry1){
 		selectedViewFromItemList1 = arg1;
-
 		selectedViewFromItemList1.setSelected(true);
 		comparisonCountryListView1.setBackgroundColor(0xAFAFAFAA);
 		comparisonCountryListView1.setEnabled(false);		
-		selectedItemPositionCountry1 = arg2;
+		
 		selectedViewFromItemList1.setBackgroundColor(0x80FFFFFF);
+		comparisonCountryEditText1.setEnabled(false);
+		comparisonCountryEditText1.setTextColor(Color.BLACK);
+		comparisonCountryEditText1.setBackgroundColor(0xAFAFAFAA);
 		
-		
+		if(nameOfAdapterCallingThisMethodCountry1 == "country1Adapter"){
+		selectedItemPositionCountry1 = arg2;
 		stringUsedForCallingQueryBuilderCountry1 = countries1[selectedItemPositionCountry1];
 		QueryBuilder. p2CountryName = stringUsedForCallingQueryBuilderCountry1;	 
-		
-		itemlist1IsSelected = true;
-		
+		}
+		else if(nameOfAdapterCallingThisMethodCountry1 == "autoCompleteAdapterCountry1"){
+		selectedItemPositionCountry1 = arg2;
+		selectedItemPositionCountry1 = CountrySearchActivity.getArrayIndex(country1NamesComparison, arg0.getItemAtPosition(arg2).toString());
+		stringUsedForCallingQueryBuilderCountry1 = countries1[selectedItemPositionCountry1];
+		QueryBuilder. p2CountryName = stringUsedForCallingQueryBuilderCountry1;	 
+		}
+
+		itemlist1IsSelected = true;		
 		logicClassesCall();
 	}
 	private void settingIndicatorAsSelected(AdapterView<?> arg0, View arg1, int arg2,

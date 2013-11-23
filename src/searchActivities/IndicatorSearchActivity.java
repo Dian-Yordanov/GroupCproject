@@ -28,8 +28,8 @@ public class IndicatorSearchActivity extends Activity{
 	AutoCompleteTextView selectYourIndicatorAutoCompleteText;
 	ListView indicatorListView1;
 	ListView indicatorListView2;
-	public static String[] countryNames;
-	public static String[] indicatorNames;
+	public static String[] countryNamesIndicator;
+	public static String[] indicatorNamesIndicator;
 	
 	public static ArrayAdapter<CharSequence> countryAdapter;
 	public static ArrayAdapter<CharSequence> indicatorAdapter;
@@ -61,8 +61,8 @@ public class IndicatorSearchActivity extends Activity{
 		res = getResources();
 		countries= res.getStringArray(R.array.countryListView);
 		indicators = res.getStringArray(R.array.indicatorListView);
-		countryNames =res.getStringArray(R.array.countryNames);
-		indicatorNames =res.getStringArray(R.array.indicatorMeaningListView);
+		countryNamesIndicator =res.getStringArray(R.array.countryNames);
+		indicatorNamesIndicator =res.getStringArray(R.array.indicatorMeaningListView);
 		
 		indicatorSearchActivityUiBuilder();
 		QueryBuilder.setNameOfClassCallingQueryBuilder(this.getLocalClassName());
@@ -93,7 +93,7 @@ public class IndicatorSearchActivity extends Activity{
 		}}
 	);
 	
-	autoCompleteAdapterCountry = new CustomAutoCompleteTextViewAdapter(this, android.R.layout.simple_dropdown_item_1line,countryNames);
+	autoCompleteAdapterCountry = new CustomAutoCompleteTextViewAdapter(this, android.R.layout.simple_dropdown_item_1line,countryNamesIndicator);
     selectYourCountryAutoCompleteText.setAdapter(autoCompleteAdapterCountry);
     selectYourCountryAutoCompleteText.setThreshold(1);
     selectYourCountryAutoCompleteText.setDropDownWidth(StartingActivity.screenWidth);
@@ -116,7 +116,7 @@ public class IndicatorSearchActivity extends Activity{
 		}});
 	
 	
-	autoCompleteAdapterIndicator = new CustomAutoCompleteTextViewAdapter(this, android.R.layout.simple_expandable_list_item_1,indicatorNames);
+	autoCompleteAdapterIndicator = new CustomAutoCompleteTextViewAdapter(this, android.R.layout.simple_expandable_list_item_1,indicatorNamesIndicator);
     selectYourIndicatorAutoCompleteText.setAdapter(autoCompleteAdapterIndicator);
     selectYourIndicatorAutoCompleteText.setThreshold(1);
     selectYourIndicatorAutoCompleteText.setDropDownWidth(StartingActivity.screenWidth);
@@ -199,7 +199,7 @@ public class IndicatorSearchActivity extends Activity{
 		QueryBuilder. p2CountryName = stringUsedForCallingQueryBuilder;	 
 		}
 		else if(nameOfAdapterCallingThisMethodCountry == "autoCompleteAdapterCountry"){
-		selectedItemPositionCountry = CountrySearchActivity.getArrayIndex(countryNames, arg0.getItemAtPosition(arg2).toString());
+		selectedItemPositionCountry = CountrySearchActivity.getArrayIndex(countryNamesIndicator, arg0.getItemAtPosition(arg2).toString());
 		stringUsedForCallingQueryBuilder = countries[selectedItemPositionCountry];
 		QueryBuilder. p2CountryName = stringUsedForCallingQueryBuilder;	 
 		}
@@ -224,8 +224,8 @@ public class IndicatorSearchActivity extends Activity{
 		QueryBuilder. p4IndicatorName = selectedItemTextIndicator;
 		}
 		else if(nameOfAdapterCallingThisMethodIndicator == "autoCompleteAdapterIndicator"){
-		selectedItemTextIndicator = indicators[CountrySearchActivity.getArrayIndex(indicatorNames, arg0.getItemAtPosition(arg2).toString())];
-		selectedItemPositionIndicator = CountrySearchActivity.getArrayIndex(indicatorNames, arg0.getItemAtPosition(arg2).toString());
+		selectedItemTextIndicator = indicators[CountrySearchActivity.getArrayIndex(indicatorNamesIndicator, arg0.getItemAtPosition(arg2).toString())];
+		selectedItemPositionIndicator = CountrySearchActivity.getArrayIndex(indicatorNamesIndicator, arg0.getItemAtPosition(arg2).toString());
 		QueryBuilder. p4IndicatorName = selectedItemTextIndicator;
 		}
 		
