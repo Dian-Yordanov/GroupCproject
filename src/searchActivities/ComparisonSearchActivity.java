@@ -139,7 +139,20 @@ public class ComparisonSearchActivity extends Activity{
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
+				settingCountry2AsSelected(arg0,arg1,arg2,arg3, "country2Adapter");
+			}});
+
+		autoCompleteAdapterCountry2 = new CustomAutoCompleteTextViewAdapter(this, android.R.layout.simple_dropdown_item_1line,country2NamesComparison);
+		comparisonCountryEditText2.setAdapter(autoCompleteAdapterCountry2);
+		comparisonCountryEditText2.setThreshold(1);
+		comparisonCountryEditText2.setDropDownWidth(StartingActivity.screenWidth);
+		comparisonCountryEditText2.setOnItemClickListener(new OnItemClickListener(){
+	 
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
 				settingCountry2AsSelected(arg0,arg1,arg2,arg3, "autoCompleteAdapterCountry2");
+				
 			}});
 		
 	}
@@ -190,8 +203,8 @@ public class ComparisonSearchActivity extends Activity{
 		selectedViewFromItemList1.setSelected(true);
 		comparisonCountryListView1.setBackgroundColor(0xAFAFAFAA);
 		comparisonCountryListView1.setEnabled(false);		
-		
 		selectedViewFromItemList1.setBackgroundColor(0x80FFFFFF);
+		
 		comparisonCountryEditText1.setEnabled(false);
 		comparisonCountryEditText1.setTextColor(Color.BLACK);
 		comparisonCountryEditText1.setBackgroundColor(0xAFAFAFAA);
@@ -213,7 +226,6 @@ public class ComparisonSearchActivity extends Activity{
 	}
 	private void settingIndicatorAsSelected(AdapterView<?> arg0, View arg1, int arg2,
 			long arg3, String nameOfAdapterCallingThisMethodIndicator){
-
 		selectedViewFromItemList2 = arg1;
 		selectedViewFromItemList2.setSelected(true);
 		comparisonIndicatorListView.setBackgroundColor(0xAFAFAFAA);
@@ -225,7 +237,6 @@ public class ComparisonSearchActivity extends Activity{
 		QueryBuilder.p4IndicatorName = selectedItemTextIndicator;	 
 		
 		itemlist2IsSelected = true;
-		
 		logicClassesCall();
 	}
 	private void settingCountry2AsSelected(AdapterView<?> arg0, View arg1, int arg2,
@@ -236,12 +247,23 @@ public class ComparisonSearchActivity extends Activity{
 		comparisonCountryListView2.setEnabled(false);
 		selectedViewFromItemList3.setBackgroundColor(0x80FFFFFF);
 		
+		comparisonCountryEditText2.setEnabled(false);
+		comparisonCountryEditText2.setTextColor(Color.BLACK);
+		comparisonCountryEditText2.setBackgroundColor(0xAFAFAFAA);
+		
+		if(nameOfAdapterCallingThisMethodCountry2 == "country2Adapter"){
 		selectedItemPositionCountry2 = arg2;
-		stringUsedForCallingQueryBuilderCountry2 = countries2[selectedItemPositionCountry2];
-		QueryBuilder. p2Country2Name = stringUsedForCallingQueryBuilderCountry2;	 
+		stringUsedForCallingQueryBuilderCountry2 = countries1[selectedItemPositionCountry2];
+		QueryBuilder. p2CountryName = stringUsedForCallingQueryBuilderCountry2;	 
+		}
+		else if(nameOfAdapterCallingThisMethodCountry2 == "autoCompleteAdapterCountry2"){
+		selectedItemPositionCountry2 = arg2;
+		selectedItemPositionCountry2 = CountrySearchActivity.getArrayIndex(country2NamesComparison, arg0.getItemAtPosition(arg2).toString());
+		stringUsedForCallingQueryBuilderCountry2 = countries1[selectedItemPositionCountry2];
+		QueryBuilder. p2CountryName = stringUsedForCallingQueryBuilderCountry2;	 
+		}
 		
 		itemlist3IsSelected = true;
-		
 		logicClassesCall();
 	}
 	private void logicClassesCall(){
@@ -256,6 +278,17 @@ public class ComparisonSearchActivity extends Activity{
 			comparisonIndicatorListView.setBackgroundColor(0xcbcbcb);
 			comparisonIndicatorListView.setEnabled(true);
 			selectedViewFromItemList3.setBackgroundColor(0xcbcbcb);
+			
+			comparisonCountryEditText1.setEnabled(true);
+			comparisonCountryEditText1.setBackgroundColor(0xcbcbcb);
+			comparisonCountryEditText1.setText("");
+			comparisonCountryEditText1.setHint("Select another country");
+			
+			comparisonCountryEditText2.setEnabled(true);
+			comparisonCountryEditText2.setBackgroundColor(0xcbcbcb);
+			comparisonCountryEditText2.setText("");
+			comparisonCountryEditText2.setHint("Select another country");
+			
 		}
 	}
 }
