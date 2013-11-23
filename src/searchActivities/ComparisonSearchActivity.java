@@ -254,13 +254,13 @@ public class ComparisonSearchActivity extends Activity{
 		if(nameOfAdapterCallingThisMethodCountry2 == "country2Adapter"){
 		selectedItemPositionCountry2 = arg2;
 		stringUsedForCallingQueryBuilderCountry2 = countries1[selectedItemPositionCountry2];
-		QueryBuilder. p2CountryName = stringUsedForCallingQueryBuilderCountry2;	 
+		QueryBuilder. p2Country2Name = stringUsedForCallingQueryBuilderCountry2;	 
 		}
 		else if(nameOfAdapterCallingThisMethodCountry2 == "autoCompleteAdapterCountry2"){
 		selectedItemPositionCountry2 = arg2;
 		selectedItemPositionCountry2 = CountrySearchActivity.getArrayIndex(country2NamesComparison, arg0.getItemAtPosition(arg2).toString());
 		stringUsedForCallingQueryBuilderCountry2 = countries1[selectedItemPositionCountry2];
-		QueryBuilder. p2CountryName = stringUsedForCallingQueryBuilderCountry2;	 
+		QueryBuilder. p2Country2Name = stringUsedForCallingQueryBuilderCountry2;	 
 		}
 		
 		itemlist3IsSelected = true;
