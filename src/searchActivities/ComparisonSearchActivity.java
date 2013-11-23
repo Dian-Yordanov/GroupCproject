@@ -109,31 +109,7 @@ public class ComparisonSearchActivity extends Activity{
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
-				// TODO Auto-generated method stub
-				selectedViewFromItemList2 = arg1;
-				selectedViewFromItemList2.setSelected(true);
-				comparisonIndicatorListView.setBackgroundColor(0xAFAFAFAA);
-				comparisonIndicatorListView.setEnabled(false);
-				selectedViewFromItemList2.setBackgroundColor(0x80FFFFFF);
-				
-				selectedItemPositionIndicator = arg2;
-				selectedItemTextIndicator = indicators[arg2];
-				QueryBuilder.p4IndicatorName = selectedItemTextIndicator;	 
-				
-				itemlist2IsSelected = true;
-				
-				while(itemlist1IsSelected && itemlist2IsSelected && itemlist3IsSelected){
-					comparisonCallQueryBuilderAndGraphView();
-					comparisonCountryListView1.setBackgroundColor(0xcbcbcb);
-					comparisonCountryListView1.setEnabled(true);
-					selectedViewFromItemList1.setBackgroundColor(0xcbcbcb);
-					comparisonCountryListView2.setBackgroundColor(0xcbcbcb);
-					comparisonCountryListView2.setEnabled(true);
-					selectedViewFromItemList2.setBackgroundColor(0xcbcbcb);
-					comparisonIndicatorListView.setBackgroundColor(0xcbcbcb);
-					comparisonIndicatorListView.setEnabled(true);
-					selectedViewFromItemList3.setBackgroundColor(0xcbcbcb);
-				}
+				settingIndicatorAsSelected(arg0,arg1,arg2,arg3, "autoCompleteAdapterIndicator");
 			}});
 		
 		country2Adapter = ArrayAdapter.createFromResource(this,R.array.countryNames, android.R.layout.simple_list_item_1);
@@ -142,31 +118,7 @@ public class ComparisonSearchActivity extends Activity{
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
-				// TODO Auto-generated method stub
-				selectedViewFromItemList3 = arg1;
-				selectedViewFromItemList3.setSelected(true);
-				comparisonCountryListView2.setBackgroundColor(0xAFAFAFAA);
-				comparisonCountryListView2.setEnabled(false);
-				selectedViewFromItemList3.setBackgroundColor(0x80FFFFFF);
-				
-				selectedItemPositionCountry2 = arg2;
-				stringUsedForCallingQueryBuilderCountry2 = countries2[selectedItemPositionCountry2];
-				QueryBuilder. p2Country2Name = stringUsedForCallingQueryBuilderCountry2;	 
-				
-				itemlist3IsSelected = true;
-				
-				while(itemlist1IsSelected && itemlist2IsSelected && itemlist3IsSelected){
-					comparisonCallQueryBuilderAndGraphView();
-					comparisonCountryListView1.setBackgroundColor(0xcbcbcb);
-					comparisonCountryListView1.setEnabled(true);
-					selectedViewFromItemList1.setBackgroundColor(0xcbcbcb);
-					comparisonCountryListView2.setBackgroundColor(0xcbcbcb);
-					comparisonCountryListView2.setEnabled(true);
-					selectedViewFromItemList2.setBackgroundColor(0xcbcbcb);
-					comparisonIndicatorListView.setBackgroundColor(0xcbcbcb);
-					comparisonIndicatorListView.setEnabled(true);
-					selectedViewFromItemList3.setBackgroundColor(0xcbcbcb);
-				}
+				settingCountry2AsSelected(arg0,arg1,arg2,arg3, "autoCompleteAdapterCountry2");
 			}});
 		
 	}
@@ -214,7 +166,7 @@ public class ComparisonSearchActivity extends Activity{
 	private void settingCountry1AsSelected(AdapterView<?> arg0, View arg1, int arg2,
 			long arg3, String nameOfAdapterCallingThisMethodCountry1){
 		selectedViewFromItemList1 = arg1;
-		// TODO Auto-generated method stub
+
 		selectedViewFromItemList1.setSelected(true);
 		comparisonCountryListView1.setBackgroundColor(0xAFAFAFAA);
 		comparisonCountryListView1.setEnabled(false);		
@@ -226,6 +178,39 @@ public class ComparisonSearchActivity extends Activity{
 		QueryBuilder. p2CountryName = stringUsedForCallingQueryBuilderCountry1;	 
 		
 		itemlist1IsSelected = true;
+		
+		logicClassesCall();
+	}
+	private void settingIndicatorAsSelected(AdapterView<?> arg0, View arg1, int arg2,
+			long arg3, String nameOfAdapterCallingThisMethodIndicator){
+
+		selectedViewFromItemList2 = arg1;
+		selectedViewFromItemList2.setSelected(true);
+		comparisonIndicatorListView.setBackgroundColor(0xAFAFAFAA);
+		comparisonIndicatorListView.setEnabled(false);
+		selectedViewFromItemList2.setBackgroundColor(0x80FFFFFF);
+		
+		selectedItemPositionIndicator = arg2;
+		selectedItemTextIndicator = indicators[arg2];
+		QueryBuilder.p4IndicatorName = selectedItemTextIndicator;	 
+		
+		itemlist2IsSelected = true;
+		
+		logicClassesCall();
+	}
+	private void settingCountry2AsSelected(AdapterView<?> arg0, View arg1, int arg2,
+			long arg3, String nameOfAdapterCallingThisMethodCountry2){
+		selectedViewFromItemList3 = arg1;
+		selectedViewFromItemList3.setSelected(true);
+		comparisonCountryListView2.setBackgroundColor(0xAFAFAFAA);
+		comparisonCountryListView2.setEnabled(false);
+		selectedViewFromItemList3.setBackgroundColor(0x80FFFFFF);
+		
+		selectedItemPositionCountry2 = arg2;
+		stringUsedForCallingQueryBuilderCountry2 = countries2[selectedItemPositionCountry2];
+		QueryBuilder. p2Country2Name = stringUsedForCallingQueryBuilderCountry2;	 
+		
+		itemlist3IsSelected = true;
 		
 		logicClassesCall();
 	}
