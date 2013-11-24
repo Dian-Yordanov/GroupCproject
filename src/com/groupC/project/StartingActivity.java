@@ -7,6 +7,7 @@ import displayActivities.*;
 import logicClasses.*;
 import searchActivities.*;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Point;
 import android.os.Bundle;
@@ -32,7 +33,8 @@ public class StartingActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.starting_activity);
-		checkIfThereIsInternet(this.getLocalClassName());
+		
+		checkIfThereIsInternet(this.getLocalClassName(), StartingActivity.this);
 		
 		indicatorsSearch = (Button) findViewById(R.id.indicatorsSearch);
 		countriesSearch = (Button) findViewById(R.id.countryListSearch);
@@ -68,15 +70,16 @@ public class StartingActivity extends Activity {
 		screenWidth = display.getWidth();  // deprecated
 		screenHeight= display.getHeight();  // deprecated
 	}
-	public void checkIfThereIsInternet(String nameOfActivity){
-		if (noInternetChecker.isInternetAvailable(StartingActivity.this)) {
+	
+	public static void checkIfThereIsInternet(String nameOfActivity, final Context activityContext){
+		if (noInternetChecker.isInternetAvailable(activityContext)) {
 			Log.v("there is internet", "how nice");
 		} else {
 
-			Toast.makeText(StartingActivity.this,
+			Toast.makeText(activityContext,
 					"Trying to find a network ...", 3000).show();
 
-			noInternetThread = new Thread() {
+			StartingActivity.noInternetThread = new Thread() {
 				@Override
 				public void run() {
 					try {
@@ -85,13 +88,13 @@ public class StartingActivity extends Activity {
 						}
 					} catch (InterruptedException ex) {
 					}
-					Intent i = new Intent(StartingActivity.this,
+					Intent i = new Intent(activityContext,
 							noInternetError.class);
-					startActivity(i);
+					activityContext.startActivity(i);
 				}
 			};
 
-			noInternetThread.start();
+			StartingActivity.noInternetThread.start();
 		}
 	}
 

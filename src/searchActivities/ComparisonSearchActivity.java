@@ -68,6 +68,7 @@ public class ComparisonSearchActivity extends Activity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		StartingActivity.checkIfThereIsInternet(this.getLocalClassName(), ComparisonSearchActivity.this);
 		
 		res1 = getResources();
 		res2 = getResources();
