@@ -34,17 +34,19 @@ public final class R {
         public static final int background=0x7f020003;
         public static final int compare=0x7f020004;
         public static final int countrylist=0x7f020005;
-        public static final int dian=0x7f020006;
-        public static final int ic_launcher=0x7f020007;
-        public static final int indicators=0x7f020008;
-        public static final int julian=0x7f020009;
-        public static final int nointerneterror=0x7f02000a;
-        public static final int oday=0x7f02000b;
-        public static final int title=0x7f02000c;
-        public static final int title2=0x7f02000d;
+        public static final int darkhorizontalframe=0x7f020006;
+        public static final int dian=0x7f020007;
+        public static final int ic_launcher=0x7f020008;
+        public static final int indicators=0x7f020009;
+        public static final int julian=0x7f02000a;
+        public static final int nointerneterror=0x7f02000b;
+        public static final int oday=0x7f02000c;
+        public static final int title=0x7f02000d;
+        public static final int title2=0x7f02000e;
     }
     public static final class id {
         public static final int ComparisonText=0x7f08000c;
+        public static final int ImageView1=0x7f080021;
         public static final int LinearLayout1=0x7f080018;
         public static final int RelativeLayout1=0x7f080000;
         public static final int about=0x7f080025;
@@ -62,7 +64,6 @@ public final class R {
         public static final int countryListSearch=0x7f080022;
         public static final int countryText=0x7f080015;
         public static final int goBackToCountrySearch=0x7f080013;
-        public static final int imageButton1=0x7f080021;
         public static final int imageView1=0x7f080005;
         public static final int imageView2=0x7f080008;
         public static final int imageView3=0x7f080002;
