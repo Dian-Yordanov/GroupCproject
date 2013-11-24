@@ -57,7 +57,7 @@ public class IndicatorActivity extends Activity{
 		textView1.setText(QueryBuilder.displayInfo);	
 		
 	    graphLayout = (LinearLayout) findViewById(R.id. layout1);
-	    graphLayout.setMinimumWidth(StartingActivity.screenWidth);
+	    graphLayout.setMinimumWidth(2*StartingActivity.screenWidth);
 	    GraphViewCreator.graphViewCreator();
 	}
 	public void gotoIndicatorSearchView(View view) {
