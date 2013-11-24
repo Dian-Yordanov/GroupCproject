@@ -1,36 +1,42 @@
-  <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/scrollView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-<LinearLayout 
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp" >
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.77"
-        android:text="Choose to see information for another country, or another indicator" 
-        android:onClick="gotoIndicatorSearchView"/>
- 
-            <TextView
-        android:id="@+id/textViewShowingCandI"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_weight="0.77"
-        android:scrollbars="vertical" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp" >
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
 
             <LinearLayout
-		    android:orientation="vertical"
-			android:layout_width="500dip"
-			android:layout_height="250dip"
-			android:id="@+id/layout1">
+                android:id="@+id/layout1"
+                android:layout_width="500dip"
+                android:layout_height="250dip"
+                android:orientation="vertical" >
             </LinearLayout>
-    
-</LinearLayout>
+        </HorizontalScrollView>
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.77"
+            android:onClick="gotoIndicatorSearchView"
+            android:text="Choose to see information for another country, or another indicator" />
+
+        <TextView
+            android:id="@+id/textViewShowingCandI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.77"
+            android:scrollbars="vertical" />
+    </LinearLayout>
+
 </ScrollView>
- 

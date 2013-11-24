@@ -70,6 +70,7 @@ public class GraphViewCreator {
 		 graphView.getGraphViewStyle().setHorizontalLabelsColor(Color.BLACK);
 		 graphView.getGraphViewStyle().setVerticalLabelsColor(Color.BLACK);
 		 graphView.getGraphViewStyle().setVerticalLabelsWidth(100);
+		 graphView.setScrollable(true);  
 		 
 		 if(nameOfTheClassCallingThis.equals("searchActivities.IndicatorSearchActivity")){IndicatorActivity.graphLayout.removeAllViews();}
 		 if(nameOfTheClassCallingThis.equals("searchActivities.IndicatorSearchActivity")){IndicatorActivity.graphLayout.addView(graphView);}
