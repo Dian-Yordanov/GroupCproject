@@ -57,6 +57,7 @@ public class IndicatorSearchActivity extends Activity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		StartingActivity.checkIfThereIsInternet(this.getLocalClassName(), IndicatorSearchActivity.this);
 		
 		res = getResources();
 		countries= res.getStringArray(R.array.countryListView);

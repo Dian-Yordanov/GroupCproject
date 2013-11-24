@@ -47,6 +47,7 @@ public class CountrySearchActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		StartingActivity.checkIfThereIsInternet(this.getLocalClassName(), CountrySearchActivity.this);
 		
 		res = getResources();
 		countries= res.getStringArray(R.array.countryListView);
