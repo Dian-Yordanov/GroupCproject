@@ -275,22 +275,17 @@
         <item>GQ</item>		  
         <item>ER</item>       
         <item>EE</item>
-        <item>ET</item>		
-        <item>FAROE_ISLANDS</item>
+        <item>ET</item>                
+        <item>FO</item>
         <item>FJ</item>
         <item>FI</item>
-        <item>FR</item>		
-        <item>FRENCH_POLYNESIA</item> 	
+        <item>FR</item>                
         <item>PF</item>         
         <item>GA</item>
         <item>GM</item>
         <item>GE</item>
         <item>DE</item>
         <item>GH</item>
-        <item>GREENLAND</item>        
-        <item>GL</item>
-        <item>GUAM</item>        
-        <item>GU</item>
         <item>GR</item>
         <item>GL</item>        
         <item>GD</item>
@@ -299,11 +294,9 @@
         <item>GN</item>
         <item>GW</item>
         <item>GY</item>
-        <item>HT</item>        
-        <item>HONG_KONG</item>           
-        <item>HK</item>
         <item>HT</item> 
-        <item>HN</item>                 
+        <item>HN</item>       
+        <item>HK</item>           
         <item>HU</item>
         <item>IS</item>
         <item>IN</item>
@@ -370,7 +363,6 @@
         <item>PH</item>
         <item>PL</item>
         <item>PT</item>        
-        <item>PUERTO_RICO</item>        
         <item>PR</item>        
         <item>QA</item>
         <item>RO</item>
@@ -691,6 +683,10 @@
         <item>Imports of goods and services (% of GDP)</item>
         
     </string-array>
+    
+        
+        
+    
 
     <string name="CList">Country List</string>
     <string name="Indicator">Indicators</string>
