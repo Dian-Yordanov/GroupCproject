@@ -23,7 +23,7 @@ public class StartingActivity extends Activity {
 	Button indicatorsSearch;
 	Button comparisonSearch;
 	Button aboutUs;
-	private Thread noInternetThread;
+	public static Thread noInternetThread;
 
 	public static int screenWidth;
 	public static int screenHeight;
@@ -32,40 +32,14 @@ public class StartingActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.starting_activity);
-
+		checkIfThereIsInternet(this.getLocalClassName());
+		
 		indicatorsSearch = (Button) findViewById(R.id.indicatorsSearch);
 		countriesSearch = (Button) findViewById(R.id.countryListSearch);
 		comparisonSearch = (Button) findViewById(R.id.comparisonSearch);
 		aboutUs = (Button) findViewById(R.id.about);
 
-		gettingTheScreenSize();
-
-	/*	noInternetThread =  new Thread(){
-	        @Override
-	        public void run(){
-	            try {
-	                synchronized(this){
-	                    wait(3000);
-	                }
-	            }
-	            catch(InterruptedException ex){                    
-	            }
-
-	            // TODO              
-	        }
-	    };
-	  
-
-	    noInternetThread.start();  
-	    
-	      */
-	    
-		if (noInternetChecker.isInternetAvailable(StartingActivity.this)){
-			Log.v("there is internet", "how nice");
-		} else {
-			Intent i = new Intent(StartingActivity.this, noInternetError.class);
-			startActivity(i);
-		}
+		gettingTheScreenSize();	
 	}
 
 	public void gotoCountrySearchView(View view) {
@@ -93,6 +67,32 @@ public class StartingActivity extends Activity {
 		Display display = getWindowManager().getDefaultDisplay(); 
 		screenWidth = display.getWidth();  // deprecated
 		screenHeight= display.getHeight();  // deprecated
+	}
+	public void checkIfThereIsInternet(String nameOfActivity){
+		if (noInternetChecker.isInternetAvailable(StartingActivity.this)) {
+			Log.v("there is internet", "how nice");
+		} else {
+
+			Toast.makeText(StartingActivity.this,
+					"Trying to find a network ...", 3000).show();
+
+			noInternetThread = new Thread() {
+				@Override
+				public void run() {
+					try {
+						synchronized (this) {
+							wait(3000);
+						}
+					} catch (InterruptedException ex) {
+					}
+					Intent i = new Intent(StartingActivity.this,
+							noInternetError.class);
+					startActivity(i);
+				}
+			};
+
+			noInternetThread.start();
+		}
 	}
 
 }
