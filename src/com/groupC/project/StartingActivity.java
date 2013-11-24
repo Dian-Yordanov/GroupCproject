@@ -44,20 +44,21 @@ public class StartingActivity extends Activity {
 		comparisonSearch = (Button) findViewById(R.id.comparisonSearch);
 		aboutUs = (Button) findViewById(R.id.about);
 
+		
+		
 		if (hasInternet == false) {
 			indicatorsSearch.setClickable(false);
 			countriesSearch.setClickable(false);
 			comparisonSearch.setClickable(false);
 			aboutUs.setClickable(false);
-		} else {
+		} 
+		checkIfThereIsInternet(this.getLocalClassName(), StartingActivity.this);
+		if  (hasInternet == true){
 			indicatorsSearch.setClickable(true);
 			countriesSearch.setClickable(true);
 			comparisonSearch.setClickable(true);
 			aboutUs.setClickable(true);
 		}
-		
-		checkIfThereIsInternet(this.getLocalClassName(), StartingActivity.this);
-		
 		
 		
 		gettingTheScreenSize();	
