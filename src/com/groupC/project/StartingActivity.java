@@ -13,6 +13,7 @@ import android.graphics.Point;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Display;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -20,27 +21,45 @@ import android.widget.Toast;
 
 public class StartingActivity extends Activity {
 
-	Button countriesSearch;
-	Button indicatorsSearch;
-	Button comparisonSearch;
-	Button aboutUs;
+	private static Button countriesSearch;
+	private static Button indicatorsSearch;
+	private static Button comparisonSearch;
+	private static Button aboutUs;
 	public static Thread noInternetThread;
 
 	public static int screenWidth;
 	public static int screenHeight;
 
+	private static boolean hasInternet = false;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.starting_activity);
 		
-		checkIfThereIsInternet(this.getLocalClassName(), StartingActivity.this);
+		
 		
 		indicatorsSearch = (Button) findViewById(R.id.indicatorsSearch);
 		countriesSearch = (Button) findViewById(R.id.countryListSearch);
 		comparisonSearch = (Button) findViewById(R.id.comparisonSearch);
 		aboutUs = (Button) findViewById(R.id.about);
 
+		if (hasInternet == false) {
+			indicatorsSearch.setClickable(false);
+			countriesSearch.setClickable(false);
+			comparisonSearch.setClickable(false);
+			aboutUs.setClickable(false);
+		} else {
+			indicatorsSearch.setClickable(true);
+			countriesSearch.setClickable(true);
+			comparisonSearch.setClickable(true);
+			aboutUs.setClickable(true);
+		}
+		
+		checkIfThereIsInternet(this.getLocalClassName(), StartingActivity.this);
+		
+		
+		
 		gettingTheScreenSize();	
 	}
 
@@ -73,7 +92,10 @@ public class StartingActivity extends Activity {
 	
 	public static void checkIfThereIsInternet(String nameOfActivity, final Context activityContext){
 		if (noInternetChecker.isInternetAvailable(activityContext)) {
+			
 			Log.v("there is internet", "how nice");
+			hasInternet = true;
+			
 		} else {
 
 			Toast.makeText(activityContext,
@@ -97,5 +119,17 @@ public class StartingActivity extends Activity {
 			StartingActivity.noInternetThread.start();
 		}
 	}
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event)  {
+	    if (keyCode == KeyEvent.KEYCODE_BACK ) {
+	        // do something on back.
+	    	Intent intent = new Intent(Intent.ACTION_MAIN);
+	    	intent.addCategory(Intent.CATEGORY_HOME);
+	    	intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+	    	startActivity(intent);
+	        return true;
+	    }
 
+	    return super.onKeyDown(keyCode, event);
+	}
 }

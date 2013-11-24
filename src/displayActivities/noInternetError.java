@@ -1,8 +1,12 @@
 package displayActivities;
 
+import searchActivities.IndicatorSearchActivity;
+
 import com.groupC.project.R;
+import com.groupC.project.StartingActivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -27,6 +31,8 @@ public class noInternetError extends Activity{
 		    if (keyCode == KeyEvent.KEYCODE_BACK ) {
 		        // do something on back.
 		    	Log.v("the user tried to return","returning...");
+		    	Intent i = new Intent( noInternetError .this, StartingActivity.class);
+				startActivity(i);
 		        return true;
 		    }
 
