@@ -8,8 +8,8 @@
         android:id="@+id/imageViewAboutUs"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        
-        android:background="@drawable/darkhorizontalframe"
+        android:background="@drawable/background"
+        android:scaleType="fitCenter"
         android:src="@drawable/aboutuspicture" />
 
 </LinearLayout>
