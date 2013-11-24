@@ -16,24 +16,28 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.60"
             android:text="Choose to see information for another country" 
-            android:onClick="gotoCountrySearchView"/>
+            android:onClick="gotoCountrySearchView"
+             android:layout_gravity="center"/>
 
         <TextView
             android:id="@+id/textViewCountryView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.60"
-            android:text="" />
+            android:text="" 
+             android:layout_gravity="center"/>
 
         <ImageView
             android:id="@+id/imageView1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content" 
+             android:layout_gravity="center"/>
 
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content" 
+             android:layout_gravity="center"/>
 
     </LinearLayout>
 
