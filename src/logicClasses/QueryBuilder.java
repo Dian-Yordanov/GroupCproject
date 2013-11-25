@@ -88,7 +88,7 @@ public class QueryBuilder {
 	static double arrayMaxLength =0;
 	
 	static int debuggingIntincreasingOnEvery50elements =0;
-	static boolean debugginAllResultsAreNull=true;
+	static boolean debugginAllResultsAreCorrect=false;
 	
 	public QueryBuilder(String urlparser) {
 		jsonParserReader(urlparser);
@@ -155,11 +155,11 @@ public class QueryBuilder {
 			years[arrayNumber] = Integer.parseInt(dateInfoStr);
 			if(valueInfoStr=="null"){values[arrayNumber] = 0.0;
 			thereIsNoInforamtionForTheFollowingYears +=Integer.toString(years[arrayNumber]) + " ";
-		
+			debugginAllResultsAreCorrect = false;
 			}
 			
 			else {values[arrayNumber] = Double.parseDouble(valueInfoStr);
-			debugginAllResultsAreNull = false;
+			
 			}
 			
 			Log. v( "",Integer. toString(Double. toString(maxLength( values [ arrayNumber])).length()));
@@ -226,8 +226,10 @@ public class QueryBuilder {
 		}
 	}
 	public static String missingInformation(){
-		if(arrayNumber==51 && debugginAllResultsAreNull==true){return "We are sorry but there was no information for the following years: " + thereIsNoInforamtionForTheFollowingYears + "\n";}
-		else return "";
+
+		if(thereIsNoInforamtionForTheFollowingYears.isEmpty()) {return "";}
+		else {return "We are sorry but there was no information for the following years: " + thereIsNoInforamtionForTheFollowingYears + "\n";}
+		
 	}
 
 	public static double maxLength(double thisValueLength){
