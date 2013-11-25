@@ -37,7 +37,8 @@ public class CountryActivity  extends Activity{
 	
 	private static Bitmap resizedBitmapFlag;
 	private static Bitmap resizedBitmapMap;
-	
+	private static String countryName;
+	private static String countryCode;
  
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -54,9 +55,12 @@ public class CountryActivity  extends Activity{
 		
 		flagView = (ImageView) findViewById(R.id.imageView1);
 		countryView = (ImageView) findViewById(R.id.imageView2);
-		
-		imageResize();
-		
+		Bundle extras = getIntent().getExtras();
+		if (extras != null) {
+		    countryCode = extras.getString("countryCode");
+		    countryName = extras.getString("countryName");
+		}
+		prepareImagesAndResize();		
 		displayedText.setText(QueryBuilder.displayInfo);
 		flagView.setImageBitmap(resizedBitmapFlag);
 		countryView.setImageBitmap(resizedBitmapMap);
@@ -67,24 +71,12 @@ public class CountryActivity  extends Activity{
 		startActivity(i);
 
 	}
-	private static void imageResize(){
-		if(CountryPicturesQueryBuilder.map.getWidth() > CountryPicturesQueryBuilder.flag.getWidth()){
-		resizedBitmapFlag =	Bitmap.createScaledBitmap(CountryPicturesQueryBuilder.flag, CountryPicturesQueryBuilder.map.getWidth()
-				, CountryPicturesQueryBuilder.flag.getHeight(), true); 
-		resizedBitmapMap =	Bitmap.createScaledBitmap(CountryPicturesQueryBuilder.map, CountryPicturesQueryBuilder.map.getWidth()
-				, CountryPicturesQueryBuilder.map.getHeight(), true);
-		return;
-		}
-		if(CountryPicturesQueryBuilder.map.getWidth() < CountryPicturesQueryBuilder.flag.getWidth()){
-		resizedBitmapFlag =	Bitmap.createScaledBitmap(CountryPicturesQueryBuilder.flag, CountryPicturesQueryBuilder.flag.getWidth()
-				, CountryPicturesQueryBuilder.flag.getHeight(), true); 
-		resizedBitmapMap =	Bitmap.createScaledBitmap(CountryPicturesQueryBuilder.map, CountryPicturesQueryBuilder.flag.getWidth()
-				, CountryPicturesQueryBuilder.map.getHeight(), true);
-		return;
-		}
-		
-		
-	}
-	
-	
+	private static void prepareImagesAndResize(){
+		Bitmap countryFlag = CountryPicturesQueryBuilder.getCountryFlag(countryCode);
+		Bitmap countryMap = CountryPicturesQueryBuilder.getCountryMap(countryName);
+		resizedBitmapFlag =	Bitmap.createScaledBitmap(countryFlag, countryFlag.getWidth()
+				, countryFlag.getHeight(), true); 
+		resizedBitmapMap =	Bitmap.createScaledBitmap(countryMap, countryFlag.getWidth()
+				, countryMap.getHeight(), true);
+	}	
 }
