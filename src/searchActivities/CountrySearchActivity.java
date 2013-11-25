@@ -34,7 +34,7 @@ public class CountrySearchActivity extends Activity {
 	AutoCompleteTextView selectYourCountryAutoCompleteText;
 	ListView countriesListView;
 	private static ArrayAdapter<CharSequence> countryListAdapter;
-	private static  CustomAutoCompleteTextViewAdapter autoCompleteAdapter;
+	private static ArrayAdapter<String> autoCompleteAdapter;
 	
 	private Resources res;
 	private String[] countries;
@@ -47,7 +47,7 @@ public class CountrySearchActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		StartingActivity.checkIfThereIsInternet(this.getLocalClassName(), CountrySearchActivity.this);
+		StartingActivity.checkIfThereIsInternet(this.getLocalClassName(),CountrySearchActivity.this);
 		
 		res = getResources();
 		countries= res.getStringArray(R.array.countryListView);
@@ -70,7 +70,7 @@ public class CountrySearchActivity extends Activity {
 		countryText.setTextSize(18);
 		createEditOptions();
 		
-		autoCompleteAdapter = new  CustomAutoCompleteTextViewAdapter(this, android.R.layout.simple_expandable_list_item_1,countryNames);
+		autoCompleteAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1,countryNames);
         selectYourCountryAutoCompleteText.setAdapter(autoCompleteAdapter);
         selectYourCountryAutoCompleteText.setThreshold(1);
         selectYourCountryAutoCompleteText.setOnItemClickListener(new OnItemClickListener(){
@@ -79,10 +79,9 @@ public class CountrySearchActivity extends Activity {
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
 				// TODO Auto-generated method stub
-				stringUsedForCallingQueryBuilder = countries[getArrayIndex(countryNames, arg0.getItemAtPosition(arg2).toString())];
-				stringUsedForCallingFlagDownloader = countriesByTwoLetters[getArrayIndex(countryNames, arg0.getItemAtPosition(arg2).toString())];
-				stringUsedForCallingCountryMapDownloader = countryNames[getArrayIndex(countryNames, arg0.getItemAtPosition(arg2).toString())];			
-				logicClassesCall();
+				int countryIndex = getArrayIndex(countryNames, arg0.getItemAtPosition(arg2).toString());
+				stringUsedForCallingQueryBuilder = countries[countryIndex];		
+				logicClassesCall(countryIndex);
 				
 			}});
         
@@ -94,11 +93,9 @@ public class CountrySearchActivity extends Activity {
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
 				// TODO Auto-generated method stub
-				stringUsedForCallingQueryBuilder = countries[arg2];
-				stringUsedForCallingFlagDownloader = countriesByTwoLetters[arg2];
-				stringUsedForCallingCountryMapDownloader = countryNames[arg2];
-									
-				logicClassesCall();
+				stringUsedForCallingQueryBuilder = countries[arg2];		
+				int countryIndex = arg2;
+				logicClassesCall(countryIndex);
 				
 			}});
 	}
@@ -128,103 +125,97 @@ public class CountrySearchActivity extends Activity {
 
 	}
 	
-	public String countryNameForCountryLocationCall(){
-		String stringToBeReturned ="";
-		stringToBeReturned = stringUsedForCallingCountryMapDownloader;
-		stringToBeReturned = stringToBeReturned.toLowerCase();
-		//if(stringToBeReturned.contains(" ")){stringToBeReturned = stringUsedForCallingFlagDownloader.toLowerCase();}
+	public static String countryNameForCountryLocationCall(String countryMapStr){
+		String stringToBeReturned = countryMapStr.toLowerCase();
         if(stringToBeReturned.contains(" ")){stringToBeReturned.replaceAll("\\s+","");}
-        if(stringToBeReturned.equals("afghanistan")){stringToBeReturned = "afghan";}
-        if(stringToBeReturned.equals("american samoa")){stringToBeReturned = "amsamoa";}   // need the image for american samoa, aruba, bermuda, cayman islands, east timor, faroe islands, french polynesia, greenland, guam, hong kong, new caledonia, northern mariana islands, perto rico, south sudan, turks and caicos islands
-        if(stringToBeReturned.equals("antigua and barbuda")){stringToBeReturned = "antigua";}
-        if(stringToBeReturned.equals("argentina")){stringToBeReturned = "argent";}
-        if(stringToBeReturned.equals("bahamas")){stringToBeReturned = "bahama";}
-        if(stringToBeReturned.equals("bosnia and herzegowina")){stringToBeReturned = "bosnia";}
-        if(stringToBeReturned.equals("brunei darussalam")){stringToBeReturned = "brunei";}
-        if(stringToBeReturned.equals("bulgaria")){stringToBeReturned = "bulgar";}
-        if(stringToBeReturned.equals("cambodia")){stringToBeReturned = "cambod";}
-        if(stringToBeReturned.equals("cape verde")){stringToBeReturned = "capverd";}
-        if(stringToBeReturned.equals("cayman islands")){stringToBeReturned = "cayman";}
-        //if(stringToBeReturned.equals("central african republic")){stringToBeReturned = "http://www.infoplease.com/atlas/country/centralafricanrepublic.html";} needs html querying
-        if(stringToBeReturned.equals("colombia")){stringToBeReturned = "colomb";}
-        if(stringToBeReturned.equals("congo, the drc")){stringToBeReturned = "drcongo";}
-        if(stringToBeReturned.equals("costa rica")){stringToBeReturned = "cosrica";}
-        if(stringToBeReturned.equals("cote divoire")){stringToBeReturned = "coteivo";}
-        if(stringToBeReturned.equals("czech republic")){stringToBeReturned = "czech";}
-        if(stringToBeReturned.equals("east timor")){stringToBeReturned = "etimor";}
-        if(stringToBeReturned.equals("el salvador")){stringToBeReturned = "elsalva";}
-        if(stringToBeReturned.equals("equatorial guinea")){stringToBeReturned = "eqguin";}
-        if(stringToBeReturned.equals("ethiopia")){stringToBeReturned = "ethiop";}
-        if(stringToBeReturned.equals("faroe islands")){stringToBeReturned = "faeroe";}
-        if(stringToBeReturned.equals("french polynesia")){stringToBeReturned = "fpolnes";}
-        if(stringToBeReturned.equals("greenland")){stringToBeReturned = "greenld";}
-        if(stringToBeReturned.equals("guinea-bissau")){stringToBeReturned = "guinea";}
-        if(stringToBeReturned.equals("hong kong")){stringToBeReturned = "hkong";}
-        if(stringToBeReturned.equals("kazakhstan")){stringToBeReturned = "kazakh";}
-        if(stringToBeReturned.equals("north korea")){stringToBeReturned = "nkorea";}
-        if(stringToBeReturned.equals("south korea")){stringToBeReturned = "skorea";}
-        if(stringToBeReturned.equals("kyrgyzstan")){stringToBeReturned = "kyrgyz";}
-        if(stringToBeReturned.equals("liechtenstein")){stringToBeReturned = "liecht";}
-        //if(stringToBeReturned.equals("luxembourg")){stringToBeReturned = "http://www.infoplease.com/atlas/country/luxembourg.html";}  needs html querying
-        if(stringToBeReturned.equals("malaysia")){stringToBeReturned = "malays";}
-        if(stringToBeReturned.equals("mauritania")){stringToBeReturned = "maurtan";}
-        if(stringToBeReturned.equals("mauritius")){stringToBeReturned = "maurtiu";}
-        if(stringToBeReturned.equals("mongolia")){stringToBeReturned = "mongol";}
-        if(stringToBeReturned.equals("montenegro")){stringToBeReturned = "yugo";}
-        if(stringToBeReturned.equals("mozambique")){stringToBeReturned = "mozamb";}
-        if(stringToBeReturned.equals("myanmar")){stringToBeReturned = "burma";}
-        if(stringToBeReturned.equals("new caledonia")){stringToBeReturned = "newcal";}
-        if(stringToBeReturned.equals("new zealand")){stringToBeReturned = "newzea";}
-        if(stringToBeReturned.equals("northern mariana islands")){stringToBeReturned = "mariana";}
-        if(stringToBeReturned.equals("pakistan")){stringToBeReturned = "pakist";}
-        if(stringToBeReturned.equals("papua new guinea")){stringToBeReturned = "papngui";}
-        if(stringToBeReturned.equals("paraguay")){stringToBeReturned = "paragy";}
-        if(stringToBeReturned.equals("portugal")){stringToBeReturned = "portgal";}
-        //if(stringToBeReturned.equals("puerto rico")){stringToBeReturned = "puertorico";} not working for some reason
-        if(stringToBeReturned.equals("russian federation")){stringToBeReturned = "russia";}
-        if(stringToBeReturned.equals("saint kitts and nevis")){stringToBeReturned = "stkitts";}
-        if(stringToBeReturned.equals("saint lucia")){stringToBeReturned = "stlucia";}
-        if(stringToBeReturned.equals("saint vincent and the grenadines")){stringToBeReturned = "stvince";}
-        if(stringToBeReturned.equals("samoa")){stringToBeReturned = "wsamoa";}
-        if(stringToBeReturned.equals("san marino")){stringToBeReturned = "snmarin";}
-        if(stringToBeReturned.equals("sao tome and principe")){stringToBeReturned = "saotome";}
-        if(stringToBeReturned.equals("saudi arabia")){stringToBeReturned = "sarabia";}
-        if(stringToBeReturned.equals("sierra leone")){stringToBeReturned = "sleone";}
-        if(stringToBeReturned.equals("singapore")){stringToBeReturned = "singap";}
-        if(stringToBeReturned.equals("slovakia")){stringToBeReturned = "slovak";}
-        if(stringToBeReturned.equals("slovenia")){stringToBeReturned = "sloven";}
-        if(stringToBeReturned.equals("south africa")){stringToBeReturned = "safrica";}
-        if(stringToBeReturned.equals("south sudan")){stringToBeReturned = "http://www.ureachtoronto.com/sites/default/files/content/PDF_Files/1079_020411sudan.gif";}
-        if(stringToBeReturned.equals("sri lanka")){stringToBeReturned = "srilank";}
-        if(stringToBeReturned.equals("swaziland")){stringToBeReturned = "swazil";}
-        if(stringToBeReturned.equals("tajikistan")){stringToBeReturned = "tajik";}
-        if(stringToBeReturned.equals("tanzania")){stringToBeReturned = "tanzan";}
-        if(stringToBeReturned.equals("tunisia")){stringToBeReturned = "tunis";}
-        if(stringToBeReturned.equals("turks and caicos islands")){stringToBeReturned = "turks";}
-        if(stringToBeReturned.equals("united arab emirates")){stringToBeReturned = "unarab";}
-        if(stringToBeReturned.equals("united kingdom")){stringToBeReturned = "uk";}
-        if(stringToBeReturned.equals("united states")){stringToBeReturned = "usa";}
-        if(stringToBeReturned.equals("uzbekistan")){stringToBeReturned = "uzbek";}
-        if(stringToBeReturned.equals("zimbabwe")){stringToBeReturned = "zimbab";}
+        if(stringToBeReturned.equals("afghanistan")){return "afghan";}
+        if(stringToBeReturned.equals("american samoa")){return "amsamoa";}   
+        if(stringToBeReturned.equals("antigua and barbuda")){return "antigua";}
+        if(stringToBeReturned.equals("argentina")){return "argent";}
+        if(stringToBeReturned.equals("bahamas")){return "bahama";}
+        if(stringToBeReturned.equals("bosnia and herzegowina")){return "bosnia";}
+        if(stringToBeReturned.equals("brunei darussalam")){return "brunei";}
+        if(stringToBeReturned.equals("bulgaria")){return "bulgar";}
+        if(stringToBeReturned.equals("cambodia")){return "cambod";}
+        if(stringToBeReturned.equals("cape verde")){return "capverd";}
+        if(stringToBeReturned.equals("cayman islands")){return "cayman";}
+        if(stringToBeReturned.equals("central african republic")){return "centafr";}
+        if(stringToBeReturned.equals("colombia")){return "colomb";}
+        if(stringToBeReturned.equals("congo, the drc")){return "drcongo";}
+        if(stringToBeReturned.equals("costa rica")){return  "cosrica";}
+        if(stringToBeReturned.equals("cote divoire")){return "coteivo";}
+        if(stringToBeReturned.equals("czech republic")){return "czech";}
+        if(stringToBeReturned.equals("east timor")){return "etimor";}
+        if(stringToBeReturned.equals("el salvador")){return "elsalva";}
+        if(stringToBeReturned.equals("equatorial guinea")){return "eqguin";}
+        if(stringToBeReturned.equals("ethiopia")){return "ethiop";}
+        if(stringToBeReturned.equals("faroe islands")){return "faeroe";}
+        if(stringToBeReturned.equals("french polynesia")){return "fpolnes";}
+        if(stringToBeReturned.equals("greenland")){return "greenld";}
+        if(stringToBeReturned.equals("guinea-bissau")){return "guinea";}
+        if(stringToBeReturned.equals("hong kong")){return "hkong";}
+        if(stringToBeReturned.equals("kazakhstan")){return "kazakh";}
+        if(stringToBeReturned.equals("north korea")){return "nkorea";}
+        if(stringToBeReturned.equals("south korea")){return "skorea";}
+        if(stringToBeReturned.equals("kyrgyzstan")){return "kyrgyz";}
+        if(stringToBeReturned.equals("liechtenstein")){return "liecht";}
+        if(stringToBeReturned.equals("luxembourg")){return "luxemb";} 
+        if(stringToBeReturned.equals("malaysia")){return "malays";}
+        if(stringToBeReturned.equals("mauritania")){return "maurtan";}
+        if(stringToBeReturned.equals("mauritius")){return "maurtiu";}
+        if(stringToBeReturned.equals("mongolia")){return "mongol";}
+        if(stringToBeReturned.equals("montenegro")){return "yugo";}
+        if(stringToBeReturned.equals("mozambique")){return "mozamb";}
+        if(stringToBeReturned.equals("myanmar")){return "burma";}
+        if(stringToBeReturned.equals("new caledonia")){return "newcal";}
+        if(stringToBeReturned.equals("new zealand")){return "newzea";}
+        if(stringToBeReturned.equals("northern mariana islands")){return "mariana";}
+        if(stringToBeReturned.equals("pakistan")){return "pakist";}
+        if(stringToBeReturned.equals("papua new guinea")){return "papngui";}
+        if(stringToBeReturned.equals("paraguay")){return "paragy";}
+        if(stringToBeReturned.equals("portugal")){return "portgal";}
+        if(stringToBeReturned.equals("puerto rico")){return "puertorico";}
+        if(stringToBeReturned.equals("russian federation")){return "russia";}
+        if(stringToBeReturned.equals("saint kitts and nevis")){return "stkitts";}
+        if(stringToBeReturned.equals("saint lucia")){return "stlucia";}
+        if(stringToBeReturned.equals("saint vincent and the grenadines")){return "stvince";}
+        if(stringToBeReturned.equals("samoa")){return "wsamoa";}
+        if(stringToBeReturned.equals("san marino")){return "snmarin";}
+        if(stringToBeReturned.equals("sao tome and principe")){return "saotome";}
+        if(stringToBeReturned.equals("saudi arabia")){return "sarabia";}
+        if(stringToBeReturned.equals("sierra leone")){return "sleone";}
+        if(stringToBeReturned.equals("singapore")){return "singap";}
+        if(stringToBeReturned.equals("slovakia")){return "slovak";}
+        if(stringToBeReturned.equals("slovenia")){return "sloven";}
+        if(stringToBeReturned.equals("south africa")){return "safrica";}
+        if(stringToBeReturned.equals("sri lanka")){return "srilank";}
+        if(stringToBeReturned.equals("swaziland")){return "swazil";}
+        if(stringToBeReturned.equals("tajikistan")){return "tajik";}
+        if(stringToBeReturned.equals("tanzania")){return "tanzan";}
+        if(stringToBeReturned.equals("tunisia")){return "tunis";}
+        if(stringToBeReturned.equals("turks and caicos islands")){return "turks";}
+        if(stringToBeReturned.equals("united arab emirates")){return "unarab";}
+        if(stringToBeReturned.equals("united kingdom")){return "uk";}
+        if(stringToBeReturned.equals("united states")){return "usa";}
+        if(stringToBeReturned.equals("uzbekistan")){return "uzbek";}
+        if(stringToBeReturned.equals("zimbabwe")){return "zimbab";}
         
-        else if(stringToBeReturned.length() > 7){stringToBeReturned = stringToBeReturned.substring(0, 7);}
+        if(stringToBeReturned.length() > 7){stringToBeReturned = stringToBeReturned.substring(0, 7);}
 		return stringToBeReturned;
 	}
-	public void gotoCountryActivity(){
+	public void gotoCountryActivity(int countryIndex){
 		Intent i = new Intent(CountrySearchActivity.this, CountryActivity.class);
+		i.putExtra("countryCode", countriesByTwoLetters[countryIndex]);
+		i.putExtra("countryName", countryNameForCountryLocationCall(countryNames[countryIndex]));
 		startActivity(i);
 	}
-	private void logicClassesCall(){
+	private void logicClassesCall(int countryIndex){
 		QueryBuilder.p2CountryName = stringUsedForCallingQueryBuilder;					
-		CountryPicturesQueryBuilder.countryCode = stringUsedForCallingFlagDownloader;
-		CountryPicturesQueryBuilder.countryName = countryNameForCountryLocationCall();
-		CountryPicturesQueryBuilder.flagQuery();
 		QueryBuilder.jsonParserReader(countryQueryConstructor());				
 		
 		selectYourCountryAutoCompleteText.setText("");
 		selectYourCountryAutoCompleteText.setHint("");
-
-		gotoCountryActivity();
+		gotoCountryActivity(countryIndex);
 	}
 	public final static int getArrayIndex(String[] myArray, String myObject) {
 	    int ArraySize = Array.getLength(myArray);// get the size of the array
