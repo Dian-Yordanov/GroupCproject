@@ -34,7 +34,7 @@ public class CountrySearchActivity extends Activity {
 	AutoCompleteTextView selectYourCountryAutoCompleteText;
 	ListView countriesListView;
 	private static ArrayAdapter<CharSequence> countryListAdapter;
-	private static ArrayAdapter<String> autoCompleteAdapter;
+	private static CustomAutoCompleteTextViewAdapter autoCompleteAdapter;
 	
 	private Resources res;
 	private String[] countries;
@@ -70,7 +70,7 @@ public class CountrySearchActivity extends Activity {
 		countryText.setTextSize(18);
 		createEditOptions();
 		
-		autoCompleteAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1,countryNames);
+		autoCompleteAdapter = new  CustomAutoCompleteTextViewAdapter(this, android.R.layout.simple_expandable_list_item_1,countryNames);
         selectYourCountryAutoCompleteText.setAdapter(autoCompleteAdapter);
         selectYourCountryAutoCompleteText.setThreshold(1);
         selectYourCountryAutoCompleteText.setOnItemClickListener(new OnItemClickListener(){
