@@ -71,7 +71,7 @@ public class CountryActivity  extends Activity{
 		startActivity(i);
 
 	}
-	private static void imageResize(){
+	private static void prepareImagesAndResize(){
 		Bitmap countryFlag = CountryPicturesQueryBuilder.getCountryFlag(countryCode);
 		Bitmap countryMap = CountryPicturesQueryBuilder.getCountryMap(countryName);
 		resizedBitmapFlag =	Bitmap.createScaledBitmap(countryFlag, countryFlag.getWidth()
