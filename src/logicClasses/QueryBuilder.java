@@ -87,6 +87,9 @@ public class QueryBuilder {
 	
 	static double arrayMaxLength =0;
 	
+	static int debuggingIntincreasingOnEvery50elements =0;
+	static boolean debugginAllResultsAreNull=true;
+	
 	public QueryBuilder(String urlparser) {
 		jsonParserReader(urlparser);
 	}
@@ -155,13 +158,18 @@ public class QueryBuilder {
 		
 			}
 			
-			else {values[arrayNumber] = Double.parseDouble(valueInfoStr);}
+			else {values[arrayNumber] = Double.parseDouble(valueInfoStr);
+			debugginAllResultsAreNull = false;
+			}
 			
 			Log. v( "",Integer. toString(Double. toString(maxLength( values [ arrayNumber])).length()));
 			
-			displayInfo +=  displayedDataForYears() + dateInfoStr + ": "
-					+ " " + valueInfoStr + "\n"
-					+ missingInformation() ;
+			displayInfo += dateInfoStr + ": "
+					+ " " + valueInfoStr + "\n";
+			
+			Log. v("arrayNumber",Integer.toString(arrayNumber));
+			
+			if(arrayNumber%50==0&& arrayNumber!=0){debuggingIntincreasingOnEvery50elements+=50;}
 			
 			arrayNumber++;
 				
@@ -217,14 +225,11 @@ public class QueryBuilder {
 			e.printStackTrace();
 		}
 	}
-	private static String missingInformation(){
-		if(arrayNumber==50){return "We are sorry but there was no information for the following years: " + thereIsNoInforamtionForTheFollowingYears + "\n";}
+	public static String missingInformation(){
+		if(arrayNumber==51 && debugginAllResultsAreNull==true){return "We are sorry but there was no information for the following years: " + thereIsNoInforamtionForTheFollowingYears + "\n";}
 		else return "";
 	}
-	private static String displayedDataForYears(){
-		if(arrayNumber==0){return "Bellow is displayed detailed information for each year"+ "\n";}
-		else return "";
-	}
+
 	public static double maxLength(double thisValueLength){
 		int castIntForThisValueLength = (int) thisValueLength;
 		int castIntForArrayMaxLength = (int) arrayMaxLength;

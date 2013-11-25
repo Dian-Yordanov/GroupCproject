@@ -38,6 +38,7 @@ import android.widget.TextView;
 public class IndicatorActivity extends Activity{
  
 	public static TextView textView1;
+	public static TextView noInformationForYears;
 	public static LinearLayout graphLayout;
 	
 	//public static GraphView graphView;
@@ -55,6 +56,9 @@ public class IndicatorActivity extends Activity{
 		setContentView(R.layout.indicator_activity);
 		textView1 = (TextView) findViewById(R.id.textViewShowingCandI);
 		textView1.setText(QueryBuilder.displayInfo);	
+		noInformationForYears = (TextView) findViewById(R.id.noInformationForYears);
+		noInformationForYears.setText(QueryBuilder.missingInformation());
+		
 		
 	    graphLayout = (LinearLayout) findViewById(R.id. layout1);
 	    graphLayout.setMinimumWidth((int) (1.5*StartingActivity.screenWidth) + 150);

@@ -32,11 +32,24 @@
             android:text="Choose to see information for another country, or another indicator" />
 
         <TextView
+            android:id="@+id/informationDisplayLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bellow is displayed information for the following years:" />
+
+        <TextView
             android:id="@+id/textViewShowingCandI"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.77"
             android:scrollbars="vertical" />
+
+        <TextView
+            android:id="@+id/noInformationForYears"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
+
     </LinearLayout>
 
 </ScrollView>
