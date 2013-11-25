@@ -87,7 +87,7 @@ public class QueryBuilder {
 	
 	static double arrayMaxLength =0;
 	
-	static int debuggingIntincreasingOnEvery50elements =0;
+	static int debuggingIntincreasingOnEvery100elements =0;
 	static boolean debugginAllResultsAreCorrect=false;
 	
 	public QueryBuilder(String urlparser) {
@@ -160,12 +160,25 @@ public class QueryBuilder {
 			displayInfo += dateInfoStr + ": "
 					+ " " + valueInfoStr + "\n";
 			
-			Log.v( "",Integer. toString(Double. toString(maxLength( values [ arrayNumber])).length()));
-			Log.d("arrayNumber",Integer.toString(arrayNumber));
+		//	Log.v( "",Integer. toString(Double. toString(maxLength( values [ arrayNumber])).length()));
 			
-			if(arrayNumber%50==0&& arrayNumber!=0){debuggingIntincreasingOnEvery50elements+=50;}
+			
+			
+			//Log.v("debuggingIntincreasingOnEvery100elements",Integer.toString(debuggingIntincreasingOnEvery100elements));
+			
 			
 			arrayNumber++;
+
+			if(arrayNumber>=(0 + debuggingIntincreasingOnEvery100elements) && arrayNumber<=(51 + debuggingIntincreasingOnEvery100elements)){
+				Log.d("arrayNumber" + Integer.toString(arrayNumber),Integer.toString(arrayNumber));
+			}
+			
+			if(arrayNumber>=( 52 + debuggingIntincreasingOnEvery100elements) && arrayNumber<=(103 + debuggingIntincreasingOnEvery100elements)){
+				Log.e("arrayNumber" + Integer.toString(arrayNumber),Integer.toString(arrayNumber));
+			}
+			
+			if(arrayNumber%102==0 && arrayNumber!=0){debuggingIntincreasingOnEvery100elements+=102;}
+			
 				
 
 		} catch (JSONException e) {
