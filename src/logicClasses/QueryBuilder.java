@@ -156,9 +156,8 @@ public class QueryBuilder {
 			
 			Log. v( "",Integer. toString(Double. toString(maxLength( values [ arrayNumber])).length()));
 			
-			displayInfo += idIndicator + " " + valueIndicator + " " + idCountry
-					+ " " + valueCountry + " " + valueInfoStr + " "
-					+ decimalInfoStr + " " + dateInfoStr + "\n"
+			displayInfo +=  displayedDataForYears() + dateInfoStr + ": "
+					+ " " + valueInfoStr + "\n"
 					+ missingInformation() ;
 			
 			arrayNumber++;
@@ -217,6 +216,10 @@ public class QueryBuilder {
 	}
 	private static String missingInformation(){
 		if(arrayNumber==51){return "We are sorry but there was no information for the following years: " + thereIsNoInforamtionForTheFollowingYears + "\n";}
+		else return "";
+	}
+	private static String displayedDataForYears(){
+		if(arrayNumber==0){return "Bellow is displayed detailed information for each year"+ "\n";}
 		else return "";
 	}
 	public static double maxLength(double thisValueLength){
