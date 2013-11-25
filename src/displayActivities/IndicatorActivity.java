@@ -66,9 +66,4 @@ public class IndicatorActivity extends Activity{
 	    GraphViewCreator.graphViewCreator();
 	    //QueryBuilder.arrayNumber=0;
 	}
-	public void gotoIndicatorSearchView(View view) {
-		Intent i = new Intent(IndicatorActivity.this, IndicatorSearchActivity.class);
-		startActivity(i);
-
-	}
 }
