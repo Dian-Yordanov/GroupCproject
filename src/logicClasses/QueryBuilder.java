@@ -101,9 +101,13 @@ public class QueryBuilder {
 		try {
 			jsonMainArr = new JSONArray(infoParsed);
 			JSONArray countries = jsonMainArr.getJSONArray(1);
+			
 			for (int i = 0; i <countries.length(); i++) {
-				jsonInfo = (JSONObject) countries.get(i);
+				jsonInfo = (JSONObject) countries.get(50 - i);
 
+				Log.v("countries.length()",Integer.toString(countries.length()));
+				Log.v("i",Integer.toString(i));
+				
 				//reverseArrayValues(arrayNumber,values);
 				//reverseArrayYears(arrayNumber,years);
 				
