@@ -105,14 +105,16 @@ public class QueryBuilder {
 			JSONArray countries = jsonMainArr.getJSONArray(1);
 			
 			for (int i = 0; i <countries.length(); i++) {
-				jsonInfo = (JSONObject) countries.get(50 - i);
 
-				if(nameOftheClassCallingThisClass.equals("searchActivities.IndicatorSearchActivity"))
-					jsonObjectExtractorForCountryAndIndicator();
-				if(nameOftheClassCallingThisClass.equals("searchActivities.CountrySearchActivity"))
-					jsonObjectExtractorForCountry();
-				if(nameOftheClassCallingThisClass.equals("searchActivities.ComparisonSearchActivity"))
-					jsonObjectExtractorForCountryAndIndicator();
+				if(nameOftheClassCallingThisClass.equals("searchActivities.IndicatorSearchActivity")){
+					jsonInfo = (JSONObject) countries.get(50 - i);
+					jsonObjectExtractorForCountryAndIndicator();}
+				if(nameOftheClassCallingThisClass.equals("searchActivities.CountrySearchActivity")){
+					jsonInfo = (JSONObject) countries.get(i);
+					jsonObjectExtractorForCountry();}
+				if(nameOftheClassCallingThisClass.equals("searchActivities.ComparisonSearchActivity")){
+					jsonInfo = (JSONObject) countries.get(50 - i);
+					jsonObjectExtractorForCountryAndIndicator();}
 							
 			}
 		} catch (JSONException e) {
@@ -126,6 +128,7 @@ public class QueryBuilder {
 		p2Country2Name = "";
 		}
 		arrayMaxLength=0;
+		
 		
 	}
  
@@ -215,7 +218,7 @@ public class QueryBuilder {
 		}
 	}
 	private static String missingInformation(){
-		if(arrayNumber==51){return "We are sorry but there was no information for the following years: " + thereIsNoInforamtionForTheFollowingYears + "\n";}
+		if(arrayNumber==50){return "We are sorry but there was no information for the following years: " + thereIsNoInforamtionForTheFollowingYears + "\n";}
 		else return "";
 	}
 	private static String displayedDataForYears(){
