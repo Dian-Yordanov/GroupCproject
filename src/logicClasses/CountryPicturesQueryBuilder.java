@@ -1,4 +1,6 @@
 package logicClasses;
+import java.io.FileNotFoundException;
+
 import com.groupC.project.*;
 import displayActivities.*;
 import logicClasses.*;
@@ -13,29 +15,29 @@ public class CountryPicturesQueryBuilder {
 	// and using the string from
 	private static String urlBuilderFlagsBeginning = "http://flagpedia.net/data/flags/normal/";
 	private static String urlBuilderFlagsEnd = ".png";
-	public static String countryCode = "";
-
 	// taking country flags from http://www.flagpedia.com/SiteImages/Data/ and
 	// using the string from
 	private static String urlBuilderFlagsBeginning2 = "http://www.flagpedia.com/SiteImages/Data/1";
 	private static String urlBuilderFlagsEnd2 = ".jpg";
-	public static String countryCode2 = "";
 
 	// taking country maps from http://i.infoplease.com/images/mlebanon.gif
-	private static String urlBuilderCountryLocationBeginning = "http://i.infoplease.com/images/m";
-	private static String urlBuilderCountryLocationEnd = ".gif";
-	public static String countryName = "";
+	private static final String urlBuilderCountryLocationBeginning = "http://i.infoplease.com/images/m";
+	private static final String urlBuilderCountryLocationEnd = ".gif";
 
-	public static Bitmap flag;
-	public static Bitmap map;
-	
 	public CountryPicturesQueryBuilder(){}
-	public static void flagQuery(){
-		//countryCode = countryCode.toLowerCase();
-		flag = ImageDownloader.loadBitmap(urlBuilderFlagsBeginning + countryCode.toLowerCase()  + urlBuilderFlagsEnd);
-		Log.v("",urlBuilderFlagsBeginning + countryCode.toLowerCase()  + urlBuilderFlagsEnd);
-		map = ImageDownloader.loadBitmap(urlBuilderCountryLocationBeginning + countryName + urlBuilderCountryLocationEnd);
-		//CountryActivity.flagView.setImageBitmap(ImageDownloader.loadBitmap(urlBuilderFlagsBeginning + countryCode  + urlBuilderFlagsEnd));
-		//CountryActivity.countryView.setImageBitmap(ImageDownloader.loadBitmap(urlBuilderCountryLocationBeginning + countryName + urlBuilderCountryLocationEnd));
+	public static Bitmap getCountryFlag(final String countryCode){
+		// Dominica and Dominican Republic show the same maps GUINEA and GUINEA-BISSAU show the same maps
+		if(countryCode.length()<3){
+			Bitmap flag = ImageDownloader.loadBitmap(urlBuilderFlagsBeginning + countryCode.toLowerCase()  + urlBuilderFlagsEnd);
+			Log.v("",urlBuilderFlagsBeginning + countryCode  + urlBuilderFlagsEnd);
+			return flag;
+		}	
+		Bitmap flag = ImageDownloader.loadBitmap(urlBuilderFlagsBeginning2 + countryCode+ urlBuilderFlagsEnd2);
+		Log.v("", urlBuilderFlagsBeginning2 + countryCode.toLowerCase() + urlBuilderFlagsEnd2);
+		return flag;
+	}
+	
+	public static Bitmap getCountryMap(String countryName){
+		return ImageDownloader.loadBitmap(urlBuilderCountryLocationBeginning + countryName + urlBuilderCountryLocationEnd);
 	}
 }
