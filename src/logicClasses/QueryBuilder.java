@@ -85,6 +85,8 @@ public class QueryBuilder {
 	
 	private static String thereIsNoInforamtionForTheFollowingYears = "";
 	
+	static double arrayMaxLength =0;
+	
 	public QueryBuilder(String urlparser) {
 		jsonParserReader(urlparser);
 	}
@@ -123,6 +125,7 @@ public class QueryBuilder {
 		p4IndicatorName = "";
 		p2Country2Name = "";
 		}
+		arrayMaxLength=0;
 		
 	}
  
@@ -148,8 +151,11 @@ public class QueryBuilder {
 			thereIsNoInforamtionForTheFollowingYears +=Integer.toString(years[arrayNumber]) + " ";
 		
 			}
+			
 			else {values[arrayNumber] = Double.parseDouble(valueInfoStr);}
-						
+			
+			Log. v( "",Integer. toString(Double. toString(maxLength( values [ arrayNumber])).length()));
+			
 			displayInfo += idIndicator + " " + valueIndicator + " " + idCountry
 					+ " " + valueCountry + " " + valueInfoStr + " "
 					+ decimalInfoStr + " " + dateInfoStr + "\n"
@@ -213,6 +219,13 @@ public class QueryBuilder {
 		if(arrayNumber==51){return "We are sorry but there was no information for the following years: " + thereIsNoInforamtionForTheFollowingYears + "\n";}
 		else return "";
 	}
-	
+	public static double maxLength(double thisValueLength){
+		int castIntForThisValueLength = (int) thisValueLength;
+		int castIntForArrayMaxLength = (int) arrayMaxLength;
+		if( castIntForThisValueLength > castIntForArrayMaxLength ){
+			arrayMaxLength = thisValueLength;
+		}
+		return arrayMaxLength;
+	}
 	
 }
