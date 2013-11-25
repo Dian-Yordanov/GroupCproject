@@ -1,4 +1,5 @@
 package displayActivities;
+
 import com.groupC.project.*;
 
 import displayActivities.*;
@@ -25,34 +26,48 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemSelectedListener;
 
-public class ComparisonActivity extends Activity{
+public class ComparisonActivity extends Activity {
 
-	public static TextView textViewComparison;
+	public static TextView textViewForGraphView1;
 	public static LinearLayout graphViewLayout;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+
 		uiBuidlerComparisonActivity();
 	}
+
 	public void uiBuidlerComparisonActivity() {
-		 
+
 		setContentView(R.layout.comparison_activity);
- 
-		
-		textViewComparison = (TextView) findViewById(R.id.textView1);
-		textViewComparison.setText(ComparisonSearchActivity.textViewComparisonText1 + ComparisonSearchActivity.textViewComparisonText2);
-		
-        graphViewLayout = (LinearLayout) findViewById(R.id. layout2); 
-        graphViewLayout.setMinimumWidth((int) (1.5*StartingActivity.screenWidth));
-        GraphViewCreator. graphViewCreator();
+
+		textViewForGraphView1 = (TextView) findViewById(R.id.textViewForGraphView1);
+		textViewForGraphView1
+				.setText(ComparisonSearchActivity.textViewComparisonText1
+						+ ComparisonSearchActivity.textViewComparisonText2);
+
+		graphViewLayout = (LinearLayout) findViewById(R.id.layout2);
+
+		Log.v("", Double.toString(StartingActivity.screenWidth));
+		if (StartingActivity.screenWidth >= 1080.0) {
+			graphViewLayout
+					.setMinimumWidth((int) (2.0 * StartingActivity.screenWidth));
+			Log.v("done", "done");
+		} else if (StartingActivity.screenWidth >= 720.0) {
+			graphViewLayout
+					.setMinimumWidth((int) (1.5 * StartingActivity.screenWidth) + 150);
+		}
+
+		graphViewLayout.setMinimumHeight((int) (StartingActivity.screenHeight));
+		GraphViewCreator.graphViewCreator();
 
 	}
+
 	public void gotoComparisonSearchView(View view) {
-		Intent i = new Intent(ComparisonActivity.this, ComparisonSearchActivity.class);
+		Intent i = new Intent(ComparisonActivity.this,
+				ComparisonSearchActivity.class);
 		startActivity(i);
 
 	}
 }
-
