@@ -157,12 +157,11 @@ public class QueryBuilder {
 			
 			}
 			
-			Log. v( "",Integer. toString(Double. toString(maxLength( values [ arrayNumber])).length()));
-			
 			displayInfo += dateInfoStr + ": "
 					+ " " + valueInfoStr + "\n";
 			
-			Log. v("arrayNumber",Integer.toString(arrayNumber));
+			Log.v( "",Integer. toString(Double. toString(maxLength( values [ arrayNumber])).length()));
+			Log.d("arrayNumber",Integer.toString(arrayNumber));
 			
 			if(arrayNumber%50==0&& arrayNumber!=0){debuggingIntincreasingOnEvery50elements+=50;}
 			

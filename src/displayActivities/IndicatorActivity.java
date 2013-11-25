@@ -61,7 +61,14 @@ public class IndicatorActivity extends Activity{
 		
 		
 	    graphLayout = (LinearLayout) findViewById(R.id. layout1);
-	    graphLayout.setMinimumWidth((int) (1.5*StartingActivity.screenWidth) + 150);
+	    
+	    Log.v("",Double.toString(StartingActivity.screenWidth));
+	    if(StartingActivity.screenWidth>=1080.0){
+		    graphLayout.setMinimumWidth((int) (2.0*StartingActivity.screenWidth));
+		    Log.v("done","done");}
+	    else if(StartingActivity.screenWidth>=720.0){
+	    graphLayout.setMinimumWidth((int) (1.5*StartingActivity.screenWidth) + 150);}
+	    
 	    graphLayout.setMinimumHeight((int) (StartingActivity.screenHeight));
 	    GraphViewCreator.graphViewCreator();
 	    //QueryBuilder.arrayNumber=0;
