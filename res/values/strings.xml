@@ -175,7 +175,6 @@
         <item>SLB</item>
         <item>SOM</item>
         <item>ZAF</item>
-        <item>SSD</item>
         <item>ESP</item>
         <item>LKA</item>
         <item>SDN</item>
@@ -217,13 +216,13 @@
         <item>AF</item>
         <item>AL</item>
         <item>DZ</item>                                
-        <item>AS</item>    
+        <item>AMERICAN_SAMOA</item>    
         <item>AD</item>
         <item>AO</item>
         <item>AG</item>
         <item>AR</item>
         <item>AM</item>
-        <item>AW</item>
+        <item>ARUBA</item>
         <item>AU</item>   
         <item>AT</item>
         <item>AZ</item>
@@ -235,7 +234,7 @@
         <item>BE</item>
         <item>BZ</item>
         <item>BJ</item>
-        <item>BM</item>     
+        <item>BERMUDA</item>     
         <item>BT</item>  
         <item>BO</item>
         <item>BA</item>
@@ -249,7 +248,7 @@
         <item>CM</item>
         <item>CA</item>
         <item>CV</item>
-        <item>KY</item>   
+        <item>CAYMAN_ISLANDS</item>   
         <item>CF</item>
         <item>TD</item>
         <item>CL</item>
@@ -268,7 +267,7 @@
         <item>DJ</item>
         <item>DM</item>		
         <item>DO</item>	
-        <item>TP</item>      	
+        <item>EAST_TIMOR</item>      	
         <item>EC</item>
         <item>EG</item>
         <item>SV</item>
@@ -276,27 +275,27 @@
         <item>ER</item>       
         <item>EE</item>
         <item>ET</item>                
-        <item>FO</item>
+        <item>FAROE_ISLANDS</item>
         <item>FJ</item>
         <item>FI</item>
         <item>FR</item>                
-        <item>PF</item>         
+        <item>FRENCH_POLYNESIA</item>         
         <item>GA</item>
         <item>GM</item>
         <item>GE</item>
         <item>DE</item>
         <item>GH</item>
         <item>GR</item>
-        <item>GL</item>        
+        <item>GREENLAND</item>        
         <item>GD</item>
-        <item>GU</item>        
+        <item>GUAM</item>        
         <item>GT</item>
         <item>GN</item>
         <item>GW</item>
         <item>GY</item>
         <item>HT</item> 
         <item>HN</item>       
-        <item>HK</item>           
+        <item>HONG_KONG</item>           
         <item>HU</item>
         <item>IS</item>
         <item>IN</item>
@@ -324,7 +323,7 @@
         <item>LY</item>
         <item>LI</item>
         <item>LT</item>
-        <item>LU</item>
+        <item>LUXEMBOURG</item>
         <item>MK</item>
         <item>MG</item>
         <item>MW</item>
@@ -346,12 +345,12 @@
         <item>NA</item>
         <item>NP</item>
         <item>NL</item>
-        <item>NC</item>
+        <item>NEW_CALEDONAI</item>
         <item>NZ</item>
         <item>NI</item>
         <item>NE</item>
         <item>NG</item>
-        <item>MP</item>
+        <item>NORTHERN_MARIANA_ISLANDS</item>
         <item>NO</item>
         <item>OM</item>
         <item>PK</item>
@@ -363,7 +362,7 @@
         <item>PH</item>
         <item>PL</item>
         <item>PT</item>        
-        <item>PR</item>        
+        <item>PUERTO_RICO</item>        
         <item>QA</item>
         <item>RO</item>
         <item>RU</item>
@@ -385,7 +384,6 @@
         <item>SB</item>
         <item>SO</item>
         <item>ZA</item>
-        <item>SS</item>
         <item>ES</item>
         <item>LK</item>
         <item>SD</item>
@@ -403,7 +401,7 @@
         <item>TN</item>
         <item>TR</item>
         <item>TM</item>
-        <item>TC</item>
+        <item>TURKS_AND_CAICOS_ISLANDS</item>
         <item>TV</item>
         <item>UG</item>
         <item>UA</item>
@@ -593,7 +591,6 @@
         <item>Solomon Islands</item>
         <item>Somalia</item>
         <item>South Africa</item>
-        <item>South Sudan</item>        
         <item>Spain</item>
         <item>Sri Lanka</item>
         <item>Sudan</item>
