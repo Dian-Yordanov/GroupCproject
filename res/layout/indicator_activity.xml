@@ -18,7 +18,7 @@
             <LinearLayout
                 android:id="@+id/layout1"
                 android:layout_width="1250dip"
-                android:layout_height="250dip"
+                android:layout_height="500dip"
                 android:orientation="vertical" >
             </LinearLayout>
         </HorizontalScrollView>
