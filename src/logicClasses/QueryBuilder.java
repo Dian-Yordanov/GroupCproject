@@ -221,8 +221,9 @@ public class QueryBuilder {
 		}
 	}
 	public static String missingInformation(){
+		String debuggingNoInfo = thereIsNoInforamtionForTheFollowingYears;
 		if(thereIsNoInforamtionForTheFollowingYears.isEmpty()) {return "";}
-		else {return "We are sorry but there was no information for the following years: " + thereIsNoInforamtionForTheFollowingYears + "\n";}
+		else {thereIsNoInforamtionForTheFollowingYears = "";return "We are sorry but there was no information for the following years: " + debuggingNoInfo + "\n";}
 		
 	}
 
@@ -242,7 +243,7 @@ public class QueryBuilder {
 		p2Country2Name = "";
 		}
 		arrayMaxLength=0;
-		thereIsNoInforamtionForTheFollowingYears = "";
+		
 	}
 	
 }
