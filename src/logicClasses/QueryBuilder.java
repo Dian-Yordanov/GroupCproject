@@ -120,17 +120,12 @@ public class QueryBuilder {
 					jsonObjectExtractorForCountryAndIndicator();}
 							
 			}
+			restartTheValuesOfAttributes();
 		} catch (JSONException e) {
 			e.printStackTrace();
 			Log.e("QueryBuilder", "data did not parse");
 		}
-	
-		if(nameOftheClassCallingThisClass=="searchActivities.IndicatorSearchActivity" || nameOftheClassCallingThisClass=="searchActivities.CountrySearchActivity" ){
-		p2CountryName = "";
-		p4IndicatorName = "";
-		p2Country2Name = "";
-		}
-		arrayMaxLength=0;
+
 		
 		
 	}
@@ -226,7 +221,6 @@ public class QueryBuilder {
 		}
 	}
 	public static String missingInformation(){
-
 		if(thereIsNoInforamtionForTheFollowingYears.isEmpty()) {return "";}
 		else {return "We are sorry but there was no information for the following years: " + thereIsNoInforamtionForTheFollowingYears + "\n";}
 		
@@ -239,6 +233,16 @@ public class QueryBuilder {
 			arrayMaxLength = thisValueLength;
 		}
 		return arrayMaxLength;
+	}
+	private static void restartTheValuesOfAttributes(){
+		
+		if(nameOftheClassCallingThisClass.equals("searchActivities.IndicatorSearchActivity") || nameOftheClassCallingThisClass.equals("searchActivities.CountrySearchActivity")){
+		p2CountryName = "";
+		p4IndicatorName = "";
+		p2Country2Name = "";
+		}
+		arrayMaxLength=0;
+		thereIsNoInforamtionForTheFollowingYears = "";
 	}
 	
 }
