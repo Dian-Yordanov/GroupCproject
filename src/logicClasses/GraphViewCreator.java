@@ -59,7 +59,7 @@ public class GraphViewCreator {
 		while(ii!=QueryBuilder.arrayNumber){
 		exampleSeries1.appendData(new GraphViewData(QueryBuilder.years[ii],QueryBuilder.values[ii]), false, 1000);		
 		if(nameOfTheClassCallingThis.equals("searchActivities.ComparisonSearchActivity")){
-			exampleSeries2.appendData(new GraphViewData(QueryBuilder.years[ii+10],QueryBuilder.values[ii+20]), false, 1000);			
+			exampleSeries2.appendData(new GraphViewData(QueryBuilder.years[ii+50],QueryBuilder.values[ii+50]), false, 1000);			
 		}
 		ii++;
 		}
@@ -69,7 +69,7 @@ public class GraphViewCreator {
 		 
 		 graphView.getGraphViewStyle().setHorizontalLabelsColor(Color.BLACK);
 		 graphView.getGraphViewStyle().setVerticalLabelsColor(Color.BLACK);
-		 graphView.getGraphViewStyle().setVerticalLabelsWidth(100);
+		 graphView.getGraphViewStyle().setVerticalLabelsWidth(250);
 		 graphView.setScrollable(true);  
 		 
 		 if(nameOfTheClassCallingThis.equals("searchActivities.IndicatorSearchActivity")){IndicatorActivity.graphLayout.removeAllViews();}

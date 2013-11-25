@@ -72,8 +72,8 @@ public class QueryBuilder {
 	public static String p8Format = "format=json";
 	public static String p2Country2Name = "";
 	
-	public static int[] years = new int[200];
-	public static double[] values = new double[200];
+	public static int[] years = new int[2000];
+	public static double[] values = new double[2000];
 	public static int arrayNumber = 0;
 	
 	private static String nameOftheClassCallingThisClass;
