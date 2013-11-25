@@ -1,5 +1,6 @@
 package displayActivities;
 import com.groupC.project.*;
+
 import displayActivities.*;
 import logicClasses.*;
 import searchActivities.*;
@@ -44,6 +45,7 @@ public class ComparisonActivity extends Activity{
 		textViewComparison.setText(ComparisonSearchActivity.textViewComparisonText1 + ComparisonSearchActivity.textViewComparisonText2);
 		
         graphViewLayout = (LinearLayout) findViewById(R.id. layout2); 
+        graphViewLayout.setMinimumWidth((int) (1.5*StartingActivity.screenWidth));
         GraphViewCreator. graphViewCreator();
 
 	}

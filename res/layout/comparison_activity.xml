@@ -7,6 +7,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <HorizontalScrollView
+            android:id="@+id/horizontalScrollView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:id="@+id/layout2"
+                android:layout_width="1250dip"
+                android:layout_height="250dip"
+                android:orientation="vertical" >
+            </LinearLayout>
+        </HorizontalScrollView>
+        
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
@@ -19,12 +32,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     
-            <LinearLayout
-		    android:orientation="vertical"
-			android:layout_width="500dip"
-			android:layout_height="250dip"
-			android:id="@+id/layout2">
-            </LinearLayout>
-
 </LinearLayout>
 </ScrollView>
