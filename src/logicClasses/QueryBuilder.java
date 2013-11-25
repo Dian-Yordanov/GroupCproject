@@ -242,7 +242,7 @@ public class QueryBuilder {
 		  }
 	}
 	private static String missingInformation(){
-		if(arrayNumber==41){return "We are sorry but there was no information for the following years: " + thereIsNoInforamtionForTheFollowingYears + "\n";}
+		if(arrayNumber==51){return "We are sorry but there was no information for the following years: " + thereIsNoInforamtionForTheFollowingYears + "\n";}
 		else return "";
 	}
 	
