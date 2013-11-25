@@ -105,21 +105,13 @@ public class QueryBuilder {
 			for (int i = 0; i <countries.length(); i++) {
 				jsonInfo = (JSONObject) countries.get(50 - i);
 
-				Log.v("countries.length()",Integer.toString(countries.length()));
-				Log.v("i",Integer.toString(i));
-				
-				//reverseArrayValues(arrayNumber,values);
-				//reverseArrayYears(arrayNumber,years);
-				
 				if(nameOftheClassCallingThisClass.equals("searchActivities.IndicatorSearchActivity"))
 					jsonObjectExtractorForCountryAndIndicator();
 				if(nameOftheClassCallingThisClass.equals("searchActivities.CountrySearchActivity"))
 					jsonObjectExtractorForCountry();
 				if(nameOftheClassCallingThisClass.equals("searchActivities.ComparisonSearchActivity"))
 					jsonObjectExtractorForCountryAndIndicator();
-				
-
-				
+							
 			}
 		} catch (JSONException e) {
 			e.printStackTrace();
@@ -154,14 +146,10 @@ public class QueryBuilder {
 			years[arrayNumber] = Integer.parseInt(dateInfoStr);
 			if(valueInfoStr=="null"){values[arrayNumber] = 0.0;
 			thereIsNoInforamtionForTheFollowingYears +=Integer.toString(years[arrayNumber]) + " ";
-			//Log.v("this will be added to say that there was no information for the folloving years:",thereIsNoInforamtionForTheFollowingYears);
+		
 			}
 			else {values[arrayNumber] = Double.parseDouble(valueInfoStr);}
-			
-			
-			Log.v("arrayNumber",Integer.toString(arrayNumber));
-			//Log.v("",Double.toString(values[arrayNumber]));
-			
+						
 			displayInfo += idIndicator + " " + valueIndicator + " " + idCountry
 					+ " " + valueCountry + " " + valueInfoStr + " "
 					+ decimalInfoStr + " " + dateInfoStr + "\n"
@@ -220,26 +208,6 @@ public class QueryBuilder {
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
-	}
-	private static void reverseArrayValues(int size, double[] array){
-		double temp;
-
-		for (int i = 0; i < size/2; i++)
-		  {
-		     temp = array[i];
-		     array[i] = array[size-1 - i];
-		     array[size-1 - i] = temp;
-		  }
-	}
-	private static void reverseArrayYears(int size, int[] array){
-		int temp;
-
-		for (int i = 0; i < size/2; i++)
-		  {
-		     temp = array[i];
-		     array[i] = array[size-1 - i];
-		     array[size-1 - i] = temp;
-		  }
 	}
 	private static String missingInformation(){
 		if(arrayNumber==51){return "We are sorry but there was no information for the following years: " + thereIsNoInforamtionForTheFollowingYears + "\n";}
