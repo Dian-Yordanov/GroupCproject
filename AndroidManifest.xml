@@ -41,6 +41,7 @@
         </activity>
         <activity
             android:name="displayActivities.AboutUsActivity"
+            android:configChanges = "orientation|screenSize"
             android:label="@string/app_name" >
         </activity>
         <activity
