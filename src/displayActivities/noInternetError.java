@@ -24,9 +24,9 @@ public class noInternetError extends Activity{
 		protected void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
 			if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
-				setContentView(R.layout.aboutus_activity);
+				setContentView(R.layout.no_internet_error);
 			}else{ 
-				setContentView(R.layout.landscape_aboutus_activity);
+				setContentView(R.layout.landscape_no_internet_error);
 			}
 			imageButton1 = (ImageButton) findViewById(R.id.textViewShowingCandI);
 		}
