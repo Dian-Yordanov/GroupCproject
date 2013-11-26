@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".IndicatorActivity" 
-    android:src="@drawable/background">
+    android:src="@drawable/background"
+    tools:context=".StartingActivity" >
 
     <ImageView
         android:id="@+id/imageView1"
@@ -31,6 +31,12 @@
         android:onClick="gotoCountrySearchView"
         android:scaleType="fitXY" />
 
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" " />
+
     <Button
         android:id="@+id/indicatorsSearch"
         android:layout_width="wrap_content"
@@ -40,6 +46,12 @@
         android:onClick="gotoIndicatorsSearchView"
         android:scaleType="fitXY" />
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" " />
+
     <Button
         android:id="@+id/comparisonSearch"
         android:layout_width="wrap_content"
@@ -48,6 +60,12 @@
         android:background="@drawable/compare"
         android:onClick="gotoComparisonSearchView"
         android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" " />
 
     <Button
         android:id="@+id/about"
