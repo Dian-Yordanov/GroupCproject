@@ -85,7 +85,7 @@ public class QueryBuilder {
 	public static GraphViewData[] data = new GraphViewData[num];
 	public static GraphViewData[] data2 = new GraphViewData[2*num];
 	
-	private static String thereIsNoInforamtionForTheFollowingYears = "";
+	public static String thereIsNoInforamtionForTheFollowingYears = "";
 	
 	static double arrayMaxLength =0;
 	

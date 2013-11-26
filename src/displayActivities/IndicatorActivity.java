@@ -75,7 +75,7 @@ public class IndicatorActivity extends Activity{
 	    
 	    //
 	   // QueryBuilder.restartTheJsonArray();
-	    
+	    QueryBuilder.thereIsNoInforamtionForTheFollowingYears = "";
 	    //QueryBuilder.arrayNumber=0;
 	//    QueryBuilder.restartTheJsonArray();
 	   // QueryBuilder.arrayNumber =0;

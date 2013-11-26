@@ -63,6 +63,7 @@ public class ComparisonActivity extends Activity {
 
 		graphViewLayout.setMinimumHeight((int) (StartingActivity.screenHeight));
 		GraphViewCreator.graphViewCreator();
+		QueryBuilder.thereIsNoInforamtionForTheFollowingYears = "";
 
 	}
 
