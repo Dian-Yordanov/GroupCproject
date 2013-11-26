@@ -59,7 +59,7 @@ public class QueryBuilder {
 	private static String valueLendingType;
 	private static String idInfo;
 	private static String iso2CodeInfo;
-	private static String nameInfo;
+	public static String nameInfo;
 	private static String capitalCityInfo;
 	private static String longitudeInfo;
 	private static String latitudeInfo;
