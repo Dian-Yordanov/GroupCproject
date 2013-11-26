@@ -133,4 +133,15 @@ public class StartingActivity extends Activity {
 
 	    return super.onKeyDown(keyCode, event);
 	}
+	public void onConfigurationChanged (Configuration newConfig){
+		super.onConfigurationChanged(newConfig);
+		
+		if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE){
+			setContentView(R.layout.landscape_starting_activity);
+		}else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
+			setContentView(R.layout.starting_activity);
+		}
+		
+	}
+	
 }
