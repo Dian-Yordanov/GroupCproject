@@ -45,6 +45,13 @@
                 android:onClick="gotoCountrySearchView"
                 android:scaleType="center" />
 
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text=" " />
+
             <Button
                 android:id="@+id/indicatorsSearch"
                 android:layout_width="wrap_content"
@@ -55,6 +62,12 @@
                 android:onClick="gotoIndicatorsSearchView"
                 android:scaleType="center" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="        " />
 
         <LinearLayout
             android:layout_width="500dp"
@@ -72,6 +85,12 @@
                 android:background="@drawable/compare"
                 android:onClick="gotoComparisonSearchView"
                 android:scaleType="fitXY" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="   " />
 
             <Button
                 android:id="@+id/about"
