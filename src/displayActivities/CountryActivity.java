@@ -30,6 +30,7 @@ import android.widget.AdapterView.OnItemSelectedListener;
 public class CountryActivity  extends Activity{
  
 	public static TextView displayedText;
+	public static TextView countryNameText;
 	public static Spinner countryList;
 	public static ImageView flagView;
 	public static ImageView countryView;
@@ -44,14 +45,15 @@ public class CountryActivity  extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
  
-		uiBuidlerCountryActivity();
+		uiBuilderCountryActivity();
 
 	}
  
-	public void uiBuidlerCountryActivity() {
+	public void uiBuilderCountryActivity() {
 		setContentView(R.layout.country_activity);
 		
 		displayedText = (TextView) findViewById(R.id.textViewCountryView);
+		countryNameText = (TextView) findViewById(R.id.countryNameTextView);
 		
 		flagView = (ImageView) findViewById(R.id.imageView1);
 		countryView = (ImageView) findViewById(R.id.imageView2);
@@ -62,6 +64,7 @@ public class CountryActivity  extends Activity{
 		}
 		prepareImagesAndResize();		
 		displayedText.setText(QueryBuilder.displayInfo);
+		countryNameText.setText(QueryBuilder.nameInfo);
 		flagView.setImageBitmap(resizedBitmapFlag);
 		countryView.setImageBitmap(resizedBitmapMap);
 		
