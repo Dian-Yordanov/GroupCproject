@@ -73,6 +73,9 @@ public class IndicatorActivity extends Activity{
 	    
 	    GraphViewCreator.graphViewCreator();
 	    
+	    //
+	   // QueryBuilder.restartTheJsonArray();
+	    
 	    //QueryBuilder.arrayNumber=0;
 	//    QueryBuilder.restartTheJsonArray();
 	   // QueryBuilder.arrayNumber =0;

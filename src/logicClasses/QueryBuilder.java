@@ -241,7 +241,18 @@ public class QueryBuilder {
 		arrayMaxLength=0;
 		
 	}
+	/*
+    public static void restartTheJsonArray(){
+       arrayNumber =0;
+       Arrays.fill(years, 0);
+       Arrays.fill(values, 0);
+              Log.v("",Integer.toString(years[4]));
+       }
+       although this may not be wrong at all just the way currently the data is displayed is changing the values 
+       
+       */
+}
+
 	
 
 	
-}
