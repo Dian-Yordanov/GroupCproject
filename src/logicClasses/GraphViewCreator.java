@@ -22,6 +22,9 @@ public class GraphViewCreator {
 	public static GraphViewSeries exampleSeries2;
 	public static GraphView graphView;
 	public static int ii=0;
+	
+	private static int startingPointForSeries2 = 0;
+	
 	//private static int timesThisClassIsCalled =0;
 	
 	private static String nameOfTheClassCallingThis;
@@ -45,28 +48,21 @@ public class GraphViewCreator {
 		seriesStyle2.color = Color.RED;
 
 
-		exampleSeries1 = new GraphViewSeries("",seriesStyle,new GraphViewData[] {new GraphViewData(QueryBuilder.years[0], QueryBuilder.values[0])});
+		exampleSeries1 = new GraphViewSeries("",seriesStyle,new GraphViewData[] {new GraphViewData(QueryBuilder.years[ii], QueryBuilder.values[ii])});
 		if(nameOfTheClassCallingThis.equals("searchActivities.IndicatorSearchActivity")){
 			graphView = new LineGraphView(displayActivities.IndicatorActivity.graphLayout .getContext(),"");}
 		
 		if(nameOfTheClassCallingThis.equals("searchActivities.ComparisonSearchActivity")){
 			graphView = new LineGraphView(displayActivities.ComparisonActivity.graphViewLayout .getContext(),"");
 		
-		exampleSeries2 = new GraphViewSeries("",seriesStyle2,new GraphViewData[] {new GraphViewData(QueryBuilder.years[0], QueryBuilder.values[0])});
+		exampleSeries2 = new GraphViewSeries("",seriesStyle2,new GraphViewData[] {
+				new GraphViewData(QueryBuilder.years[ 51 + ii], QueryBuilder.values[ 51 + ii])});
 		
 		graphView.addSeries(exampleSeries2);}
 		graphView.addSeries(exampleSeries1);	
 		 
 		
 		while(ii!=QueryBuilder.arrayNumber){
-			
-			
-			
-			
-	//	exampleSeries1.appendData(new GraphViewData(QueryBuilder.years[ii],QueryBuilder.values[ii]), false, 1000);		
-	//	if(nameOfTheClassCallingThis.equals("searchActivities.ComparisonSearchActivity")){
-	//		exampleSeries2.appendData(new GraphViewData(QueryBuilder.years[ii+50],QueryBuilder.values[ii+50]), false, 1000);			
-	//	}
 			
 		if(nameOfTheClassCallingThis.equals("searchActivities.IndicatorSearchActivity")){
 			exampleSeries1.appendData(new GraphViewData(QueryBuilder.years[ii],QueryBuilder.values[ii]), false, 1000);
@@ -91,7 +87,7 @@ public class GraphViewCreator {
 		
 		}
 		
-		
+		 resetGraphAttributes();
 		 graphView.redrawAll();
 		 
 		 graphView.getGraphViewStyle().setHorizontalLabelsColor(Color.BLACK);
@@ -108,5 +104,8 @@ public class GraphViewCreator {
 		 if(nameOfTheClassCallingThis.equals("searchActivities.ComparisonSearchActivity")){ComparisonActivity.graphViewLayout.addView(graphView);}
 		 
 
+	}
+	private static void resetGraphAttributes(){
+		startingPointForSeries2 =0;
 	}
 }
