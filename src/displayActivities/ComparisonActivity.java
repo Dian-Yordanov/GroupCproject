@@ -29,6 +29,7 @@ import android.widget.AdapterView.OnItemSelectedListener;
 public class ComparisonActivity extends Activity {
 
 	public static TextView textViewForGraphView1;
+	public static TextView textViewForGraphView2;
 	public static LinearLayout graphViewLayout;
 
 	@Override
@@ -43,10 +44,11 @@ public class ComparisonActivity extends Activity {
 		setContentView(R.layout.comparison_activity);
 
 		textViewForGraphView1 = (TextView) findViewById(R.id.textViewForGraphView1);
-		textViewForGraphView1
-				.setText(ComparisonSearchActivity.textViewComparisonText1
-						+ ComparisonSearchActivity.textViewComparisonText2);
-
+		textViewForGraphView1.setText(ComparisonSearchActivity.textViewComparisonText1);
+						
+		textViewForGraphView2 = (TextView) findViewById(R.id.textViewForGraphView2);
+		textViewForGraphView2.setText(ComparisonSearchActivity.textViewComparisonText2);
+		
 		graphViewLayout = (LinearLayout) findViewById(R.id.layout2);
 
 		Log.v("", Double.toString(StartingActivity.screenWidth));

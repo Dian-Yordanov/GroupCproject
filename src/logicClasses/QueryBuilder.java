@@ -162,19 +162,8 @@ public class QueryBuilder {
 			
 			displayInfo += dateInfoStr + ": "
 					+ " " + valueInfoStr + "\n";
-			
-		//	Log.v( "",Integer. toString(Double. toString(maxLength( values [ arrayNumber])).length()));
-			
-			
-			
-			//Log.v("debuggingIntincreasingOnEvery100elements",Integer.toString(debuggingIntincreasingOnEvery100elements));
-			
-			
+	
 			arrayNumber++;
-
-			
-			
-				
 
 		} catch (JSONException e) {
 			e.printStackTrace();
