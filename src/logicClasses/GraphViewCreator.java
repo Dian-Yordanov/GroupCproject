@@ -46,9 +46,14 @@ public class GraphViewCreator {
 		
 		GraphViewSeriesStyle seriesStyle2 = new GraphViewSeriesStyle();
 		seriesStyle2.color = Color.RED;
-
-		Log.v("",Integer.toString(QueryBuilder.years[ii]));
-		exampleSeries1 = new GraphViewSeries("",seriesStyle,new GraphViewData[] {new GraphViewData(QueryBuilder.years[ii], QueryBuilder.values[ii])});
+		
+		Log.v("years "+ ii+1,Integer.toString(QueryBuilder.years[ii]));
+		Log.v("values "+ ii+1,Double.toString(QueryBuilder.values[ii]));
+		Log.v("years +51 " + ii,Integer.toString(QueryBuilder.years[51 + ii]));
+		Log.v("values +51 " + ii,Double.toString(QueryBuilder.values[51 + ii ]));
+		
+		exampleSeries1 = new GraphViewSeries("",seriesStyle,new GraphViewData[] {
+				new GraphViewData(QueryBuilder.years[ii], QueryBuilder.values[ii])});
 		if(nameOfTheClassCallingThis.equals("searchActivities.IndicatorSearchActivity")){
 			graphView = new LineGraphView(displayActivities.IndicatorActivity.graphLayout .getContext(),"");}
 		
@@ -56,7 +61,7 @@ public class GraphViewCreator {
 			graphView = new LineGraphView(displayActivities.ComparisonActivity.graphViewLayout .getContext(),"");
 		
 		exampleSeries2 = new GraphViewSeries("",seriesStyle2,new GraphViewData[] {
-				new GraphViewData(QueryBuilder.years[ii], QueryBuilder.values[ii])});
+				new GraphViewData(QueryBuilder.years[51 +ii], QueryBuilder.values[51 +ii])});
 		
 		graphView.addSeries(exampleSeries2);}
 		graphView.addSeries(exampleSeries1);	
