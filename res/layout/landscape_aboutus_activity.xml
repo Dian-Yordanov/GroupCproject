@@ -10,6 +10,6 @@
         android:layout_height="fill_parent"
         android:background="@drawable/background"
         android:scaleType="fitCenter"
-        android:src="@drawable/aboutus_landscape" />
+        android:src="@drawable/about_us_landscape" />
 
 </LinearLayout>

@@ -47,7 +47,7 @@ public class GraphViewCreator {
 		GraphViewSeriesStyle seriesStyle2 = new GraphViewSeriesStyle();
 		seriesStyle2.color = Color.RED;
 
-
+		Log.v("",Integer.toString(QueryBuilder.years[ii]));
 		exampleSeries1 = new GraphViewSeries("",seriesStyle,new GraphViewData[] {new GraphViewData(QueryBuilder.years[ii], QueryBuilder.values[ii])});
 		if(nameOfTheClassCallingThis.equals("searchActivities.IndicatorSearchActivity")){
 			graphView = new LineGraphView(displayActivities.IndicatorActivity.graphLayout .getContext(),"");}
@@ -56,7 +56,7 @@ public class GraphViewCreator {
 			graphView = new LineGraphView(displayActivities.ComparisonActivity.graphViewLayout .getContext(),"");
 		
 		exampleSeries2 = new GraphViewSeries("",seriesStyle2,new GraphViewData[] {
-				new GraphViewData(QueryBuilder.years[ 51 + ii], QueryBuilder.values[ 51 + ii])});
+				new GraphViewData(QueryBuilder.years[ii], QueryBuilder.values[ii])});
 		
 		graphView.addSeries(exampleSeries2);}
 		graphView.addSeries(exampleSeries1);	
@@ -87,7 +87,7 @@ public class GraphViewCreator {
 		
 		}
 		
-		 resetGraphAttributes();
+		 //resetGraphAttributes();
 		 graphView.redrawAll();
 		 
 		 graphView.getGraphViewStyle().setHorizontalLabelsColor(Color.BLACK);
