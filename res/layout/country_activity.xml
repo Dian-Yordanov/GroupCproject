@@ -10,14 +10,13 @@
         android:paddingLeft="16dp"
         android:paddingRight="16dp" >
 
-        <Button
-            android:id="@+id/goBackToCountrySearch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.60"
-            android:text="Choose to see information for another country" 
-            android:onClick="gotoCountrySearchView"
-             android:layout_gravity="center"/>
+        <TextView
+            android:id="@+id/countryNameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:textSize="25dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textViewCountryView"
