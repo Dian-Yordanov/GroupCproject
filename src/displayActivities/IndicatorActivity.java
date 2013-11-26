@@ -70,7 +70,12 @@ public class IndicatorActivity extends Activity{
 	    graphLayout.setMinimumWidth((int) (1.5*StartingActivity.screenWidth) + 150);}
 	    
 	    graphLayout.setMinimumHeight((int) (StartingActivity.screenHeight));
+	    
 	    GraphViewCreator.graphViewCreator();
+	    
 	    //QueryBuilder.arrayNumber=0;
+	//    QueryBuilder.restartTheJsonArray();
+	   // QueryBuilder.arrayNumber =0;
 	}
+	
 }

@@ -1,5 +1,7 @@
 package logicClasses;
 
+import java.util.Arrays;
+
 import com.groupC.project.*;
 import displayActivities.*;
 import logicClasses.*;
@@ -87,7 +89,7 @@ public class QueryBuilder {
 	
 	static double arrayMaxLength =0;
 	
-	static int debuggingIntincreasingOnEvery100elements =0;
+	public static int debuggingIntincreasingOnEvery102elements =0;
 	static boolean debugginAllResultsAreCorrect=false;
 	
 	public QueryBuilder(String urlparser) {
@@ -121,6 +123,7 @@ public class QueryBuilder {
 							
 			}
 			restartTheValuesOfAttributes();
+			
 		} catch (JSONException e) {
 			e.printStackTrace();
 			Log.e("QueryBuilder", "data did not parse");
@@ -169,15 +172,7 @@ public class QueryBuilder {
 			
 			arrayNumber++;
 
-			if(arrayNumber>=(0 + debuggingIntincreasingOnEvery100elements) && arrayNumber<=(51 + debuggingIntincreasingOnEvery100elements)){
-				Log.d("arrayNumber" + Integer.toString(arrayNumber),Integer.toString(arrayNumber));
-			}
 			
-			if(arrayNumber>=( 52 + debuggingIntincreasingOnEvery100elements) && arrayNumber<=(103 + debuggingIntincreasingOnEvery100elements)){
-				Log.e("arrayNumber" + Integer.toString(arrayNumber),Integer.toString(arrayNumber));
-			}
-			
-			if(arrayNumber%102==0 && arrayNumber!=0){debuggingIntincreasingOnEvery100elements+=102;}
 			
 				
 
@@ -257,5 +252,7 @@ public class QueryBuilder {
 		arrayMaxLength=0;
 		
 	}
+	
+
 	
 }

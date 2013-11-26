@@ -26,6 +26,8 @@ public class GraphViewCreator {
 	
 	private static String nameOfTheClassCallingThis;
 	
+	private static int iiIncreasingOn102;
+	
 	public GraphViewCreator(){
 		graphViewCreator();
 	}
@@ -57,11 +59,33 @@ public class GraphViewCreator {
 		 
 		
 		while(ii!=QueryBuilder.arrayNumber){
-		exampleSeries1.appendData(new GraphViewData(QueryBuilder.years[ii],QueryBuilder.values[ii]), false, 1000);		
-		if(nameOfTheClassCallingThis.equals("searchActivities.ComparisonSearchActivity")){
-			exampleSeries2.appendData(new GraphViewData(QueryBuilder.years[ii+50],QueryBuilder.values[ii+50]), false, 1000);			
+			
+			
+			
+			
+	//	exampleSeries1.appendData(new GraphViewData(QueryBuilder.years[ii],QueryBuilder.values[ii]), false, 1000);		
+	//	if(nameOfTheClassCallingThis.equals("searchActivities.ComparisonSearchActivity")){
+	//		exampleSeries2.appendData(new GraphViewData(QueryBuilder.years[ii+50],QueryBuilder.values[ii+50]), false, 1000);			
+	//	}
+			
+		
+		
+		if(ii>=(0 + iiIncreasingOn102) && ii<=(51 + iiIncreasingOn102)){
+			exampleSeries1.appendData(new GraphViewData(QueryBuilder.years[ii],QueryBuilder.values[ii]), false, 1000);		
+			Log.d("ii" + Integer.toString(ii),Integer.toString(ii));
 		}
+		
+		if(ii>=( 52 + iiIncreasingOn102) && ii<=(103 + iiIncreasingOn102)){
+			if(nameOfTheClassCallingThis.equals("searchActivities.ComparisonSearchActivity")){
+				exampleSeries2.appendData(new GraphViewData(QueryBuilder.years[ii],QueryBuilder.values[ii]), false, 1000);			
+			}
+			Log.e("ii" + Integer.toString(ii),Integer.toString(ii));
+		}
+		
+		if(ii%102==0 && ii!=0){iiIncreasingOn102+=102;}
+		
 		ii++;
+		
 		}
 		
 		
