@@ -7,6 +7,7 @@ import com.groupC.project.StartingActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -22,9 +23,12 @@ public class noInternetError extends Activity{
 		@Override
 		protected void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
-
-			setContentView(R.layout.no_internet_error);
-			 imageButton1 = (ImageButton) findViewById(R.id.textViewShowingCandI);
+			if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
+				setContentView(R.layout.aboutus_activity);
+			}else{ 
+				setContentView(R.layout.landscape_aboutus_activity);
+			}
+			imageButton1 = (ImageButton) findViewById(R.id.textViewShowingCandI);
 		}
 		@Override
 		public boolean onKeyDown(int keyCode, KeyEvent event)  {
@@ -38,4 +42,23 @@ public class noInternetError extends Activity{
 
 		    return super.onKeyDown(keyCode, event);
 		}
+		private void noInternetErrorBuildUi(boolean IsPortrait){
+			if(IsPortrait)
+			{
+				setContentView(R.layout.no_internet_error);
+			}else{
+				setContentView(R.layout.landscape_no_internet_error);
+			}
+		}
+		public void onConfigurationChanged (Configuration newConfig){
+			super.onConfigurationChanged(newConfig);
+			if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE){		
+				noInternetErrorBuildUi(false);
+			}else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
+				noInternetErrorBuildUi(true);
+				
+			}
+			
+		}
+
 }
