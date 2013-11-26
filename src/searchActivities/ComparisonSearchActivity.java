@@ -10,8 +10,10 @@ import com.groupC.project.R.layout;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.graphics.Bitmap.Config;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -79,14 +81,21 @@ public class ComparisonSearchActivity extends Activity{
 		country1NamesComparison =res.getStringArray(R.array.countryNames);
 		indicatorNamesComparison =res.getStringArray(R.array.indicatorMeaningListView);
 		country2NamesComparison =res.getStringArray(R.array.countryNames);
+		if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
+		comparisonSearchActivityBuildUi(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT);
 		
-		comparisonSearchActivityBuildUi();
 		QueryBuilder.setNameOfClassCallingQueryBuilder(this.getLocalClassName());
 		GraphViewCreator.setNameOfClassCallingGraphViewCreator(this.getLocalClassName());
 		
 	}
-	private void comparisonSearchActivityBuildUi(){
-		setContentView(R.layout.comparison_search_activity);
+	
+	private void comparisonSearchActivityBuildUi(boolean IsPortrait){
+		if(IsPortrait)
+		{
+			setContentView(R.layout.comparison_search_activity);
+		}else{
+			setContentView(R.layout.landscape_comparison_search_activity);
+		}
 			
 		comparisonText = (TextView) findViewById(R.id.ComparisonText);
 		
@@ -330,4 +339,39 @@ public class ComparisonSearchActivity extends Activity{
 			
 		}
 	}
+	private void createResources(){
+		res1 = getResources();
+		res2 = getResources();
+		res = getResources();
+		countries1= res1.getStringArray(R.array.countryListView);
+		countries2= res2.getStringArray(R.array.countryListView);
+		indicators = res.getStringArray(R.array.indicatorListView);
+		country1NamesComparison =res.getStringArray(R.array.countryNames);
+		indicatorNamesComparison =res.getStringArray(R.array.indicatorMeaningListView);
+		country2NamesComparison =res.getStringArray(R.array.countryNames);
+		
+		QueryBuilder.setNameOfClassCallingQueryBuilder(this.getLocalClassName());
+		GraphViewCreator.setNameOfClassCallingGraphViewCreator(this.getLocalClassName());
+		
+	}
+	
+	public void onConfigurationChanged (Configuration newConfig){
+		super.onConfigurationChanged(newConfig);
+		
+		
+		if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE){
+			
+			createResources();
+			comparisonSearchActivityBuildUi(false);
+			
+			
+		}else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
+			
+			createResources();
+			comparisonSearchActivityBuildUi(true);
+			
+		}
+		
+	}
+	
 }
