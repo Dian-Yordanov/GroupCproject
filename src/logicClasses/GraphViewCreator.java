@@ -70,12 +70,12 @@ public class GraphViewCreator {
 			
 		
 		
-		if(ii>=(0 + iiIncreasingOn102) && ii<=(51 + iiIncreasingOn102)){
+		if(ii>=(0 + iiIncreasingOn102) && ii<=(50 + iiIncreasingOn102)){
 			exampleSeries1.appendData(new GraphViewData(QueryBuilder.years[ii],QueryBuilder.values[ii]), false, 1000);		
 			Log.d("ii" + Integer.toString(ii),Integer.toString(ii));
 		}
 		
-		if(ii>=( 52 + iiIncreasingOn102) && ii<=(103 + iiIncreasingOn102)){
+		if(ii>=( 51 + iiIncreasingOn102) && ii<=(102 + iiIncreasingOn102)){
 			if(nameOfTheClassCallingThis.equals("searchActivities.ComparisonSearchActivity")){
 				exampleSeries2.appendData(new GraphViewData(QueryBuilder.years[ii],QueryBuilder.values[ii]), false, 1000);			
 			}
