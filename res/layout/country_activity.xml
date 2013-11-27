@@ -31,14 +31,7 @@
             </LinearLayout>
         </HorizontalScrollView>
 
-        <TextView
-            android:id="@+id/textViewCountryView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="0.60"
-            android:text="" />
-
+      
         <ImageView
             android:id="@+id/imageView1"
             android:layout_width="wrap_content"

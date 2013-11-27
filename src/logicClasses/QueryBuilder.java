@@ -251,7 +251,8 @@ public class QueryBuilder {
 			arrayWithDescrptionsForCountry.add(" Income level: ");
 			arrayWithDescrptionsForCountry.add(" Lending type id: ");
 			arrayWithDescrptionsForCountry.add(" Lending type: ");
-								
+			
+			/*					
 			displayInfo += 
 					"Country id: " + idInfo + "\n" + 
 					"Iso code: " + iso2CodeInfo + "\n" + 
@@ -268,6 +269,8 @@ public class QueryBuilder {
 					"Lending type id: " + idLendingType + "\n" + 
 					"Lending type: " + valueLendingType + "\n" + 
 					"Logo and country map:" + "\n";
+			*/
+			
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}

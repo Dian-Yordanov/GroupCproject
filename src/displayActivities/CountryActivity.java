@@ -31,7 +31,6 @@ import android.widget.AdapterView.OnItemSelectedListener;
  
 public class CountryActivity  extends Activity{
  
-	public static TextView displayedText;
 	public static TextView countryNameText;
 	public static Spinner countryList;
 	public static ImageView flagView;
@@ -61,7 +60,6 @@ public class CountryActivity  extends Activity{
 	public void uiBuilderCountryActivity() {
 		setContentView(R.layout.country_activity);
 		
-		displayedText = (TextView) findViewById(R.id.textViewCountryView);
 		countryNameText = (TextView) findViewById(R.id.countryNameTextView);
 		
 		layoutForInflation = (LinearLayout) findViewById(R.id.layoutForInflation);
