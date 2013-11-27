@@ -220,8 +220,7 @@ public class QueryBuilder {
 			capitalCityInfo = " " + capitalCityInfo;
 			longitudeInfo = " " + longitudeInfo;
 			latitudeInfo = " " + latitudeInfo ;
- 
- 
+ 			
 			arrayWithValuesForCountry.add(idInfo);
 			arrayWithValuesForCountry.add(iso2CodeInfo);
 			arrayWithValuesForCountry.add(nameInfo);
@@ -230,8 +229,14 @@ public class QueryBuilder {
 			arrayWithValuesForCountry.add(latitudeInfo);
 			arrayWithValuesForCountry.add(idRegion);
 			arrayWithValuesForCountry.add(valueRegion);
-			arrayWithValuesForCountry.add(idAdminRegion);
-			arrayWithValuesForCountry.add(valueAdminRegion);
+			
+			if(!idAdminRegion.equals(" ")){
+				arrayWithValuesForCountry.add(idAdminRegion);}
+			//arrayWithValuesForCountry.add(idAdminRegion);
+			if(!valueAdminRegion.equals(" ")){
+				arrayWithValuesForCountry.add(valueAdminRegion);}
+			//arrayWithValuesForCountry.add(valueAdminRegion);
+			
 			arrayWithValuesForCountry.add(idIncomeLevel);
 			arrayWithValuesForCountry.add(valueIncomeLevel);
 			arrayWithValuesForCountry.add(idLendingType);
@@ -245,13 +250,29 @@ public class QueryBuilder {
 			arrayWithDescrptionsForCountry.add(" Latitude: ");
 			arrayWithDescrptionsForCountry.add(" Region id: ");
 			arrayWithDescrptionsForCountry.add(" Region                      location: ");
-			arrayWithDescrptionsForCountry.add(" Admin location id: ");
-			arrayWithDescrptionsForCountry.add(" Administration              location: ");
+			if(!idAdminRegion.equals(" ")){
+				arrayWithDescrptionsForCountry.add(" Admin location id: ");}
+			//arrayWithDescrptionsForCountry.add(" Admin location id: ");
+			if(!valueAdminRegion.equals(" ")){
+				arrayWithDescrptionsForCountry.add(" Administration              location: ");}
+			//arrayWithDescrptionsForCountry.add(" Administration              location: ");
 			arrayWithDescrptionsForCountry.add(" Income level id: ");
 			arrayWithDescrptionsForCountry.add(" Income level: ");
 			arrayWithDescrptionsForCountry.add(" Lending type id: ");
 			arrayWithDescrptionsForCountry.add(" Lending type: ");
+		/*	
+			if(valueAdminRegion.equals("")){
+				arrayWithValuesForCountry.remove(10);
+				arrayWithDescrptionsForCountry.remove(10);
+			}
+			if(idAdminRegion.equals("")){
+				arrayWithValuesForCountry.remove(9);
+				arrayWithDescrptionsForCountry.remove(9);				
+			}
+			*/
 			
+			Log.v("valueAdminRegion",valueAdminRegion);
+			Log.v("idAdminRegion",idAdminRegion);
 			/*					
 			displayInfo += 
 					"Country id: " + idInfo + "\n" + 

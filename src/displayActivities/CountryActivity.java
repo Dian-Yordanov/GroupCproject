@@ -96,10 +96,11 @@ public class CountryActivity  extends Activity{
 	}	
 	
 	private void setElementsWithInflation(){
-		 for(int i=0; i<14; i++) {
+		 for(int i=0; i<QueryBuilder.arrayWithValuesForCountry.size(); i++) {
 		        lineView = getLayoutInflater().inflate(R.layout.text_in_table_layout, layoutForInflation,false);
 		        layoutForInflation.addView(lineView);
 		        
+		        	        	
 		        label1 = (TextView)lineView.findViewById(R.id.inflatedTextView1);
 		        label1.setMinimumWidth((StartingActivity.screenWidth/2)-(StartingActivity.screenWidth/6) );
 		        label1.setTypeface(null,Typeface.BOLD);
