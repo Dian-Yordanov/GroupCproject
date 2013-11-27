@@ -18,318 +18,341 @@
             android:textSize="25dp"
             android:textStyle="bold" />
 
-        
-        <HorizontalScrollView
-            android:id="@+id/horizontalScrollView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-        
         <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <TableRow
-                android:id="@+id/tableRow1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:id="@+id/tableTextView1"
-                    android:layout_column="1"
-                    android:background="#E0E0E0"
-                    android:padding="3dip"
-                    android:text="Country id: " />
-
-                <TextView
-                    android:id="@+id/tableTextView2"
-                    android:background="#D0D0D0"
-                    android:gravity="right"
-                    android:padding="3dip"
-                    android:text="" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:id="@+id/tableTextView3"
-                    android:layout_column="1"
-                    android:background="#E0E0E0"
-                    android:padding="3dip"
-                    android:text="Iso code: " />
-
-                <TextView
-                    android:id="@+id/tableTextView4"
-                    android:background="#D0D0D0"
-                    android:gravity="right"
-                    android:padding="3dip"
-                    android:text="" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:id="@+id/tableTextView5"
-                    android:layout_column="1"
-                    android:background="#E0E0E0"
-                    android:padding="3dip"
-                    android:text="Country name: " />
-
-                <TextView
-                    android:id="@+id/tableTextView6"
-                    android:background="#D0D0D0"
-                    android:gravity="right"
-                    android:padding="3dip"
-                    android:text="" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:id="@+id/tableTextView7"
-                    android:layout_column="1"
-                    android:background="#E0E0E0"
-                    android:padding="3dip"
-                    android:text="Capital city: " />
-
-                <TextView
-                    android:id="@+id/tableTextView8"
-                    android:background="#D0D0D0"
-                    android:gravity="right"
-                    android:padding="3dip"
-                    android:text="" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:id="@+id/tableTextView9"
-                    android:layout_column="1"
-                    android:background="#E0E0E0"
-                    android:padding="3dip"
-                    android:text="Longitude: " />
-
-                <TextView
-                    android:id="@+id/tableTextView10"
-                    android:background="#D0D0D0"
-                    android:gravity="right"
-                    android:padding="3dip"
-                    android:text="" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:id="@+id/tableTextView11"
-                    android:layout_column="1"
-                    android:background="#E0E0E0"
-                    android:padding="3dip"
-                    android:text="Latitude: " />
-
-                <TextView
-                    android:id="@+id/tableTextView12"
-                    android:background="#D0D0D0"
-                    android:gravity="right"
-                    android:padding="3dip"
-                    android:text="" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:id="@+id/tableTextView13"
-                    android:layout_column="1"
-                    android:background="#E0E0E0"
-                    android:padding="3dip"
-                    android:text="Region id: " />
-
-                <TextView
-                    android:id="@+id/tableTextView14"
-                    android:background="#D0D0D0"
-                    android:gravity="right"
-                    android:padding="3dip"
-                    android:text="" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:id="@+id/tableTextView15"
-                    android:layout_column="1"
-                    android:background="#E0E0E0"
-                    android:padding="3dip"
-                    android:text="Region location: " />
-
-                <TextView
-                    android:id="@+id/tableTextView16"
-                    android:background="#D0D0D0"
-                    android:gravity="right"
-                    android:padding="3dip"
-                    android:text="" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:id="@+id/tableTextView17"
-                    android:layout_column="1"
-                    android:background="#E0E0E0"
-                    android:padding="3dip"
-                    android:text="Administration location id: " />
-
-                <TextView
-                    android:id="@+id/tableTextView18"
-                    android:background="#D0D0D0"
-                    android:gravity="right"
-                    android:padding="3dip"
-                    android:text="" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:id="@+id/tableTextView19"
-                    android:layout_column="1"
-                    android:background="#E0E0E0"
-                    android:padding="3dip"
-                    android:text="Administration location: " />
-
-                <TextView
-                    android:id="@+id/tableTextView20"
-                    android:background="#D0D0D0"
-                    android:gravity="right"
-                    android:padding="3dip"
-                    android:text="" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:id="@+id/tableTextView21"
-                    android:layout_column="1"
-                    android:background="#E0E0E0"
-                    android:padding="3dip"
-                    android:text="Income level id: " />
-
-                <TextView
-                    android:id="@+id/tableTextView22"
-                    android:background="#D0D0D0"
-                    android:gravity="right"
-                    android:padding="3dip"
-                    android:text="" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:id="@+id/tableTextView23"
-                    android:layout_column="1"
-                    android:background="#E0E0E0"
-                    android:padding="3dip"
-                    android:text="Income level: " />
-
-                <TextView
-                    android:id="@+id/tableTextView24"
-                    android:background="#D0D0D0"
-                    android:gravity="right"
-                    android:padding="3dip"
-                    android:text="" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow13"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:id="@+id/tableTextView25"
-                    android:layout_column="1"
-                    android:background="#E0E0E0"
-                    android:padding="3dip"
-                    android:text="Lending type id: " />
-
-                <TextView
-                    android:id="@+id/tableTextView26"
-                    android:background="#D0D0D0"
-                    android:gravity="right"
-                    android:padding="3dip"
-                    android:text="" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:id="@+id/tableTextView27"
-                    android:layout_column="1"
-                    android:background="#E0E0E0"
-                    android:padding="3dip"
-                    android:text="Lending type: " />
-
-                <TextView
-                    android:id="@+id/tableTextView28"
-                    android:background="#D0D0D0"
-                    android:gravity="right"
-                    android:padding="3dip"
-                    android:text="" />
-            </TableRow>
-        </TableLayout>
-         </HorizontalScrollView>
-
-        <TextView
-            android:id="@+id/textViewCountryView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="0.60"
-            android:text="" />
-
-        <ImageView
-            android:id="@+id/imageView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center" />
+            android:background="#000000"
+           >
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center" />
+            <TableRow
+                android:layout_margin="2dip"
+                android:background="#000000" >
+
+                  <TextView
+                    android:id="@+id/button"
+                    android:layout_margin="2dip"
+                    android:background="#E8E8E8"
+                    android:text="f" />
+
+               	 <TextView
+                    android:layout_margin="2dip"
+                    android:background="#E8E8E8"
+                    android:text="f" />
+             
+            </TableRow>
+		 </TableLayout>
+		 
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TableRow
+                        android:id="@+id/tableRow1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/tableTextView1"
+                            android:layout_column="1"
+                            android:background="#E0E0E0"
+                            android:padding="3dip"
+                            android:text="Country id: " />
+
+                        <TextView
+                            android:id="@+id/tableTextView2"
+                            android:background="#D0D0D0"
+                            android:gravity="right"
+                            android:padding="3dip"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/tableTextView3"
+                            android:layout_column="1"
+                            android:background="#E0E0E0"
+                            android:padding="3dip"
+                            android:text="Iso code: " />
+
+                        <TextView
+                            android:id="@+id/tableTextView4"
+                            android:background="#D0D0D0"
+                            android:gravity="right"
+                            android:padding="3dip"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/tableTextView5"
+                            android:layout_column="1"
+                            android:background="#E0E0E0"
+                            android:padding="3dip"
+                            android:text="Country name: " />
+
+                        <TextView
+                            android:id="@+id/tableTextView6"
+                            android:background="#D0D0D0"
+                            android:gravity="right"
+                            android:padding="3dip"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/tableTextView7"
+                            android:layout_column="1"
+                            android:background="#E0E0E0"
+                            android:padding="3dip"
+                            android:text="Capital city: " />
+
+                        <TextView
+                            android:id="@+id/tableTextView8"
+                            android:background="#D0D0D0"
+                            android:gravity="right"
+                            android:padding="3dip"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/tableTextView9"
+                            android:layout_column="1"
+                            android:background="#E0E0E0"
+                            android:padding="3dip"
+                            android:text="Longitude: " />
+
+                        <TextView
+                            android:id="@+id/tableTextView10"
+                            android:background="#D0D0D0"
+                            android:gravity="right"
+                            android:padding="3dip"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/tableTextView11"
+                            android:layout_column="1"
+                            android:background="#E0E0E0"
+                            android:padding="3dip"
+                            android:text="Latitude: " />
+
+                        <TextView
+                            android:id="@+id/tableTextView12"
+                            android:background="#D0D0D0"
+                            android:gravity="right"
+                            android:padding="3dip"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/tableTextView13"
+                            android:layout_column="1"
+                            android:background="#E0E0E0"
+                            android:padding="3dip"
+                            android:text="Region id: " />
+
+                        <TextView
+                            android:id="@+id/tableTextView14"
+                            android:background="#D0D0D0"
+                            android:gravity="right"
+                            android:padding="3dip"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/tableTextView15"
+                            android:layout_column="1"
+                            android:background="#E0E0E0"
+                            android:padding="3dip"
+                            android:text="Region location: " />
+
+                        <TextView
+                            android:id="@+id/tableTextView16"
+                            android:background="#D0D0D0"
+                            android:gravity="right"
+                            android:padding="3dip"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/tableTextView17"
+                            android:layout_column="1"
+                            android:background="#E0E0E0"
+                            android:padding="3dip"
+                            android:text="Administration location id: " />
+
+                        <TextView
+                            android:id="@+id/tableTextView18"
+                            android:background="#D0D0D0"
+                            android:gravity="right"
+                            android:padding="3dip"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/tableTextView19"
+                            android:layout_column="1"
+                            android:background="#E0E0E0"
+                            android:padding="3dip"
+                            android:text="Administration location: " />
+
+                        <TextView
+                            android:id="@+id/tableTextView20"
+                            android:background="#D0D0D0"
+                            android:gravity="right"
+                            android:padding="3dip"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/tableTextView21"
+                            android:layout_column="1"
+                            android:background="#E0E0E0"
+                            android:padding="3dip"
+                            android:text="Income level id: " />
+
+                        <TextView
+                            android:id="@+id/tableTextView22"
+                            android:background="#D0D0D0"
+                            android:gravity="right"
+                            android:padding="3dip"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/tableTextView23"
+                            android:layout_column="1"
+                            android:background="#E0E0E0"
+                            android:padding="3dip"
+                            android:text="Income level: " />
+
+                        <TextView
+                            android:id="@+id/tableTextView24"
+                            android:background="#D0D0D0"
+                            android:gravity="right"
+                            android:padding="3dip"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/tableTextView25"
+                            android:layout_column="1"
+                            android:background="#E0E0E0"
+                            android:padding="3dip"
+                            android:text="Lending type id: " />
+
+                        <TextView
+                            android:id="@+id/tableTextView26"
+                            android:background="#D0D0D0"
+                            android:gravity="right"
+                            android:padding="3dip"
+                            android:text="" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/tableTextView27"
+                            android:layout_column="1"
+                            android:background="#E0E0E0"
+                            android:padding="3dip"
+                            android:text="Lending type: " />
+
+                        <TextView
+                            android:id="@+id/tableTextView28"
+                            android:background="#D0D0D0"
+                            android:gravity="right"
+                            android:padding="3dip"
+                            android:text="" />
+                    </TableRow>
+                </TableLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/textViewCountryView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.60"
+                android:text="" />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+       
     </LinearLayout>
-    
 
 </ScrollView>
