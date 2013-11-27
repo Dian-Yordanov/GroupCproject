@@ -47,7 +47,7 @@
             <TextView
                 android:id="@+id/noFlagTitle"
                 android:layout_margin="1dip"
-                android:background="#E8E8E8"
+                android:background="#F6F6F6"
                 android:width="100dip"
                 android:text=" Flag" />
                  
@@ -62,7 +62,7 @@
                     android:id="@+id/imageView1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="#E8E8E8" />
+                    android:background="#CCCCCC" />
             </TableRow>
 
             <TableRow
@@ -73,7 +73,7 @@
                  <TextView
                 android:id="@+id/noMapTitle"
                 android:layout_margin="1dip"
-                android:background="#E8E8E8"
+                android:background="#F6F6F6"
                 android:width="100dip"
                 android:text=" Map" />
             </TableRow>
@@ -87,7 +87,7 @@
                     android:id="@+id/imageView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="#E8E8E8" />
+                    android:background="#CCCCCC" />
             </TableRow>
         </TableLayout>
     </LinearLayout>

@@ -15,6 +15,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
@@ -117,10 +118,19 @@ public class CountryActivity  extends Activity{
 		        label1.setTypeface(null,Typeface.BOLD);
 		        label1.setText(QueryBuilder.arrayWithDescrptionsForCountry.get(i));
 		        
+		        
 		        label2 = (TextView)lineView.findViewById(R.id.inflatedTextView2);
 		        label2.setMinimumWidth((StartingActivity.screenWidth/2)+(StartingActivity.screenWidth/6) - (StartingActivity.screenWidth/7));
 		        label2.setText(QueryBuilder.arrayWithValuesForCountry.get(i));
 		        
+		        if(i%2==0){
+		        	label1.setBackgroundColor(Color.parseColor("#F6F6F6"));
+		        	label2.setBackgroundColor(Color.parseColor("#F6F6F6"));
+		        }
+		        else{
+		        	label1.setBackgroundColor(Color.parseColor("#CCCCCC"));
+		        	label2.setBackgroundColor(Color.parseColor("#CCCCCC"));
+		        }
 		        //arrayWithValuesForCountry
 		        }
 	}
