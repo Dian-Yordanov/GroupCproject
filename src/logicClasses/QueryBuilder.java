@@ -109,6 +109,8 @@ public class QueryBuilder {
 	}
 	public static void jsonStringIntoJsonArrayTransformer() {
 		displayInfo = "";
+		arrayWithValuesForCountry.clear();
+		
 		try {
 			jsonMainArr = new JSONArray(infoParsed);
 			JSONArray countries = jsonMainArr.getJSONArray(1);
