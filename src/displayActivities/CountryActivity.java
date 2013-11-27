@@ -78,7 +78,7 @@ public class CountryActivity  extends Activity{
 		    countryName = extras.getString("countryName");
 		}
 		prepareImagesAndResize();		
-		//displayedText.setText(QueryBuilder.displayInfo);
+		
 		countryNameText.setText(QueryBuilder.nameInfo);
 		flagView.setImageBitmap(resizedBitmapFlag);
 		countryView.setImageBitmap(resizedBitmapMap);

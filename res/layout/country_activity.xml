@@ -15,6 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
+             android:gravity="center"
             android:textSize="25dp"
             android:textStyle="bold" />
 
@@ -35,8 +36,7 @@
         <TableLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#000000" 
-             android:stretchColumns="1" >
+            android:background="#000000" >
 
             <TableRow
                 android:id="@+id/tableRow1"
@@ -56,13 +56,13 @@
             <TableRow
                 android:id="@+id/tableRow2"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent" 
-                android:background="#E8E8E8">
+                android:layout_height="fill_parent" >
 
                 <ImageView
                     android:id="@+id/imageView1"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:background="#E8E8E8" />
             </TableRow>
 
             <TableRow
@@ -80,14 +80,14 @@
 
             <TableRow
                 android:id="@+id/tableRow4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" 
-                android:background="#E8E8E8">
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
 
                 <ImageView
                     android:id="@+id/imageView2"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:background="#E8E8E8" />
             </TableRow>
         </TableLayout>
     </LinearLayout>
