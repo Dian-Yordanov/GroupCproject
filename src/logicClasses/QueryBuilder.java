@@ -215,8 +215,21 @@ public class QueryBuilder {
 			arrayWithValuesForCountry.add(idLendingType);
 			arrayWithValuesForCountry.add(valueLendingType);
 			
-			//arrayWithDescriptionsForCountry
-			
+			arrayWithDescrptionsForCountry.add("Country id:  ");
+			arrayWithDescrptionsForCountry.add("Iso code:");
+			arrayWithDescrptionsForCountry.add("Country name:  ");
+			arrayWithDescrptionsForCountry.add("Capital city:  ");
+			arrayWithDescrptionsForCountry.add("Longitude:  ");
+			arrayWithDescrptionsForCountry.add("Latitude:  ");
+			arrayWithDescrptionsForCountry.add("Region id:  ");
+			arrayWithDescrptionsForCountry.add("Region location:  ");
+			arrayWithDescrptionsForCountry.add("Administration location id: ");
+			arrayWithDescrptionsForCountry.add("Administration location: ");
+			arrayWithDescrptionsForCountry.add("Income level id:  ");
+			arrayWithDescrptionsForCountry.add("Income level:  ");
+			arrayWithDescrptionsForCountry.add("Lending type id: ");
+			arrayWithDescrptionsForCountry.add("Lending type:  ");
+								
 			displayInfo += 
 					"Country id: " + idInfo + "\n" + 
 					"Iso code: " + iso2CodeInfo + "\n" + 

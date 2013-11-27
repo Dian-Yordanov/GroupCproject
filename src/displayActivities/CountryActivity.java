@@ -101,7 +101,7 @@ public class CountryActivity  extends Activity{
 		        layoutForInflation.addView(lineView);
 		        
 		        label1 = (TextView)lineView.findViewById(R.id.inflatedTextView1);
-		        label1.setText(Integer.toString(i));
+		        label1.setText(QueryBuilder.arrayWithDescrptionsForCountry.get(i));
 		        
 		        label2 = (TextView)lineView.findViewById(R.id.inflatedTextView2);
 		        label2.setText(QueryBuilder.arrayWithValuesForCountry.get(i));
