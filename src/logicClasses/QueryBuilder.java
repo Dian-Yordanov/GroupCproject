@@ -1,5 +1,6 @@
 package logicClasses;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import com.groupC.project.*;
@@ -91,6 +92,8 @@ public class QueryBuilder {
 	
 	public static int debuggingIntincreasingOnEvery102elements =0;
 	static boolean debugginAllResultsAreCorrect=false;
+	
+	public static ArrayList<String> arrayWithValuesForCountry = new ArrayList<String>();
 	
 	public QueryBuilder(String urlparser) {
 		jsonParserReader(urlparser);
@@ -196,6 +199,21 @@ public class QueryBuilder {
 			longitudeInfo = jsonInfo.getString("longitude");
 			latitudeInfo = jsonInfo.getString("latitude");
  
+			arrayWithValuesForCountry.add(idInfo);
+			arrayWithValuesForCountry.add(iso2CodeInfo);
+			arrayWithValuesForCountry.add(nameInfo);
+			arrayWithValuesForCountry.add(capitalCityInfo);
+			arrayWithValuesForCountry.add(longitudeInfo);
+			arrayWithValuesForCountry.add(latitudeInfo);
+			arrayWithValuesForCountry.add(idRegion);
+			arrayWithValuesForCountry.add(valueRegion);
+			arrayWithValuesForCountry.add(idAdminRegion);
+			arrayWithValuesForCountry.add(valueAdminRegion);
+			arrayWithValuesForCountry.add(idIncomeLevel);
+			arrayWithValuesForCountry.add(valueIncomeLevel);
+			arrayWithValuesForCountry.add(idLendingType);
+			arrayWithValuesForCountry.add(valueLendingType);
+			
 			displayInfo += 
 					"Country id: " + idInfo + "\n" + 
 					"Iso code: " + iso2CodeInfo + "\n" + 

@@ -95,8 +95,14 @@ public class GraphViewCreator {
 		 //resetGraphAttributes();
 		 graphView.redrawAll();
 		 
+		
+		
+		 
 		 graphView.getGraphViewStyle().setHorizontalLabelsColor(Color.BLACK);
 		 graphView.getGraphViewStyle().setVerticalLabelsColor(Color.BLACK);
+		 
+		 
+		 
 		 graphView.setScrollable(true);  
 		 
 		 graphView.getGraphViewStyle().setVerticalLabelsWidth(250);
