@@ -40,35 +40,10 @@ public class CountryActivity  extends Activity{
 	private static Bitmap resizedBitmapMap;
 	private static String countryName;
 	private static String countryCode;
- 
-	private static TextView tableTextView1;
-	private static TextView tableTextView2;
-	private static TextView tableTextView3;
-	private static TextView tableTextView4;
-	private static TextView tableTextView5;
-	private static TextView tableTextView6;
-	private static TextView tableTextView7;
-	private static TextView tableTextView8;
-	private static TextView tableTextView9;
-	private static TextView tableTextView10;
-	private static TextView tableTextView11;
-	private static TextView tableTextView12;
-	private static TextView tableTextView13;
-	private static TextView tableTextView14;
-	private static TextView tableTextView15;
-	private static TextView tableTextView16;
-	private static TextView tableTextView17;
-	private static TextView tableTextView18;
-	private static TextView tableTextView19;
-	private static TextView tableTextView20;
-	private static TextView tableTextView21;
-	private static TextView tableTextView22;
-	private static TextView tableTextView23;
-	private static TextView tableTextView24;
-	private static TextView tableTextView25;
-	private static TextView tableTextView26;
-	private static TextView tableTextView27;
-	private static TextView tableTextView28;
+ 	 
+     View lineView;
+     LinearLayout layoutForInflation;
+     TextView label;
 	
 
 	@Override
@@ -85,53 +60,11 @@ public class CountryActivity  extends Activity{
 		displayedText = (TextView) findViewById(R.id.textViewCountryView);
 		countryNameText = (TextView) findViewById(R.id.countryNameTextView);
 		
-
-	     tableTextView1 = (TextView) findViewById(R.id.tableTextView1);
-		 tableTextView2 = (TextView) findViewById(R.id.tableTextView2);
-		 tableTextView3 = (TextView) findViewById(R.id.tableTextView3);
-		 tableTextView4 = (TextView) findViewById(R.id.tableTextView4);
-		 tableTextView5 = (TextView) findViewById(R.id.tableTextView5);
-		 tableTextView6 = (TextView) findViewById(R.id.tableTextView6);
-		 tableTextView7 = (TextView) findViewById(R.id.tableTextView7);
-		 tableTextView8 = (TextView) findViewById(R.id.tableTextView8);
-		 tableTextView9 = (TextView) findViewById(R.id.tableTextView9);
-		 tableTextView10 = (TextView) findViewById(R.id.tableTextView10);
-		 tableTextView11 = (TextView) findViewById(R.id.tableTextView11);
-		 tableTextView12 = (TextView) findViewById(R.id.tableTextView12);
-		 tableTextView13 = (TextView) findViewById(R.id.tableTextView13);
-		 tableTextView14 = (TextView) findViewById(R.id.tableTextView14);
-		 tableTextView15 = (TextView) findViewById(R.id.tableTextView15);
-		 tableTextView16 = (TextView) findViewById(R.id.tableTextView16);
-		 tableTextView17 = (TextView) findViewById(R.id.tableTextView17);
-		 tableTextView18 = (TextView) findViewById(R.id.tableTextView18);
-		 tableTextView19 = (TextView) findViewById(R.id.tableTextView19);
-		 tableTextView20 = (TextView) findViewById(R.id.tableTextView20);
-		 tableTextView21 = (TextView) findViewById(R.id.tableTextView21);
-		 tableTextView22 = (TextView) findViewById(R.id.tableTextView22);
-		 tableTextView23 = (TextView) findViewById(R.id.tableTextView23);
-		 tableTextView24 = (TextView) findViewById(R.id.tableTextView24);
-		 tableTextView25 = (TextView) findViewById(R.id.tableTextView25);
-		 tableTextView26 = (TextView) findViewById(R.id.tableTextView26);
-		 tableTextView27 = (TextView) findViewById(R.id.tableTextView27);
-		 tableTextView28 = (TextView) findViewById(R.id.tableTextView28);
-		 
-		 tableTextView2.setText(QueryBuilder.arrayWithValuesForCountry.get(0));
-		 tableTextView4.setText(QueryBuilder.arrayWithValuesForCountry.get(1));
-		 tableTextView6.setText(QueryBuilder.arrayWithValuesForCountry.get(2));
-		 tableTextView8.setText(QueryBuilder.arrayWithValuesForCountry.get(3));
-		 tableTextView10.setText(QueryBuilder.arrayWithValuesForCountry.get(4));
-		 tableTextView12.setText(QueryBuilder.arrayWithValuesForCountry.get(5));
-		 tableTextView14.setText(QueryBuilder.arrayWithValuesForCountry.get(6));
-		 tableTextView16.setText(QueryBuilder.arrayWithValuesForCountry.get(7));
-		 tableTextView18.setText(QueryBuilder.arrayWithValuesForCountry.get(8));
-		 tableTextView20.setText(QueryBuilder.arrayWithValuesForCountry.get(9));
-		 tableTextView22.setText(QueryBuilder.arrayWithValuesForCountry.get(10));
-		 tableTextView24.setText(QueryBuilder.arrayWithValuesForCountry.get(11));
-		 tableTextView26.setText(QueryBuilder.arrayWithValuesForCountry.get(12));
-		 tableTextView28.setText(QueryBuilder.arrayWithValuesForCountry.get(13));
-		 QueryBuilder.arrayWithValuesForCountry.isEmpty();
-		 
+		layoutForInflation = (LinearLayout) findViewById(R.id.layoutForInflation);
 		
+		setElementsWithInflation();
+		//setElementsWithoutinflation();
+
 		flagView = (ImageView) findViewById(R.id.imageView1);
 		countryView = (ImageView) findViewById(R.id.imageView2);
 		Bundle extras = getIntent().getExtras();
@@ -159,4 +92,13 @@ public class CountryActivity  extends Activity{
 		resizedBitmapMap =	Bitmap.createScaledBitmap(countryMap, countryFlag.getWidth()
 				, countryMap.getHeight(), true);
 	}	
+	
+	private void setElementsWithInflation(){
+		 for(int i=1; i<=10; i++) {
+		        lineView = getLayoutInflater().inflate(R.layout.text_in_table_layout, layoutForInflation,false);
+		        layoutForInflation.addView(lineView);
+		        //label = (TextView)lineView.findViewById(R.id.number_label);
+		        //label.setText(Integer.toString(i));
+		        }
+	}
 }
