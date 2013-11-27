@@ -96,6 +96,8 @@ public class QueryBuilder {
 	public static ArrayList<String> arrayWithValuesForCountry = new ArrayList<String>();
 	public static ArrayList<String> arrayWithDescrptionsForCountry = new ArrayList<String>();
 	
+	public static ArrayList<String> arrayWithValuesAndYearsForIndicators = new ArrayList<String>();
+	
 	public QueryBuilder(String urlparser) {
 		jsonParserReader(urlparser);
 	}
@@ -165,6 +167,9 @@ public class QueryBuilder {
 			else {values[arrayNumber] = Double.parseDouble(valueInfoStr);
 			
 			}
+			
+			arrayWithValuesAndYearsForIndicators.add(dateInfoStr);
+			arrayWithValuesAndYearsForIndicators.add(valueInfoStr);
 			
 			displayInfo += dateInfoStr + ": "
 					+ " " + valueInfoStr + "\n";

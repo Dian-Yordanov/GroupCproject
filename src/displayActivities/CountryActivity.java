@@ -43,11 +43,11 @@ public class CountryActivity  extends Activity{
 	private static String countryName;
 	private static String countryCode;
  	 
-     View lineView;
-     LinearLayout layoutForInflation;
+	private static View lineView;
+	private static LinearLayout layoutForInflation;
      
-     TextView label1;
-     TextView label2;
+	private static TextView label1;
+	private static TextView label2;
      
      private static TextView noFlagTitle;
      private static TextView noMapTitle;

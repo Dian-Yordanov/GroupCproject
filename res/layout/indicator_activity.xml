@@ -23,6 +23,19 @@
             </LinearLayout>
         </HorizontalScrollView>
 
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollViewIndicatorActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:id="@+id/layoutForInflationIndicatorActivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+            </LinearLayout>
+        </HorizontalScrollView>
+
         <TextView
             android:id="@+id/informationDisplayLabel"
             android:layout_width="wrap_content"
@@ -41,7 +54,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="" />
-
     </LinearLayout>
 
 </ScrollView>

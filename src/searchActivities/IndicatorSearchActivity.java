@@ -14,6 +14,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -51,9 +52,13 @@ public class IndicatorSearchActivity extends Activity{
 	
 	private static View selectedViewFromItemList1;
 	private static View selectedViewFromItemList2;
-	
-	View lineView;
 
+	private static View lineView;
+	private static LinearLayout layoutForInflation;
+     
+	private static TextView label1;
+	private static TextView label2;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -232,6 +237,33 @@ public class IndicatorSearchActivity extends Activity{
 		
 		itemlist2IsSelected = true;
 		logicClassesCall();
+	}
+	private void indicatorSetElementsWithInflation(){
+		 for(int i=0; i<QueryBuilder.arrayWithValuesForCountry.size(); i++) {
+		        lineView = getLayoutInflater().inflate(R.layout.text_in_table_layout, layoutForInflation,false);
+		        layoutForInflation.addView(lineView);
+		        
+		        	        	
+		        label1 = (TextView)lineView.findViewById(R.id.inflatedTextView1);
+		        label1.setMinimumWidth((StartingActivity.screenWidth/2)-(StartingActivity.screenWidth/6) );
+		        label1.setTypeface(null,Typeface.BOLD);
+		        label1.setText(QueryBuilder.arrayWithDescrptionsForCountry.get(i));
+		        
+		        
+		        label2 = (TextView)lineView.findViewById(R.id.inflatedTextView2);
+		        label2.setMinimumWidth((StartingActivity.screenWidth/2)+(StartingActivity.screenWidth/6) - (StartingActivity.screenWidth/7));
+		        label2.setText(QueryBuilder.arrayWithValuesForCountry.get(i));
+		        
+		        if(i%2==0){
+		        	label1.setBackgroundColor(Color.parseColor("#F6F6F6"));
+		        	label2.setBackgroundColor(Color.parseColor("#F6F6F6"));
+		        }
+		        else{
+		        	label1.setBackgroundColor(Color.parseColor("#CCCCCC"));
+		        	label2.setBackgroundColor(Color.parseColor("#CCCCCC"));
+		        }
+		        //arrayWithValuesForCountry
+		        }
 	}
 	
  
