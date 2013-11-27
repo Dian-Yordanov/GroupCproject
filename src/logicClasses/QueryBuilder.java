@@ -232,9 +232,14 @@ public class QueryBuilder {
 			
 			if(!idAdminRegion.equals(" ")){
 				arrayWithValuesForCountry.add(idAdminRegion);}
+			else{
+				arrayWithValuesForCountry.add(" No information");}
+			
 			//arrayWithValuesForCountry.add(idAdminRegion);
 			if(!valueAdminRegion.equals(" ")){
 				arrayWithValuesForCountry.add(valueAdminRegion);}
+			else{
+				arrayWithValuesForCountry.add(" No                                    information");}
 			//arrayWithValuesForCountry.add(valueAdminRegion);
 			
 			arrayWithValuesForCountry.add(idIncomeLevel);
@@ -250,27 +255,27 @@ public class QueryBuilder {
 			arrayWithDescrptionsForCountry.add(" Latitude: ");
 			arrayWithDescrptionsForCountry.add(" Region id: ");
 			arrayWithDescrptionsForCountry.add(" Region                      location: ");
-			if(!idAdminRegion.equals(" ")){
-				arrayWithDescrptionsForCountry.add(" Admin location id: ");}
-			//arrayWithDescrptionsForCountry.add(" Admin location id: ");
-			if(!valueAdminRegion.equals(" ")){
-				arrayWithDescrptionsForCountry.add(" Administration              location: ");}
-			//arrayWithDescrptionsForCountry.add(" Administration              location: ");
+		//	if(!idAdminRegion.equals(" ")){
+		//		arrayWithDescrptionsForCountry.add(" Admin location id: ");}
+			arrayWithDescrptionsForCountry.add(" Admin location id: ");
+		//	if(!valueAdminRegion.equals(" ")){
+		//		arrayWithDescrptionsForCountry.add(" Administration              location: ");}
+			arrayWithDescrptionsForCountry.add(" Administration              location: ");
 			arrayWithDescrptionsForCountry.add(" Income level id: ");
 			arrayWithDescrptionsForCountry.add(" Income level: ");
 			arrayWithDescrptionsForCountry.add(" Lending type id: ");
 			arrayWithDescrptionsForCountry.add(" Lending type: ");
 		/*	
-			if(valueAdminRegion.equals("")){
+			if(valueAdminRegion.equals(" ")){
 				arrayWithValuesForCountry.remove(10);
 				arrayWithDescrptionsForCountry.remove(10);
 			}
-			if(idAdminRegion.equals("")){
+			if(idAdminRegion.equals(" ")){
 				arrayWithValuesForCountry.remove(9);
 				arrayWithDescrptionsForCountry.remove(9);				
 			}
-			*/
-			
+		*/		
+		
 			Log.v("valueAdminRegion",valueAdminRegion);
 			Log.v("idAdminRegion",idAdminRegion);
 			/*					
