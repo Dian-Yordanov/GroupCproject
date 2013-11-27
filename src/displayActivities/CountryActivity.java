@@ -9,6 +9,7 @@ import com.groupC.project.R;
 import com.groupC.project.R.array;
 import com.groupC.project.R.id;
 import com.groupC.project.R.layout;
+import com.groupC.project.StartingActivity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -101,9 +102,11 @@ public class CountryActivity  extends Activity{
 		        layoutForInflation.addView(lineView);
 		        
 		        label1 = (TextView)lineView.findViewById(R.id.inflatedTextView1);
+		        label1.setMinimumWidth((StartingActivity.screenWidth/2)-47);
 		        label1.setText(QueryBuilder.arrayWithDescrptionsForCountry.get(i));
 		        
 		        label2 = (TextView)lineView.findViewById(R.id.inflatedTextView2);
+		        label2.setMinimumWidth((StartingActivity.screenWidth/2)-47);
 		        label2.setText(QueryBuilder.arrayWithValuesForCountry.get(i));
 		        
 		        //arrayWithValuesForCountry

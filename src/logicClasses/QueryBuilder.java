@@ -224,9 +224,9 @@ public class QueryBuilder {
 			arrayWithDescrptionsForCountry.add("Longitude: ");
 			arrayWithDescrptionsForCountry.add("Latitude: ");
 			arrayWithDescrptionsForCountry.add("Region id: ");
-			arrayWithDescrptionsForCountry.add("Region location: ");
-			arrayWithDescrptionsForCountry.add("Administration location id: ");
-			arrayWithDescrptionsForCountry.add("Administration location: ");
+			arrayWithDescrptionsForCountry.add("Region                     location: ");
+			arrayWithDescrptionsForCountry.add("Admin location id: ");
+			arrayWithDescrptionsForCountry.add("Administration           location: ");
 			arrayWithDescrptionsForCountry.add("Income level id: ");
 			arrayWithDescrptionsForCountry.add("Income level: ");
 			arrayWithDescrptionsForCountry.add("Lending type id: ");
