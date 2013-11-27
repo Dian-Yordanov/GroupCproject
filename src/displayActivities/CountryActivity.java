@@ -15,6 +15,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
@@ -76,7 +77,7 @@ public class CountryActivity  extends Activity{
 		    countryName = extras.getString("countryName");
 		}
 		prepareImagesAndResize();		
-		displayedText.setText(QueryBuilder.displayInfo);
+		//displayedText.setText(QueryBuilder.displayInfo);
 		countryNameText.setText(QueryBuilder.nameInfo);
 		flagView.setImageBitmap(resizedBitmapFlag);
 		countryView.setImageBitmap(resizedBitmapMap);
@@ -102,11 +103,12 @@ public class CountryActivity  extends Activity{
 		        layoutForInflation.addView(lineView);
 		        
 		        label1 = (TextView)lineView.findViewById(R.id.inflatedTextView1);
-		        label1.setMinimumWidth((StartingActivity.screenWidth/2)-47);
+		        label1.setMinimumWidth((StartingActivity.screenWidth/2)-(StartingActivity.screenWidth/6) );
+		        label1.setTypeface(null,Typeface.BOLD);
 		        label1.setText(QueryBuilder.arrayWithDescrptionsForCountry.get(i));
 		        
 		        label2 = (TextView)lineView.findViewById(R.id.inflatedTextView2);
-		        label2.setMinimumWidth((StartingActivity.screenWidth/2)-47);
+		        label2.setMinimumWidth((StartingActivity.screenWidth/2)+(StartingActivity.screenWidth/6) - (StartingActivity.screenWidth/7));
 		        label2.setText(QueryBuilder.arrayWithValuesForCountry.get(i));
 		        
 		        //arrayWithValuesForCountry

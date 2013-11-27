@@ -183,9 +183,9 @@ public class QueryBuilder {
 			incomeLevelInfo = jsonInfo.getJSONObject("incomeLevel");
 			lendingTypeInfo = jsonInfo.getJSONObject("lendingType");
  
-			idRegion = regionInfo.getString("id");
+			idRegion = regionInfo.getString("id");			
 			valueRegion = regionInfo.getString("value");
- 
+			
 			idAdminRegion = adminRegionInfo.getString("id");
 			valueAdminRegion = adminRegionInfo.getString("value");
  
@@ -201,6 +201,26 @@ public class QueryBuilder {
 			capitalCityInfo = jsonInfo.getString("capitalCity");
 			longitudeInfo = jsonInfo.getString("longitude");
 			latitudeInfo = jsonInfo.getString("latitude");
+			
+			idRegion = " " + idRegion;
+			valueRegion = " " + valueRegion;
+			
+			idAdminRegion = " " + idAdminRegion;
+			valueAdminRegion = " " + valueAdminRegion;
+
+			idIncomeLevel = " " + idIncomeLevel;
+			valueIncomeLevel =  " " + valueIncomeLevel ;
+			
+			idLendingType =  " " + idLendingType;
+			valueLendingType =  " " + valueLendingType;
+			
+			idInfo=  " " + idLendingType;
+			iso2CodeInfo =  " " + iso2CodeInfo;
+			nameInfo = " " + nameInfo;
+			capitalCityInfo = " " + capitalCityInfo;
+			longitudeInfo = " " + longitudeInfo;
+			latitudeInfo = " " + latitudeInfo ;
+ 
  
 			arrayWithValuesForCountry.add(idInfo);
 			arrayWithValuesForCountry.add(iso2CodeInfo);
@@ -217,20 +237,20 @@ public class QueryBuilder {
 			arrayWithValuesForCountry.add(idLendingType);
 			arrayWithValuesForCountry.add(valueLendingType);
 			
-			arrayWithDescrptionsForCountry.add("Country id: ");
-			arrayWithDescrptionsForCountry.add("Iso code: ");
-			arrayWithDescrptionsForCountry.add("Country name: ");
-			arrayWithDescrptionsForCountry.add("Capital city: ");
-			arrayWithDescrptionsForCountry.add("Longitude: ");
-			arrayWithDescrptionsForCountry.add("Latitude: ");
-			arrayWithDescrptionsForCountry.add("Region id: ");
-			arrayWithDescrptionsForCountry.add("Region                     location: ");
-			arrayWithDescrptionsForCountry.add("Admin location id: ");
-			arrayWithDescrptionsForCountry.add("Administration           location: ");
-			arrayWithDescrptionsForCountry.add("Income level id: ");
-			arrayWithDescrptionsForCountry.add("Income level: ");
-			arrayWithDescrptionsForCountry.add("Lending type id: ");
-			arrayWithDescrptionsForCountry.add("Lending type: ");
+			arrayWithDescrptionsForCountry.add(" Country id: ");
+			arrayWithDescrptionsForCountry.add(" Iso code: ");
+			arrayWithDescrptionsForCountry.add(" Country name: ");
+			arrayWithDescrptionsForCountry.add(" Capital city: ");
+			arrayWithDescrptionsForCountry.add(" Longitude: ");
+			arrayWithDescrptionsForCountry.add(" Latitude: ");
+			arrayWithDescrptionsForCountry.add(" Region id: ");
+			arrayWithDescrptionsForCountry.add(" Region                      location: ");
+			arrayWithDescrptionsForCountry.add(" Admin location id: ");
+			arrayWithDescrptionsForCountry.add(" Administration              location: ");
+			arrayWithDescrptionsForCountry.add(" Income level id: ");
+			arrayWithDescrptionsForCountry.add(" Income level: ");
+			arrayWithDescrptionsForCountry.add(" Lending type id: ");
+			arrayWithDescrptionsForCountry.add(" Lending type: ");
 								
 			displayInfo += 
 					"Country id: " + idInfo + "\n" + 
