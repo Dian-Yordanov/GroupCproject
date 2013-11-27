@@ -43,7 +43,9 @@ public class CountryActivity  extends Activity{
  	 
      View lineView;
      LinearLayout layoutForInflation;
-     TextView label;
+     
+     TextView label1;
+     TextView label2;
 	
 
 	@Override
@@ -94,11 +96,17 @@ public class CountryActivity  extends Activity{
 	}	
 	
 	private void setElementsWithInflation(){
-		 for(int i=1; i<=10; i++) {
+		 for(int i=0; i<14; i++) {
 		        lineView = getLayoutInflater().inflate(R.layout.text_in_table_layout, layoutForInflation,false);
 		        layoutForInflation.addView(lineView);
-		        //label = (TextView)lineView.findViewById(R.id.number_label);
-		        //label.setText(Integer.toString(i));
+		        
+		        label1 = (TextView)lineView.findViewById(R.id.inflatedTextView1);
+		        label1.setText(Integer.toString(i));
+		        
+		        label2 = (TextView)lineView.findViewById(R.id.inflatedTextView2);
+		        label2.setText(QueryBuilder.arrayWithValuesForCountry.get(i));
+		        
+		        //arrayWithValuesForCountry
 		        }
 	}
 }

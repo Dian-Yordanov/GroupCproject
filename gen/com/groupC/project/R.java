@@ -50,7 +50,6 @@ public final class R {
         public static final int autoCompleteComparisonTextViewIndicator=0x7f080009;
         public static final int autoCompleteTextViewCountry=0x7f08001d;
         public static final int autoCompleteTextViewIndicator=0x7f08001e;
-        public static final int button=0x7f08002b;
         public static final int button1=0x7f080004;
         public static final int comparisonSearch=0x7f080027;
         public static final int comparisonlistView1=0x7f08000b;
@@ -69,6 +68,8 @@ public final class R {
         public static final int indicatorListView2=0x7f080020;
         public static final int indicatorText=0x7f08001c;
         public static final int indicatorsSearch=0x7f080026;
+        public static final int inflatedTextView1=0x7f08002b;
+        public static final int inflatedTextView2=0x7f08002c;
         public static final int informationDisplayLabel=0x7f080019;
         public static final int item=0x7f080017;
         public static final int layout1=0x7f080018;

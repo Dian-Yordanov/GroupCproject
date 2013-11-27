@@ -94,6 +94,7 @@ public class QueryBuilder {
 	static boolean debugginAllResultsAreCorrect=false;
 	
 	public static ArrayList<String> arrayWithValuesForCountry = new ArrayList<String>();
+	public static ArrayList<String> arrayWithDescrptionsForCountry = new ArrayList<String>();
 	
 	public QueryBuilder(String urlparser) {
 		jsonParserReader(urlparser);
@@ -214,6 +215,8 @@ public class QueryBuilder {
 			arrayWithValuesForCountry.add(idLendingType);
 			arrayWithValuesForCountry.add(valueLendingType);
 			
+			//arrayWithDescriptionsForCountry
+			
 			displayInfo += 
 					"Country id: " + idInfo + "\n" + 
 					"Iso code: " + iso2CodeInfo + "\n" + 
@@ -259,16 +262,7 @@ public class QueryBuilder {
 		arrayMaxLength=0;
 		
 	}
-	/*
-    public static void restartTheJsonArray(){
-       arrayNumber =0;
-       Arrays.fill(years, 0);
-       Arrays.fill(values, 0);
-              Log.v("",Integer.toString(years[4]));
-       }
-       although this may not be wrong at all just the way currently the data is displayed is changing the values 
-       
-       */
+
 }
 
 	
