@@ -21,7 +21,8 @@
         <HorizontalScrollView
             android:id="@+id/horizontalScrollView1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content" 
+            >
 
             <LinearLayout
                 android:id="@+id/layoutForInflation"
@@ -31,18 +32,64 @@
             </LinearLayout>
         </HorizontalScrollView>
 
-      
-        <ImageView
-            android:id="@+id/imageView1"
+        <TableLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center" />
+            android:background="#000000" 
+             android:stretchColumns="1" >
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center" />
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" 
+               >
+                
+            <TextView
+                android:id="@+id/noFlagTitle"
+                android:layout_margin="1dip"
+                android:background="#E8E8E8"
+                android:width="100dip"
+                android:text=" Flag" />
+                 
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" 
+                android:background="#E8E8E8">
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" 
+                >
+                 <TextView
+                android:id="@+id/noMapTitle"
+                android:layout_margin="1dip"
+                android:background="#E8E8E8"
+                android:width="100dip"
+                android:text=" Map" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" 
+                android:background="#E8E8E8">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </TableRow>
+        </TableLayout>
     </LinearLayout>
 
 </ScrollView>

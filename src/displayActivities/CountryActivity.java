@@ -47,6 +47,9 @@ public class CountryActivity  extends Activity{
      
      TextView label1;
      TextView label2;
+     
+     private static TextView noFlagTitle;
+     private static TextView noMapTitle;
 	
 
 	@Override
@@ -79,6 +82,14 @@ public class CountryActivity  extends Activity{
 		countryNameText.setText(QueryBuilder.nameInfo);
 		flagView.setImageBitmap(resizedBitmapFlag);
 		countryView.setImageBitmap(resizedBitmapMap);
+		
+		noFlagTitle = (TextView) findViewById(R.id.noFlagTitle);
+		noMapTitle = (TextView) findViewById(R.id.noMapTitle);
+		
+		noFlagTitle.setMinimumWidth((StartingActivity.screenWidth)-(StartingActivity.screenWidth/7) + 4);
+		noFlagTitle.setTypeface(null,Typeface.BOLD);
+		noMapTitle.setMinimumWidth((StartingActivity.screenWidth)-(StartingActivity.screenWidth/7) + 4);
+		noMapTitle.setTypeface(null,Typeface.BOLD);
 		
 	}
 	public void gotoCountrySearchView(View view) {
