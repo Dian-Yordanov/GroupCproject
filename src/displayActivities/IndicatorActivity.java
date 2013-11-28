@@ -78,7 +78,7 @@ public class IndicatorActivity extends Activity{
 		
 		
 		informationDisplayLabel = (TextView) findViewById(R.id.informationDisplayLabel);
-		informationDisplayLabel.setMinimumWidth((StartingActivity.screenWidth)-(StartingActivity.screenWidth/7) + 4);
+		informationDisplayLabel.setMinimumWidth((StartingActivity.screenHeight) -(StartingActivity.screenHeight/10) +4);
 		informationDisplayLabel.setTypeface(null,Typeface.BOLD);
 		
 		
@@ -131,13 +131,13 @@ public class IndicatorActivity extends Activity{
 		        
 		        	        	
 		        label1 = (TextView)lineView.findViewById(R.id.inflatedTextView1);
-		        label1.setMinimumWidth((StartingActivity.screenWidth/2)-(StartingActivity.screenWidth/6) );
+		        label1.setMinimumWidth((StartingActivity.screenHeight/2)-(StartingActivity.screenHeight/6) );
 		        label1.setTypeface(null,Typeface.BOLD);
 		        label1.setText(QueryBuilder.arrayWithValuesAndYearsForIndicators.get(i));
 		        
 		        
 		        label2 = (TextView)lineView.findViewById(R.id.inflatedTextView2);
-		        label2.setMinimumWidth((StartingActivity.screenWidth/2)+(StartingActivity.screenWidth/6) - (StartingActivity.screenWidth/7));
+		        label2.setMinimumWidth((StartingActivity.screenHeight/2)+(StartingActivity.screenHeight/6) - (StartingActivity.screenHeight/10));
 		        label2.setText(QueryBuilder.arrayWithValuesAndYearsForIndicators.get(i+1));
 		        
 		        if(i%2==0){
