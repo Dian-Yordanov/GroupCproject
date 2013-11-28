@@ -41,23 +41,22 @@ public final class R {
         public static final int title=0x7f02000a;
     }
     public static final class id {
-        public static final int ComparisonText=0x7f080007;
+        public static final int ComparisonText=0x7f080008;
         public static final int ImageView1=0x7f080031;
         public static final int LinearLayout1=0x7f08001b;
         public static final int about=0x7f080030;
-        public static final int autoCompleteComparisonTextViewCountry1=0x7f080008;
-        public static final int autoCompleteComparisonTextViewCountry2=0x7f08000a;
-        public static final int autoCompleteComparisonTextViewIndicator=0x7f080009;
+        public static final int autoCompleteComparisonTextViewCountry1=0x7f080009;
+        public static final int autoCompleteComparisonTextViewCountry2=0x7f08000b;
+        public static final int autoCompleteComparisonTextViewIndicator=0x7f08000a;
         public static final int autoCompleteTextViewCountry=0x7f080024;
         public static final int autoCompleteTextViewIndicator=0x7f080025;
-        public static final int button1=0x7f080004;
         public static final int comparisonSearch=0x7f08002e;
-        public static final int comparisonlistView1=0x7f08000b;
-        public static final int comparisonlistView2=0x7f08000c;
-        public static final int comparisonlistView3=0x7f08000d;
+        public static final int comparisonlistView1=0x7f08000c;
+        public static final int comparisonlistView2=0x7f08000d;
+        public static final int comparisonlistView3=0x7f08000e;
         public static final int countriesListView=0x7f08001a;
         public static final int countryListSearch=0x7f08002c;
-        public static final int countryNameTextView=0x7f08000e;
+        public static final int countryNameTextView=0x7f08000f;
         public static final int countryText=0x7f080018;
         public static final int horizontalScrollView1=0x7f080002;
         public static final int horizontalScrollViewIndicatorActivity=0x7f08001f;
@@ -72,17 +71,18 @@ public final class R {
         public static final int inflatedTextView1=0x7f080032;
         public static final int inflatedTextView2=0x7f080033;
         public static final int informationDisplayLabel=0x7f08001e;
+        public static final int informationDisplayLabelComparison=0x7f080005;
         public static final int item=0x7f08001c;
         public static final int layout1=0x7f08001d;
         public static final int layout2=0x7f080003;
-        public static final int layoutForInflation=0x7f08000f;
+        public static final int layoutForInflation=0x7f080010;
         public static final int layoutForInflationIndicatorActivity=0x7f080020;
         public static final int noFlagTitle=0x7f080011;
         public static final int noInformationForYears=0x7f080022;
         public static final int noMapTitle=0x7f080015;
         public static final int scrollView1=0x7f080001;
         public static final int selectYourCountryAutoCompleteText=0x7f080019;
-        public static final int tableRow1=0x7f080010;
+        public static final int tableRow1=0x7f080004;
         public static final int tableRow2=0x7f080012;
         public static final int tableRow3=0x7f080014;
         public static final int tableRow4=0x7f080016;
@@ -90,8 +90,8 @@ public final class R {
         public static final int textView2=0x7f08002a;
         public static final int textView3=0x7f08002b;
         public static final int textView4=0x7f08002f;
-        public static final int textViewForGraphView1=0x7f080005;
-        public static final int textViewForGraphView2=0x7f080006;
+        public static final int textViewForGraphView1=0x7f080006;
+        public static final int textViewForGraphView2=0x7f080007;
         public static final int textViewShowingCandI=0x7f080021;
     }
     public static final class layout {

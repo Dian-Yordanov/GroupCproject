@@ -97,6 +97,10 @@ public class QueryBuilder {
 	public static ArrayList<String> arrayWithDescrptionsForCountry = new ArrayList<String>();
 	
 	public static ArrayList<String> arrayWithValuesAndYearsForIndicators = new ArrayList<String>();
+	public static ArrayList<String> arrayWithValuesAndYearsForComparison = new ArrayList<String>();
+	public static ArrayList<String> arrayListForComparisonTitle = new ArrayList<String>();
+	
+	
 	
 	public QueryBuilder(String urlparser) {
 		jsonParserReader(urlparser);
@@ -113,6 +117,8 @@ public class QueryBuilder {
 		displayInfo = "";
 		arrayWithValuesForCountry.clear();
 		arrayWithValuesAndYearsForIndicators.clear();
+		arrayWithValuesAndYearsForComparison.clear();
+		//arrayListForComparisonTitle.clear();
 		
 		try {
 			jsonMainArr = new JSONArray(infoParsed);
@@ -169,8 +175,12 @@ public class QueryBuilder {
 			
 			}
 			
+			
 			arrayWithValuesAndYearsForIndicators.add(dateInfoStr);
 			arrayWithValuesAndYearsForIndicators.add(valueInfoStr);
+			
+			//arrayWithValuesAndYearsForComparison.add(dateInfoStr);
+			arrayWithValuesAndYearsForComparison.add(valueInfoStr);
 			
 			displayInfo += dateInfoStr + ": "
 					+ " " + valueInfoStr + "\n";
