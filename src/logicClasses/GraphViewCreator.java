@@ -11,6 +11,7 @@ import android.util.Log;
 import com.jjoe64.graphview.BarGraphView;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.GraphView.GraphViewData;
+import com.jjoe64.graphview.GraphView.LegendAlign;
 import com.jjoe64.graphview.GraphViewSeries;
 import com.jjoe64.graphview.GraphViewSeries.GraphViewSeriesStyle;
 import com.jjoe64.graphview.LineGraphView;
@@ -47,10 +48,7 @@ public class GraphViewCreator {
 		GraphViewSeriesStyle seriesStyle2 = new GraphViewSeriesStyle();
 		seriesStyle2.color = Color.RED;
 		
-		Log.v("years "+ ii+1,Integer.toString(QueryBuilder.years[ii]));
-		Log.v("values "+ ii+1,Double.toString(QueryBuilder.values[ii]));
-		Log.v("years +51 " + ii,Integer.toString(QueryBuilder.years[51 + ii]));
-		Log.v("values +51 " + ii,Double.toString(QueryBuilder.values[51 + ii ]));
+		
 		
 		exampleSeries1 = new GraphViewSeries("",seriesStyle,new GraphViewData[] {
 				new GraphViewData(QueryBuilder.years[ii], QueryBuilder.values[ii])});
@@ -66,6 +64,7 @@ public class GraphViewCreator {
 		graphView.addSeries(exampleSeries2);}
 		graphView.addSeries(exampleSeries1);	
 		 
+		
 		
 		while(ii!=QueryBuilder.arrayNumber){
 			
@@ -98,7 +97,7 @@ public class GraphViewCreator {
 		ii++;
 		
 		}
-		
+				
 		 //resetGraphAttributes();
 		 graphView.redrawAll();
 		 
@@ -108,11 +107,13 @@ public class GraphViewCreator {
 		 graphView.getGraphViewStyle().setHorizontalLabelsColor(Color.BLACK);
 		 graphView.getGraphViewStyle().setVerticalLabelsColor(Color.BLACK);
 		 
+		// set legend  
 		 
 		 
 		 graphView.setScrollable(true);  
 		 
 		 graphView.getGraphViewStyle().setVerticalLabelsWidth(250);
+		 
 		 
 		 
 		 if(nameOfTheClassCallingThis.equals("searchActivities.IndicatorSearchActivity")){IndicatorActivity.graphLayout.removeAllViews();}

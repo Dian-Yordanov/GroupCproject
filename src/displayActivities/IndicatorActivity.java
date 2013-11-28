@@ -27,7 +27,11 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.text.Html;
+import android.text.Spannable;
 import android.text.method.ScrollingMovementMethod;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.StyleSpan;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -36,6 +40,7 @@ import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.TextView.BufferType;
  
 public class IndicatorActivity extends Activity{
  
@@ -70,10 +75,35 @@ public class IndicatorActivity extends Activity{
 		noInformationForYears = (TextView) findViewById(R.id.noInformationForYears);
 		noInformationForYears.setText(QueryBuilder.missingInformation());
 		
+		
+		
 		informationDisplayLabel = (TextView) findViewById(R.id.informationDisplayLabel);
 		informationDisplayLabel.setMinimumWidth((StartingActivity.screenWidth)-(StartingActivity.screenWidth/7) + 4);
-		informationDisplayLabel.setText("The displayed information is for " + QueryBuilder.valueCountry 
-				+ ", " + QueryBuilder.valueIndicator);				
+		informationDisplayLabel.setTypeface(null,Typeface.BOLD);
+		
+		
+		String first = "The displayed information is for ";
+		String next = QueryBuilder.valueCountry;
+		String enddd = " with indicator: " + QueryBuilder.valueIndicator;
+		
+		informationDisplayLabel.setText(first + next + enddd, BufferType.SPANNABLE);
+		Spannable s = (Spannable)informationDisplayLabel.getText();
+		int start = first.length();
+		int end = start + next.length();
+		int endd =  end + enddd.length();	
+		
+		Log.v("ss",Integer.toString(start));
+		Log.v("ss",Integer.toString(end));
+		Log.v("ss",Integer.toString(endd));
+		
+		
+		s.setSpan(new ForegroundColorSpan(Color.BLACK), 0, start, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+		s.setSpan(new ForegroundColorSpan(Color.BLUE), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+		s.setSpan(new ForegroundColorSpan(Color.BLACK), end, endd, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+		//setText();
+		
+		//informationDisplayLabel.setText("The displayed information is for " + QueryBuilder.valueCountry
+		//		+ ", " + QueryBuilder.valueIndicator);				
 		informationDisplayLabel.setBackgroundColor(Color.parseColor("#F6F6F6"));
 		
 	    graphLayout = (LinearLayout) findViewById(R.id. layout1);
