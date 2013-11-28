@@ -112,6 +112,7 @@ public class QueryBuilder {
 	public static void jsonStringIntoJsonArrayTransformer() {
 		displayInfo = "";
 		arrayWithValuesForCountry.clear();
+		arrayWithValuesAndYearsForIndicators.clear();
 		
 		try {
 			jsonMainArr = new JSONArray(infoParsed);
