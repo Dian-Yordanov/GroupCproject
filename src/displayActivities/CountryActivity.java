@@ -13,6 +13,7 @@ import com.groupC.project.StartingActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -108,31 +109,73 @@ public class CountryActivity  extends Activity{
 				, countryMap.getHeight(), true);
 	}	
 	
-	private void setElementsWithInflation(){
-		 for(int i=0; i<QueryBuilder.arrayWithValuesForCountry.size(); i++) {
-		        lineView = getLayoutInflater().inflate(R.layout.text_in_table_layout, layoutForInflation,false);
-		        layoutForInflation.addView(lineView);
-		        
-		        	        	
-		        label1 = (TextView)lineView.findViewById(R.id.inflatedTextView1);
-		        label1.setMinimumWidth((StartingActivity.screenWidth/2)-(StartingActivity.screenWidth/6) );
-		        label1.setTypeface(null,Typeface.BOLD);
-		        label1.setText(QueryBuilder.arrayWithDescrptionsForCountry.get(i));
-		        
-		        
-		        label2 = (TextView)lineView.findViewById(R.id.inflatedTextView2);
-		        label2.setMinimumWidth((StartingActivity.screenWidth/2)+(StartingActivity.screenWidth/6) - (StartingActivity.screenWidth/7));
-		        label2.setText(QueryBuilder.arrayWithValuesForCountry.get(i));
-		        
-		        if(i%2==0){
-		        	label1.setBackgroundColor(Color.parseColor("#F6F6F6"));
-		        	label2.setBackgroundColor(Color.parseColor("#F6F6F6"));
-		        }
-		        else{
-		        	label1.setBackgroundColor(Color.parseColor("#CCCCCC"));
-		        	label2.setBackgroundColor(Color.parseColor("#CCCCCC"));
-		        }
-		        //arrayWithValuesForCountry
-		        }
+	private void setElementsWithInflation() {
+		if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+			{
+				for (int i = 0; i < QueryBuilder.arrayWithValuesForCountry
+						.size(); i++) {
+					lineView = getLayoutInflater().inflate(
+							R.layout.text_in_table_layout, layoutForInflation,
+							false);
+					layoutForInflation.addView(lineView);
+
+					label1 = (TextView) lineView
+							.findViewById(R.id.inflatedTextView1);
+					label1.setMinimumWidth((StartingActivity.screenHeight/ 2)
+							- (StartingActivity.screenHeight/ 3));
+					label1.setTypeface(null, Typeface.BOLD);
+					label1.setText(QueryBuilder.arrayWithDescrptionsForCountry
+							.get(i));
+
+					label2 = (TextView) lineView
+							.findViewById(R.id.inflatedTextView2);
+					label2.setMinimumWidth((StartingActivity.screenHeight / 2)
+							+ (StartingActivity.screenHeight /3)
+							- (StartingActivity.screenHeight/ 8));
+					label2.setText(QueryBuilder.arrayWithValuesForCountry
+							.get(i));
+
+					if (i % 2 == 0) {
+						label1.setBackgroundColor(Color.parseColor("#F6F6F6"));
+						label2.setBackgroundColor(Color.parseColor("#F6F6F6"));
+					} else {
+						label1.setBackgroundColor(Color.parseColor("#CCCCCC"));
+						label2.setBackgroundColor(Color.parseColor("#CCCCCC"));
+					}
+					// arrayWithValuesForCountry
+				}
+			}
+		} else {
+			for (int i = 0; i < QueryBuilder.arrayWithValuesForCountry.size(); i++) {
+				lineView = getLayoutInflater().inflate(
+						R.layout.text_in_table_layout, layoutForInflation,
+						false);
+				layoutForInflation.addView(lineView);
+
+				label1 = (TextView) lineView
+						.findViewById(R.id.inflatedTextView1);
+				label1.setMinimumWidth((StartingActivity.screenWidth / 2)
+						- (StartingActivity.screenWidth / 6));
+				label1.setTypeface(null, Typeface.BOLD);
+				label1.setText(QueryBuilder.arrayWithDescrptionsForCountry
+						.get(i));
+
+				label2 = (TextView) lineView
+						.findViewById(R.id.inflatedTextView2);
+				label2.setMinimumWidth((StartingActivity.screenWidth / 2)
+						+ (StartingActivity.screenWidth / 6)
+						- (StartingActivity.screenWidth / 7));
+				label2.setText(QueryBuilder.arrayWithValuesForCountry.get(i));
+
+				if (i % 2 == 0) {
+					label1.setBackgroundColor(Color.parseColor("#F6F6F6"));
+					label2.setBackgroundColor(Color.parseColor("#F6F6F6"));
+				} else {
+					label1.setBackgroundColor(Color.parseColor("#CCCCCC"));
+					label2.setBackgroundColor(Color.parseColor("#CCCCCC"));
+				}
+				// arrayWithValuesForCountry
+			}
+		}
 	}
 }
