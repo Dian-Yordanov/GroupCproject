@@ -52,6 +52,7 @@ public class CountryActivity  extends Activity{
      private static TextView noFlagTitle;
      private static TextView noMapTitle;
 	
+     
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

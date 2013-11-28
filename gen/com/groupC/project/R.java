@@ -60,7 +60,7 @@ public final class R {
         public static final int countryNameTextView=0x7f08000e;
         public static final int countryText=0x7f080018;
         public static final int horizontalScrollView1=0x7f080002;
-        public static final int horizontalScrollViewIndicatorActivity=0x7f08001e;
+        public static final int horizontalScrollViewIndicatorActivity=0x7f08001f;
         public static final int imageView1=0x7f080013;
         public static final int imageView2=0x7f080017;
         public static final int imageViewAboutUs=0x7f080000;
@@ -71,12 +71,12 @@ public final class R {
         public static final int indicatorsSearch=0x7f08002d;
         public static final int inflatedTextView1=0x7f080032;
         public static final int inflatedTextView2=0x7f080033;
-        public static final int informationDisplayLabel=0x7f080020;
+        public static final int informationDisplayLabel=0x7f08001e;
         public static final int item=0x7f08001c;
         public static final int layout1=0x7f08001d;
         public static final int layout2=0x7f080003;
         public static final int layoutForInflation=0x7f08000f;
-        public static final int layoutForInflationIndicatorActivity=0x7f08001f;
+        public static final int layoutForInflationIndicatorActivity=0x7f080020;
         public static final int noFlagTitle=0x7f080011;
         public static final int noInformationForYears=0x7f080022;
         public static final int noMapTitle=0x7f080015;
