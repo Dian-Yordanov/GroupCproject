@@ -198,10 +198,13 @@ public class ComparisonSearchActivity extends Activity{
 			+ QueryBuilder.p5BeginningOfIdentifiers + QueryBuilder.p6ItemsPerPage + QueryBuilder.p7Date + QueryBuilder.p8Format);
 	}
 	private void comparisonCallQueryBuilderAndGraphView(){
-  
+		
+		QueryBuilder.arrayListForComparisonTitle.clear();
         QueryBuilder. jsonParserReader(comparisonQueryConstructor (QueryBuilder.p2CountryName));
         textViewComparisonText1 ="";
         textViewComparisonText1 = QueryBuilder. displayInfo;
+        
+        QueryBuilder.arrayListForComparisonTitle.add(QueryBuilder.valueCountry);
         
         QueryBuilder. displayInfo = "" ;
         QueryBuilder. infoParsed = "" ;
@@ -210,6 +213,8 @@ public class ComparisonSearchActivity extends Activity{
         textViewComparisonText2 ="";
         textViewComparisonText2 = QueryBuilder. displayInfo;
 
+        QueryBuilder.arrayListForComparisonTitle.add(QueryBuilder.valueCountry);
+        QueryBuilder.arrayListForComparisonTitle.add(QueryBuilder.valueIndicator);
 		
 		itemlist1IsSelected = false;
 		itemlist2IsSelected = false;
