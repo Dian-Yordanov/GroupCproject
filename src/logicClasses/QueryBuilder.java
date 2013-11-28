@@ -118,6 +118,7 @@ public class QueryBuilder {
 		arrayWithValuesForCountry.clear();
 		arrayWithValuesAndYearsForIndicators.clear();
 		arrayWithValuesAndYearsForComparison.clear();
+		
 		//arrayListForComparisonTitle.clear();
 		
 		try {
@@ -180,7 +181,10 @@ public class QueryBuilder {
 			arrayWithValuesAndYearsForIndicators.add(valueInfoStr);
 			
 			//arrayWithValuesAndYearsForComparison.add(dateInfoStr);
+			if(nameOftheClassCallingThisClass.equals("searchActivities.ComparisonSearchActivity")){
+				arrayWithValuesAndYearsForComparison.add(QueryBuilder.valueInfoStr);}
 			
+			//arrayWithValuesAndYearsForComparison.add(QueryBuilder.valueInfoStr);
 			
 			displayInfo += dateInfoStr + ": "
 					+ " " + valueInfoStr + "\n";

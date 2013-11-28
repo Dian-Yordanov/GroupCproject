@@ -8,7 +8,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#000000"
-        android:stretchColumns="1" >
+         >
 
         <TableRow
             android:layout_width="fill_parent"
@@ -18,13 +18,13 @@
                 android:id="@+id/inflatedTextView1"
                 android:layout_margin="1dip"
                 android:background="#E8E8E8"
-                android:width="100dip"
+                android:width="50dip"
                 android:text="" />
 
             <TextView
                 android:id="@+id/inflatedTextView2"
                 android:layout_margin="1dip"
-                android:width="100dip"
+                android:width="50dip"
                 android:background="#E8E8E8"
                 android:text="" />
             
@@ -32,7 +32,7 @@
                 android:id="@+id/inflatedTextView3"
                 android:layout_margin="1dip"
                 android:background="#E8E8E8"
-                android:width="100dip"
+                android:width="50dip"
                 android:text="" />
         </TableRow>
     </TableLayout>

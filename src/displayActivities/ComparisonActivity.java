@@ -41,6 +41,7 @@ public class ComparisonActivity extends Activity {
      
 	private static TextView label1;
 	private static TextView label2;
+	private static TextView label3;
 	
 	private static TextView informationDisplayLabel;
 	
@@ -100,20 +101,26 @@ public class ComparisonActivity extends Activity {
 	}
 	
 	private void indicatorSetElementsWithInflation(){
-		 for(int i=0; i<QueryBuilder.arrayWithValuesAndYearsForIndicators.size(); i+=2) {
-		        lineView = getLayoutInflater().inflate(R.layout.text_in_table_layout, layoutForInflationComparisonActivity ,false);
+		Log.v("", Integer.toString(QueryBuilder.arrayWithValuesAndYearsForIndicators.size()));
+		 for(int i=0; i<QueryBuilder.arrayWithValuesAndYearsForComparison.size(); i++) {
+		        lineView = getLayoutInflater().inflate(R.layout.text_in_table_comparison, layoutForInflationComparisonActivity ,false);
 		        layoutForInflationComparisonActivity .addView(lineView);
 		        
 		        	        	
 		        label1 = (TextView)lineView.findViewById(R.id.inflatedTextView1);
-		        label1.setMinimumWidth((StartingActivity.screenWidth/2)-(StartingActivity.screenWidth/6) );
+		        label1.setMinimumWidth(8);
 		        label1.setTypeface(null,Typeface.BOLD);
 		        label1.setText(QueryBuilder.arrayWithValuesAndYearsForIndicators.get(i));
 		        
 		        
 		        label2 = (TextView)lineView.findViewById(R.id.inflatedTextView2);
-		        label2.setMinimumWidth((StartingActivity.screenWidth/2)+(StartingActivity.screenWidth/6) - (StartingActivity.screenWidth/7));
-		        label2.setText(QueryBuilder.arrayWithValuesAndYearsForIndicators.get(i+1));
+		        label2.setMinimumWidth(80);
+		        label2.setText(QueryBuilder.arrayWithValuesAndYearsForIndicators.get(i));
+		        
+		        label3 = (TextView)lineView.findViewById(R.id.inflatedTextView3);
+		        label3.setMinimumWidth(80);
+		        label3.setTypeface(null,Typeface.BOLD);
+		        label3.setText(QueryBuilder.arrayWithValuesAndYearsForComparison.get(i));
 		        
 		        if(i%2==0){
 		        	label1.setBackgroundColor(Color.parseColor("#F6F6F6"));
