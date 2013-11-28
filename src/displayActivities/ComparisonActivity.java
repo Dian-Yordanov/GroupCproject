@@ -64,7 +64,7 @@ public class ComparisonActivity extends Activity {
 		graphViewLayout = (LinearLayout) findViewById(R.id.layout2);
 
 		informationDisplayLabelComparison = (TextView) findViewById(R.id.informationDisplayLabelComparison);
-		informationDisplayLabelComparison.setMinimumWidth((StartingActivity.screenWidth)-(StartingActivity.screenWidth/7) + 4);
+		informationDisplayLabelComparison.setMinimumWidth((StartingActivity.screenHeight) -(StartingActivity.screenHeight/10) +5);
 		//informationDisplayLabelComparison.setText("This is comparison between " 
 		//+ QueryBuilder.arrayListForComparisonTitle.get(0)
 		//+ " and " + QueryBuilder.arrayListForComparisonTitle.get(1)
@@ -141,11 +141,11 @@ public class ComparisonActivity extends Activity {
 		        
 		        
 		        label2 = (TextView)lineView.findViewById(R.id.inflatedTextView2);
-		        label2.setMinimumWidth((StartingActivity.screenWidth/2)-(StartingActivity.screenWidth/6) + 32);
+		        label2.setMinimumWidth((StartingActivity.screenHeight/2)-(StartingActivity.screenHeight/10) + 27);
 		        label2.setText(QueryBuilder.arrayWithValuesForComparison.get(i));
 		        
 		        label3 = (TextView)lineView.findViewById(R.id.inflatedTextView3);
-		        label3.setMinimumWidth((StartingActivity.screenWidth/2)-(StartingActivity.screenWidth/6) + 32);
+		        label3.setMinimumWidth((StartingActivity.screenHeight/2)-(StartingActivity.screenHeight/10) + 27);
 		        label3.setText(QueryBuilder.arrayWithValuesAndYearsForComparison.get(i));
 		        
 		        if(i%2==0){
