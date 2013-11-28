@@ -17,6 +17,8 @@ import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -27,6 +29,7 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.TextView.BufferType;
 
 public class ComparisonActivity extends Activity {
 
@@ -62,10 +65,38 @@ public class ComparisonActivity extends Activity {
 
 		informationDisplayLabelComparison = (TextView) findViewById(R.id.informationDisplayLabelComparison);
 		informationDisplayLabelComparison.setMinimumWidth((StartingActivity.screenWidth)-(StartingActivity.screenWidth/7) + 4);
-		informationDisplayLabelComparison.setText("This is comparison between " 
-		+ QueryBuilder.arrayListForComparisonTitle.get(0)
-		+ " and " + QueryBuilder.arrayListForComparisonTitle.get(1)
-				+ " in " + QueryBuilder.arrayListForComparisonTitle.get(2));				
+		//informationDisplayLabelComparison.setText("This is comparison between " 
+		//+ QueryBuilder.arrayListForComparisonTitle.get(0)
+		//+ " and " + QueryBuilder.arrayListForComparisonTitle.get(1)
+		//		+ " in " + QueryBuilder.arrayListForComparisonTitle.get(2));				
+		
+		
+		String comprisonString1 = "This is comparison between ";
+		String comprisonString2 = QueryBuilder.arrayListForComparisonTitle.get(0);
+		String comprisonString3 = " and ";
+		String comprisonString4 = QueryBuilder.arrayListForComparisonTitle.get(1);
+		String comprisonString5 = " in ";
+		String comprisonString6 = QueryBuilder.arrayListForComparisonTitle.get(2);
+		
+		informationDisplayLabelComparison.setText(comprisonString1 + comprisonString2 +
+				comprisonString3 + comprisonString4 +
+				comprisonString5 + comprisonString6, BufferType.SPANNABLE);
+		Spannable s = (Spannable)informationDisplayLabelComparison.getText();
+		
+		int comprisonString1i = comprisonString1.length();
+		int comprisonString2i = comprisonString1i + comprisonString2.length();
+		int comprisonString3i = comprisonString2i + comprisonString3.length();	
+		int comprisonString4i = comprisonString3i +comprisonString4.length();
+		int comprisonString5i = comprisonString4i + comprisonString5.length();
+		int comprisonString6i = comprisonString5i + comprisonString6.length();	
+		
+		s.setSpan(new ForegroundColorSpan(Color.BLACK), 0, comprisonString1i, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+		s.setSpan(new ForegroundColorSpan(Color.BLUE), comprisonString1i, comprisonString2i, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+		s.setSpan(new ForegroundColorSpan(Color.BLACK), comprisonString2i, comprisonString3i, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+		s.setSpan(new ForegroundColorSpan(Color.RED), comprisonString3i, comprisonString4i, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+		s.setSpan(new ForegroundColorSpan(Color.BLACK), comprisonString4i, comprisonString5i, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+		s.setSpan(new ForegroundColorSpan(Color.BLACK), comprisonString5i, comprisonString6i, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
 		informationDisplayLabelComparison.setBackgroundColor(Color.parseColor("#F6F6F6"));
 		
 		Log.v("", Double.toString(StartingActivity.screenWidth));

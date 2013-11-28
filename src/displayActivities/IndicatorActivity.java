@@ -92,11 +92,6 @@ public class IndicatorActivity extends Activity{
 		int end = start + next.length();
 		int endd =  end + enddd.length();	
 		
-		Log.v("ss",Integer.toString(start));
-		Log.v("ss",Integer.toString(end));
-		Log.v("ss",Integer.toString(endd));
-		
-		
 		s.setSpan(new ForegroundColorSpan(Color.BLACK), 0, start, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 		s.setSpan(new ForegroundColorSpan(Color.BLUE), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 		s.setSpan(new ForegroundColorSpan(Color.BLACK), end, endd, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
