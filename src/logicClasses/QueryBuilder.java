@@ -43,9 +43,9 @@ public class QueryBuilder {
 	public static JSONObject lendingTypeInfo;
 	
 	static String idIndicator;
-	static String valueIndicator;
+	public static String valueIndicator;
 	static String idCountry;
-	static String valueCountry;
+	public static String valueCountry;
 	static String valueInfoStr;
 	static String decimalInfoStr;
 	static String dateInfoStr;

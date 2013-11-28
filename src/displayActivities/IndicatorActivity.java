@@ -39,7 +39,7 @@ import android.widget.TextView;
  
 public class IndicatorActivity extends Activity{
  
-	public static TextView textView1;
+	//public static TextView textView1;
 	public static TextView noInformationForYears;
 	public static LinearLayout graphLayout;
 	
@@ -48,6 +48,9 @@ public class IndicatorActivity extends Activity{
      
 	private static TextView label1;
 	private static TextView label2;
+	
+	private static TextView informationDisplayLabel;
+	
 	
 	//public static GraphView graphView;
 
@@ -62,11 +65,16 @@ public class IndicatorActivity extends Activity{
 	public void uiBuidlerIndicatorActivity() {
  
 		setContentView(R.layout.indicator_activity);
-		textView1 = (TextView) findViewById(R.id.textViewShowingCandI);
+		//textView1 = (TextView) findViewById(R.id.textViewShowingCandI);
 		//textView1.setText(QueryBuilder.displayInfo);	
 		noInformationForYears = (TextView) findViewById(R.id.noInformationForYears);
 		noInformationForYears.setText(QueryBuilder.missingInformation());
 		
+		informationDisplayLabel = (TextView) findViewById(R.id.informationDisplayLabel);
+		informationDisplayLabel.setMinimumWidth((StartingActivity.screenWidth)-(StartingActivity.screenWidth/7) + 4);
+		informationDisplayLabel.setText("The displayed information is for " + QueryBuilder.valueCountry 
+				+ ", " + QueryBuilder.valueIndicator);				
+		informationDisplayLabel.setBackgroundColor(Color.parseColor("#F6F6F6"));
 		
 	    graphLayout = (LinearLayout) findViewById(R.id. layout1);
 	    
