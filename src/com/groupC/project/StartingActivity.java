@@ -38,6 +38,12 @@ public class StartingActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.starting_activity);
 		
+		if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
+			setContentView(R.layout.starting_activity);
+		}else{ 
+			setContentView(R.layout.landscape_starting_activity);
+		}
+		
 		
 		
 		indicatorsSearch = (Button) findViewById(R.id.indicatorsSearch);
