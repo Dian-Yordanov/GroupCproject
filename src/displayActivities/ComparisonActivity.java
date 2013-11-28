@@ -111,7 +111,7 @@ public class ComparisonActivity extends Activity {
 		        
 		        label2 = (TextView)lineView.findViewById(R.id.inflatedTextView2);
 		        label2.setMinimumWidth((StartingActivity.screenWidth/2)-(StartingActivity.screenWidth/6) + 32);
-		        label2.setText(QueryBuilder.arrayWithValuesAndYearsForIndicators.get(i+1));
+		        label2.setText(QueryBuilder.arrayWithValuesForComparison.get(i));
 		        
 		        label3 = (TextView)lineView.findViewById(R.id.inflatedTextView3);
 		        label3.setMinimumWidth((StartingActivity.screenWidth/2)-(StartingActivity.screenWidth/6) + 32);

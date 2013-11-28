@@ -100,6 +100,7 @@ public class QueryBuilder {
 	public static ArrayList<String> arrayWithValuesAndYearsForComparison = new ArrayList<String>();
 	public static ArrayList<String> arrayListForComparisonTitle = new ArrayList<String>();
 	public static ArrayList<String> arrayWithYearsForComparison = new ArrayList<String>();
+	public static ArrayList<String> arrayWithValuesForComparison = new ArrayList<String>();
 	
 	
 	
@@ -120,6 +121,7 @@ public class QueryBuilder {
 		arrayWithValuesAndYearsForIndicators.clear();
 		arrayWithValuesAndYearsForComparison.clear();
 		arrayWithYearsForComparison.clear();
+		arrayWithValuesForComparison.clear();
 		
 		//arrayListForComparisonTitle.clear();
 		
@@ -181,6 +183,10 @@ public class QueryBuilder {
 			
 			arrayWithValuesAndYearsForIndicators.add(dateInfoStr);
 			arrayWithValuesAndYearsForIndicators.add(valueInfoStr);
+			
+			
+			arrayWithValuesForComparison.add(valueInfoStr);
+		
 			
 			//arrayWithValuesAndYearsForComparison.add(dateInfoStr);
 			if(nameOftheClassCallingThisClass.equals("searchActivities.ComparisonSearchActivity")){

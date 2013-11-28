@@ -219,6 +219,7 @@ public class ComparisonSearchActivity extends Activity{
         QueryBuilder.arrayListForComparisonTitle.add(QueryBuilder.valueCountry);
         QueryBuilder.arrayListForComparisonTitle.add(QueryBuilder.valueIndicator);
 		
+        
                 
 		itemlist1IsSelected = false;
 		itemlist2IsSelected = false;
