@@ -102,7 +102,7 @@ public class ComparisonActivity extends Activity {
 	
 	private void indicatorSetElementsWithInflation(){
 		Log.v("", Integer.toString(QueryBuilder.arrayWithValuesAndYearsForIndicators.size()));
-		 for(int i=0; i<QueryBuilder.arrayWithValuesAndYearsForComparison.size(); i++) {
+		 for(int i=0; i<QueryBuilder.arrayWithValuesAndYearsForComparison.size(); i+=2) {
 		        lineView = getLayoutInflater().inflate(R.layout.text_in_table_comparison, layoutForInflationComparisonActivity ,false);
 		        layoutForInflationComparisonActivity .addView(lineView);
 		        
@@ -110,12 +110,12 @@ public class ComparisonActivity extends Activity {
 		        label1 = (TextView)lineView.findViewById(R.id.inflatedTextView1);
 		        label1.setMinimumWidth(76);
 		        label1.setTypeface(null,Typeface.BOLD);
-		        label1.setText(QueryBuilder.arrayWithValuesAndYearsForIndicators.get(i));
+		        label1.setText(QueryBuilder.arrayWithYearsForComparison.get(i));
 		        
 		        
 		        label2 = (TextView)lineView.findViewById(R.id.inflatedTextView2);
 		        label2.setMinimumWidth((StartingActivity.screenWidth/2)-(StartingActivity.screenWidth/6) -32);
-		        label2.setText(QueryBuilder.arrayWithValuesAndYearsForIndicators.get(i));
+		        label2.setText(QueryBuilder.arrayWithValuesAndYearsForIndicators.get(i+1));
 		        
 		        label3 = (TextView)lineView.findViewById(R.id.inflatedTextView3);
 		        label3.setMinimumWidth((StartingActivity.screenWidth/2)-(StartingActivity.screenWidth/6) -32);
