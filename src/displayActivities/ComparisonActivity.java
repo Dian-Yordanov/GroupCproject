@@ -56,11 +56,7 @@ public class ComparisonActivity extends Activity {
 
 		setContentView(R.layout.comparison_activity);
 
-		textViewForGraphView1 = (TextView) findViewById(R.id.textViewForGraphView1);
-		textViewForGraphView1.setText(ComparisonSearchActivity.textViewComparisonText1);
-						
-		textViewForGraphView2 = (TextView) findViewById(R.id.textViewForGraphView2);
-		textViewForGraphView2.setText(ComparisonSearchActivity.textViewComparisonText2);
+		
 		
 		graphViewLayout = (LinearLayout) findViewById(R.id.layout2);
 
@@ -108,17 +104,17 @@ public class ComparisonActivity extends Activity {
 		        
 		        	        	
 		        label1 = (TextView)lineView.findViewById(R.id.inflatedTextView1);
-		        label1.setMinimumWidth(76);
+		        label1.setMinimumWidth(32);
 		        label1.setTypeface(null,Typeface.BOLD);
 		        label1.setText(QueryBuilder.arrayWithYearsForComparison.get(i));
 		        
 		        
 		        label2 = (TextView)lineView.findViewById(R.id.inflatedTextView2);
-		        label2.setMinimumWidth((StartingActivity.screenWidth/2)-(StartingActivity.screenWidth/6) -32);
+		        label2.setMinimumWidth((StartingActivity.screenWidth/2)-(StartingActivity.screenWidth/6) + 32);
 		        label2.setText(QueryBuilder.arrayWithValuesAndYearsForIndicators.get(i+1));
 		        
 		        label3 = (TextView)lineView.findViewById(R.id.inflatedTextView3);
-		        label3.setMinimumWidth((StartingActivity.screenWidth/2)-(StartingActivity.screenWidth/6) -32);
+		        label3.setMinimumWidth((StartingActivity.screenWidth/2)-(StartingActivity.screenWidth/6) + 32);
 		        label3.setText(QueryBuilder.arrayWithValuesAndYearsForComparison.get(i));
 		        
 		        if(i%2==0){

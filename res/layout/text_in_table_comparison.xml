@@ -18,7 +18,7 @@
                 android:id="@+id/inflatedTextView1"
                 android:layout_margin="1dip"
                 android:background="#E8E8E8"
-                android:width="99dip"
+                android:width="35dip"
                 android:text="" />
 
             <TextView
