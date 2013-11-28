@@ -70,9 +70,13 @@ public class GraphViewCreator {
 		while(ii!=QueryBuilder.arrayNumber){
 			
 		if(nameOfTheClassCallingThis.equals("searchActivities.IndicatorSearchActivity")){
-			exampleSeries1.appendData(new GraphViewData(QueryBuilder.years[ii],QueryBuilder.values[ii]), false, 1000);
+			exampleSeries1.appendData(new GraphViewData(QueryBuilder.years[ii],QueryBuilder.values[ii]), false, 1000);			
 			Log.v("ii2" + Integer.toString(ii),Integer.toString(ii));
 		}
+		
+		
+		
+		QueryBuilder.arrayWithValuesForComparison.add(QueryBuilder.arrayWithValuesForComparisonForKeepingTheNullValues[ii]);
 		
 		if(nameOfTheClassCallingThis.equals("searchActivities.ComparisonSearchActivity")){
 		if(ii>=(0 + iiIncreasingOn102) && ii<=(50 + iiIncreasingOn102)){
@@ -81,6 +85,9 @@ public class GraphViewCreator {
 		}
 		
 		if(ii>=( 51 + iiIncreasingOn102) && ii<=(102 + iiIncreasingOn102)){
+			
+			
+			
 				exampleSeries2.appendData(new GraphViewData(QueryBuilder.years[ii],QueryBuilder.values[ii]), false, 1000);			
 			Log.e("ii" + Integer.toString(ii),Integer.toString(ii));
 		}

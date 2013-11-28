@@ -102,6 +102,8 @@ public class QueryBuilder {
 	public static ArrayList<String> arrayWithYearsForComparison = new ArrayList<String>();
 	public static ArrayList<String> arrayWithValuesForComparison = new ArrayList<String>();
 	
+	public static String[] arrayWithValuesForComparisonForKeepingTheNullValues = new String[2000];
+	
 	
 	
 	public QueryBuilder(String urlparser) {
@@ -122,6 +124,7 @@ public class QueryBuilder {
 		arrayWithValuesAndYearsForComparison.clear();
 		arrayWithYearsForComparison.clear();
 		arrayWithValuesForComparison.clear();
+		//arrayWithValuesForComparisonForKeepingTheNullValues = new String[2000];
 		
 		//arrayListForComparisonTitle.clear();
 		
@@ -168,7 +171,7 @@ public class QueryBuilder {
 			decimalInfoStr = jsonInfo.getString("decimal");
 			dateInfoStr = jsonInfo.getString("date");
  
-			
+			arrayWithValuesForComparisonForKeepingTheNullValues[arrayNumber] = valueInfoStr;
 			
 			years[arrayNumber] = Integer.parseInt(dateInfoStr);
 			if(valueInfoStr=="null"){values[arrayNumber] = 0.0;
@@ -185,7 +188,7 @@ public class QueryBuilder {
 			arrayWithValuesAndYearsForIndicators.add(valueInfoStr);
 			
 			
-			arrayWithValuesForComparison.add(valueInfoStr);
+			
 		
 			
 			//arrayWithValuesAndYearsForComparison.add(dateInfoStr);
