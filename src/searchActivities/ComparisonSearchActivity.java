@@ -81,9 +81,13 @@ public class ComparisonSearchActivity extends Activity{
 		country1NamesComparison =res.getStringArray(R.array.countryNames);
 		indicatorNamesComparison =res.getStringArray(R.array.indicatorMeaningListView);
 		country2NamesComparison =res.getStringArray(R.array.countryNames);
-		if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
-		comparisonSearchActivityBuildUi(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT);
-		
+		if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
+			setContentView(R.layout.comparison_search_activity);
+		}else{
+			setContentView(R.layout.landscape_comparison_search_activity);
+			createResources();
+			comparisonSearchActivityBuildUi(false);
+		}
 		QueryBuilder.setNameOfClassCallingQueryBuilder(this.getLocalClassName());
 		GraphViewCreator.setNameOfClassCallingGraphViewCreator(this.getLocalClassName());
 		
