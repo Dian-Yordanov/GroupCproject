@@ -83,6 +83,8 @@ public class ComparisonSearchActivity extends Activity{
 		country2NamesComparison =res.getStringArray(R.array.countryNames);
 		if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
 			setContentView(R.layout.comparison_search_activity);
+			createResources();
+			comparisonSearchActivityBuildUi(true);
 		}else{
 			setContentView(R.layout.landscape_comparison_search_activity);
 			createResources();
