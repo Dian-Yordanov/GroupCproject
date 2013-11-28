@@ -10,7 +10,10 @@
         android:id="@+id/countryText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="  Choose a country you want to learn more about" />
+        android:text="  Choose a country for more information"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
 
     <AutoCompleteTextView
         android:id="@+id/selectYourCountryAutoCompleteText"
