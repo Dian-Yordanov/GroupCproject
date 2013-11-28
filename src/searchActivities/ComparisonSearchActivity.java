@@ -200,6 +200,8 @@ public class ComparisonSearchActivity extends Activity{
 	private void comparisonCallQueryBuilderAndGraphView(){
 		
 		QueryBuilder.arrayListForComparisonTitle.clear();
+		QueryBuilder.arrayWithValuesAndYearsForComparison.clear();
+		
         QueryBuilder. jsonParserReader(comparisonQueryConstructor (QueryBuilder.p2CountryName));
         textViewComparisonText1 ="";
         textViewComparisonText1 = QueryBuilder. displayInfo;
@@ -216,6 +218,8 @@ public class ComparisonSearchActivity extends Activity{
         QueryBuilder.arrayListForComparisonTitle.add(QueryBuilder.valueCountry);
         QueryBuilder.arrayListForComparisonTitle.add(QueryBuilder.valueIndicator);
 		
+        QueryBuilder.arrayWithValuesAndYearsForComparison.add(QueryBuilder.valueInfoStr);
+        
 		itemlist1IsSelected = false;
 		itemlist2IsSelected = false;
 		itemlist3IsSelected = false;

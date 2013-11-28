@@ -46,7 +46,7 @@ public class QueryBuilder {
 	public static String valueIndicator;
 	static String idCountry;
 	public static String valueCountry;
-	static String valueInfoStr;
+	public static String valueInfoStr;
 	static String decimalInfoStr;
 	static String dateInfoStr;
 	
@@ -180,7 +180,7 @@ public class QueryBuilder {
 			arrayWithValuesAndYearsForIndicators.add(valueInfoStr);
 			
 			//arrayWithValuesAndYearsForComparison.add(dateInfoStr);
-			arrayWithValuesAndYearsForComparison.add(valueInfoStr);
+			
 			
 			displayInfo += dateInfoStr + ": "
 					+ " " + valueInfoStr + "\n";

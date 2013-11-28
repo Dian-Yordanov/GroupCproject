@@ -15,6 +15,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -34,6 +35,14 @@ public class ComparisonActivity extends Activity {
 	public static LinearLayout graphViewLayout;
 
 	private static TextView informationDisplayLabelComparison;
+	
+	private static View lineView;
+	private static LinearLayout layoutForInflationComparisonActivity;
+     
+	private static TextView label1;
+	private static TextView label2;
+	
+	private static TextView informationDisplayLabel;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +83,11 @@ public class ComparisonActivity extends Activity {
 
 		graphViewLayout.setMinimumHeight((int) (StartingActivity.screenHeight));
 		GraphViewCreator.graphViewCreator();
+		
+		layoutForInflationComparisonActivity =  (LinearLayout) findViewById(R.id.layoutForInflationComparisonActivity);
+		indicatorSetElementsWithInflation();
+		
+		
 		QueryBuilder.thereIsNoInforamtionForTheFollowingYears = "";
 
 	}
@@ -83,5 +97,33 @@ public class ComparisonActivity extends Activity {
 				ComparisonSearchActivity.class);
 		startActivity(i);
 
+	}
+	
+	private void indicatorSetElementsWithInflation(){
+		 for(int i=0; i<QueryBuilder.arrayWithValuesAndYearsForIndicators.size(); i+=2) {
+		        lineView = getLayoutInflater().inflate(R.layout.text_in_table_layout, layoutForInflationComparisonActivity ,false);
+		        layoutForInflationComparisonActivity .addView(lineView);
+		        
+		        	        	
+		        label1 = (TextView)lineView.findViewById(R.id.inflatedTextView1);
+		        label1.setMinimumWidth((StartingActivity.screenWidth/2)-(StartingActivity.screenWidth/6) );
+		        label1.setTypeface(null,Typeface.BOLD);
+		        label1.setText(QueryBuilder.arrayWithValuesAndYearsForIndicators.get(i));
+		        
+		        
+		        label2 = (TextView)lineView.findViewById(R.id.inflatedTextView2);
+		        label2.setMinimumWidth((StartingActivity.screenWidth/2)+(StartingActivity.screenWidth/6) - (StartingActivity.screenWidth/7));
+		        label2.setText(QueryBuilder.arrayWithValuesAndYearsForIndicators.get(i+1));
+		        
+		        if(i%2==0){
+		        	label1.setBackgroundColor(Color.parseColor("#F6F6F6"));
+		        	label2.setBackgroundColor(Color.parseColor("#F6F6F6"));
+		        }
+		        if(i%4==0){
+		        	label1.setBackgroundColor(Color.parseColor("#CCCCCC"));
+		        	label2.setBackgroundColor(Color.parseColor("#CCCCCC"));
+		        }
+		        //arrayWithValuesForCountry
+		        }
 	}
 }

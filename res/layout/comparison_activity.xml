@@ -53,6 +53,19 @@
             </TableRow>
         </TableLayout>
 
+         <HorizontalScrollView
+            android:id="@+id/horizontalScrollViewComparisonActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:id="@+id/layoutForInflationComparisonActivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+            </LinearLayout>
+        </HorizontalScrollView>
+        
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
