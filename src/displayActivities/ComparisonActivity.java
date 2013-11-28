@@ -108,17 +108,17 @@ public class ComparisonActivity extends Activity {
 		        
 		        	        	
 		        label1 = (TextView)lineView.findViewById(R.id.inflatedTextView1);
-		        label1.setMinimumWidth(8);
+		        label1.setMinimumWidth(76);
 		        label1.setTypeface(null,Typeface.BOLD);
 		        label1.setText(QueryBuilder.arrayWithValuesAndYearsForIndicators.get(i));
 		        
 		        
 		        label2 = (TextView)lineView.findViewById(R.id.inflatedTextView2);
-		        label2.setMinimumWidth(80);
+		        label2.setMinimumWidth((StartingActivity.screenWidth/2)-(StartingActivity.screenWidth/6) -32);
 		        label2.setText(QueryBuilder.arrayWithValuesAndYearsForIndicators.get(i));
 		        
 		        label3 = (TextView)lineView.findViewById(R.id.inflatedTextView3);
-		        label3.setMinimumWidth(80);
+		        label3.setMinimumWidth((StartingActivity.screenWidth/2)-(StartingActivity.screenWidth/6) -32);
 		        label3.setTypeface(null,Typeface.BOLD);
 		        label3.setText(QueryBuilder.arrayWithValuesAndYearsForComparison.get(i));
 		        

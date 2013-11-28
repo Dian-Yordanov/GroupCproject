@@ -18,13 +18,13 @@
                 android:id="@+id/inflatedTextView1"
                 android:layout_margin="1dip"
                 android:background="#E8E8E8"
-                android:width="50dip"
+                android:width="99dip"
                 android:text="" />
 
             <TextView
                 android:id="@+id/inflatedTextView2"
                 android:layout_margin="1dip"
-                android:width="50dip"
+                android:width="100dip"
                 android:background="#E8E8E8"
                 android:text="" />
             
@@ -32,7 +32,7 @@
                 android:id="@+id/inflatedTextView3"
                 android:layout_margin="1dip"
                 android:background="#E8E8E8"
-                android:width="50dip"
+                android:width="100dip"
                 android:text="" />
         </TableRow>
     </TableLayout>
