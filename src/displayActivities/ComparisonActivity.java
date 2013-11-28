@@ -98,7 +98,7 @@ public class ComparisonActivity extends Activity {
 	
 	private void indicatorSetElementsWithInflation(){
 		Log.v("", Integer.toString(QueryBuilder.arrayWithValuesAndYearsForIndicators.size()));
-		 for(int i=0; i<QueryBuilder.arrayWithValuesAndYearsForComparison.size(); i+=2) {
+		 for(int i=0; i<QueryBuilder.arrayWithValuesAndYearsForComparison.size(); i++) {
 		        lineView = getLayoutInflater().inflate(R.layout.text_in_table_comparison, layoutForInflationComparisonActivity ,false);
 		        layoutForInflationComparisonActivity .addView(lineView);
 		        
@@ -122,7 +122,9 @@ public class ComparisonActivity extends Activity {
 		        	label2.setBackgroundColor(Color.parseColor("#F6F6F6"));
 		        	label3.setBackgroundColor(Color.parseColor("#F6F6F6"));
 		        }
-		        if(i%4==0){
+		       
+		        
+		        else{
 		        	label1.setBackgroundColor(Color.parseColor("#CCCCCC"));
 		        	label2.setBackgroundColor(Color.parseColor("#CCCCCC"));
 		        	label3.setBackgroundColor(Color.parseColor("#CCCCCC"));
