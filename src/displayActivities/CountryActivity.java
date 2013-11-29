@@ -46,6 +46,9 @@ public class CountryActivity extends Activity {
 
 	private static TextView noFlagTitle;
 	private static TextView noMapTitle;
+	
+	private static Bitmap countryFlag;
+	private static Bitmap countryMap;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -71,13 +74,12 @@ public class CountryActivity extends Activity {
 			countryCode = extras.getString("countryCode");
 			countryName = extras.getString("countryName");
 		}
-		
-		new ImageThread().execute();
-		
+			
+
+		new ImageThread().execute(countryFlag,countryMap);
 
 		countryNameText.setText(QueryBuilder.nameInfo);
-		flagView.setImageBitmap(resizedBitmapFlag);
-		countryView.setImageBitmap(resizedBitmapMap);
+		
 
 		noFlagTitle = (TextView) findViewById(R.id.noFlagTitle);
 		noMapTitle = (TextView) findViewById(R.id.noMapTitle);
@@ -88,6 +90,9 @@ public class CountryActivity extends Activity {
 		noMapTitle.setMinimumWidth((StartingActivity.screenWidth)
 				- (StartingActivity.screenWidth / 7) + 4);
 		noMapTitle.setTypeface(null, Typeface.BOLD);
+		
+	
+
 
 	}
 
@@ -97,16 +102,7 @@ public class CountryActivity extends Activity {
 
 	}
 
-	private static void prepareImagesAndResize() {
-		Bitmap countryFlag = CountryPicturesQueryBuilder
-				.getCountryFlag(countryCode);
-		Bitmap countryMap = CountryPicturesQueryBuilder
-				.getCountryMap(countryName);
-		resizedBitmapFlag = Bitmap.createScaledBitmap(countryFlag,
-				countryFlag.getWidth(), countryFlag.getHeight(), true);
-		resizedBitmapMap = Bitmap.createScaledBitmap(countryMap,
-				countryFlag.getWidth(), countryMap.getHeight(), true);
-	}
+	
 
 	private void setElementsWithInflation() {
 		if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
@@ -175,21 +171,27 @@ public class CountryActivity extends Activity {
 			}
 		}
 	}
-	protected class ImageThread extends AsyncTask<Void, Void, Bitmap>
+	protected class ImageThread extends AsyncTask<Bitmap, Bitmap , Bitmap>
 	{
+		
+		protected void onPostExecute(Bitmap results)
+		{
+			flagView.setImageBitmap(resizedBitmapFlag);
+			countryView.setImageBitmap(resizedBitmapMap);
+		
+		}
 
 		@Override
-		protected Bitmap doInBackground(Void... params) {
-			// TODO Auto-generated method stub
-			//fetch date put into array list
-			//return array list
-			prepareImagesAndResize();
+		protected Bitmap doInBackground(Bitmap... params) {
+			countryFlag = CountryPicturesQueryBuilder
+					.getCountryFlag(countryCode);
+			countryMap = CountryPicturesQueryBuilder
+					.getCountryMap(countryName);
+			resizedBitmapFlag = Bitmap.createScaledBitmap(countryFlag,
+					countryFlag.getWidth(), countryFlag.getHeight(), true);
+			resizedBitmapMap = Bitmap.createScaledBitmap(countryMap,
+					countryFlag.getWidth(), countryMap.getHeight(), true);
 			return null;
-		}
-		
-		protected void onPostExecute(ArrayList<String> results)
-		{
-			//put array list into ListView
 		}
 		
 	}
