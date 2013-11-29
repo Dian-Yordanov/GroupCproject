@@ -1,6 +1,10 @@
 package displayActivities;
 
+import searchActivities.CountrySearchActivity;
+import searchActivities.IndicatorSearchActivity;
+
 import com.groupC.project.*;
+
 import logicClasses.*;
 
 import com.groupC.project.R;
@@ -10,6 +14,7 @@ import displayActivities.CountryActivity.JsonThread;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -42,9 +47,10 @@ public class IndicatorActivity extends Activity {
 	}
 
 	public void uiBuidlerIndicatorActivity() {
-
 		setContentView(R.layout.indicator_activity);
 
+		new JsonThreadIndicatorActivity().execute();
+		
 		noInformationForYears = (TextView) findViewById(R.id.noInformationForYears);
 		noInformationForYears.setText(QueryBuilder.missingInformation());
 
@@ -53,6 +59,7 @@ public class IndicatorActivity extends Activity {
 				- (StartingActivity.screenHeight / 10) + 4);
 		informationDisplayLabel.setTypeface(null, Typeface.BOLD);
 
+		
 		String first = "The displayed information is for ";
 		String next = QueryBuilder.valueCountry;
 		String enddd = " with indicator: " + QueryBuilder.valueIndicator;
@@ -85,50 +92,20 @@ public class IndicatorActivity extends Activity {
 
 		graphLayout.setMinimumHeight((int) (StartingActivity.screenHeight));
 
-		new GraphThread().execute();
+		new GraphThreadIndicatorActivity().execute();
+		
 		
 		layoutForInflationIndicatorActivity = (LinearLayout) findViewById(R.id.layoutForInflationIndicatorActivity);
 
-		indicatorSetElementsWithInflation();
 
+	
+		
 		QueryBuilder.thereIsNoInforamtionForTheFollowingYears = "";
 
 	}
 
-	private void indicatorSetElementsWithInflation() {
-		for (int i = 0; i < QueryBuilder.arrayWithValuesAndYearsForIndicators
-				.size(); i += 2) {
-			lineView = getLayoutInflater().inflate(
-					R.layout.text_in_table_layout,
-					layoutForInflationIndicatorActivity, false);
-			layoutForInflationIndicatorActivity.addView(lineView);
 
-			label1 = (TextView) lineView.findViewById(R.id.inflatedTextView1);
-			label1.setMinimumWidth((StartingActivity.screenHeight / 2)
-					- (StartingActivity.screenHeight / 6));
-			label1.setTypeface(null, Typeface.BOLD);
-			label1.setText(QueryBuilder.arrayWithValuesAndYearsForIndicators
-					.get(i));
-
-			label2 = (TextView) lineView.findViewById(R.id.inflatedTextView2);
-			label2.setMinimumWidth((StartingActivity.screenHeight / 2)
-					+ (StartingActivity.screenHeight / 6)
-					- (StartingActivity.screenHeight / 10));
-			label2.setText(QueryBuilder.arrayWithValuesAndYearsForIndicators
-					.get(i + 1));
-
-			if (i % 2 == 0) {
-				label1.setBackgroundColor(Color.parseColor("#F6F6F6"));
-				label2.setBackgroundColor(Color.parseColor("#F6F6F6"));
-			}
-			if (i % 4 == 0) {
-				label1.setBackgroundColor(Color.parseColor("#CCCCCC"));
-				label2.setBackgroundColor(Color.parseColor("#CCCCCC"));
-			}
-
-		}
-	}
-	protected class GraphThread extends AsyncTask<LinearLayout, Void, LinearLayout> {
+	protected class GraphThreadIndicatorActivity extends AsyncTask<LinearLayout, Void, LinearLayout> {
 		protected void onPostExecute(LinearLayout result) {
 			
 				IndicatorActivity.graphLayout.removeAllViews();
@@ -142,5 +119,51 @@ public class IndicatorActivity extends Activity {
 		}
 
 	}
+	
+	protected class JsonThreadIndicatorActivity extends AsyncTask<String, String, String> {
+		protected void onPostExecute(String results) {
+			indicatorSetElementsWithInflation();
+		}
 
+		@Override
+		protected String doInBackground(String... params) {
+
+			return null;
+		}
+		private void indicatorSetElementsWithInflation() {
+			for (int i = 0; i < QueryBuilder.arrayWithValuesAndYearsForIndicators
+					.size(); i += 2) {
+				lineView = getLayoutInflater().inflate(
+						R.layout.text_in_table_layout,
+						layoutForInflationIndicatorActivity, false);
+				layoutForInflationIndicatorActivity.addView(lineView);
+
+				label1 = (TextView) lineView.findViewById(R.id.inflatedTextView1);
+				label1.setMinimumWidth((StartingActivity.screenHeight / 2)
+						- (StartingActivity.screenHeight / 6));
+				label1.setTypeface(null, Typeface.BOLD);
+				label1.setText(QueryBuilder.arrayWithValuesAndYearsForIndicators
+						.get(i));
+
+				label2 = (TextView) lineView.findViewById(R.id.inflatedTextView2);
+				label2.setMinimumWidth((StartingActivity.screenHeight / 2)
+						+ (StartingActivity.screenHeight / 6)
+						- (StartingActivity.screenHeight / 10));
+				label2.setText(QueryBuilder.arrayWithValuesAndYearsForIndicators
+						.get(i + 1));
+
+				if (i % 2 == 0) {
+					label1.setBackgroundColor(Color.parseColor("#F6F6F6"));
+					label2.setBackgroundColor(Color.parseColor("#F6F6F6"));
+				}
+				if (i % 4 == 0) {
+					label1.setBackgroundColor(Color.parseColor("#CCCCCC"));
+					label2.setBackgroundColor(Color.parseColor("#CCCCCC"));
+				}
+
+			}
+		}
+		
+		}
 }
+
