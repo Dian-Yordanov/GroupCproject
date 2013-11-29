@@ -1,29 +1,18 @@
 package searchActivities;
- 
- 
+
 import com.groupC.project.*;
- 
 import displayActivities.*;
 import logicClasses.*;
-import searchActivities.*;
- 
- 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
-import android.database.Cursor;
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.*;
 import android.widget.AdapterView.OnItemClickListener;
- 
-public class IndicatorSearchActivity extends Activity{
+
+public class IndicatorSearchActivity extends Activity {
 	TextView indicatorText;
 	AutoCompleteTextView selectYourCountryAutoCompleteText;
 	AutoCompleteTextView selectYourIndicatorAutoCompleteText;
@@ -31,110 +20,132 @@ public class IndicatorSearchActivity extends Activity{
 	ListView indicatorListView2;
 	public static String[] countryNamesIndicator;
 	public static String[] indicatorNamesIndicator;
-	
+
 	public static ArrayAdapter<CharSequence> countryAdapter;
 	public static ArrayAdapter<CharSequence> indicatorAdapter;
-	
+
 	private static CustomAutoCompleteTextViewAdapter autoCompleteAdapterCountry;
 	private static CustomAutoCompleteTextViewAdapter autoCompleteAdapterIndicator;
-	
+
 	private Resources res;
 	private String[] countries;
 	private String[] indicators;
-	private String stringUsedForCallingQueryBuilder ="";
-	
+	private String stringUsedForCallingQueryBuilder = "";
+
 	private static boolean itemlist1IsSelected = false;
 	private static boolean itemlist2IsSelected = false;
-	
+
 	private static int selectedItemPositionCountry;
 	public static int selectedItemPositionIndicator;
 	private static String selectedItemTextIndicator;
-	
+
 	private static View selectedViewFromItemList1;
 	private static View selectedViewFromItemList2;
 
-
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		StartingActivity.checkIfThereIsInternet(this.getLocalClassName(), IndicatorSearchActivity.this);
-		
+		StartingActivity.checkIfThereIsInternet(this.getLocalClassName(),
+				IndicatorSearchActivity.this);
+
 		res = getResources();
-		countries= res.getStringArray(R.array.countryListView);
+		countries = res.getStringArray(R.array.countryListView);
 		indicators = res.getStringArray(R.array.indicatorListView);
-		countryNamesIndicator =res.getStringArray(R.array.countryNames);
-		indicatorNamesIndicator =res.getStringArray(R.array.indicatorMeaningListView);
-		
+		countryNamesIndicator = res.getStringArray(R.array.countryNames);
+		indicatorNamesIndicator = res
+				.getStringArray(R.array.indicatorMeaningListView);
+
 		indicatorSearchActivityUiBuilder();
-		QueryBuilder.setNameOfClassCallingQueryBuilder(this.getLocalClassName());
-		
-		GraphViewCreator.setNameOfClassCallingGraphViewCreator(this.getLocalClassName());
-	
+		QueryBuilder
+				.setNameOfClassCallingQueryBuilder(this.getLocalClassName());
+
+		GraphViewCreator.setNameOfClassCallingGraphViewCreator(this
+				.getLocalClassName());
+
 	}
-	private void indicatorSearchActivityUiBuilder(){
-	setContentView(R.layout.indicator_search_activity);
-	indicatorText = (TextView) findViewById(R.id.indicatorText);
-	
-	selectYourCountryAutoCompleteText = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextViewCountry);
-	selectYourIndicatorAutoCompleteText = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextViewIndicator);
-	
-	indicatorListView1 = (ListView) findViewById(R.id.indicatorListView1);
-	indicatorListView2 = (ListView) findViewById(R.id.indicatorListView2);
-	
-	createEditOptions(selectYourCountryAutoCompleteText);
-	createEditOptions(selectYourIndicatorAutoCompleteText);
-	
-	countryAdapter = ArrayAdapter.createFromResource(this,R.array.countryNames, android.R.layout.simple_list_item_1);
-	indicatorListView1.setAdapter(countryAdapter);
-	indicatorListView1.setOnItemClickListener(new OnItemClickListener(){
-		@Override
-		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
-				long arg3) {
-			settingCountryAsSelected(arg0,arg1,arg2,arg3, "countryAdapter");
-		}}
-	);
-	
-	autoCompleteAdapterCountry = new CustomAutoCompleteTextViewAdapter(this, android.R.layout.simple_dropdown_item_1line,countryNamesIndicator);
-    selectYourCountryAutoCompleteText.setAdapter(autoCompleteAdapterCountry);
-    selectYourCountryAutoCompleteText.setThreshold(1);
-    selectYourCountryAutoCompleteText.setDropDownWidth(StartingActivity.screenWidth);
-    selectYourCountryAutoCompleteText.setOnItemClickListener(new OnItemClickListener(){
- 
-		@Override
-		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
-				long arg3) {
-			settingCountryAsSelected(arg0,arg1,arg2,arg3, "autoCompleteAdapterCountry");
-			
-		}});
- 
-	indicatorAdapter = ArrayAdapter.createFromResource(this,R.array.indicatorMeaningListView, android.R.layout.simple_list_item_1);
-	indicatorListView2.setAdapter(indicatorAdapter);
-	indicatorListView2.setOnItemClickListener(new OnItemClickListener(){
-		@Override
-		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
-				long arg3) {
-			settingIndicatorAsSelected(arg0,arg1,arg2,arg3, "indicatorAdapter");
-		}});
-	
-	
-	autoCompleteAdapterIndicator = new CustomAutoCompleteTextViewAdapter(this, android.R.layout.simple_expandable_list_item_1,indicatorNamesIndicator);
-    selectYourIndicatorAutoCompleteText.setAdapter(autoCompleteAdapterIndicator);
-    selectYourIndicatorAutoCompleteText.setThreshold(1);
-    selectYourIndicatorAutoCompleteText.setDropDownWidth(StartingActivity.screenWidth);
-    
-    selectYourIndicatorAutoCompleteText.setOnItemClickListener(new OnItemClickListener(){
- 
-		@Override
-		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
-				long arg3) {
-			settingIndicatorAsSelected(arg0,arg1,arg2,arg3, "autoCompleteAdapterIndicator");
-		}});
-	
-	
+
+	private void indicatorSearchActivityUiBuilder() {
+		setContentView(R.layout.indicator_search_activity);
+		indicatorText = (TextView) findViewById(R.id.indicatorText);
+
+		selectYourCountryAutoCompleteText = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextViewCountry);
+		selectYourIndicatorAutoCompleteText = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextViewIndicator);
+
+		indicatorListView1 = (ListView) findViewById(R.id.indicatorListView1);
+		indicatorListView2 = (ListView) findViewById(R.id.indicatorListView2);
+
+		createEditOptions(selectYourCountryAutoCompleteText);
+		createEditOptions(selectYourIndicatorAutoCompleteText);
+
+		countryAdapter = ArrayAdapter.createFromResource(this,
+				R.array.countryNames, android.R.layout.simple_list_item_1);
+		indicatorListView1.setAdapter(countryAdapter);
+		indicatorListView1.setOnItemClickListener(new OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				settingCountryAsSelected(arg0, arg1, arg2, arg3,
+						"countryAdapter");
+			}
+		});
+
+		autoCompleteAdapterCountry = new CustomAutoCompleteTextViewAdapter(
+				this, android.R.layout.simple_dropdown_item_1line,
+				countryNamesIndicator);
+		selectYourCountryAutoCompleteText
+				.setAdapter(autoCompleteAdapterCountry);
+		selectYourCountryAutoCompleteText.setThreshold(1);
+		selectYourCountryAutoCompleteText
+				.setDropDownWidth(StartingActivity.screenWidth);
+		selectYourCountryAutoCompleteText
+				.setOnItemClickListener(new OnItemClickListener() {
+
+					@Override
+					public void onItemClick(AdapterView<?> arg0, View arg1,
+							int arg2, long arg3) {
+						settingCountryAsSelected(arg0, arg1, arg2, arg3,
+								"autoCompleteAdapterCountry");
+
+					}
+				});
+
+		indicatorAdapter = ArrayAdapter.createFromResource(this,
+				R.array.indicatorMeaningListView,
+				android.R.layout.simple_list_item_1);
+		indicatorListView2.setAdapter(indicatorAdapter);
+		indicatorListView2.setOnItemClickListener(new OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				settingIndicatorAsSelected(arg0, arg1, arg2, arg3,
+						"indicatorAdapter");
+			}
+		});
+
+		autoCompleteAdapterIndicator = new CustomAutoCompleteTextViewAdapter(
+				this, android.R.layout.simple_expandable_list_item_1,
+				indicatorNamesIndicator);
+		selectYourIndicatorAutoCompleteText
+				.setAdapter(autoCompleteAdapterIndicator);
+		selectYourIndicatorAutoCompleteText.setThreshold(1);
+		selectYourIndicatorAutoCompleteText
+				.setDropDownWidth(StartingActivity.screenWidth);
+
+		selectYourIndicatorAutoCompleteText
+				.setOnItemClickListener(new OnItemClickListener() {
+
+					@Override
+					public void onItemClick(AdapterView<?> arg0, View arg1,
+							int arg2, long arg3) {
+						settingIndicatorAsSelected(arg0, arg1, arg2, arg3,
+								"autoCompleteAdapterIndicator");
+					}
+				});
+
 	}
-	
-	private void createEditOptions(final AutoCompleteTextView autoCompleteTextViewToGetOptions) {
+
+	private void createEditOptions(
+			final AutoCompleteTextView autoCompleteTextViewToGetOptions) {
 		autoCompleteTextViewToGetOptions
 				.setOnFocusChangeListener(new View.OnFocusChangeListener() {
 					@Override
@@ -146,71 +157,80 @@ public class IndicatorSearchActivity extends Activity{
 					}
 				});
 	}
-	private void callQueryBuilderAndGraphView(){
-		         
-	         
-	      QueryBuilder. jsonParserReader(countryAndIndicatorQueryConstructor ());
-	    //  textView1 .setText(QueryBuilder. displayInfo);	      
-	   	      	
+
+	private void callQueryBuilderAndGraphView() {
+
+		QueryBuilder.jsonParserReader(countryAndIndicatorQueryConstructor());
+
 		itemlist1IsSelected = false;
 		itemlist2IsSelected = false;
-		
+
 		gotoInidcatorActivity();
 	}
-	public static String countryAndIndicatorQueryConstructor() {	
-		return (QueryBuilder.p1ApiAddress + QueryBuilder.p2CountryName + QueryBuilder.p3Indicators + QueryBuilder.p4IndicatorName
-				+ QueryBuilder.p5BeginningOfIdentifiers + QueryBuilder.p6ItemsPerPage + QueryBuilder.p7Date + QueryBuilder.p8Format);
+
+	public static String countryAndIndicatorQueryConstructor() {
+		return (QueryBuilder.p1ApiAddress + QueryBuilder.p2CountryName
+				+ QueryBuilder.p3Indicators + QueryBuilder.p4IndicatorName
+				+ QueryBuilder.p5BeginningOfIdentifiers
+				+ QueryBuilder.p6ItemsPerPage + QueryBuilder.p7Date + QueryBuilder.p8Format);
 	}
-	public void gotoInidcatorActivity(){
-		Intent i = new Intent(IndicatorSearchActivity.this, IndicatorActivity.class);
+
+	public void gotoInidcatorActivity() {
+		Intent i = new Intent(IndicatorSearchActivity.this,
+				IndicatorActivity.class);
 		startActivity(i);
 	}
-	private void logicClassesCall(){
-		while(itemlist1IsSelected && itemlist2IsSelected ){
-		callQueryBuilderAndGraphView();
-		indicatorListView1.setBackgroundColor(0xcbcbcb);
-		indicatorListView1.setEnabled(true);
-		selectedViewFromItemList1.setBackgroundColor(0xcbcbcb);
-		indicatorListView2.setBackgroundColor(0xcbcbcb);
-		indicatorListView2.setEnabled(true);
-		selectedViewFromItemList2.setBackgroundColor(0xcbcbcb);
-		selectYourCountryAutoCompleteText.setEnabled(true);
-		selectYourCountryAutoCompleteText.setBackgroundColor(0xcbcbcb);
-		selectYourIndicatorAutoCompleteText.setEnabled(true);
-		selectYourIndicatorAutoCompleteText.setBackgroundColor(0xcbcbcb);
-		selectYourIndicatorAutoCompleteText.setText("");
-		selectYourIndicatorAutoCompleteText.setHint("Select another indicator");
-		selectYourCountryAutoCompleteText.setText("");
-		selectYourCountryAutoCompleteText.setHint("Select another country");
+
+	private void logicClassesCall() {
+		while (itemlist1IsSelected && itemlist2IsSelected) {
+			callQueryBuilderAndGraphView();
+			indicatorListView1.setBackgroundColor(0xcbcbcb);
+			indicatorListView1.setEnabled(true);
+			selectedViewFromItemList1.setBackgroundColor(0xcbcbcb);
+			indicatorListView2.setBackgroundColor(0xcbcbcb);
+			indicatorListView2.setEnabled(true);
+			selectedViewFromItemList2.setBackgroundColor(0xcbcbcb);
+			selectYourCountryAutoCompleteText.setEnabled(true);
+			selectYourCountryAutoCompleteText.setBackgroundColor(0xcbcbcb);
+			selectYourIndicatorAutoCompleteText.setEnabled(true);
+			selectYourIndicatorAutoCompleteText.setBackgroundColor(0xcbcbcb);
+			selectYourIndicatorAutoCompleteText.setText("");
+			selectYourIndicatorAutoCompleteText
+					.setHint("Select another indicator");
+			selectYourCountryAutoCompleteText.setText("");
+			selectYourCountryAutoCompleteText.setHint("Select another country");
 		}
 	}
-	private void settingCountryAsSelected(AdapterView<?> arg0, View arg1, int arg2,
-			long arg3, String nameOfAdapterCallingThisMethodCountry){
+
+	private void settingCountryAsSelected(AdapterView<?> arg0, View arg1,
+			int arg2, long arg3, String nameOfAdapterCallingThisMethodCountry) {
 		selectedViewFromItemList1 = arg1;
-		selectedViewFromItemList1 .setSelected(true);
+		selectedViewFromItemList1.setSelected(true);
 		indicatorListView1.setBackgroundColor(0xAFAFAFAA);
 		indicatorListView1.setEnabled(false);
 		selectedViewFromItemList1.setBackgroundColor(0x80FFFFFF);
 		selectYourCountryAutoCompleteText.setEnabled(false);
 		selectYourCountryAutoCompleteText.setTextColor(Color.BLACK);
 		selectYourCountryAutoCompleteText.setBackgroundColor(0xAFAFAFAA);
-		
-		if(nameOfAdapterCallingThisMethodCountry == "countryAdapter"){
-		selectedItemPositionCountry = arg2;
-		stringUsedForCallingQueryBuilder = countries[arg2];
-		QueryBuilder. p2CountryName = stringUsedForCallingQueryBuilder;	 
+
+		if (nameOfAdapterCallingThisMethodCountry == "countryAdapter") {
+			selectedItemPositionCountry = arg2;
+			stringUsedForCallingQueryBuilder = countries[arg2];
+			QueryBuilder.p2CountryName = stringUsedForCallingQueryBuilder;
+		} else if (nameOfAdapterCallingThisMethodCountry == "autoCompleteAdapterCountry") {
+			selectedItemPositionCountry = CountrySearchActivity.getArrayIndex(
+					countryNamesIndicator, arg0.getItemAtPosition(arg2)
+							.toString());
+			stringUsedForCallingQueryBuilder = countries[selectedItemPositionCountry];
+			QueryBuilder.p2CountryName = stringUsedForCallingQueryBuilder;
 		}
-		else if(nameOfAdapterCallingThisMethodCountry == "autoCompleteAdapterCountry"){
-		selectedItemPositionCountry = CountrySearchActivity.getArrayIndex(countryNamesIndicator, arg0.getItemAtPosition(arg2).toString());
-		stringUsedForCallingQueryBuilder = countries[selectedItemPositionCountry];
-		QueryBuilder. p2CountryName = stringUsedForCallingQueryBuilder;	 
-		}
-		
+
 		itemlist1IsSelected = true;
 		logicClassesCall();
 	}
-	private void settingIndicatorAsSelected(AdapterView<?> arg0, View arg1, int arg2,
-			long arg3, String nameOfAdapterCallingThisMethodIndicator){
+
+	private void settingIndicatorAsSelected(AdapterView<?> arg0, View arg1,
+			int arg2, long arg3, String nameOfAdapterCallingThisMethodIndicator) {
 		selectedViewFromItemList2 = arg1;
 		selectedViewFromItemList2.setSelected(true);
 		indicatorListView2.setBackgroundColor(0xAFAFAFAA);
@@ -219,22 +239,23 @@ public class IndicatorSearchActivity extends Activity{
 		selectYourIndicatorAutoCompleteText.setEnabled(false);
 		selectYourIndicatorAutoCompleteText.setTextColor(Color.BLACK);
 		selectYourIndicatorAutoCompleteText.setBackgroundColor(0xAFAFAFAA);
-		
-		if(nameOfAdapterCallingThisMethodIndicator == "indicatorAdapter"){
-		selectedItemTextIndicator = indicators[arg2];
-		selectedItemPositionIndicator = arg2;
-		QueryBuilder. p4IndicatorName = selectedItemTextIndicator;
+
+		if (nameOfAdapterCallingThisMethodIndicator == "indicatorAdapter") {
+			selectedItemTextIndicator = indicators[arg2];
+			selectedItemPositionIndicator = arg2;
+			QueryBuilder.p4IndicatorName = selectedItemTextIndicator;
+		} else if (nameOfAdapterCallingThisMethodIndicator == "autoCompleteAdapterIndicator") {
+			selectedItemTextIndicator = indicators[CountrySearchActivity
+					.getArrayIndex(indicatorNamesIndicator, arg0
+							.getItemAtPosition(arg2).toString())];
+			selectedItemPositionIndicator = CountrySearchActivity
+					.getArrayIndex(indicatorNamesIndicator, arg0
+							.getItemAtPosition(arg2).toString());
+			QueryBuilder.p4IndicatorName = selectedItemTextIndicator;
 		}
-		else if(nameOfAdapterCallingThisMethodIndicator == "autoCompleteAdapterIndicator"){
-		selectedItemTextIndicator = indicators[CountrySearchActivity.getArrayIndex(indicatorNamesIndicator, arg0.getItemAtPosition(arg2).toString())];
-		selectedItemPositionIndicator = CountrySearchActivity.getArrayIndex(indicatorNamesIndicator, arg0.getItemAtPosition(arg2).toString());
-		QueryBuilder. p4IndicatorName = selectedItemTextIndicator;
-		}
-		
+
 		itemlist2IsSelected = true;
 		logicClassesCall();
 	}
-	
-	
- 
+
 }

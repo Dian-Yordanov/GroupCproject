@@ -1,21 +1,14 @@
 package searchActivities;
 
 import com.groupC.project.*;
-
 import displayActivities.*;
 import logicClasses.*;
-import searchActivities.*;
-
-import com.groupC.project.R.layout;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Color;
-import android.graphics.Bitmap.Config;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.*;
 import android.widget.AdapterView.OnItemClickListener;
