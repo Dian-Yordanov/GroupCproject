@@ -70,7 +70,6 @@ public class GraphViewCreator {
 				exampleSeries1.appendData(new GraphViewData(
 						QueryBuilder.years[ii], QueryBuilder.values[ii]),
 						false, 1000);
-				Log.v("ii2" + Integer.toString(ii), Integer.toString(ii));
 			}
 
 			QueryBuilder.arrayWithValuesForComparison
@@ -83,7 +82,6 @@ public class GraphViewCreator {
 					exampleSeries1.appendData(new GraphViewData(
 							QueryBuilder.years[ii], QueryBuilder.values[ii]),
 							false, 1000);
-					Log.d("ii" + Integer.toString(ii), Integer.toString(ii));
 				}
 
 				if (ii >= (51 + iiIncreasingOn102)
@@ -92,7 +90,6 @@ public class GraphViewCreator {
 					exampleSeries2.appendData(new GraphViewData(
 							QueryBuilder.years[ii], QueryBuilder.values[ii]),
 							false, 1000);
-					Log.e("ii" + Integer.toString(ii), Integer.toString(ii));
 				}
 
 				if (ii % 102 == 0 && ii != 0) {

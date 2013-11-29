@@ -99,7 +99,6 @@ public class StartingActivity extends Activity {
 			final Context activityContext) {
 		if (noInternetChecker.isInternetAvailable(activityContext)) {
 
-			Log.v("there is internet", "how nice");
 			hasInternet = true;
 
 		} else {

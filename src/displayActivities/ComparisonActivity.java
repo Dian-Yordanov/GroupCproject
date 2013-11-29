@@ -90,11 +90,9 @@ public class ComparisonActivity extends Activity {
 		informationDisplayLabelComparison.setBackgroundColor(Color
 				.parseColor("#F6F6F6"));
 
-		Log.v("", Double.toString(StartingActivity.screenWidth));
 		if (StartingActivity.screenWidth >= 1080.0) {
 			graphViewLayout
 					.setMinimumWidth((int) (2.0 * StartingActivity.screenWidth));
-			Log.v("done", "done");
 		} else if (StartingActivity.screenWidth >= 720.0) {
 			graphViewLayout
 					.setMinimumWidth((int) (1.5 * StartingActivity.screenWidth) + 150);
@@ -118,9 +116,6 @@ public class ComparisonActivity extends Activity {
 	}
 
 	private void indicatorSetElementsWithInflation() {
-		Log.v("", Integer
-				.toString(QueryBuilder.arrayWithValuesAndYearsForIndicators
-						.size()));
 		for (int i = 0; i < QueryBuilder.arrayWithValuesAndYearsForComparison
 				.size(); i++) {
 			lineView = getLayoutInflater().inflate(

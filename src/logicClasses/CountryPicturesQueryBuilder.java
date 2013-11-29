@@ -24,14 +24,10 @@ public class CountryPicturesQueryBuilder {
 		if (countryCode.length() < 3) {
 			Bitmap flag = ImageDownloader.loadBitmap(urlBuilderFlagsBeginning
 					+ countryCode.toLowerCase() + urlBuilderFlagsEnd);
-			Log.v("", urlBuilderFlagsBeginning + countryCode
-					+ urlBuilderFlagsEnd);
 			return flag;
 		}
 		Bitmap flag = ImageDownloader.loadBitmap(urlBuilderFlagsBeginning2
 				+ countryCode + urlBuilderFlagsEnd2);
-		Log.v("", urlBuilderFlagsBeginning2 + countryCode.toLowerCase()
-				+ urlBuilderFlagsEnd2);
 		return flag;
 	}
 

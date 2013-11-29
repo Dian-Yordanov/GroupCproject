@@ -30,7 +30,6 @@ public class noInternetError extends Activity {
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
 
-			Log.v("the user tried to return", "returning...");
 			Intent i = new Intent(noInternetError.this, StartingActivity.class);
 			startActivity(i);
 			return true;
