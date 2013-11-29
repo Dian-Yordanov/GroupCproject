@@ -8,6 +8,7 @@ import com.groupC.project.R;
 import com.groupC.project.StartingActivity;
 
 import android.app.Activity;
+import android.app.IntentService;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
@@ -60,8 +61,9 @@ public class CountryActivity extends Activity {
 	public void uiBuilderCountryActivity() {
 		setContentView(R.layout.country_activity);
 
-		new JsonThread().execute();
-
+		  Intent intent =new Intent(this, intentServiceClassForCountryActivity.class);
+		  startService(intent);
+		   
 		countryNameText = (TextView) findViewById(R.id.countryNameTextView);
 
 		layoutForInflation = (LinearLayout) findViewById(R.id.layoutForInflation);
@@ -115,93 +117,95 @@ public class CountryActivity extends Activity {
 		}
 	}
 
-	protected class JsonThread extends AsyncTask<String, String, String> {
-		protected void onPostExecute(String results) {
-			countryNameText.setText(QueryBuilder.nameInfo);
-			setElementsWithInflation();
+
+	public class intentServiceClassForCountryActivity extends IntentService{
+		 
+
+		public intentServiceClassForCountryActivity() {
+		   super("intentServiceClassForCountryActivity");
 		}
+
 
 		@Override
-		protected String doInBackground(String... params) {
-			QueryBuilder.jsonParserReader(CountrySearchActivity
-					.countryQueryConstructor());
-			return null;
-		}
+		protected void onHandleIntent(Intent intent) {
+			// TODO Auto-generated method stub
 
-		private void setElementsWithInflation() {
-			if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-				{
+				QueryBuilder.jsonParserReader(CountrySearchActivity
+						.countryQueryConstructor());
+				countryNameText.setText(QueryBuilder.nameInfo);		
+
+				if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+					{
+						for (int i = 0; i < QueryBuilder.arrayWithValuesForCountry
+								.size(); i++) {
+							lineView = getLayoutInflater().inflate(
+									R.layout.text_in_table_layout,
+									layoutForInflation, false);
+							layoutForInflation.addView(lineView);
+
+							label1 = (TextView) lineView
+									.findViewById(R.id.inflatedTextView1);
+							label1.setMinimumWidth((StartingActivity.screenHeight / 2)
+									- (StartingActivity.screenHeight / 3));
+							label1.setTypeface(null, Typeface.BOLD);
+							label1.setText(QueryBuilder.arrayWithDescrptionsForCountry
+									.get(i));
+
+							label2 = (TextView) lineView
+									.findViewById(R.id.inflatedTextView2);
+							label2.setMinimumWidth((StartingActivity.screenHeight / 2)
+									+ (StartingActivity.screenHeight / 3)
+									- (StartingActivity.screenHeight / 8));
+							label2.setText(QueryBuilder.arrayWithValuesForCountry
+									.get(i));
+
+							if (i % 2 == 0) {
+								label1.setBackgroundColor(Color
+										.parseColor("#F6F6F6"));
+								label2.setBackgroundColor(Color
+										.parseColor("#F6F6F6"));
+							} else {
+								label1.setBackgroundColor(Color
+										.parseColor("#CCCCCC"));
+								label2.setBackgroundColor(Color
+										.parseColor("#CCCCCC"));
+							}
+						}
+					}
+				} else {
 					for (int i = 0; i < QueryBuilder.arrayWithValuesForCountry
 							.size(); i++) {
 						lineView = getLayoutInflater().inflate(
-								R.layout.text_in_table_layout,
-								layoutForInflation, false);
+								R.layout.text_in_table_layout, layoutForInflation,
+								false);
 						layoutForInflation.addView(lineView);
 
 						label1 = (TextView) lineView
 								.findViewById(R.id.inflatedTextView1);
-						label1.setMinimumWidth((StartingActivity.screenHeight / 2)
-								- (StartingActivity.screenHeight / 3));
+						label1.setMinimumWidth((StartingActivity.screenWidth / 2)
+								- (StartingActivity.screenWidth / 6));
 						label1.setTypeface(null, Typeface.BOLD);
 						label1.setText(QueryBuilder.arrayWithDescrptionsForCountry
 								.get(i));
 
 						label2 = (TextView) lineView
 								.findViewById(R.id.inflatedTextView2);
-						label2.setMinimumWidth((StartingActivity.screenHeight / 2)
-								+ (StartingActivity.screenHeight / 3)
-								- (StartingActivity.screenHeight / 8));
+						label2.setMinimumWidth((StartingActivity.screenWidth / 2)
+								+ (StartingActivity.screenWidth / 6)
+								- (StartingActivity.screenWidth / 7));
 						label2.setText(QueryBuilder.arrayWithValuesForCountry
 								.get(i));
 
 						if (i % 2 == 0) {
-							label1.setBackgroundColor(Color
-									.parseColor("#F6F6F6"));
-							label2.setBackgroundColor(Color
-									.parseColor("#F6F6F6"));
+							label1.setBackgroundColor(Color.parseColor("#F6F6F6"));
+							label2.setBackgroundColor(Color.parseColor("#F6F6F6"));
 						} else {
-							label1.setBackgroundColor(Color
-									.parseColor("#CCCCCC"));
-							label2.setBackgroundColor(Color
-									.parseColor("#CCCCCC"));
+							label1.setBackgroundColor(Color.parseColor("#CCCCCC"));
+							label2.setBackgroundColor(Color.parseColor("#CCCCCC"));
 						}
 					}
 				}
-			} else {
-				for (int i = 0; i < QueryBuilder.arrayWithValuesForCountry
-						.size(); i++) {
-					lineView = getLayoutInflater().inflate(
-							R.layout.text_in_table_layout, layoutForInflation,
-							false);
-					layoutForInflation.addView(lineView);
-
-					label1 = (TextView) lineView
-							.findViewById(R.id.inflatedTextView1);
-					label1.setMinimumWidth((StartingActivity.screenWidth / 2)
-							- (StartingActivity.screenWidth / 6));
-					label1.setTypeface(null, Typeface.BOLD);
-					label1.setText(QueryBuilder.arrayWithDescrptionsForCountry
-							.get(i));
-
-					label2 = (TextView) lineView
-							.findViewById(R.id.inflatedTextView2);
-					label2.setMinimumWidth((StartingActivity.screenWidth / 2)
-							+ (StartingActivity.screenWidth / 6)
-							- (StartingActivity.screenWidth / 7));
-					label2.setText(QueryBuilder.arrayWithValuesForCountry
-							.get(i));
-
-					if (i % 2 == 0) {
-						label1.setBackgroundColor(Color.parseColor("#F6F6F6"));
-						label2.setBackgroundColor(Color.parseColor("#F6F6F6"));
-					} else {
-						label1.setBackgroundColor(Color.parseColor("#CCCCCC"));
-						label2.setBackgroundColor(Color.parseColor("#CCCCCC"));
-					}
-				}
 			}
+			
 		}
-
 	}
-
-}
