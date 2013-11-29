@@ -13,7 +13,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 
 import android.os.StrictMode;
 import android.util.Log;
-
+// this json parser is taken from the 9th lab pack from keats 
 public class JsonParser {
 	public JsonParser() {
 

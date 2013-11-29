@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
-
+//the main logic for this class is taken from http://stackoverflow.com/questions/15866035/android-show-a-message-if-no-internet-connection-and-continue-to-check
 public class noInternetChecker {
 
 	private static final String TAG = noInternetChecker.class.getSimpleName();

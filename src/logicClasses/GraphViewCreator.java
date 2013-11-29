@@ -8,7 +8,7 @@ import com.jjoe64.graphview.GraphView.GraphViewData;
 import com.jjoe64.graphview.GraphViewSeries;
 import com.jjoe64.graphview.GraphViewSeries.GraphViewSeriesStyle;
 import com.jjoe64.graphview.LineGraphView;
-
+// we used http://www.jjoe64.com/p/graphview-library.html GraphView library in order to present the evolution of data through the years
 public class GraphViewCreator {
 
 	public static GraphViewSeries exampleSeries1;

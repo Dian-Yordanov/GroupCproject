@@ -20,7 +20,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
-
+// i used http://stackoverflow.com/questions/3118691/android-make-an-image-at-a-url-equal-to-imageviews-image in 
+//order to understand how should i resize one of the pictures width to the other ones 
 public class CountryActivity extends Activity {
 
 	public static TextView countryNameText;

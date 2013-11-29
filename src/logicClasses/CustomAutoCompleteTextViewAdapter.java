@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+//we used http://stackoverflow.com/questions/13037643/how-to-force-autocompletetextview-drop-down-elements-to-wrap-text-in-three-or-mo 
+//in order to understand how to construct a custom adaptor for autocompletetext
 
 public class CustomAutoCompleteTextViewAdapter extends ArrayAdapter<String> {
 	public View view;
