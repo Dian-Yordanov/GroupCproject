@@ -104,7 +104,7 @@ public class CountrySearchActivity extends Activity {
 				});
 	}
 
-	public String countryQueryConstructor() {
+	public static String countryQueryConstructor() {
 		return (QueryBuilder.p1ApiAddress + QueryBuilder.p2CountryName
 				+ QueryBuilder.p5BeginningOfIdentifiers
 				+ QueryBuilder.p6ItemsPerPage + QueryBuilder.p7Date + QueryBuilder.p8Format);
@@ -346,7 +346,7 @@ public class CountrySearchActivity extends Activity {
 
 	private void logicClassesCall(int countryIndex) {
 		QueryBuilder.p2CountryName = stringUsedForCallingQueryBuilder;
-		QueryBuilder.jsonParserReader(countryQueryConstructor());
+		
 
 		selectYourCountryAutoCompleteText.setText("");
 		selectYourCountryAutoCompleteText.setHint("");

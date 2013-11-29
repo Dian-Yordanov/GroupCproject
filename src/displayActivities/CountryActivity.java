@@ -58,12 +58,14 @@ public class CountryActivity extends Activity {
 
 	public void uiBuilderCountryActivity() {
 		setContentView(R.layout.country_activity);
-
+		
+		new JsonThread().execute();
+		
 		countryNameText = (TextView) findViewById(R.id.countryNameTextView);
 
 		layoutForInflation = (LinearLayout) findViewById(R.id.layoutForInflation);
 
-		setElementsWithInflation();
+		//setElementsWithInflation();
 
 		flagView = (ImageView) findViewById(R.id.imageView1);
 		countryView = (ImageView) findViewById(R.id.imageView2);
@@ -72,12 +74,11 @@ public class CountryActivity extends Activity {
 		if (extras != null) {
 			countryCode = extras.getString("countryCode");
 			countryName = extras.getString("countryName");
-		}
-			
+		}			
 
 		new ImageThread().execute(countryFlag,countryMap);
 
-		countryNameText.setText(QueryBuilder.nameInfo);
+	
 		
 
 		noFlagTitle = (TextView) findViewById(R.id.noFlagTitle);
@@ -103,73 +104,7 @@ public class CountryActivity extends Activity {
 
 	
 
-	private void setElementsWithInflation() {
-		if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-			{
-				for (int i = 0; i < QueryBuilder.arrayWithValuesForCountry
-						.size(); i++) {
-					lineView = getLayoutInflater().inflate(
-							R.layout.text_in_table_layout, layoutForInflation,
-							false);
-					layoutForInflation.addView(lineView);
 
-					label1 = (TextView) lineView
-							.findViewById(R.id.inflatedTextView1);
-					label1.setMinimumWidth((StartingActivity.screenHeight / 2)
-							- (StartingActivity.screenHeight / 3));
-					label1.setTypeface(null, Typeface.BOLD);
-					label1.setText(QueryBuilder.arrayWithDescrptionsForCountry
-							.get(i));
-
-					label2 = (TextView) lineView
-							.findViewById(R.id.inflatedTextView2);
-					label2.setMinimumWidth((StartingActivity.screenHeight / 2)
-							+ (StartingActivity.screenHeight / 3)
-							- (StartingActivity.screenHeight / 8));
-					label2.setText(QueryBuilder.arrayWithValuesForCountry
-							.get(i));
-
-					if (i % 2 == 0) {
-						label1.setBackgroundColor(Color.parseColor("#F6F6F6"));
-						label2.setBackgroundColor(Color.parseColor("#F6F6F6"));
-					} else {
-						label1.setBackgroundColor(Color.parseColor("#CCCCCC"));
-						label2.setBackgroundColor(Color.parseColor("#CCCCCC"));
-					}
-				}
-			}
-		} else {
-			for (int i = 0; i < QueryBuilder.arrayWithValuesForCountry.size(); i++) {
-				lineView = getLayoutInflater().inflate(
-						R.layout.text_in_table_layout, layoutForInflation,
-						false);
-				layoutForInflation.addView(lineView);
-
-				label1 = (TextView) lineView
-						.findViewById(R.id.inflatedTextView1);
-				label1.setMinimumWidth((StartingActivity.screenWidth / 2)
-						- (StartingActivity.screenWidth / 6));
-				label1.setTypeface(null, Typeface.BOLD);
-				label1.setText(QueryBuilder.arrayWithDescrptionsForCountry
-						.get(i));
-
-				label2 = (TextView) lineView
-						.findViewById(R.id.inflatedTextView2);
-				label2.setMinimumWidth((StartingActivity.screenWidth / 2)
-						+ (StartingActivity.screenWidth / 6)
-						- (StartingActivity.screenWidth / 7));
-				label2.setText(QueryBuilder.arrayWithValuesForCountry.get(i));
-
-				if (i % 2 == 0) {
-					label1.setBackgroundColor(Color.parseColor("#F6F6F6"));
-					label2.setBackgroundColor(Color.parseColor("#F6F6F6"));
-				} else {
-					label1.setBackgroundColor(Color.parseColor("#CCCCCC"));
-					label2.setBackgroundColor(Color.parseColor("#CCCCCC"));
-				}
-			}
-		}
-	}
 	protected class ImageThread extends AsyncTask<Bitmap, Bitmap , Bitmap>
 	{
 		protected void onPostExecute(Bitmap results)
@@ -190,7 +125,89 @@ public class CountryActivity extends Activity {
 			resizedBitmapMap = Bitmap.createScaledBitmap(countryMap,
 					countryFlag.getWidth(), countryMap.getHeight(), true);
 			return null;
+		}	
+	}
+	protected class JsonThread extends AsyncTask< String,  String , String>
+	{
+		protected void onPostExecute(String results)
+		{
+			countryNameText.setText(QueryBuilder.nameInfo);
+			setElementsWithInflation();
+		}
+		@Override
+		protected String doInBackground(String... params) {
+			// TODO Auto-generated method stub
+			QueryBuilder.jsonParserReader(CountrySearchActivity.countryQueryConstructor());
+			return null;
+		}
+		private void setElementsWithInflation() {
+			if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+				{
+					for (int i = 0; i < QueryBuilder.arrayWithValuesForCountry
+							.size(); i++) {
+						lineView = getLayoutInflater().inflate(
+								R.layout.text_in_table_layout, layoutForInflation,
+								false);
+						layoutForInflation.addView(lineView);
+
+						label1 = (TextView) lineView
+								.findViewById(R.id.inflatedTextView1);
+						label1.setMinimumWidth((StartingActivity.screenHeight / 2)
+								- (StartingActivity.screenHeight / 3));
+						label1.setTypeface(null, Typeface.BOLD);
+						label1.setText(QueryBuilder.arrayWithDescrptionsForCountry
+								.get(i));
+
+						label2 = (TextView) lineView
+								.findViewById(R.id.inflatedTextView2);
+						label2.setMinimumWidth((StartingActivity.screenHeight / 2)
+								+ (StartingActivity.screenHeight / 3)
+								- (StartingActivity.screenHeight / 8));
+						label2.setText(QueryBuilder.arrayWithValuesForCountry
+								.get(i));
+
+						if (i % 2 == 0) {
+							label1.setBackgroundColor(Color.parseColor("#F6F6F6"));
+							label2.setBackgroundColor(Color.parseColor("#F6F6F6"));
+						} else {
+							label1.setBackgroundColor(Color.parseColor("#CCCCCC"));
+							label2.setBackgroundColor(Color.parseColor("#CCCCCC"));
+						}
+					}
+				}
+			} else {
+				for (int i = 0; i < QueryBuilder.arrayWithValuesForCountry.size(); i++) {
+					lineView = getLayoutInflater().inflate(
+							R.layout.text_in_table_layout, layoutForInflation,
+							false);
+					layoutForInflation.addView(lineView);
+
+					label1 = (TextView) lineView
+							.findViewById(R.id.inflatedTextView1);
+					label1.setMinimumWidth((StartingActivity.screenWidth / 2)
+							- (StartingActivity.screenWidth / 6));
+					label1.setTypeface(null, Typeface.BOLD);
+					label1.setText(QueryBuilder.arrayWithDescrptionsForCountry
+							.get(i));
+
+					label2 = (TextView) lineView
+							.findViewById(R.id.inflatedTextView2);
+					label2.setMinimumWidth((StartingActivity.screenWidth / 2)
+							+ (StartingActivity.screenWidth / 6)
+							- (StartingActivity.screenWidth / 7));
+					label2.setText(QueryBuilder.arrayWithValuesForCountry.get(i));
+
+					if (i % 2 == 0) {
+						label1.setBackgroundColor(Color.parseColor("#F6F6F6"));
+						label2.setBackgroundColor(Color.parseColor("#F6F6F6"));
+					} else {
+						label1.setBackgroundColor(Color.parseColor("#CCCCCC"));
+						label2.setBackgroundColor(Color.parseColor("#CCCCCC"));
+					}
+				}
+			}
 		}
 		
 	}
+	
 }
