@@ -1,5 +1,7 @@
 package displayActivities;
 
+import java.util.ArrayList;
+
 import logicClasses.*;
 import searchActivities.*;
 
@@ -13,6 +15,7 @@ import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -68,7 +71,9 @@ public class CountryActivity extends Activity {
 			countryCode = extras.getString("countryCode");
 			countryName = extras.getString("countryName");
 		}
-		prepareImagesAndResize();
+		
+		new ImageThread().execute();
+		
 
 		countryNameText.setText(QueryBuilder.nameInfo);
 		flagView.setImageBitmap(resizedBitmapFlag);
@@ -136,7 +141,6 @@ public class CountryActivity extends Activity {
 						label1.setBackgroundColor(Color.parseColor("#CCCCCC"));
 						label2.setBackgroundColor(Color.parseColor("#CCCCCC"));
 					}
-					// arrayWithValuesForCountry
 				}
 			}
 		} else {
@@ -170,5 +174,23 @@ public class CountryActivity extends Activity {
 				}
 			}
 		}
+	}
+	protected class ImageThread extends AsyncTask<Void, Void, Bitmap>
+	{
+
+		@Override
+		protected Bitmap doInBackground(Void... params) {
+			// TODO Auto-generated method stub
+			//fetch date put into array list
+			//return array list
+			prepareImagesAndResize();
+			return null;
+		}
+		
+		protected void onPostExecute(ArrayList<String> results)
+		{
+			//put array list into ListView
+		}
+		
 	}
 }
