@@ -13,7 +13,6 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Spannable;
 import android.text.style.ForegroundColorSpan;
-import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;

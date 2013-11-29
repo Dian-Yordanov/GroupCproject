@@ -1,7 +1,6 @@
 package logicClasses;
 
 import android.graphics.Bitmap;
-import android.util.Log;
 
 public class CountryPicturesQueryBuilder {
 	// taking country logos from http://flagpedia.net/data/flags/normal/fr.png
