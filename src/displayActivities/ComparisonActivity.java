@@ -6,10 +6,14 @@ import logicClasses.*;
 import searchActivities.*;
 
 import com.groupC.project.R;
+
+import displayActivities.IndicatorActivity.GraphThreadIndicatorActivity;
+import displayActivities.IndicatorActivity.JsonThreadIndicatorActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Spannable;
 import android.text.style.ForegroundColorSpan;
@@ -44,6 +48,8 @@ public class ComparisonActivity extends Activity {
 
 		setContentView(R.layout.comparison_activity);
 
+		new JsonThreadComparisonActivity().execute();
+		
 		graphViewLayout = (LinearLayout) findViewById(R.id.layout2);
 
 		informationDisplayLabelComparison = (TextView) findViewById(R.id.informationDisplayLabelComparison);
@@ -98,10 +104,11 @@ public class ComparisonActivity extends Activity {
 		}
 
 		graphViewLayout.setMinimumHeight((int) (StartingActivity.screenHeight));
-		GraphViewCreator.graphViewCreator();
-
+	
+		new GraphThreadComparisonActivity().execute();
+		
 		layoutForInflationComparisonActivity = (LinearLayout) findViewById(R.id.layoutForInflationComparisonActivity);
-		indicatorSetElementsWithInflation();
+		
 
 		QueryBuilder.thereIsNoInforamtionForTheFollowingYears = "";
 
@@ -114,41 +121,70 @@ public class ComparisonActivity extends Activity {
 
 	}
 
-	private void indicatorSetElementsWithInflation() {
-		for (int i = 0; i < QueryBuilder.arrayWithValuesAndYearsForComparison
-				.size(); i++) {
-			lineView = getLayoutInflater().inflate(
-					R.layout.text_in_table_comparison,
-					layoutForInflationComparisonActivity, false);
-			layoutForInflationComparisonActivity.addView(lineView);
+	
+	protected class GraphThreadComparisonActivity extends AsyncTask<LinearLayout, Void, LinearLayout> {
+		protected void onPostExecute(LinearLayout result) {
 
-			label1 = (TextView) lineView.findViewById(R.id.inflatedTextView1);
-			label1.setMinimumWidth(32);
-			label1.setTypeface(null, Typeface.BOLD);
-			label1.setText(QueryBuilder.arrayWithYearsForComparison.get(i));
 
-			label2 = (TextView) lineView.findViewById(R.id.inflatedTextView2);
-			label2.setMinimumWidth((StartingActivity.screenHeight / 2)
-					- (StartingActivity.screenHeight / 10) + 27);
-			label2.setText(QueryBuilder.arrayWithValuesForComparison.get(i));
+			ComparisonActivity.graphViewLayout.removeAllViews();
+			ComparisonActivity.graphViewLayout.addView(GraphViewCreator.graphView);
+		
+		}
 
-			label3 = (TextView) lineView.findViewById(R.id.inflatedTextView3);
-			label3.setMinimumWidth((StartingActivity.screenHeight / 2)
-					- (StartingActivity.screenHeight / 10) + 27);
-			label3.setText(QueryBuilder.arrayWithValuesAndYearsForComparison
-					.get(i));
+		@Override
+		protected LinearLayout doInBackground(LinearLayout... params) {
+			GraphViewCreator.graphViewCreator();
+			return null;
+		}
 
-			if (i % 2 == 0) {
-				label1.setBackgroundColor(Color.parseColor("#F6F6F6"));
-				label2.setBackgroundColor(Color.parseColor("#F6F6F6"));
-				label3.setBackgroundColor(Color.parseColor("#F6F6F6"));
-			}
+	}
+	protected class JsonThreadComparisonActivity extends AsyncTask<String, String, String> {
+		protected void onPostExecute(String results) {
+			indicatorSetElementsWithInflation();
+		}
 
-			else {
-				label1.setBackgroundColor(Color.parseColor("#CCCCCC"));
-				label2.setBackgroundColor(Color.parseColor("#CCCCCC"));
-				label3.setBackgroundColor(Color.parseColor("#CCCCCC"));
+		@Override
+		protected String doInBackground(String... params) {
+
+			return null;
+		}
+		private void indicatorSetElementsWithInflation() {
+			for (int i = 0; i < QueryBuilder.arrayWithValuesAndYearsForComparison
+					.size(); i++) {
+				lineView = getLayoutInflater().inflate(
+						R.layout.text_in_table_comparison,
+						layoutForInflationComparisonActivity, false);
+				layoutForInflationComparisonActivity.addView(lineView);
+
+				label1 = (TextView) lineView.findViewById(R.id.inflatedTextView1);
+				label1.setMinimumWidth(32);
+				label1.setTypeface(null, Typeface.BOLD);
+				label1.setText(QueryBuilder.arrayWithYearsForComparison.get(i));
+
+				label2 = (TextView) lineView.findViewById(R.id.inflatedTextView2);
+				label2.setMinimumWidth((StartingActivity.screenHeight / 2)
+						- (StartingActivity.screenHeight / 10) + 27);
+				label2.setText(QueryBuilder.arrayWithValuesForComparison.get(i));
+
+				label3 = (TextView) lineView.findViewById(R.id.inflatedTextView3);
+				label3.setMinimumWidth((StartingActivity.screenHeight / 2)
+						- (StartingActivity.screenHeight / 10) + 27);
+				label3.setText(QueryBuilder.arrayWithValuesAndYearsForComparison
+						.get(i));
+
+				if (i % 2 == 0) {
+					label1.setBackgroundColor(Color.parseColor("#F6F6F6"));
+					label2.setBackgroundColor(Color.parseColor("#F6F6F6"));
+					label3.setBackgroundColor(Color.parseColor("#F6F6F6"));
+				}
+
+				else {
+					label1.setBackgroundColor(Color.parseColor("#CCCCCC"));
+					label2.setBackgroundColor(Color.parseColor("#CCCCCC"));
+					label3.setBackgroundColor(Color.parseColor("#CCCCCC"));
+				}
 			}
 		}
-	}
+		
+		}
 }

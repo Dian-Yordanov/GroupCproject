@@ -1,21 +1,10 @@
 package displayActivities;
-
-import searchActivities.CountrySearchActivity;
-import searchActivities.IndicatorSearchActivity;
-
 import com.groupC.project.*;
-
 import logicClasses.*;
-
 import com.groupC.project.R;
-
-import displayActivities.CountryActivity.JsonThread;
-
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
-import android.content.res.Configuration;
-import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.text.Spannable;
