@@ -23,6 +23,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 // i used http://stackoverflow.com/questions/3118691/android-make-an-image-at-a-url-equal-to-imageviews-image in 
 //order to understand how should i resize one of the pictures width to the other ones 
+
 public class CountryActivity extends Activity {
 
 	public static TextView countryNameText;
@@ -44,7 +45,7 @@ public class CountryActivity extends Activity {
 
 	private static TextView noFlagTitle;
 	private static TextView noMapTitle;
-	
+
 	private static Bitmap countryFlag;
 	private static Bitmap countryMap;
 
@@ -58,28 +59,23 @@ public class CountryActivity extends Activity {
 
 	public void uiBuilderCountryActivity() {
 		setContentView(R.layout.country_activity);
-		
+
 		new JsonThread().execute();
-		
+
 		countryNameText = (TextView) findViewById(R.id.countryNameTextView);
 
 		layoutForInflation = (LinearLayout) findViewById(R.id.layoutForInflation);
 
-		//setElementsWithInflation();
-
 		flagView = (ImageView) findViewById(R.id.imageView1);
 		countryView = (ImageView) findViewById(R.id.imageView2);
-		
+
 		Bundle extras = getIntent().getExtras();
 		if (extras != null) {
 			countryCode = extras.getString("countryCode");
 			countryName = extras.getString("countryName");
-		}			
+		}
 
-		new ImageThread().execute(countryFlag,countryMap);
-
-	
-		
+		new ImageThread().execute(countryFlag, countryMap);
 
 		noFlagTitle = (TextView) findViewById(R.id.noFlagTitle);
 		noMapTitle = (TextView) findViewById(R.id.noMapTitle);
@@ -90,9 +86,6 @@ public class CountryActivity extends Activity {
 		noMapTitle.setMinimumWidth((StartingActivity.screenWidth)
 				- (StartingActivity.screenWidth / 7) + 4);
 		noMapTitle.setTypeface(null, Typeface.BOLD);
-		
-	
-
 
 	}
 
@@ -102,52 +95,47 @@ public class CountryActivity extends Activity {
 
 	}
 
-	
-
-
-	protected class ImageThread extends AsyncTask<Bitmap, Bitmap , Bitmap>
-	{
-		protected void onPostExecute(Bitmap results)
-		{
+	protected class ImageThread extends AsyncTask<Bitmap, Bitmap, Bitmap> {
+		protected void onPostExecute(Bitmap results) {
 			flagView.setImageBitmap(resizedBitmapFlag);
 			countryView.setImageBitmap(resizedBitmapMap);
-		
+
 		}
 
 		@Override
 		protected Bitmap doInBackground(Bitmap... params) {
 			countryFlag = CountryPicturesQueryBuilder
 					.getCountryFlag(countryCode);
-			countryMap = CountryPicturesQueryBuilder
-					.getCountryMap(countryName);
+			countryMap = CountryPicturesQueryBuilder.getCountryMap(countryName);
 			resizedBitmapFlag = Bitmap.createScaledBitmap(countryFlag,
 					countryFlag.getWidth(), countryFlag.getHeight(), true);
 			resizedBitmapMap = Bitmap.createScaledBitmap(countryMap,
 					countryFlag.getWidth(), countryMap.getHeight(), true);
 			return null;
-		}	
+		}
 	}
-	protected class JsonThread extends AsyncTask< String,  String , String>
-	{
-		protected void onPostExecute(String results)
-		{
+
+	protected class JsonThread extends AsyncTask<String, String, String> {
+		protected void onPostExecute(String results) {
 			countryNameText.setText(QueryBuilder.nameInfo);
 			setElementsWithInflation();
 		}
+
 		@Override
 		protected String doInBackground(String... params) {
-			// TODO Auto-generated method stub
-			QueryBuilder.jsonParserReader(CountrySearchActivity.countryQueryConstructor());
+			QueryBuilder.jsonParserReader(CountrySearchActivity
+					.countryQueryConstructor());
 			return null;
 		}
+
 		private void setElementsWithInflation() {
 			if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
 				{
 					for (int i = 0; i < QueryBuilder.arrayWithValuesForCountry
 							.size(); i++) {
 						lineView = getLayoutInflater().inflate(
-								R.layout.text_in_table_layout, layoutForInflation,
-								false);
+								R.layout.text_in_table_layout,
+								layoutForInflation, false);
 						layoutForInflation.addView(lineView);
 
 						label1 = (TextView) lineView
@@ -167,16 +155,21 @@ public class CountryActivity extends Activity {
 								.get(i));
 
 						if (i % 2 == 0) {
-							label1.setBackgroundColor(Color.parseColor("#F6F6F6"));
-							label2.setBackgroundColor(Color.parseColor("#F6F6F6"));
+							label1.setBackgroundColor(Color
+									.parseColor("#F6F6F6"));
+							label2.setBackgroundColor(Color
+									.parseColor("#F6F6F6"));
 						} else {
-							label1.setBackgroundColor(Color.parseColor("#CCCCCC"));
-							label2.setBackgroundColor(Color.parseColor("#CCCCCC"));
+							label1.setBackgroundColor(Color
+									.parseColor("#CCCCCC"));
+							label2.setBackgroundColor(Color
+									.parseColor("#CCCCCC"));
 						}
 					}
 				}
 			} else {
-				for (int i = 0; i < QueryBuilder.arrayWithValuesForCountry.size(); i++) {
+				for (int i = 0; i < QueryBuilder.arrayWithValuesForCountry
+						.size(); i++) {
 					lineView = getLayoutInflater().inflate(
 							R.layout.text_in_table_layout, layoutForInflation,
 							false);
@@ -195,7 +188,8 @@ public class CountryActivity extends Activity {
 					label2.setMinimumWidth((StartingActivity.screenWidth / 2)
 							+ (StartingActivity.screenWidth / 6)
 							- (StartingActivity.screenWidth / 7));
-					label2.setText(QueryBuilder.arrayWithValuesForCountry.get(i));
+					label2.setText(QueryBuilder.arrayWithValuesForCountry
+							.get(i));
 
 					if (i % 2 == 0) {
 						label1.setBackgroundColor(Color.parseColor("#F6F6F6"));
@@ -207,7 +201,7 @@ public class CountryActivity extends Activity {
 				}
 			}
 		}
-		
+
 	}
-	
+
 }

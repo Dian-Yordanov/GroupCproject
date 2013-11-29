@@ -2,9 +2,15 @@ package displayActivities;
 
 import com.groupC.project.*;
 import logicClasses.*;
+
 import com.groupC.project.R;
+
+import displayActivities.CountryActivity.JsonThread;
+
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.text.Spannable;
@@ -79,8 +85,8 @@ public class IndicatorActivity extends Activity {
 
 		graphLayout.setMinimumHeight((int) (StartingActivity.screenHeight));
 
-		GraphViewCreator.graphViewCreator();
-
+		new GraphThread().execute();
+		
 		layoutForInflationIndicatorActivity = (LinearLayout) findViewById(R.id.layoutForInflationIndicatorActivity);
 
 		indicatorSetElementsWithInflation();
@@ -121,6 +127,20 @@ public class IndicatorActivity extends Activity {
 			}
 
 		}
+	}
+	protected class GraphThread extends AsyncTask<LinearLayout, Void, LinearLayout> {
+		protected void onPostExecute(LinearLayout result) {
+			
+				IndicatorActivity.graphLayout.removeAllViews();
+				IndicatorActivity.graphLayout.addView(GraphViewCreator.graphView);
+		}
+
+		@Override
+		protected LinearLayout doInBackground(LinearLayout... params) {
+			GraphViewCreator.graphViewCreator();
+			return null;
+		}
+
 	}
 
 }

@@ -109,14 +109,6 @@ public class GraphViewCreator {
 
 		graphView.getGraphViewStyle().setVerticalLabelsWidth(250);
 
-		if (nameOfTheClassCallingThis
-				.equals("searchActivities.IndicatorSearchActivity")) {
-			IndicatorActivity.graphLayout.removeAllViews();
-		}
-		if (nameOfTheClassCallingThis
-				.equals("searchActivities.IndicatorSearchActivity")) {
-			IndicatorActivity.graphLayout.addView(graphView);
-		}
 
 		if (nameOfTheClassCallingThis
 				.equals("searchActivities.ComparisonSearchActivity")) {
