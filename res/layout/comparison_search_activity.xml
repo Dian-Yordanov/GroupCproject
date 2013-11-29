@@ -9,9 +9,9 @@
     <TextView
         android:id="@+id/ComparisonText"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="wrap_content"      
         android:text="Compare two countries by an indicator"
-        android:textSize="20sp"
+        android:textSize="20sp" 
         android:textStyle="bold" />
 
     <LinearLayout
