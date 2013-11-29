@@ -1,7 +1,5 @@
 package displayActivities;
 
-import java.util.ArrayList;
-
 import logicClasses.*;
 import searchActivities.*;
 
@@ -69,6 +67,7 @@ public class CountryActivity extends Activity {
 
 		flagView = (ImageView) findViewById(R.id.imageView1);
 		countryView = (ImageView) findViewById(R.id.imageView2);
+		
 		Bundle extras = getIntent().getExtras();
 		if (extras != null) {
 			countryCode = extras.getString("countryCode");
@@ -173,7 +172,6 @@ public class CountryActivity extends Activity {
 	}
 	protected class ImageThread extends AsyncTask<Bitmap, Bitmap , Bitmap>
 	{
-		
 		protected void onPostExecute(Bitmap results)
 		{
 			flagView.setImageBitmap(resizedBitmapFlag);
