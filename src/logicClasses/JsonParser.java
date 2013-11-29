@@ -1,10 +1,5 @@
 package logicClasses;
 
-import com.groupC.project.*;
-import displayActivities.*;
-import logicClasses.*;
-import searchActivities.*;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,7 +13,6 @@ import org.apache.http.impl.client.DefaultHttpClient;
 
 import android.os.StrictMode;
 import android.util.Log;
-
 
 public class JsonParser {
 	public JsonParser() {

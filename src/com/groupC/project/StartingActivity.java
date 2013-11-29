@@ -88,6 +88,7 @@ public class StartingActivity extends Activity {
 
 	}
 
+	@SuppressWarnings("deprecation")
 	public void gettingTheScreenSize() {
 		Display display = getWindowManager().getDefaultDisplay();
 		screenWidth = display.getWidth();

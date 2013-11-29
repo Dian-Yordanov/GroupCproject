@@ -1,11 +1,4 @@
 package logicClasses;
-import java.io.FileNotFoundException;
-
-import com.groupC.project.*;
-import displayActivities.*;
-import logicClasses.*;
-import searchActivities.*;
-
 
 import android.graphics.Bitmap;
 import android.util.Log;
@@ -24,20 +17,26 @@ public class CountryPicturesQueryBuilder {
 	private static final String urlBuilderCountryLocationBeginning = "http://i.infoplease.com/images/m";
 	private static final String urlBuilderCountryLocationEnd = ".gif";
 
-	public CountryPicturesQueryBuilder(){}
-	public static Bitmap getCountryFlag(final String countryCode){
-		// Dominica and Dominican Republic show the same maps GUINEA and GUINEA-BISSAU show the same maps
-		if(countryCode.length()<3){
-			Bitmap flag = ImageDownloader.loadBitmap(urlBuilderFlagsBeginning + countryCode.toLowerCase()  + urlBuilderFlagsEnd);
-			Log.v("",urlBuilderFlagsBeginning + countryCode  + urlBuilderFlagsEnd);
+	public CountryPicturesQueryBuilder() {
+	}
+
+	public static Bitmap getCountryFlag(final String countryCode) {
+		if (countryCode.length() < 3) {
+			Bitmap flag = ImageDownloader.loadBitmap(urlBuilderFlagsBeginning
+					+ countryCode.toLowerCase() + urlBuilderFlagsEnd);
+			Log.v("", urlBuilderFlagsBeginning + countryCode
+					+ urlBuilderFlagsEnd);
 			return flag;
-		}	
-		Bitmap flag = ImageDownloader.loadBitmap(urlBuilderFlagsBeginning2 + countryCode+ urlBuilderFlagsEnd2);
-		Log.v("", urlBuilderFlagsBeginning2 + countryCode.toLowerCase() + urlBuilderFlagsEnd2);
+		}
+		Bitmap flag = ImageDownloader.loadBitmap(urlBuilderFlagsBeginning2
+				+ countryCode + urlBuilderFlagsEnd2);
+		Log.v("", urlBuilderFlagsBeginning2 + countryCode.toLowerCase()
+				+ urlBuilderFlagsEnd2);
 		return flag;
 	}
-	
-	public static Bitmap getCountryMap(String countryName){
-		return ImageDownloader.loadBitmap(urlBuilderCountryLocationBeginning + countryName + urlBuilderCountryLocationEnd);
+
+	public static Bitmap getCountryMap(String countryName) {
+		return ImageDownloader.loadBitmap(urlBuilderCountryLocationBeginning
+				+ countryName + urlBuilderCountryLocationEnd);
 	}
 }
